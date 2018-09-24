@@ -22,4 +22,6 @@
   <project path="vendor/xiaomi" name="davinci-dev/vendor_xiaomi" remote="private" revision="lineage-16.0" />
 
   <project path="vendor/qcom/opensource/interfaces" name="davinci-dev/android_vendor_qcom_opensource_interfaces" remote="private" revision="lineage-16.0" />
+
+  <project path="packages/resources/devicesettings" name="LineageOS/android_packages_resources_devicesettings" remote="private" revision="lineage-16.0" />
 </manifest>
