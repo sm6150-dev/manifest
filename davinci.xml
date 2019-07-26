@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <project path="device/xiaomi/davinci" name="PIPIPIG233666/android_device_xiaomi_davinci" remote="github" revision="mkp" />
+  <project path="kernel/xiaomi/davinci" name="davinci-dev/android_kernel_xiaomi_davinci" remote="github" revision="mkp" />
+  <project path="vendor/xiaomi/davinci" name="davinci-dev/android_vendor_xiaomi_davinci" remote="github" revision="mkp" />
+  <project path="vendor/xiaomi/MiuiCamera" name="MoKee/android_vendor_xiaomi_miuicamera" remote="github" revision="mkp" />
+</manifest>
