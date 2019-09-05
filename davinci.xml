@@ -6,6 +6,7 @@
   <remove-project name="LineageOS/android_vendor_nxp_opensource_packages_apps_Nfc" />
   <remove-project name="LineageOS/android_vendor_nxp_opensource_halimpl" />
   <remove-project name="LineageOS/android_vendor_nxp_opensource_hidlimpl" />
+  <remove-project name="LineageOS/android_vendor_qcom_opensource_interfaces" />
 
   <remote fetch="https://source.codeaurora.org/quic/la/" name="caf" review="codeaurora.org"/>
   <project remote="caf" name="platform/vendor/nxp/interfaces/opensource/nfc" path="vendor/nxp/opensource/interfaces/nfc" revision="be4da3327535956bc14153446168fba4d3a28765" />
@@ -19,4 +20,6 @@
   <project path="device/xiaomi/sm6150-common" name="davinci-dev/android_device_xiaomi_sm6150-common" remote="private" revision="lineage-16.0" />
   <project path="kernel/xiaomi/davinci" name="davinci-dev/android_kernel_xiaomi_davinci" remote="github" revision="lineage-16.0" />
   <project path="vendor/xiaomi" name="davinci-dev/vendor_xiaomi" remote="private" revision="lineage-16.0" />
+
+  <project path="vendor/qcom/opensource/interfaces" name="davinci-dev/android_vendor_qcom_opensource_interfaces" remote="private" revision="lineage-16.0" />
 </manifest>
