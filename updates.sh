@@ -104,7 +104,6 @@ repopick 256891 # stagefright: omx: Don't signal dataspace change on legacy QCOM
 repopick 256892 # stagefright: ACodec: Resolve empty vendor parameters usage
 repopick 256893 # libstagefright: Free buffers on observer died
 repopick 256894 # libstagefright: use 64-bit usage for native_window_set_usage
-repopick 256895 # camera: convert cameraserver back to mk
 repopick 256896 # camera/media: Support legacy HALv1 camera in mediaserver
 repopick 256897 # Camera: check metadata type before releasing frame
 repopick 256898 # camera: include: Don't override possible overlayed header
@@ -357,6 +356,25 @@ repopick 256409 # LineageParts: Reenable DisplayRotation
 repopick 257021 # Reenable KeyHandler
 
 # packages/apps/Messaging
+repopick 256720 # Messaging: Fix generating id in android namespace
+repopick 257324 # AOSP/Messaging - Update the Messaging version to 24 until notification related logic changes are made. Fixes the error "Developer warning for package com.android. messaging failed to post notification on channel null".
+repopick 257325 # AOSP/Messaging - Remove TEST_MAPPING because presubmit tests fail on build_target: aosp_cf_x86_phone-userdebug
+repopick 257326 # AOSP/Messaging - Moved LOCAL_COMPATIBILITY_SUITE to tests/Android.mk. + Deleted the unnecessary blankId check. Updated the TODO comment for NUM_TEST_CONVERSATIONS+4. + Added AndroidTest.xml + Added "LOCAL_PROGUARD_ENABLED := disabled" for tests to pass on cf.
+repopick 257327 # AOSP/Messaging - Fix many improperly formatted resource strings in Messaging.
+repopick 257328 # Fix X-Mms-Transaction-ID of M-Acknowledge.ind
+repopick 257329 # Fix SMS status handling
+repopick 257330 # Use correct format info for SMS
+repopick 257331 # Fix MMS Config issues in Debug menu
+repopick 257332 # Fix assertion failures caused by different instance type
+repopick 257333 # Fix wrong PreferenceCategory for SMS delivery report
+repopick 257334 # Apply new duplication detection logic for M-Notification.ind
+repopick 257335 # Replace no error code '0' for SMS with '-1'
+repopick 257336 # Fix GetOrCreateConversationActionTest failure
+repopick 257337 # Sort ParticipantsData in order of the slot id
+repopick 257338 # Ignore unexpected ACTION_DOWN for SIM avatar icons
+repopick 257339 # Fix FATAL EXCEPTION on SmsStorageLowWarningActivity
+repopick 257340 # Move Messaging to /product
+repopick 257341 # Move libgiftranscode.so to /product
 repopick 256696 # Messaging: define app category
 repopick 256697 # Messaging: adaptive icon
 repopick 256698 # Messaging: Implement option for swipe right to delete.
@@ -364,30 +382,21 @@ repopick 256699 # Messaging: change Avatar fontFamily to sans-serif-medium
 repopick 256700 # MessageQueue: Process pending messages per subscription
 repopick 256701 # Messaging: Toggable keyboard emoticons access
 repopick 256702 # Fix menu item highlight color.
-repopick 256703 # Messaging App is crashing when storage memory is full
 repopick 256704 # Messaging: bring back accent color
 repopick 256705 # Messaging: Implement saved video attachments in MMS
 repopick 256706 # Play an audible notification on receiving a class zero message.
 repopick 256707 # Added support for video and audio mms attachments
 repopick 256708 # Fixed storage permission issue for attachments
 repopick 256709 # Messaging app crashes after a few MMS
-repopick 256710 # Use app settings for conversation settings if no custom set
 repopick 256711 # Messaging: fix bad recycle on sending two mms in a row
 repopick 256712 # MediaPicker: Check for NPE
 repopick 256713 # Messaging: Don't crash on unsupported shared content type
 repopick 256714 # Messaging: Fix crash of blocked participant list activity
 repopick 256715 # Messaging: Add "Mark as read" quick action for message notifications
 repopick 256716 # Allow intent shared subject or title to be mms subject
-repopick 256717 # Messaging: Fix crash when trying to view a vcf file
 repopick 256718 # Messaging: use white nav bar
-repopick 256719 # Don't build with platform certificate
-repopick 256720 # Messaging: Fix generating id in android namespace
-repopick 257185 # Messaging: improve notification channels
-repopick 257186 # Implement per conversation channels
-repopick 257187 # Remove notification settings from database
-repopick 257188 # When removing a conversation, also remove its notification channel
-repopick 257189 # Messaging: And there shall be light (LED)
-repopick 257190 # Messaging: Avoid duplicating code
+repopick 257342 # Don't build with platform certificate
+repopick 257343 # Messaging: Implement per conversation channels
 
 # packages/apps/Nfc
 repopick 257191 # NFC: Clean duplicated and unknown permissions
@@ -404,6 +413,7 @@ repopick 257024 # Settings: gesture: Add LineageParts touchscreen gesture settin
 repopick 257025 # Settings: Allow devices to provide remote gesture preferences
 repopick 256290 # Settings: Add setup UI for minimum delay between an app's notification sounds
 repopick 256162 # Settings: Add rotation settings
+repopick 256803 # DevelopmentSettings: Hide OEM unlock by default
 
 # packages/apps/SetupWizard
 repopick 256915 # SetupWizard: Migrate to androidx
@@ -540,10 +550,6 @@ repopick 256823 # Camera: Add feature extensions
 # system/netd
 repopick 256959 # netd: Allow devices to force-add directly-connected routes
 
-# system/update_engine
-repopick 257104 # update_engine: run backuptool script before normal postinstall script
-repopick 257105 # update_engine: Transition to backuptool domain
-
 # vendor/lineage
 repopick 257154 # lineage: Remove unused ro.build.selinux
 repopick 257155 # lineage: Cleanup PRODUCT_PACKAGES
@@ -554,7 +560,7 @@ repopick 256273 # qcom: Set a pathmap variable for qcom superproject
 repopick 256217 # soong_config: Add new flag for vendor_init
 repopick 256422 # lineage: soong: replace space with colon on TARGET_LD_SHIM_LIBS
 repopick 256960 # soong_config: add TARGET_NEEDS_NETD_DIRECT_CONNECT_RULE
-repopick 256900 # lineage: allow Has_legacy_camera_hal1 to provide Shared_libs
+repopick 256900 # lineage: allow Has_legacy_camera_hal1 to configure Shared_libs and Overrides
 repopick 257000 # Remove apicheck.mk
 repopick 257259 # kernel: Fix specifying custom clang compiler version
 repopick 255667 # adb insecure by default
