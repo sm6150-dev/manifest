@@ -116,6 +116,9 @@ repopick 256899 # camera: Allow devices to load custom CameraParameter code
 repopick 256829 # Request to reset effect buffer in clearInputBuffer
 
 # frameworks/base
+repopick 258159 # frameworks: base: Port password retention feature
+repopick 258180 # Fix Build Credentials refactored to use byte[]
+repopick 258160 # LockSettingsService: Support for separate clear key api
 repopick 255684 # storage: Set all sdcards to visible
 repopick 256163 # Configurable 0, 90, 180 and 270 degree rotation
 repopick 256164 # SystemUI: Fix toggling lockscreen rotation [1/3]
@@ -128,23 +131,12 @@ repopick 255646 # Revert "DO NOT MERGE Remove Privacy Indicators"
 repopick 255648 # Revert "DO NOT MERGE Revert "Adding the privacy chip to the CarStatusBar""
 repopick 255649 # PrivacyItemController: Enable permission hub by default
 repopick 257008 # SystemUI: Apply system_icons_keyguard_padding_end to parent view
-repopick 256167 # Support for device specific key handlers
 repopick 256830 # audio: Don't play sound effects if stream is muted
 repopick 256922 # Initial support for in-display fingerprint sensors
-repopick 256345 # SystemUI: Enable NFC tile
-repopick 256326 # SystemUI: Add caffeine qs tile
-repopick 256327 # SystemUI: Add heads up tile
-repopick 256328 # SystemUI: Add Sync tile
-repopick 256329 # SystemUI: Add tile to show volume panel
-repopick 256346 # SystemUI: Add ADB over network tile
-repopick 256331 # SystemUI: Add AmbientDisplay tile
-repopick 256332 # SystemUI: Add USB Tether tile
-repopick 256445 # SystemUI: Add LiveDisplay tile
-repopick 256334 # SystemUI: Add reading mode tile
-repopick 256337 # SystemUI: Allow user to add/remove QS with one click
 repopick 256446 # SystemUI: Enable and fix QS detail view, adapt layout to Pie
 repopick 256447 # SystemUI: Add Profiles tile
 repopick 256448 # SystemUI: Advanced location tile
+repopick 257148 # PackageManager: Add configuration to specify vendor platform signatures
 repopick 256831 # KernelCpuUidTimeReader: Decrease log level on eng builds
 repopick 257151 # Camera: allow camera to use power key as shutter
 repopick 256016 # Revert "Disable custom clock faces in SystemUI"
@@ -160,6 +152,9 @@ repopick 256923 # libui: Allow extension of valid gralloc 1.0 buffer usage bits
 # frameworks/opt/telephony
 repopick 256942 # telephony: Squashed support for simactivation feature
 
+# hardware/interfaces
+repopick 258181 # keymasterV4_0: Tags support for FBE wrapped key.
+
 # hardware/libhardware
 repopick 256911 # hardware/libhw: Add display_defs.h to declare custom enums/flags
 
@@ -167,6 +162,8 @@ repopick 256911 # hardware/libhw: Add display_defs.h to declare custom enums/fla
 repopick 256951 # Add wifi_add_or_remove_virtual_intf() to the legacy wifi hal
 
 # hardware/lineage/interfaces
+repopick 258215 # Initial dummy cryptfshw implementation
+repopick 258216 # cryptfshw: Export headers to libcryptfshw_hidl_headers
 repopick 256902 # interfaces: Camera: Add support for IMapper 3.0
 repopick 256420 # Initial audio amplifier HAL
 
@@ -316,7 +313,6 @@ repopick 257133 # Re-add dialer lookup.
 repopick 257118 # Generalize the in-call vibration settings category
 repopick 257119 # Add setting to enable Do Not Disturb during calls
 repopick 257134 # Re-add call recording.
-repopick 257124 # Move dialer from /product to /system.
 repopick 257121 # Allow per-call account selection.
 repopick 257122 # Re-add call statistics.
 repopick 257135 # Control dialer's incoming call proximity sensor check via an overlay
@@ -368,7 +364,6 @@ repopick 255432 # FlipFlap: Migrate to androidx
 # packages/apps/LineageParts
 repopick 256598 # LineageParts: Inject Trust into privacy settings
 repopick 256409 # LineageParts: Reenable DisplayRotation
-repopick 257021 # Reenable KeyHandler
 
 # packages/apps/Messaging
 repopick 256720 # Messaging: Fix generating id in android namespace
@@ -417,6 +412,13 @@ repopick 257343 # Messaging: Implement per conversation channels
 repopick 257191 # NFC: Clean duplicated and unknown permissions
 repopick 256595 # NFC: Adding new vendor specific interface to NFC Service
 repopick 256814 # NFCService: Add sysprop to prevent FW download during boot with NFC off.
+repopick 257348 # NFC: Restore legacy NXP stack
+repopick 257349 # nxp: jni: Forward-port the stack sources
+repopick 257350 # nxp: NativeNfcManager: Implement missing inherited abstract methods
+repopick 257351 # nxp: jni: use proper nativehelper headers
+repopick 257352 # nxp: jni: Remove unused variables and functions
+repopick 257353 # nxp: jni: Implement AOSP P abstract methods
+repopick 258124 # nxp: Q api updates
 
 # packages/apps/PackageInstaller
 repopick 255658 # Revert "Remove Permissions Hub."
@@ -424,8 +426,6 @@ repopick 255659 # PermissionController: Enable permission hub by default
 
 # packages/apps/Settings
 repopick 257192 # Settings: adaptive icon
-repopick 257024 # Settings: gesture: Add LineageParts touchscreen gesture settings
-repopick 257025 # Settings: Allow devices to provide remote gesture preferences
 repopick 256290 # Settings: Add setup UI for minimum delay between an app's notification sounds
 repopick 256162 # Settings: Add rotation settings
 repopick 256803 # DevelopmentSettings: Hide OEM unlock by default
@@ -561,6 +561,7 @@ repopick 256797 # Allow to disable the new scan API for manual network search.
 repopick 256790 # LivePicker: adaptive icon
 
 # system/core
+repopick 258166 # Squashed wrapped key support?
 repopick 255664 # mkbootimg: add support for --dt
 repopick 255932 # adb: Add wait-for-online command
 repopick 256086 # init: Add vendor-specific initialization hooks.
@@ -571,9 +572,42 @@ repopick 256823 # Camera: Add feature extensions
 # system/netd
 repopick 256959 # netd: Allow devices to force-add directly-connected routes
 
+# system/vold
+repopick 258131 # vold: Add Hardware FDE feature
+repopick 258132 # system: vold: Remove crypto block device creation
+repopick 258133 # vold: Wrapped key support for FBE
+repopick 258134 # vold: Use separate flag for wrappedkey
+repopick 258135 # Remove no longer relevant header file
+repopick 258136 # vold: add support for clear key
+repopick 258137 # Fix for CTS test CtsAppSecurityHostTestCases
+repopick 258138 # vold: fix build error
+repopick 258139 # vold: change to upgrade key if export fails
+repopick 258141 # system: vold: fix block disk encryption to work with metadata encryption
+repopick 258145 # Updates for migrated code upstream
+repopick 258147 # system: vold: Close crypto block device if it was created
+repopick 258148 # system: vold: pass proper extra params to load crypto device
+repopick 258140 # system: vold: Use wrapped key for metadata encryption
+repopick 258149 # [automerger] vold: resolve crypto device creation failure with dm-crypt skipped: 4b5c1b2db2
+repopick 258150 # system: vold: Use ICE for UFS card
+repopick 258151 # vold: Move QCOM HW FDE inclusion under Lineage namespace
+repopick 258169 # vold: add support for more filesystems for public storage
+repopick 258170 # vold: Fix fsck on public volumes
+repopick 258171 # vold: Support internal storage partitions
+repopick 258172 # vold: Honor mount options for ext4/f2fs partitions
+repopick 258173 # vold: Mount ext4/f2fs portable storage with sdcard_posix
+repopick 258174 # vold ext4/f2fs: do not use dirsync if we're mounting adopted storage
+repopick 258175 # Fix the group permissions of the sdcard root.
+repopick 258176 # vold: skip first disk change when converting MBR to GPT
+repopick 258177 # vold: Allow reset after shutdown
+repopick 258178 # vold: Accept Linux GPT partitions on external SD cards
+repopick 258179 # Add "changepw" command to vdc.
+
 # vendor/lineage
 repopick 257154 # lineage: Remove unused ro.build.selinux
 repopick 257155 # lineage: Cleanup PRODUCT_PACKAGES
+repopick 256837 # config: Split priv-app permission whitelist
+repopick 258183 # config: Replace 'system' with '$(TARGET_COPY_OUT_SYSTEM)'
+repopick 258184 # config: Remove lineagehw from sdk PRODUCT_PACKAGES
 repopick 257145 # common: Copy APN list to $(TARGET_COPY_OUT_PRODUCT)/etc
 repopick 255933 # lineage: env: fixup recovery fstab path
 repopick 256271 # qcom: Move to new qcom HAL directory layout
@@ -595,6 +629,12 @@ repopick 257217 # Prevent OOB write in phFriNfc_ExtnsTransceive
 repopick 257218 # Prevent OOB write in Mfc_Transceive
 repopick 257219 # Prevent OOB Read in Mfc_Transceive
 
+# vendor/qcom/opensource/cryptfs_hw
+repopick 258191 # cryptfs_hw: Use generated kernel headers
+repopick 258192 # cryptfs_hw: Choose keymaster version for key signing
+repopick 258193 # cryptfs_hw: add missing logging tag
+repopick 258194 # cryptfs_hw: Mark unused parameter
+
 # vendor/qcom/opensource/data-ipa-cfg-mgr
 repopick 257220 # data-ipa-cfg-mgr: Use project pathmap
 repopick 257221 # data-ipa-cfg-mgr: Use generated kernel headers
@@ -609,7 +649,9 @@ repopick 257227 # dataservices: Don't pollute the tree
 repopick 257228 # librmnetctl: Use generated kernel headers
 
 # vendor/qcom/opensource/interfaces
+repopick 258203 # Add Script to generate vendor hal make files
 repopick 257235 # Generate blueprints
+repopick 258212 # Introduce vendor.qti.hardware.cryptfshw@1.0 HAL
 
 # vendor/qcom/opensource/thermal-engine
 repopick 257229 # Remove Android.mk
