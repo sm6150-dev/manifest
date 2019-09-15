@@ -82,6 +82,11 @@ repopick 257047 # sepolicy: Drop fsck.f2fs label
 repopick 257053 # sepolicy: Make recovery permissive
 repopick 257100 # [DND] Kill su
 
+# device/qcom/sepolicy
+repopick 257238 # sepolicy: Move definitions from Android.mk to make opt-in
+repopick 257244 # sepolicy: Fix target selection
+repopick 257245 # legacy: Fix newline in file_contexts
+
 # external/ant-wireless/ant_native
 repopick 257193 # ant_native: use project pathmap
 repopick 257194 # ANT: Don't build HIDL variant libantradio for OSS builds
@@ -345,7 +350,17 @@ repopick 256690 # email: return default folder name for subfolders
 repopick 256691 # email: junk icon
 repopick 256692 # Search in folder specified via URI parameter, if possible.
 repopick 256693 # Remove max aspect ratio.
-repopick 256694 # Email: Fix generating id in android namespace
+repopick 257358 # Fix Email tests on userdebug builds.
+repopick 257359 # AOSP/Email -Added TEST_MAPPING file and "LOCAL_COMPATIBILITY_SUITE := ...
+repopick 257360 # Remove build-time dep on opt-datetimepicker
+repopick 257361 # Revert "Revert "AOSP/Email - Changes for code to work with UnifiedEmail's ...
+repopick 257362 # Revert "Revert "AOSP/Email - Bump targetSdkVersion to 28.""
+#repopick 257363 # AOSP/Email - Bump version number to 28 in the XML file.
+#repopick 257364 # AOSP/Email - Bumped version number to 28. Disabled notifications, uifolders ...
+#repopick 257365 # AOSP/Email and AOSP/UnfiedEmail - Added back call to uiaccounts. + Added ...
+
+# packages/apps/Exchange
+repopick 257297 # Exchange: Migrate to androidx
 
 # packages/apps/FlipFlap
 repopick 255432 # FlipFlap: Migrate to androidx
@@ -463,6 +478,12 @@ repopick 256743 # Properly close body InputStreams.
 repopick 256744 # Make navigation drawer extend over status bar.
 repopick 256745 # Disable animations for translucent activities.
 repopick 256746 # Don't re-show search bar on query click.
+repopick 257366 # Fix UnifiedEmail tests on userdebug builds.
+repopick 257367 # AOSP/UnifiedEmail -  Fix improperly formatted resource strings in UnifiedEmail.
+repopick 257368 # Remove build-time dep on opt-datetimepicker
+repopick 257369 # Import translations. DO NOT MERGE]
+repopick 257370 # Revert "Revert "AOSP/UnifiedEmail - Bumped the targetSdkVersion to 28 ...
+#repopick 257371 # AOSP/Email and AOSP/UnfiedEmail - Added back call to uiaccounts. + Added ...
 
 # packages/inputmethods/LatinIME
 repopick 256747 # Remove extend touchable region for AOSP keyboard
