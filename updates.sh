@@ -7,9 +7,6 @@ source build/envsetup.sh
 repopick 256444 # Don't fail dual map if memfd isn't supported
 
 # bionic
-repopick 256168 # Add inaddr.h header file
-repopick 256083 # linker: Add support for dynamic SHIM libraries
-repopick 256147 # bionic: Sort and cache hosts file data for fast lookup
 repopick 256148 # libc: Mark libstdc++ as vendor available
 repopick 256149 # Implement per-process target SDK version override.
 repopick 256150 # bionic: Use legacy pthread_mutex_init() behavior on pre-P API levels
@@ -35,20 +32,18 @@ repopick 255992 # recovery: ui: Support hardware virtual keys
 repopick 256010 # recovery: Include vendor init trigger
 
 # build/make
-repopick 255663 # Add BOARD_CUSTOM_BOOTIMG_MK support
-repopick 255925 # build: Add support for device tree in boot.img
-repopick 256500 # Allow a device to generically define its own headers
-repopick 256458 # core: Disable vendor restrictions
-repopick 257099 # Make PRODUCT_BUILD_PROP_OVERRIDES bit more powerful
 repopick 257156 # build: Conditionally include AudioPackage14.mk instead of AllAudio.mk
-repopick 257157 # Revert "Add handheld_core_hardware.xml to telephony base"
 repopick 257158 # Remove LatinIME as it is included per target in vendor/lineage
 repopick 257159 # Fix inheritance of PRODUCT_PROPERTY_OVERRIDES for Lineage audio files
 repopick 257160 # Disable dataroaming by default
 repopick 257161 # Add missing languages
-repopick 257162 # Don't enable ADB by default on userdebug builds
 repopick 257163 # Enable dynamic linker warnings only on eng build
+repopick 257162 # Don't enable ADB by default on userdebug builds
 repopick 257243 # NFC: Disbale build for AOSP NFC
+
+repopick 256500 # Allow a device to generically define its own headers
+repopick 257099 # Make PRODUCT_BUILD_PROP_OVERRIDES bit more powerful
+
 #repopick 257166 # build: recovery: Support adding device-specific items
 #repopick 257167 # build: Separate commands in recovery foreach loops
 #repopick 257168 # Allow setting the recovery density separately from the aapt config
@@ -67,11 +62,9 @@ repopick 257243 # NFC: Disbale build for AOSP NFC
 #repopick 257181 # Revert "Remove the obsolete UnpackPackageDir() in edify generator"
 #repopick 257182 # build: Support system-as-root A-only backuptool
 #repopick 257183 # build: Allow mounting system properly for A-only system-as-root devices
-repopick 257184 # build: Only set the default verity key as a fallback
 
 # build/soong
 repopick 256886 # soong: Add function to return camera parameters library name
-repopick 256833 # Fix formatting
 
 # development
 repopick 257150 # make-key: Enforce PBEv1 password-protected signing keys
@@ -92,8 +85,11 @@ repopick 257193 # ant_native: use project pathmap
 repopick 257194 # ANT: Don't build HIDL variant libantradio for OSS builds
 repopick 257195 # Remove unused parameters in vfs code
 
-# external/json-c
-repopick 257196 # libjson: Remove dependency on kernel headers
+# external/ntfs-3g
+repopick 258532 # ntfs-3g: Add support for android builds
+repopick 258533 # ntfs-3g: Fix compilation warning]
+repopick 258534 # ntfs-3g: Fix overflow in ioctl command
+repopick 258535 # ntfs-3g: Fix argument parsing issue of Android 8.0
 
 # external/tinycompress
 repopick 256308 # tinycompress: Enable extended compress format
@@ -114,8 +110,12 @@ repopick 256897 # Camera: check metadata type before releasing frame
 repopick 256898 # camera: include: Don't override possible overlayed header
 repopick 256899 # camera: Allow devices to load custom CameraParameter code
 repopick 256829 # Request to reset effect buffer in clearInputBuffer
+repopick 258224 # Camera: Add extensions to CameraClient
+repopick 258437 # Camera: Add support for preview frame fd
+repopick 258439 # stagefright: add changes related to high-framerates in CameraSource
 
 # frameworks/base
+repopick 258530 # Use UnlockMethodCache#canSkipBouncer in user switcher
 repopick 258159 # frameworks: base: Port password retention feature
 repopick 258180 # Fix Build Credentials refactored to use byte[]
 repopick 258160 # LockSettingsService: Support for separate clear key api
@@ -124,7 +124,6 @@ repopick 256163 # Configurable 0, 90, 180 and 270 degree rotation
 repopick 256164 # SystemUI: Fix toggling lockscreen rotation [1/3]
 repopick 256185 # Enable Binder Proxy Tracking by Uid only on eng builds
 repopick 256186 # SystemUI: Add support for persistent usb drive notification.
-repopick 256187 # Disable notification channel warnings by default
 repopick 256291 # Support enforcing a minimum delay between notification sounds of an app
 repopick 256596 # frameworks/base: Support for third party NFC features and extensions
 repopick 255646 # Revert "DO NOT MERGE Remove Privacy Indicators"
@@ -139,6 +138,24 @@ repopick 256448 # SystemUI: Advanced location tile
 repopick 257148 # PackageManager: Add configuration to specify vendor platform signatures
 repopick 256831 # KernelCpuUidTimeReader: Decrease log level on eng builds
 repopick 257151 # Camera: allow camera to use power key as shutter
+repopick 258225 # Camera: Add feature extensions
+repopick 258298 # LiveDisplayTile: Enable for outdoor mode and skip night display on HWC2
+repopick 258303 # power: Re-introduce custom charging sounds
+repopick 258228 # Correction in logic of roundend size calculation of SD card
+repopick 258301 # Forward port CM Screen Security settings (1/2)
+repopick 258504 # frameworks: Add unlinked ringtone and notification volumes
+repopick 258235 # Allow adjusting screen density to smaller sizes.
+repopick 258471 # Reintroduce button-backlight (and respective inactivity timeout)
+repopick 258472 # power: Disable keyboard/button lights while dozing/dreaming
+repopick 258473 # PowerManager: Re-integrate button brightness
+repopick 257302 # PowerManager: Add proximity check on wake
+repopick 258474 # PowerManagerService: Allow to light up buttons only when pressed
+repopick 258475 # PowerManager: Allow to distinguish different keypresses
+repopick 258476 # Add support for runtime toggle of navbar
+repopick 258477 # Framework: Volume key cursor control
+repopick 258478 # PhoneWindowManager: add LineageButtons volumekey hook
+repopick 258479 # Long-press power while display is off for torch
+repopick 258480 # Reimplement hardware keys custom rebinding
 repopick 256016 # Revert "Disable custom clock faces in SystemUI"
 repopick 256015 # Revert "Disable ClockOptionsProvider so clocks don't appear in picker app"
 repopick 255650 # Revert "Drop final remnants of Type clock face"
@@ -148,18 +165,18 @@ repopick 256192 # [DNM] IS_DEBUGGABLE -> IS_ENG
 
 # frameworks/native
 repopick 256923 # libui: Allow extension of valid gralloc 1.0 buffer usage bits
+repopick 258440 # PowerManager.h: Define USER_ACTIVITY_FLAG values
+repopick 258441 # InputDispatcher: On keypress, deliver keycode to pokeUserActivity
 
 # frameworks/opt/telephony
 repopick 256942 # telephony: Squashed support for simactivation feature
+repopick 257334 # Add ims-ext-common to static java libraries
 
 # hardware/interfaces
 repopick 258181 # keymasterV4_0: Tags support for FBE wrapped key.
 
 # hardware/libhardware
 repopick 256911 # hardware/libhw: Add display_defs.h to declare custom enums/flags
-
-# hardware/libhardware_legacy
-repopick 256951 # Add wifi_add_or_remove_virtual_intf() to the legacy wifi hal
 
 # hardware/lineage/interfaces
 repopick 258215 # Initial dummy cryptfshw implementation
@@ -174,7 +191,10 @@ repopick 256955 # nfc: Restore pn548 support to 1.1 HAL
 repopick 256353 # audio: Use project pathmap
 
 # hardware/qcom/bootctrl
-repopick 256354 # bootcontrol: Only compile when the A/B feature is enabled
+repopick 258221 # Build bootctrl.sdm710 with Android.bp.
+repopick 258222 # Revert^2 "Build bootctrl.msm8998 with Android.bp.""
+repopick 258243 # Build bootctrl.msm8996 with Android.bp.
+repopick 258244 # Remove Android.mk rules for building bootctrl.
 
 # hardware/qcom/bt
 repopick 256355 # bt: Add guard makefile
@@ -199,9 +219,6 @@ repopick 256361 # media: Use project pathmap
 
 # hardware/qcom/wlan
 repopick 256362 # wlan: Add guard makefile
-
-# hardware/qcom-caf/bt
-repopick 256302 # bt: Remove LOCAL_MODULE_TAGS := debug usage
 
 # hardware/qcom-caf/fm
 repopick 257274 # Use BOARD_HAVE_QCOM_FM flag
@@ -241,9 +258,6 @@ repopick 257207 # wifi-hal: Use generated kernel headers
 repopick 257208 # Reading the serialno property is forbidden
 repopick 257209 # wcnss-service: Opt-in to disable copying WCNSS_qcom_cfg.ini to userdata
 
-# hardware/qcom/vr
-repopick 257198 # vr: Use project pathmap
-
 # hardware/ril
 repopick 256551 # libril: allow board to provide libril
 repopick 257211 # libril: Bounds check s_commands
@@ -252,19 +266,13 @@ repopick 257213 # libril: Fix manual network selection with old modem
 repopick 257210 # FR51015: Tuning of Binder buffer for rild.
 repopick 257214 # Make RIL command headers overlayable by devices.
 
+# lineage-sdk
+repopick 258333 # lineage-sdk: Bump PREF_HAS_MIGRATED_LINEAGE_SETTINGS for 17.0
+
 # packages/apps/AudioFX
 repopick 256920 # AudioFX: Migrate to androidx
 
-# packages/apps/Bluetooth
-repopick 256600 # Bluetooth: Remove unused string resources
-repopick 256601 # Fix null pointer exception on AvrcpTargetService
-
-# packages/apps/Calendar
-repopick 256602 # Calendar: adaptive icon
-repopick 256603 # Calendar: Fix translatables
-
 # packages/apps/Camera2
-repopick 256640 # Camera2: adaptive icon
 repopick 256641 # Don't attempt to convert degree to orientation enum twice
 repopick 256642 # Camera2: Only autofocus before a snap if we are actually in "auto" mode.
 repopick 256643 # Camera2: Remove settings preferences only once
@@ -279,16 +287,15 @@ repopick 256818 # Rework permissions request flow
 repopick 256645 # Camera2: Request for ACCESS_FINE_LOCATION permission
 
 # packages/apps/Contacts
-repopick 256651 # Contacts: define app category
 repopick 256652 # Contacts: adaptive icon
 repopick 256653 # Contacts: update splash screen to match the new icon
+repopick 257054 # Contacts: Up minimum SDK to 26
+repopick 256659 # Contacts: Remove unused boolean resource
 repopick 256654 # Contacts: Enable support for device contact.
 repopick 256655 # Place MyInfo shortcut on drawer
 repopick 256656 # Place EmergencyInfo shortcut on drawer
 repopick 256657 # Allow calling contacts via specific phone accounts.
-repopick 256658 # Contacts: use white nav bar
-repopick 256659 # Contacts: Remove unused boolean resource
-repopick 257054 # Contacts: Up minimum SDK to 26
+#repopick 256658 # Contacts: use white nav bar
 
 # packages/apps/DeskClock
 repopick 257139 # DeskClock - Moved the android:targetSdkVersion to 25 to fix "Clock has stopped" message displayed when Alarm trigger.
@@ -302,8 +309,6 @@ repopick 256665 # DeskClock: Add support of power off alarm feature
 repopick 256666 # DeskClock: Use POWER_OFF_ALARM permission
 
 # packages/apps/Dialer
-repopick 257129 # Dialer: define app category
-repopick 257130 # Dialer: adaptive icon
 repopick 257131 # Dialer: handle database upgrade from cm-14.1
 repopick 257132 # Dialer: disable anti-falsing for call answer screen
 repopick 257113 # Revert "Remove dialer sounds and vibrations settings fragments and redirect to the system sound
@@ -319,14 +324,12 @@ repopick 257135 # Control dialer's incoming call proximity sensor check via an o
 repopick 257136 # Dialer: AudioModeProvider: use wired route for usb headsets
 
 # packages/apps/DocumentsUI
-repopick 256669 # DocumentsUI: define appcategory
 repopick 256670 # DocumentsUI: adaptive icon
 
 # packages/apps/Eleven
 repopick 256230 # Migrate to AndroidX
 
 # packages/apps/Email
-repopick 256674 # Email: adaptive icon
 repopick 256675 # Email: handle databases from cm-14.1
 repopick 256676 # Allow account deletion.
 repopick 256677 # email: support for auto-sync multiple IMAP folders
@@ -409,7 +412,6 @@ repopick 257342 # Don't build with platform certificate
 repopick 257343 # Messaging: Implement per conversation channels
 
 # packages/apps/Nfc
-repopick 257191 # NFC: Clean duplicated and unknown permissions
 repopick 256595 # NFC: Adding new vendor specific interface to NFC Service
 repopick 256814 # NFCService: Add sysprop to prevent FW download during boot with NFC off.
 repopick 257348 # NFC: Restore legacy NXP stack
@@ -427,8 +429,14 @@ repopick 255659 # PermissionController: Enable permission hub by default
 # packages/apps/Settings
 repopick 257192 # Settings: adaptive icon
 repopick 256290 # Settings: Add setup UI for minimum delay between an app's notification sounds
+repopick 258299 # Settings: forward port lock pattern grid size (2/2)
+repopick 258300 # Forward port pattern visibility settings (2/2)
+repopick 258501 # Settings: Add switch for linked ring and media notification volumes
+repopick 258502 # Settings: Use correct icon for ring volume
+repopick 258500 # Settings: Add back increasing ring feature (2/2).
 repopick 256162 # Settings: Add rotation settings
-repopick 256803 # DevelopmentSettings: Hide OEM unlock by default
+repopick 258304 # Settings: Add LineageParts charging sound settings preference
+repopick 258234 # Settings: Hide unsupported USB modes automatically
 
 # packages/apps/SetupWizard
 repopick 256915 # SetupWizard: Migrate to androidx
@@ -436,12 +444,7 @@ repopick 257058 # Update for Q setup library changes
 repopick 257064 # Add new method from ICaptivePortal
 repopick 257065 # [HAX] Temporarily fix build due to PhoneMonitor API change
 
-# packages/apps/Stk
-repopick 256724 # Stk: adaptive icon
-
 # packages/apps/Terminal
-repopick 256725 # Terminal: define app category
-repopick 256726 # Term: adaptive icon
 repopick 256242 # TerminalKeys: Disable debug
 repopick 256243 # Allow terminal app to show in LeanBack (1/2)
 repopick 256244 # Terminal: Fix keyboard Ctrl- and ALT-key input.
@@ -508,65 +511,30 @@ repopick 256765 # Add support for Bépo keyboard layout
 repopick 256766 # LatinIME: Add support for Australian English
 repopick 256767 # LatinIME: Add Luxembourgish keyboard & spellchecking dictionary
 
-# packages/providers/BlockedNumberProvider
-repopick 256768 # BlockedNumberProvider: adaptive icon
-
-# packages/providers/BookmarkProvider
-repopick 256769 # BookmarkProvider: adaptive icon
-
-# packages/providers/CalendarProvider
-repopick 256770 # CalendarProvider: adaptive icon
-
-# packages/providers/CallLogProvider
-repopick 256771 # CallLogBackup: adaptive icon
-
 # packages/providers/ContactsProvider
-repopick 256772 # ContactsProvider: adaptive icon
 repopick 256773 # ContactsProvider: Prevent device contact being deleted.
 repopick 256774 # CallLogDatabase: Try to re-run the version 5 upgrade path
 
-# packages/providers/MediaProvider
-repopick 256775 # MediaProvider: adaptive icon
-
 # packages/providers/TelephonyProvider
-repopick 256779 # TelephonyProvider: adaptive icon
 repopick 256780 # TelephonyProvider: add upgrade support from cm-14.1
 
-# packages/services/BuiltInPrintService
-repopick 256781 # fix PWG-Raster duplex case
-repopick 256782 # add print service recommendations under More Options
-repopick 256783 # fix crash during PCLM duplex job with odd page count
-repopick 256784 # Move new strings to lineage_strings
-
-# packages/services/Mms
-repopick 256785 # Add app label
-repopick 256786 # Mms: adaptive icon
-
 # packages/services/Telecomm
-repopick 256788 # Telecomm: adaptive icon
+repopick 258503 # Add back increasing ring feature (1/2).
 repopick 256161 # Telecomm: Make sensitive phone numbers not to be shown in call log history.
 repopick 256265 # CallLog: Take into account multiple SIMs for sensitive numbers
 repopick 256938 # Telecomm: Squashed phone_type switch support
 
 # packages/services/Telephony
-repopick 256791 # Telephony: adaptive icon
 repopick 256792 # Telephony: Add ERI configuration for U.S. Cellular
 repopick 256793 # Telephony: Support muting by RIL command
 repopick 256794 # Fix non-protected broadcasts sent from phone process.
 repopick 256795 # Don't start SIP service before decrypted
-repopick 256796 # Telephony: Mark enhanced_4g_lte_mode_title_variant as untranslatable
 repopick 256797 # Allow to disable the new scan API for manual network search.
-
-# packages/wallpapers/LivePicker
-repopick 256790 # LivePicker: adaptive icon
 
 # system/core
 repopick 258166 # Squashed wrapped key support?
-repopick 255664 # mkbootimg: add support for --dt
 repopick 255932 # adb: Add wait-for-online command
-repopick 256086 # init: Add vendor-specific initialization hooks.
 repopick 256219 # utils: Threads: Handle empty thread names
-repopick 256908 # healthd: Add DASH charger type
 repopick 256823 # Camera: Add feature extensions
 
 # system/netd
@@ -603,31 +571,19 @@ repopick 258178 # vold: Accept Linux GPT partitions on external SD cards
 repopick 258179 # Add "changepw" command to vdc.
 
 # vendor/lineage
-repopick 257154 # lineage: Remove unused ro.build.selinux
-repopick 257155 # lineage: Cleanup PRODUCT_PACKAGES
-repopick 256837 # config: Split priv-app permission whitelist
-repopick 258183 # config: Replace 'system' with '$(TARGET_COPY_OUT_SYSTEM)'
-repopick 258184 # config: Remove lineagehw from sdk PRODUCT_PACKAGES
+repopick 258528 # Remove duplicated priv-app permission
 repopick 257145 # common: Copy APN list to $(TARGET_COPY_OUT_PRODUCT)/etc
 repopick 255933 # lineage: env: fixup recovery fstab path
 repopick 256271 # qcom: Move to new qcom HAL directory layout
-repopick 256273 # qcom: Set a pathmap variable for qcom superproject
-repopick 256217 # soong_config: Add new flag for vendor_init
-repopick 256422 # lineage: soong: replace space with colon on TARGET_LD_SHIM_LIBS
+repopick 258531 # lineage: Disable vendor restrictions
 repopick 256960 # soong_config: add TARGET_NEEDS_NETD_DIRECT_CONNECT_RULE
 repopick 256900 # lineage: allow Has_legacy_camera_hal1 to configure Shared_libs and Overrides
 repopick 257000 # Remove apicheck.mk
-repopick 257259 # kernel: Fix specifying custom clang compiler version
+repopick 258418 # kernel: fix KERNEL_TOOLCHAIN_PATH_gcc and usage
 repopick 255667 # adb insecure by default
 
 # vendor/codeaurora/telephony
 repopick 257215 # Revert "IMS-VT: Low battery handling for Video calls"
-
-# vendor/nxp/opensource/commonsys/packages/apps/Nfc
-repopick 257216 # NFC: Clean duplicated and unknown permissions
-repopick 257217 # Prevent OOB write in phFriNfc_ExtnsTransceive
-repopick 257218 # Prevent OOB write in Mfc_Transceive
-repopick 257219 # Prevent OOB Read in Mfc_Transceive
 
 # vendor/qcom/opensource/cryptfs_hw
 repopick 258191 # cryptfs_hw: Use generated kernel headers
@@ -649,9 +605,4 @@ repopick 257227 # dataservices: Don't pollute the tree
 repopick 257228 # librmnetctl: Use generated kernel headers
 
 # vendor/qcom/opensource/interfaces
-repopick 258203 # Add Script to generate vendor hal make files
-repopick 257235 # Generate blueprints
 repopick 258212 # Introduce vendor.qti.hardware.cryptfshw@1.0 HAL
-
-# vendor/qcom/opensource/thermal-engine
-repopick 257229 # Remove Android.mk
