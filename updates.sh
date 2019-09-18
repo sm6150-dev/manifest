@@ -115,7 +115,7 @@ repopick 258437 # Camera: Add support for preview frame fd
 repopick 258439 # stagefright: add changes related to high-framerates in CameraSource
 
 # frameworks/base
-repopick 258530 # Use UnlockMethodCache#canSkipBouncer in user switcher
+#repopick 258530 # Use UnlockMethodCache#canSkipBouncer in user switcher
 repopick 258159 # frameworks: base: Port password retention feature
 repopick 258180 # Fix Build Credentials refactored to use byte[]
 repopick 258160 # LockSettingsService: Support for separate clear key api
