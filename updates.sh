@@ -170,7 +170,7 @@ repopick 258441 # InputDispatcher: On keypress, deliver keycode to pokeUserActiv
 
 # frameworks/opt/telephony
 repopick 256942 # telephony: Squashed support for simactivation feature
-repopick 257334 # Add ims-ext-common to static java libraries
+repopick 257344 # Add ims-ext-common to static java libraries
 
 # hardware/interfaces
 repopick 258181 # keymasterV4_0: Tags support for FBE wrapped key.
