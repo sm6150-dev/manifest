@@ -7,18 +7,11 @@ source build/envsetup.sh
 repopick 256444 # Don't fail dual map if memfd isn't supported
 
 # bionic
-repopick 256148 # libc: Mark libstdc++ as vendor available
 repopick 256149 # Implement per-process target SDK version override.
 repopick 256150 # bionic: Use legacy pthread_mutex_init() behavior on pre-P API levels
 repopick 256151 # Actually restore pre-P mutex behavior
 
 # bootable/recovery
-repopick 255824 # Revert "updater: Remove dead make_parents()."
-repopick 255825 # Revert "otautil: Delete dirUnlinkHierarchy()."
-repopick 255826 # Revert "kill package_extract_dir"
-repopick 255827 # Revert "Remove the obsolete package_extract_dir() test"
-repopick 255828 # Revert "updater: Remove some obsoleted functions for file-based OTA."
-repopick 255829 # recovery: updater: Fix SymlinkFn args
 repopick 255830 # Make adb use a custom prop for adb root
 repopick 255831 # recovery: Get a proper shell environment in recovery
 repopick 255979 # recovery: symlink /sbin for script compatibility
@@ -32,34 +25,21 @@ repopick 255992 # recovery: ui: Support hardware virtual keys
 repopick 256010 # recovery: Include vendor init trigger
 
 # build/make
-repopick 257156 # build: Conditionally include AudioPackage14.mk instead of AllAudio.mk
-repopick 257158 # Remove LatinIME as it is included per target in vendor/lineage
-repopick 257159 # Fix inheritance of PRODUCT_PROPERTY_OVERRIDES for Lineage audio files
-repopick 257160 # Disable dataroaming by default
-repopick 257161 # Add missing languages
-repopick 257163 # Enable dynamic linker warnings only on eng build
-repopick 257162 # Don't enable ADB by default on userdebug builds
+repopick 257166 # build: recovery: Support adding device-specific items
+repopick 257167 # build: Separate commands in recovery foreach loops
+repopick 257168 # Allow setting the recovery density separately from the aapt config
+repopick 257170 # build: Never set persist.sys.usb.config=none in recovery
+repopick 257179 # releasetools: ota_from_target_files: add FullOTA_PostValidate
+repopick 257171 # build: ota: Support for install tools in /tmp/install
+repopick 257172 # releasetools: squash backuptool support
+repopick 257173 # Edify: Add abort message for bootloader asserts
+repopick 257174 # releasetools: support reading release keys out of some sort of command
+repopick 257175 # releasetools: Add script to sign zips
+repopick 257176 # releasetools: Store the build.prop file in the OTA zip
+repopick 257177 # releasetools: Use the first entry of a mount point when reading fstab
+repopick 257178 # build: allow forcing build of otatools
 repopick 257243 # NFC: Disbale build for AOSP NFC
-
-repopick 256500 # Allow a device to generically define its own headers
 repopick 257099 # Make PRODUCT_BUILD_PROP_OVERRIDES bit more powerful
-
-#repopick 257166 # build: recovery: Support adding device-specific items
-#repopick 257167 # build: Separate commands in recovery foreach loops
-#repopick 257168 # Allow setting the recovery density separately from the aapt config
-#repopick 257169 # build: recovery: add vendor to exclusion list
-#repopick 257170 # build: Never set persist.sys.usb.config=none in recovery
-#repopick 257171 # build: ota: Support for install tools in /tmp/install
-#repopick 257172 # releasetools: squash backuptool support
-#repopick 257173 # Edify: Add abort message for bootloader asserts
-#repopick 257174 # releasetools: support reading release keys out of some sort of command
-#repopick 257175 # releasetools: Add script to sign zips
-#repopick 257176 # releasetools: Store the build.prop file in the OTA zip
-#repopick 257177 # releasetools: Use the first entry of a mount point when reading fstab
-#repopick 257178 # build: allow forcing build of otatools
-#repopick 257179 # releasetools: ota_from_target_files: add FullOTA_PostValidate
-#repopick 257180 # edify: bring back SetPermissionsRecursive
-#repopick 257181 # Revert "Remove the obsolete UnpackPackageDir() in edify generator"
 #repopick 257182 # build: Support system-as-root A-only backuptool
 #repopick 257183 # build: Allow mounting system properly for A-only system-as-root devices
 
@@ -70,8 +50,6 @@ repopick 256886 # soong: Add function to return camera parameters library name
 repopick 257150 # make-key: Enforce PBEv1 password-protected signing keys
 
 # device/lineage/sepolicy
-repopick 257046 # sepolicy: Mark mkfs and sysinit as system_file_type
-repopick 257047 # sepolicy: Drop fsck.f2fs label
 repopick 257053 # sepolicy: Make recovery permissive
 repopick 257100 # [DND] Kill su
 
@@ -79,17 +57,6 @@ repopick 257100 # [DND] Kill su
 repopick 257238 # sepolicy: Move definitions from Android.mk to make opt-in
 repopick 257244 # sepolicy: Fix target selection
 repopick 257245 # legacy: Fix newline in file_contexts
-
-# external/ant-wireless/ant_native
-repopick 257193 # ant_native: use project pathmap
-repopick 257194 # ANT: Don't build HIDL variant libantradio for OSS builds
-repopick 257195 # Remove unused parameters in vfs code
-
-# external/ntfs-3g
-repopick 258532 # ntfs-3g: Add support for android builds
-repopick 258533 # ntfs-3g: Fix compilation warning]
-repopick 258534 # ntfs-3g: Fix overflow in ioctl command
-repopick 258535 # ntfs-3g: Fix argument parsing issue of Android 8.0
 
 # external/tinycompress
 repopick 256308 # tinycompress: Enable extended compress format
@@ -109,7 +76,6 @@ repopick 256896 # camera/media: Support legacy HALv1 camera in mediaserver
 repopick 256897 # Camera: check metadata type before releasing frame
 repopick 256898 # camera: include: Don't override possible overlayed header
 repopick 256899 # camera: Allow devices to load custom CameraParameter code
-repopick 256829 # Request to reset effect buffer in clearInputBuffer
 repopick 258224 # Camera: Add extensions to CameraClient
 repopick 258437 # Camera: Add support for preview frame fd
 repopick 258439 # stagefright: add changes related to high-framerates in CameraSource
@@ -130,14 +96,13 @@ repopick 255646 # Revert "DO NOT MERGE Remove Privacy Indicators"
 repopick 255648 # Revert "DO NOT MERGE Revert "Adding the privacy chip to the CarStatusBar""
 repopick 255649 # PrivacyItemController: Enable permission hub by default
 repopick 257008 # SystemUI: Apply system_icons_keyguard_padding_end to parent view
-repopick 256830 # audio: Don't play sound effects if stream is muted
 repopick 256922 # Initial support for in-display fingerprint sensors
 repopick 256446 # SystemUI: Enable and fix QS detail view, adapt layout to Pie
 repopick 256447 # SystemUI: Add Profiles tile
 repopick 256448 # SystemUI: Advanced location tile
-repopick 257148 # PackageManager: Add configuration to specify vendor platform signatures
 repopick 256831 # KernelCpuUidTimeReader: Decrease log level on eng builds
 repopick 257151 # Camera: allow camera to use power key as shutter
+#repopick 258554 # Allow lid to send a generic COVER_CHANGED broadcast
 repopick 258225 # Camera: Add feature extensions
 repopick 258298 # LiveDisplayTile: Enable for outdoor mode and skip night display on HWC2
 repopick 258303 # power: Re-introduce custom charging sounds
@@ -156,6 +121,19 @@ repopick 258477 # Framework: Volume key cursor control
 repopick 258478 # PhoneWindowManager: add LineageButtons volumekey hook
 repopick 258479 # Long-press power while display is off for torch
 repopick 258480 # Reimplement hardware keys custom rebinding
+repopick 258540 # Reimplement device hardware wake keys support
+repopick 258541 # PhoneWindowManager: Tap volume buttons to answer call
+repopick 258542 # PhoneWindowManager: Implement press home to answer call
+repopick 258543 # fw/b: Allow customisation of navbar app switch long press action
+repopick 258544 # PhoneWindowManager: Allow torch and track skip during ambient display
+repopick 258767 # SystemUI: Add navbar layout inversion tuning
+repopick 258545 # Forward port 'Swap volume buttons' (1/3)
+repopick 258546 # Camera button support
+repopick 257246 # fingerprint: handle PerformanceStats NULL pointers
+#repopick 257247 # fingerprint: notify client when cancelling succeeded
+repopick 258516 # fw/b: Add capability to allow tethering to use VPN upstreams
+repopick 258517 # fw/b: Prevent trying to enable hw offload for tethering via VPN upstreams
+repopick 258754 # Keyguard: Allow disabling fingerprint wake-and-unlock
 repopick 256016 # Revert "Disable custom clock faces in SystemUI"
 repopick 256015 # Revert "Disable ClockOptionsProvider so clocks don't appear in picker app"
 repopick 255650 # Revert "Drop final remnants of Type clock face"
@@ -164,9 +142,11 @@ repopick 255651 # TypeClockController: Make it compile with new plugin API
 repopick 256192 # [DNM] IS_DEBUGGABLE -> IS_ENG
 
 # frameworks/native
-repopick 256923 # libui: Allow extension of valid gralloc 1.0 buffer usage bits
 repopick 258440 # PowerManager.h: Define USER_ACTIVITY_FLAG values
 repopick 258441 # InputDispatcher: On keypress, deliver keycode to pokeUserActivity
+repopick 258442 # Forward port 'Swap volume buttons' (2/3)
+repopick 258443 # sensorservice: Register orientation sensor if HAL doesn't provide it
+repopick 258601 # sensorservice: customize sensor fusion mag filter via prop
 
 # frameworks/opt/telephony
 repopick 256942 # telephony: Squashed support for simactivation feature
@@ -181,11 +161,7 @@ repopick 256911 # hardware/libhw: Add display_defs.h to declare custom enums/fla
 # hardware/lineage/interfaces
 repopick 258215 # Initial dummy cryptfshw implementation
 repopick 258216 # cryptfshw: Export headers to libcryptfshw_hidl_headers
-repopick 256902 # interfaces: Camera: Add support for IMapper 3.0
 repopick 256420 # Initial audio amplifier HAL
-
-# hardware/nxp/nfc
-repopick 256955 # nfc: Restore pn548 support to 1.1 HAL
 
 # hardware/qcom/audio
 repopick 256353 # audio: Use project pathmap
@@ -219,10 +195,6 @@ repopick 256361 # media: Use project pathmap
 
 # hardware/qcom/wlan
 repopick 256362 # wlan: Add guard makefile
-
-# hardware/qcom-caf/fm
-repopick 257274 # Use BOARD_HAVE_QCOM_FM flag
-repopick 257275 # fm_hci/helium: Exclude from OSS builds
 
 # hardware/qcom-caf/msm8998/audio
 repopick 256181 # hal: Add libprocessgroup dependency to set_sched_policy users
@@ -259,7 +231,6 @@ repopick 257208 # Reading the serialno property is forbidden
 repopick 257209 # wcnss-service: Opt-in to disable copying WCNSS_qcom_cfg.ini to userdata
 
 # hardware/ril
-repopick 256551 # libril: allow board to provide libril
 repopick 257211 # libril: Bounds check s_commands
 repopick 257212 # libril: Restore support for RIL v6, v8 and v9 stacks
 repopick 257213 # libril: Fix manual network selection with old modem
@@ -270,7 +241,7 @@ repopick 257214 # Make RIL command headers overlayable by devices.
 repopick 258333 # lineage-sdk: Bump PREF_HAS_MIGRATED_LINEAGE_SETTINGS for 17.0
 
 # packages/apps/AudioFX
-repopick 256920 # AudioFX: Migrate to androidx
+repopick 258239 # AudioFX: Set a correct device during the service start
 
 # packages/apps/Camera2
 repopick 256641 # Don't attempt to convert degree to orientation enum twice
@@ -287,10 +258,6 @@ repopick 256818 # Rework permissions request flow
 repopick 256645 # Camera2: Request for ACCESS_FINE_LOCATION permission
 
 # packages/apps/Contacts
-repopick 256652 # Contacts: adaptive icon
-repopick 256653 # Contacts: update splash screen to match the new icon
-repopick 257054 # Contacts: Up minimum SDK to 26
-repopick 256659 # Contacts: Remove unused boolean resource
 repopick 256654 # Contacts: Enable support for device contact.
 repopick 256655 # Place MyInfo shortcut on drawer
 repopick 256656 # Place EmergencyInfo shortcut on drawer
@@ -322,12 +289,6 @@ repopick 257121 # Allow per-call account selection.
 repopick 257122 # Re-add call statistics.
 repopick 257135 # Control dialer's incoming call proximity sensor check via an overlay
 repopick 257136 # Dialer: AudioModeProvider: use wired route for usb headsets
-
-# packages/apps/DocumentsUI
-repopick 256670 # DocumentsUI: adaptive icon
-
-# packages/apps/Eleven
-repopick 256230 # Migrate to AndroidX
 
 # packages/apps/Email
 repopick 256675 # Email: handle databases from cm-14.1
@@ -361,12 +322,12 @@ repopick 257362 # Revert "Revert "AOSP/Email - Bump targetSdkVersion to 28.""
 # packages/apps/Exchange
 repopick 257297 # Exchange: Migrate to androidx
 
-# packages/apps/FlipFlap
-repopick 255432 # FlipFlap: Migrate to androidx
-
 # packages/apps/LineageParts
-repopick 256598 # LineageParts: Inject Trust into privacy settings
+repopick 258769 # LineageParts: Fix and reenable commented out ButtonSettings code
+repopick 258768 # LineageParts: Add 'Invert layout' to navigation bar settings
+repopick 258770 # LineageParts: Reenable ButtonBacklightBrightness
 repopick 256409 # LineageParts: Reenable DisplayRotation
+repopick 256598 # LineageParts: Inject Trust into privacy settings
 
 # packages/apps/Messaging
 repopick 256720 # Messaging: Fix generating id in android namespace
@@ -427,19 +388,19 @@ repopick 255658 # Revert "Remove Permissions Hub."
 repopick 255659 # PermissionController: Enable permission hub by default
 
 # packages/apps/Settings
-repopick 257192 # Settings: adaptive icon
+repopick 258518 # Settings: Add hotspot setting to allow VPN upstreams
 repopick 256290 # Settings: Add setup UI for minimum delay between an app's notification sounds
-repopick 258299 # Settings: forward port lock pattern grid size (2/2)
-repopick 258300 # Forward port pattern visibility settings (2/2)
 repopick 258501 # Settings: Add switch for linked ring and media notification volumes
 repopick 258502 # Settings: Use correct icon for ring volume
 repopick 258500 # Settings: Add back increasing ring feature (2/2).
+repopick 258299 # Settings: forward port lock pattern grid size (2/2)
+repopick 258300 # Settings: Forward port pattern visibility settings (2/2)
 repopick 256162 # Settings: Add rotation settings
+repopick 257303 # Settings: Add proximity check on wake preference
 repopick 258304 # Settings: Add LineageParts charging sound settings preference
 repopick 258234 # Settings: Hide unsupported USB modes automatically
 
 # packages/apps/SetupWizard
-repopick 256915 # SetupWizard: Migrate to androidx
 repopick 257058 # Update for Q setup library changes
 repopick 257064 # Add new method from ICaptivePortal
 repopick 257065 # [HAX] Temporarily fix build due to PhoneMonitor API change
@@ -487,29 +448,6 @@ repopick 257368 # Remove build-time dep on opt-datetimepicker
 repopick 257369 # Import translations. DO NOT MERGE]
 repopick 257370 # Revert "Revert "AOSP/UnifiedEmail - Bumped the targetSdkVersion to 28 ...
 #repopick 257371 # AOSP/Email and AOSP/UnfiedEmail - Added back call to uiaccounts. + Added ...
-
-# packages/inputmethods/LatinIME
-repopick 256747 # Remove extend touchable region for AOSP keyboard
-repopick 256748 # Fix send button not being centered for non-standard densities.
-repopick 256749 # Don't crash when displaying the " key
-repopick 256750 # LatinIME: support for incognito mode
-repopick 256751 # LatinIME: Regenerate KeyboardTextsTable
-repopick 256752 # LatinIME: disable sound on keypress on all devices by default
-repopick 256753 # LainIME: add unicode 9.0 chars
-repopick 256754 # LatinIME: sync and rebuild emojis
-repopick 256755 # LatinIME: Add fallback loader for JNI lib
-repopick 256756 # Don't interrupt active gesture input by modifier key presses.
-repopick 256757 # LatinIME: Add shortcuts support
-repopick 256758 # LatinIME: Add "more" keys to ALL the keys
-repopick 256759 # LatinIME: Add new type for Bulgarian script
-repopick 256760 # LatinIME: Set proper keyboard for Georgian script
-repopick 256761 # LatinIME: Add Bulgarian, Georgian and Ukrainian wordlists
-repopick 256762 # LatinIME: Enable spellchecker for additional languages
-repopick 256763 # LatinIME: HU enable predictive dictionary and remove unused letters
-repopick 256764 # LatinIME: Add Hungarian QWERTY, enable predictive dictionary
-repopick 256765 # Add support for Bépo keyboard layout
-repopick 256766 # LatinIME: Add support for Australian English
-repopick 256767 # LatinIME: Add Luxembourgish keyboard & spellchecking dictionary
 
 # packages/providers/ContactsProvider
 repopick 256773 # ContactsProvider: Prevent device contact being deleted.
@@ -571,7 +509,6 @@ repopick 258178 # vold: Accept Linux GPT partitions on external SD cards
 repopick 258179 # Add "changepw" command to vdc.
 
 # vendor/lineage
-repopick 258528 # Remove duplicated priv-app permission
 repopick 257145 # common: Copy APN list to $(TARGET_COPY_OUT_PRODUCT)/etc
 repopick 255933 # lineage: env: fixup recovery fstab path
 repopick 256271 # qcom: Move to new qcom HAL directory layout
@@ -590,19 +527,6 @@ repopick 258191 # cryptfs_hw: Use generated kernel headers
 repopick 258192 # cryptfs_hw: Choose keymaster version for key signing
 repopick 258193 # cryptfs_hw: add missing logging tag
 repopick 258194 # cryptfs_hw: Mark unused parameter
-
-# vendor/qcom/opensource/data-ipa-cfg-mgr
-repopick 257220 # data-ipa-cfg-mgr: Use project pathmap
-repopick 257221 # data-ipa-cfg-mgr: Use generated kernel headers
-repopick 257222 # data-ipa-cfg-mgr: Don't build ipacm tests on debug builds
-repopick 257223 # data-ipa-cfg-mgr: Remove verbose cflag
-repopick 257224 # data-ipa-cfg-mgr: Disable DEBUG for userdebug builds
-repopick 257225 # data-ipa-cfg-mgr: Disable all the debugging
-repopick 257226 # data-ipa-cfg-mgr: Disable NAT_DUMP on non-debug builds
-
-# vendor/qcom/opensource/dataservices
-repopick 257227 # dataservices: Don't pollute the tree
-repopick 257228 # librmnetctl: Use generated kernel headers
 
 # vendor/qcom/opensource/interfaces
 repopick 258212 # Introduce vendor.qti.hardware.cryptfshw@1.0 HAL
