@@ -7,11 +7,11 @@ source build/envsetup.sh
 repopick 256444 # Don't fail dual map if memfd isn't supported
 
 # bionic
-repopick 256149 # Implement per-process target SDK version override.
 repopick 256150 # bionic: Use legacy pthread_mutex_init() behavior on pre-P API levels
 repopick 256151 # Actually restore pre-P mutex behavior
 
 # bootable/recovery
+repopick 258978 # applypatch: Use static libs for libbrotli and libbz.
 repopick 255830 # Make adb use a custom prop for adb root
 repopick 255831 # recovery: Get a proper shell environment in recovery
 repopick 255979 # recovery: symlink /sbin for script compatibility
@@ -53,14 +53,9 @@ repopick 257150 # make-key: Enforce PBEv1 password-protected signing keys
 repopick 257053 # sepolicy: Make recovery permissive
 repopick 257100 # [DND] Kill su
 
-# device/qcom/sepolicy
-repopick 257238 # sepolicy: Move definitions from Android.mk to make opt-in
-repopick 257244 # sepolicy: Fix target selection
-repopick 257245 # legacy: Fix newline in file_contexts
-
 # external/tinycompress
-repopick 256308 # tinycompress: Enable extended compress format
 repopick 256309 # tinycompress: Use generated kernel headers
+repopick 256308 # tinycompress: Enable extended compress format
 
 # frameworks/av
 repopick 256421 # audiopolicy: make audio policy extensible
@@ -79,6 +74,7 @@ repopick 256899 # camera: Allow devices to load custom CameraParameter code
 repopick 258224 # Camera: Add extensions to CameraClient
 repopick 258437 # Camera: Add support for preview frame fd
 repopick 258439 # stagefright: add changes related to high-framerates in CameraSource
+repopick 258812 # CameraService: Support hooks for motorized camera
 
 # frameworks/base
 #repopick 258530 # Use UnlockMethodCache#canSkipBouncer in user switcher
@@ -97,25 +93,18 @@ repopick 255648 # Revert "DO NOT MERGE Revert "Adding the privacy chip to the Ca
 repopick 255649 # PrivacyItemController: Enable permission hub by default
 repopick 257008 # SystemUI: Apply system_icons_keyguard_padding_end to parent view
 repopick 256922 # Initial support for in-display fingerprint sensors
+repopick 258813 # FODCircleView: defer removal to next re-layout
 repopick 256446 # SystemUI: Enable and fix QS detail view, adapt layout to Pie
 repopick 256447 # SystemUI: Add Profiles tile
 repopick 256448 # SystemUI: Advanced location tile
 repopick 256831 # KernelCpuUidTimeReader: Decrease log level on eng builds
 repopick 257151 # Camera: allow camera to use power key as shutter
-#repopick 258554 # Allow lid to send a generic COVER_CHANGED broadcast
 repopick 258225 # Camera: Add feature extensions
-repopick 258298 # LiveDisplayTile: Enable for outdoor mode and skip night display on HWC2
 repopick 258303 # power: Re-introduce custom charging sounds
 repopick 258228 # Correction in logic of roundend size calculation of SD card
 repopick 258301 # Forward port CM Screen Security settings (1/2)
 repopick 258504 # frameworks: Add unlinked ringtone and notification volumes
 repopick 258235 # Allow adjusting screen density to smaller sizes.
-repopick 258471 # Reintroduce button-backlight (and respective inactivity timeout)
-repopick 258472 # power: Disable keyboard/button lights while dozing/dreaming
-repopick 258473 # PowerManager: Re-integrate button brightness
-repopick 257302 # PowerManager: Add proximity check on wake
-repopick 258474 # PowerManagerService: Allow to light up buttons only when pressed
-repopick 258475 # PowerManager: Allow to distinguish different keypresses
 repopick 258476 # Add support for runtime toggle of navbar
 repopick 258477 # Framework: Volume key cursor control
 repopick 258478 # PhoneWindowManager: add LineageButtons volumekey hook
@@ -134,6 +123,14 @@ repopick 257246 # fingerprint: handle PerformanceStats NULL pointers
 repopick 258516 # fw/b: Add capability to allow tethering to use VPN upstreams
 repopick 258517 # fw/b: Prevent trying to enable hw offload for tethering via VPN upstreams
 repopick 258754 # Keyguard: Allow disabling fingerprint wake-and-unlock
+repopick 258803 # base: add Trust usb restrictor
+repopick 258820 # SystemUI: Add visualizer feature
+repopick 258826 # SystemUI: Dismiss keyguard on boot if disabled by current profile
+repopick 258827 # SystemUI: Don't dismiss keyguard if user key isn't unlocked
+#repopick 258852 # SystemUI: Allow overlaying max notification icons
+repopick 258853 # Add CHANNEL_MODE_DUAL_CHANNEL constant
+repopick 258854 # Add Dual Channel into Bluetooth Audio Channel Mode developer options menu
+repopick 258855 # Allow SBC as HD audio codec in Bluetooth device configuration
 repopick 256016 # Revert "Disable custom clock faces in SystemUI"
 repopick 256015 # Revert "Disable ClockOptionsProvider so clocks don't appear in picker app"
 repopick 255650 # Revert "Drop final remnants of Type clock face"
@@ -142,14 +139,13 @@ repopick 255651 # TypeClockController: Make it compile with new plugin API
 repopick 256192 # [DNM] IS_DEBUGGABLE -> IS_ENG
 
 # frameworks/native
-repopick 258440 # PowerManager.h: Define USER_ACTIVITY_FLAG values
-repopick 258441 # InputDispatcher: On keypress, deliver keycode to pokeUserActivity
 repopick 258442 # Forward port 'Swap volume buttons' (2/3)
 repopick 258443 # sensorservice: Register orientation sensor if HAL doesn't provide it
 repopick 258601 # sensorservice: customize sensor fusion mag filter via prop
+repopick 258537 # surfaceflinger: fix default frame/viewport assignment
+repopick 258538 # surfaceflinger: Pass proper transform orientation to setProjection()
 
 # frameworks/opt/telephony
-repopick 256942 # telephony: Squashed support for simactivation feature
 repopick 257344 # Add ims-ext-common to static java libraries
 
 # hardware/interfaces
@@ -160,7 +156,10 @@ repopick 256911 # hardware/libhw: Add display_defs.h to declare custom enums/fla
 
 # hardware/lineage/interfaces
 repopick 258215 # Initial dummy cryptfshw implementation
-repopick 258216 # cryptfshw: Export headers to libcryptfshw_hidl_headers
+repopick 258828 # cryptfshw: Setup boilerplate items before actual implementation
+repopick 258849 # cryptfshw: Split implementations into dlsym and ioctl
+repopick 258850 # cryptfshw: ioctl: Wire up the implementation
+repopick 258851 # cryptfshw: dlsym: Wire up the implementation
 repopick 256420 # Initial audio amplifier HAL
 
 # hardware/qcom/audio
@@ -240,8 +239,9 @@ repopick 257214 # Make RIL command headers overlayable by devices.
 # lineage-sdk
 repopick 258333 # lineage-sdk: Bump PREF_HAS_MIGRATED_LINEAGE_SETTINGS for 17.0
 
-# packages/apps/AudioFX
-repopick 258239 # AudioFX: Set a correct device during the service start
+# packages/apps/Bluetooth
+repopick 258859 # SBC Dual Channel (SBC HD Audio) support
+repopick 258860 # Assume optional codecs are supported if were supported previously
 
 # packages/apps/Camera2
 repopick 256641 # Don't attempt to convert degree to orientation enum twice
@@ -319,15 +319,17 @@ repopick 257362 # Revert "Revert "AOSP/Email - Bump targetSdkVersion to 28.""
 #repopick 257364 # AOSP/Email - Bumped version number to 28. Disabled notifications, uifolders ...
 #repopick 257365 # AOSP/Email and AOSP/UnfiedEmail - Added back call to uiaccounts. + Added ...
 
+# packages/apps/EmergencyInfo
+repopick 258909 # Don't force status bar to be light
+
 # packages/apps/Exchange
 repopick 257297 # Exchange: Migrate to androidx
 
 # packages/apps/LineageParts
 repopick 258769 # LineageParts: Fix and reenable commented out ButtonSettings code
 repopick 258768 # LineageParts: Add 'Invert layout' to navigation bar settings
-repopick 258770 # LineageParts: Reenable ButtonBacklightBrightness
 repopick 256409 # LineageParts: Reenable DisplayRotation
-repopick 256598 # LineageParts: Inject Trust into privacy settings
+repopick 258825 # LineageParts: Reenable system profiles
 
 # packages/apps/Messaging
 repopick 256720 # Messaging: Fix generating id in android namespace
@@ -396,9 +398,9 @@ repopick 258500 # Settings: Add back increasing ring feature (2/2).
 repopick 258299 # Settings: forward port lock pattern grid size (2/2)
 repopick 258300 # Settings: Forward port pattern visibility settings (2/2)
 repopick 256162 # Settings: Add rotation settings
-repopick 257303 # Settings: Add proximity check on wake preference
 repopick 258304 # Settings: Add LineageParts charging sound settings preference
-repopick 258234 # Settings: Hide unsupported USB modes automatically
+repopick 258819 # Settings: Add lockscreen visualizer toggle
+repopick 258856 # Add Dual Channel into Bluetooth Audio Channel Mode developer options menu
 
 # packages/apps/SetupWizard
 repopick 257058 # Update for Q setup library changes
@@ -460,7 +462,6 @@ repopick 256780 # TelephonyProvider: add upgrade support from cm-14.1
 repopick 258503 # Add back increasing ring feature (1/2).
 repopick 256161 # Telecomm: Make sensitive phone numbers not to be shown in call log history.
 repopick 256265 # CallLog: Take into account multiple SIMs for sensitive numbers
-repopick 256938 # Telecomm: Squashed phone_type switch support
 
 # packages/services/Telephony
 repopick 256792 # Telephony: Add ERI configuration for U.S. Cellular
@@ -469,8 +470,12 @@ repopick 256794 # Fix non-protected broadcasts sent from phone process.
 repopick 256795 # Don't start SIP service before decrypted
 repopick 256797 # Allow to disable the new scan API for manual network search.
 
+# system/bt
+repopick 258857 # Increase maximum Bluetooth SBC codec bitrate for SBC HD
+repopick 258858 # Explicit SBC Dual Channel (SBC HD) support
+
 # system/core
-repopick 258166 # Squashed wrapped key support?
+repopick 258166 # Squashed wrapped key support
 repopick 255932 # adb: Add wait-for-online command
 repopick 256219 # utils: Threads: Handle empty thread names
 repopick 256823 # Camera: Add feature extensions
@@ -509,6 +514,7 @@ repopick 258178 # vold: Accept Linux GPT partitions on external SD cards
 repopick 258179 # Add "changepw" command to vdc.
 
 # vendor/lineage
+repopick 258913 # Revert "soong_config: Add flag for devices use metadata as FDE key"
 repopick 257145 # common: Copy APN list to $(TARGET_COPY_OUT_PRODUCT)/etc
 repopick 255933 # lineage: env: fixup recovery fstab path
 repopick 256271 # qcom: Move to new qcom HAL directory layout
@@ -527,6 +533,7 @@ repopick 258191 # cryptfs_hw: Use generated kernel headers
 repopick 258192 # cryptfs_hw: Choose keymaster version for key signing
 repopick 258193 # cryptfs_hw: add missing logging tag
 repopick 258194 # cryptfs_hw: Mark unused parameter
+repopick 258821 # cryptfs_hw: Remove libcryptfshw_hidl_headers dependency
 
 # vendor/qcom/opensource/interfaces
 repopick 258212 # Introduce vendor.qti.hardware.cryptfshw@1.0 HAL
