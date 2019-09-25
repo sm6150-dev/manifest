@@ -12,18 +12,18 @@ repopick 256151 # Actually restore pre-P mutex behavior
 
 # bootable/recovery
 repopick 258978 # applypatch: Use static libs for libbrotli and libbz.
-repopick 255830 # Make adb use a custom prop for adb root
-repopick 255831 # recovery: Get a proper shell environment in recovery
-repopick 259415 # Revert "Make adb use a custom prop for adb root"
-repopick 255979 # recovery: symlink /sbin for script compatibility
-repopick 255846 # recovery: Allow custom bootloader msg offset in block misc
-repopick 255847 # recovery: wipe bootloader message from index 0 when using custom offsets
-repopick 255990 # recovery: Remove HOST_OS guard for f2fs tools
-repopick 255991 # Revert "recovery: Fork a process for fuse when sideloading from SD card."
-repopick 255832 # recovery: ui: Default to touch enabled
-repopick 255833 # recovery: ui: Minor cleanup for touch code
-repopick 255992 # recovery: ui: Support hardware virtual keys
-repopick 259434 # recovery: Puke out an /etc/fstab so stuff like busybox/toybox is happy
+#repopick 255830 # Make adb use a custom prop for adb root
+#repopick 255831 # recovery: Get a proper shell environment in recovery
+#repopick 259415 # Revert "Make adb use a custom prop for adb root"
+#repopick 255979 # recovery: symlink /sbin for script compatibility
+#repopick 255846 # recovery: Allow custom bootloader msg offset in block misc
+#repopick 255847 # recovery: wipe bootloader message from index 0 when using custom offsets
+#repopick 255990 # recovery: Remove HOST_OS guard for f2fs tools
+#repopick 255991 # Revert "recovery: Fork a process for fuse when sideloading from SD card."
+#repopick 255832 # recovery: ui: Default to touch enabled
+#repopick 255833 # recovery: ui: Minor cleanup for touch code
+#repopick 255992 # recovery: ui: Support hardware virtual keys
+#repopick 259434 # recovery: Puke out an /etc/fstab so stuff like busybox/toybox is happy
 repopick 256010 # recovery: Include vendor init trigger
 
 # build/blueprint
@@ -83,7 +83,7 @@ repopick 259428 # sepolicy: Label mpctl_socket as data_file_type
 
 # external/mksh
 repopick 259412 # mksh: Set TERM to xterm-256color
-repopick 259413 # mksh: Build a static library
+#repopick 259413 # mksh: Build a static library
 
 # external/tinycompress
 repopick 256309 # tinycompress: Use generated kernel headers
@@ -229,6 +229,9 @@ repopick 259462 # keymaster: Fix compiler warnings
 repopick 259463 # keymaster: move to /vendor
 repopick 259464 # keymaster: Build with BOARD_VNDK_VERSION
 
+# hardware/qcom-caf/bt
+repopick 259504 # bt: Update makefile guard
+
 # hardware/qcom-caf/common
 repopick 256478 # Initial OS pickup files
 repopick 259433 # Add guard for AOSP hardware/qcom dir
@@ -249,6 +252,7 @@ repopick 256178 # media: venc: Fix compilation error
 repopick 256179 # mm-video-v412: fix -Wimplicit-fallthrough compilation
 
 # hardware/qcom-caf/wlan
+repopick 257199 # wlan-caf: Add guard makefile
 repopick 257200 # wcnss-service: Additional format support
 repopick 257201 # wcnss: Build and dlopen wcnss_qmi_client as a shared library
 repopick 257202 # wcnss_service: Deal with mdm-detect too
@@ -428,9 +432,9 @@ repopick 256162 # Settings: Add rotation settings
 repopick 258304 # Settings: Add LineageParts charging sound settings preference
 repopick 258819 # Settings: Add lockscreen visualizer toggle
 repopick 258856 # Add Dual Channel into Bluetooth Audio Channel Mode developer options menu
-repopick 259315 # One does not simply become a Developer
+#repopick 259315 # One does not simply become a Developer
 repopick 259319 # Allow sorting Applications by size
-repopick 259320 # Settings: display: Add wake on plug switch
+#repopick 259320 # Settings: display: Add wake on plug switch
 repopick 259361 # Settings: fix apn_editor carrier_enabled summaryOff string
 repopick 259362 # Settings: Fix the failing strings
 
@@ -511,14 +515,14 @@ repopick 258166 # Squashed wrapped key support
 repopick 255932 # adb: Add wait-for-online command
 repopick 256219 # utils: Threads: Handle empty thread names
 repopick 256823 # Camera: Add feature extensions
-repopick 259414 # reboot: add libreboot library for recovery
+#repopick 259414 # reboot: add libreboot library for recovery
 
 # system/netd
 repopick 256959 # netd: Allow devices to force-add directly-connected routes
 
 # system/update_engine
 repopick 259363 # Move performance mode to top app
-repopick 259364 # update_engine: Fallback to partition without suffix
+#repopick 259364 # update_engine: Fallback to partition without suffix
 
 # system/vold
 repopick 258131 # vold: Add Hardware FDE feature
@@ -572,6 +576,12 @@ repopick 258775 # extract_files: Implement blueprint file generation
 
 # vendor/codeaurora/telephony
 repopick 257215 # Revert "IMS-VT: Low battery handling for Video calls"
+
+# vendor/nxp/opensource/halimpl/pn5xx
+repopick 259500 # Fix include and copy file paths
+
+# vendor/nxp/opensource/halimpl/sn100x
+repopick 259499 # Fix include and copy file paths
 
 # vendor/qcom/opensource/cryptfs_hw
 repopick 258191 # cryptfs_hw: Use generated kernel headers
