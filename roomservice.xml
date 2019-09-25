@@ -3,51 +3,14 @@
   <remote name="caf"
           fetch="https://source.codeaurora.org/quic/la/"
           review="codeaurora.org"/>
+  <project remote="caf" name="platform/vendor/qcom-opensource/core-utils" path="vendor/qcom/opensource/core-utils" revision="qcom-devices.lnx.5.0.r2-rel" />
 
-  <remote name="pixel"
-          fetch="https://github.com/PixelExperience"
-          revision="pie"
-          review="gerrit.pixelexperience.org" />
-
-  <remove-project name="LineageOS/android_vendor_nxp_interfaces_opensource_nfc" />
-  <remove-project name="LineageOS/android_vendor_nxp_opensource_external_libnfc-nci" />
-  <remove-project name="LineageOS/android_vendor_nxp_opensource_frameworks" />
-  <remove-project name="LineageOS/android_vendor_nxp_opensource_packages_apps_Nfc" />
-  <remove-project name="LineageOS/android_vendor_nxp_opensource_halimpl" />
-  <remove-project name="LineageOS/android_vendor_nxp_opensource_hidlimpl" />
-  <remove-project name="LineageOS/android_vendor_qcom_opensource_interfaces" />
-  <remove-project name="LineageOS/android_hardware_qcom_display" />
-  <remove-project name="platform/prebuilts/clang/host/linux-x86" />
-
-  <project path="prebuilts/clang/host/linux-x86" name="prebuilts_clang_host_linux-x86" remote="pixel" clone-depth="1" />
-
-  <project path="hardware/qcom/display" name="LineageOS/android_hardware_qcom_display" groups="pdk-qcom,qcom,qcom_display" />
-  <project path="hardware/qcom/display-caf/apq8084" name="LineageOS/android_hardware_qcom_display" groups="pdk-qcom,qcom,qcom_display" revision="lineage-16.0-caf-8084" />
-  <project path="hardware/qcom/display-caf/msm8916" name="LineageOS/android_hardware_qcom_display" groups="pdk-qcom,qcom,qcom_display" revision="lineage-16.0-caf-8916" />
-  <project path="hardware/qcom/display-caf/msm8952" name="LineageOS/android_hardware_qcom_display" groups="pdk-qcom,qcom,qcom_display" revision="lineage-16.0-caf-8952" />
-  <project path="hardware/qcom/display-caf/msm8960" name="LineageOS/android_hardware_qcom_display" groups="pdk-qcom,qcom,qcom_display" revision="lineage-16.0-caf-8960" />
-  <project path="hardware/qcom/display-caf/msm8974" name="LineageOS/android_hardware_qcom_display" groups="pdk-qcom,qcom,qcom_display" revision="lineage-16.0-caf-8974" />
-  <project path="hardware/qcom/display-caf/msm8994" name="LineageOS/android_hardware_qcom_display" groups="pdk-qcom,qcom,qcom_display" revision="lineage-16.0-caf-8994" />
-  <project path="hardware/qcom/display-caf/msm8996" name="LineageOS/android_hardware_qcom_display" groups="pdk-qcom,qcom,qcom_display" revision="lineage-16.0-caf-8996" />
-  <project path="hardware/qcom/display-caf/msm8998" name="LineageOS/android_hardware_qcom_display" groups="pdk-qcom,qcom,qcom_display" revision="lineage-16.0-caf-8998" />
-  <project path="hardware/qcom/display-caf/sdm845" name="LineageOS/android_hardware_qcom_display" groups="pdk-qcom,qcom,qcom_display" revision="lineage-16.0-caf-845" />
-
-  <project remote="caf" name="platform/vendor/nxp/interfaces/opensource/nfc" path="vendor/nxp/opensource/interfaces/nfc" revision="be4da3327535956bc14153446168fba4d3a28765" />
-  <project remote="caf" name="platform/vendor/nxp/opensource/external/libnfc-nci" path="vendor/nxp/opensource/commonsys/external/libnfc-nci" revision="ac2d3b3f1f44b3bc2c6123568b2ab0aa7f4cf268" />
-  <project remote="caf" name="platform/vendor/nxp/opensource/frameworks" path="vendor/nxp/opensource/commonsys/frameworks" revision="4e3bec42fcdba0d15927327b025f3db283a99a59" />
-  <project remote="caf" name="platform/vendor/nxp/opensource/halimpl" path="vendor/nxp/opensource/halimpl" revision="261aeb629795810c94e78371433724c5e430d927" />
-  <project remote="caf" name="platform/vendor/nxp/opensource/hidlimpl" path="vendor/nxp/opensource/hidlimpl" revision="8541096753e210fd8e44102136d1b75daeccfafd" />
-  <project remote="caf" name="platform/vendor/nxp/opensource/packages/apps/Nfc" path="vendor/nxp/opensource/commonsys/packages/apps/Nfc" revision="c61c6e34ecca13e27e3e0d4441c14e7ea78e5b14" />
-
-  <project path="device/xiaomi/davinci" name="davinci-dev/android_device_xiaomi_davinci" remote="private" revision="lineage-16.0" />
-  <project path="device/xiaomi/sm6150-common" name="davinci-dev/android_device_xiaomi_sm6150-common" remote="private" revision="lineage-16.0" />
-  <project path="kernel/xiaomi/davinci" name="davinci-dev/android_kernel_xiaomi_davinci" remote="private" revision="lineage-16.0" />
-  <project path="vendor/xiaomi" name="davinci-dev/vendor_xiaomi" remote="private" revision="lineage-16.0" />
-  <project path="hardware/qcom/display-caf/sm8150" name="davinci-dev/android_hardware_qcom_display" remote="private" revision="lineage-16.0-caf-8150" />
-  <project path="vendor/qcom/opensource/interfaces" name="davinci-dev/android_vendor_qcom_opensource_interfaces" remote="private" revision="lineage-16.0" />
-
-  <project path="packages/resources/devicesettings" name="LineageOS/android_packages_resources_devicesettings" remote="private" revision="lineage-16.0" />
-  <project name="LineageOS/android_device_oneplus_oneplus2" path="device/oneplus/oneplus2" remote="github" />
-  <project name="LineageOS/android_device_oppo_common" path="device/oppo/common" remote="github" />
-  <project name="LineageOS/android_kernel_oneplus_msm8994" path="kernel/oneplus/msm8994" remote="github" />
+  <project groups="qcom,qcom_audio,pdk-qcom" name="davinci-dev/android_hardware_qcom_audio" path="hardware/qcom-caf/sm8150/audio" remote="private" revision="lineage-17.0-caf-sm8150" />
+  <project groups="pdk-qcom,qcom,qcom_display" name="PeterCxy/android_hardware_qcom_display" path="hardware/qcom-caf/sm8150/display" remote="private" revision="lineage-17.0-caf-sm8150" />
+  <project groups="qcom,pdk-qcom" name="PeterCxy/android_hardware_qcom_media" path="hardware/qcom-caf/sm8150/media" remote="private" revision="lineage-17.0-caf-sm8150" />
+  <project name="minz1/android_device_xiaomi_davinci" path="device/xiaomi/davinci" remote="private" revision="lineage-17.0" />
+  <project name="minz1/android_device_xiaomi_sm6150-common" path="device/xiaomi/sm6150-common" remote="private" revision="lineage-17.0" />
+  <project name="davinci-dev/android_kernel_xiaomi_davinci" path="kernel/xiaomi/davinci" remote="private" revision="lineage-17.0" />
+  <project name="davinci-dev/vendor_xiaomi" path="vendor/xiaomi" remote="private" revision="lineage-17.0" />
+  <project name="LineageOS/android_packages_resources_devicesettings" path="packages/resources/devicesettings" remote="github" />
 </manifest>
