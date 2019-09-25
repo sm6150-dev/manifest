@@ -58,6 +58,12 @@ repopick 259290 # Improve android_app_import.dpi_variants handling.
 repopick 259291 # Add filename property to android_app_import
 repopick 259292 # Add arch variant support to android_app_import.
 repopick 259293 # Add default_dev_cert to android_app_import
+repopick 259511 # New AndroidMk authoring system based on entry map.
+repopick 259512 # Add data property to sh_test.
+repopick 259513 # Add sh_test_host.
+repopick 259514 # Add overrides property to prebuilt_apex
+repopick 259515 # AndroidMkEntries minor refactoring.
+repopick 259516 # Comment out broken android_app_imports tests
 
 # development
 repopick 257150 # make-key: Enforce PBEv1 password-protected signing keys
@@ -66,11 +72,13 @@ repopick 257150 # make-key: Enforce PBEv1 password-protected signing keys
 repopick 257053 # sepolicy: Make recovery permissive
 repopick 257100 # [DND] Kill su
 
-# device/qcom/sepolicy
+# device/qcom/sepolicy/legacy-um
 repopick 259416 # sepolicy: Move definitions from Android.mk to make opt-in
+repopick 259520 # sepolicy: Update paths for new repository location
 repopick 259417 # Fix newline in vendor/common/hwservice_contexts
 repopick 259418 # Revert "sepolicy: Allow platform app to find nfc service"
 repopick 259419 # sepolicy: Remove rules for no longer supported platforms
+repopick 259429 # sepolicy: Remove rules for non legacy platforms
 repopick 259420 # qcom: Label vendor files with (vendor|system/vendor) instead of vendor
 repopick 259421 # Use set_prop() macro for property sets
 repopick 259422 # sepolicy: Fix video4linux "name" node labeling
