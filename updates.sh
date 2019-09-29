@@ -40,22 +40,20 @@ repopick 259649 # recovery: Blank screen on init
 repopick 259301 # Make off-the-shelf order funcs public.
 
 # build/make
+repopick 257172 # releasetools: squash backuptool support
+repopick 257177 # releasetools: Use the first entry of a mount point when reading fstab
+repopick 259308 # build: Force system-as-root layout for backuptool
+repopick 259309 # releasetools: Implement system-mount script to support any recovery system mount
 repopick 257166 # build: recovery: Support adding device-specific items
 repopick 257167 # build: Separate commands in recovery foreach loops
 repopick 257168 # Allow setting the recovery density separately from the aapt config
 repopick 257170 # build: Never set persist.sys.usb.config=none in recovery
-repopick 257179 # releasetools: ota_from_target_files: add FullOTA_PostValidate
-repopick 257171 # build: ota: Support for install tools in /tmp/install
-repopick 257172 # releasetools: squash backuptool support
 repopick 257173 # Edify: Add abort message for bootloader asserts
 repopick 257174 # releasetools: support reading release keys out of some sort of command
 repopick 257175 # releasetools: Add script to sign zips
 repopick 257176 # releasetools: Store the build.prop file in the OTA zip
-repopick 257177 # releasetools: Use the first entry of a mount point when reading fstab
 repopick 257178 # build: allow forcing build of otatools
 repopick 257099 # Make PRODUCT_BUILD_PROP_OVERRIDES bit more powerful
-#repopick 257182 # build: Support system-as-root A-only backuptool
-#repopick 257183 # build: Allow mounting system properly for A-only system-as-root devices
 
 # build/soong
 repopick 256886 # soong: Add function to return camera parameters library name
@@ -120,9 +118,6 @@ repopick 256164 # SystemUI: Fix toggling lockscreen rotation [1/3]
 repopick 256186 # SystemUI: Add support for persistent usb drive notification.
 repopick 256291 # Support enforcing a minimum delay between notification sounds of an app
 repopick 257008 # SystemUI: Apply system_icons_keyguard_padding_end to parent view
-repopick 258852 # SystemUI: Allow overlaying max notification icons
-repopick 256922 # Initial support for in-display fingerprint sensors
-repopick 258813 # FODCircleView: defer removal to next re-layout
 repopick 256446 # SystemUI: Enable and fix QS detail view, adapt layout to Pie
 repopick 256447 # SystemUI: Add Profiles tile
 repopick 256448 # SystemUI: Advanced location tile
@@ -132,9 +127,6 @@ repopick 258303 # power: Re-introduce custom charging sounds
 repopick 258301 # Forward port CM Screen Security settings (1/2)
 repopick 258504 # frameworks: Add unlinked ringtone and notification volumes
 repopick 258235 # Allow adjusting screen density to smaller sizes.
-repopick 258476 # Add support for runtime toggle of navbar
-repopick 258767 # SystemUI: Add navbar layout inversion tuning
-repopick 259411 # PowerManagerService: Wake on plug (1/2)
 repopick 257151 # Camera: allow camera to use power key as shutter
 repopick 258546 # Camera button support
 repopick 257246 # fingerprint: handle PerformanceStats NULL pointers
@@ -311,8 +303,6 @@ repopick 257362 # Revert "Revert "AOSP/Email - Bump targetSdkVersion to 28.""
 repopick 257297 # Exchange: Migrate to androidx
 
 # packages/apps/LineageParts
-repopick 258769 # LineageParts: Fix and reenable commented out ButtonSettings code
-repopick 258768 # LineageParts: Add 'Invert layout' to navigation bar settings
 repopick 256409 # LineageParts: Reenable DisplayRotation
 repopick 258825 # LineageParts: Reenable system profiles
 
@@ -373,14 +363,8 @@ repopick 258124 # nxp: Q api updates
 repopick 255658 # Revert "Remove Permissions Hub."
 repopick 255659 # PermissionController: Enable permission hub by default
 
-# packages/apps/Recorder
-repopick 259636 # Recorder: Use Media projection APIs
-repopick 259637 # Recorder: Make this a standard app
-repopick 259653 # Recorder: insert files in the MediaProvider
-
 # packages/apps/Settings
 repopick 258518 # Settings: Add hotspot setting to allow VPN upstreams
-repopick 259320 # Settings: display: Add wake on plug switch
 repopick 256290 # Settings: Add setup UI for minimum delay between an app's notification sounds
 repopick 258501 # Settings: Add switch for linked ring and media notification volumes
 repopick 258502 # Settings: Use correct icon for ring volume
@@ -521,6 +505,7 @@ repopick 257000 # Remove apicheck.mk
 repopick 255667 # adb insecure by default
 repopick 258774 # extract_files: Add initial blueprint creation
 repopick 258775 # extract_files: Implement blueprint file generation
+repopick 259310 # prebuilt: Add a script to simplify A-only recovery system mount
 
 # vendor/codeaurora/telephony
 repopick 257215 # Revert "IMS-VT: Low battery handling for Video calls"
