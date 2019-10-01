@@ -23,7 +23,7 @@ repopick 259434 # recovery: Puke out an /etc/fstab so stuff like busybox/toybox 
 repopick 256010 # recovery: Include vendor init trigger
 repopick 259546 # recovery: Allow device-specific recovery modules
 repopick 259547 # recovery: Blank screen during shutdown and reboot
-repopick 255991 # Revert "recovery: Fork a process for fuse when sideloading from SD card."
+repopick 259720 # recovery: sdcard is data/media/0
 repopick 259629 # recovery: Provide caching for sideload files
 repopick 259548 # recovery: Provide sideload cancellation
 repopick 259642 # recovery: Add wipe system partition option
@@ -34,7 +34,9 @@ repopick 259646 # recovery: Expose reboot to recovery option
 repopick 259647 # recovery: Only show tests in eng builds
 repopick 259648 # recovery: Also hide rescue mode from non eng builds
 repopick 259649 # recovery: Blank screen on init
-#repopick 255979 # recovery: symlink /sbin for script compatibility
+repopick 255979 # recovery: symlink /sbin for script compatibility
+repopick 259738 # recovery: Allow bypassing signature verification on non-release builds
+repopick 259748 # recovery: Add runtime checks for A/B vs traditional updates
 
 # build/blueprint
 repopick 259301 # Make off-the-shelf order funcs public.
@@ -191,17 +193,21 @@ repopick 258243 # Build bootctrl.msm8996 with Android.bp.
 repopick 258244 # Remove Android.mk rules for building bootctrl.
 
 # hardware/qcom-caf/msm8998/audio
-repopick 256181 # hal: Add libprocessgroup dependency to set_sched_policy users
-repopick 256583 # hal: Add Mic Direction API
-repopick 256584 # Revert "hal: add amplifier hooks for stream parameter manipulation"
-repopick 256585 # Revert "hal: Support the audio amplifier hook"
+repopick 259809 # audio: Use direct project pathmap
+repopick 259810 # audio: Skip libhdmipassthru on OSS builds
+repopick 259811 # ssr: Fix building with OSS materials
+repopick 259812 # audio_extn/gef.c: Include pthread.h
+
+# hardware/qcom-caf/msm8998/display
+repopick 259817 # display: Use project pathmap
+repopick 259818 # Don't build lights module if vendor supplies it
 
 # hardware/qcom-caf/msm8998/media
-repopick 256178 # media: venc: Fix compilation error
-repopick 256179 # mm-video-v412: fix -Wimplicit-fallthrough compilation
+repopick 259813 # media: Use project pathmap
+repopick 259814 # venc: Fix VQZip issue
+repopick 259815 # media: Add extrapolated gpustats header for PQ
 
 # hardware/qcom-caf/wlan
-repopick 257199 # wlan-caf: Add guard makefile
 repopick 257200 # wcnss-service: Additional format support
 repopick 257201 # wcnss: Build and dlopen wcnss_qmi_client as a shared library
 repopick 257202 # wcnss_service: Deal with mdm-detect too
@@ -212,13 +218,6 @@ repopick 257206 # Make wcnss_service build with the VNDK.
 repopick 257207 # wifi-hal: Use generated kernel headers
 repopick 257208 # Reading the serialno property is forbidden
 repopick 257209 # wcnss-service: Opt-in to disable copying WCNSS_qcom_cfg.ini to userdata
-
-# hardware/ril
-repopick 257211 # libril: Bounds check s_commands
-repopick 257212 # libril: Restore support for RIL v6, v8 and v9 stacks
-repopick 257213 # libril: Fix manual network selection with old modem
-repopick 257210 # FR51015: Tuning of Binder buffer for rild.
-repopick 257214 # Make RIL command headers overlayable by devices.
 
 # lineage-sdk
 repopick 258333 # lineage-sdk: Bump PREF_HAS_MIGRATED_LINEAGE_SETTINGS for 17.0
@@ -400,6 +399,7 @@ repopick 256017 # ThemePicker: Properly update clock face setting
 # packages/apps/Trebuchet
 repopick 256018 # Revert "[DO NOT MERGE] Disable swipe down to pull noti shade for Q"
 repopick 256019 # Launcher3: Export GridOptionsProvider
+repopick 259724 # Launcher3: Fix launcher preview rendering
 
 # packages/apps/UnifiedEmail
 repopick 256727 # unified email: prefer account display name to sender name
@@ -497,6 +497,7 @@ repopick 258178 # vold: Accept Linux GPT partitions on external SD cards
 repopick 258179 # Add "changepw" command to vdc.
 
 # vendor/lineage
+repopick 259778 # kernel: Switch back to host openssl entirely
 repopick 259487 # build: Move CAF repositories to their original paths
 repopick 258913 # Revert "soong_config: Add flag for devices use metadata as FDE key"
 repopick 256960 # soong_config: add TARGET_NEEDS_NETD_DIRECT_CONNECT_RULE
