@@ -56,6 +56,7 @@ repopick 257175 # releasetools: Add script to sign zips
 repopick 257176 # releasetools: Store the build.prop file in the OTA zip
 repopick 257178 # build: allow forcing build of otatools
 repopick 257099 # Make PRODUCT_BUILD_PROP_OVERRIDES bit more powerful
+repopick -f 259858 # Sorry bro: 6 -> 3
 
 # build/soong
 repopick 256886 # soong: Add function to return camera parameters library name
@@ -93,17 +94,6 @@ repopick 259638 # mksh: Mark mkshrc as recovery_available
 repopick 256308 # tinycompress: Enable extended compress format
 
 # frameworks/av
-repopick 256887 # nuplayer: Avoid crash when codec fails to load
-repopick 256888 # camera: Don't segfault if we get a NULL parameter
-repopick 256889 # cameraservice: Resolve message vs start/stop preview races
-repopick 256890 # libstagefright: Support YVU420SemiPlanar camera format
-repopick 256891 # stagefright: omx: Don't signal dataspace change on legacy QCOM
-repopick 256892 # stagefright: ACodec: Resolve empty vendor parameters usage
-repopick 256893 # libstagefright: Free buffers on observer died
-repopick 256894 # libstagefright: use 64-bit usage for native_window_set_usage
-repopick 256896 # camera/media: Support legacy HALv1 camera in mediaserver
-repopick 256897 # Camera: check metadata type before releasing frame
-repopick 256898 # camera: include: Don't override possible overlayed header
 repopick 256899 # camera: Allow devices to load custom CameraParameter code
 repopick 258224 # Camera: Add extensions to CameraClient
 repopick 258437 # Camera: Add support for preview frame fd
@@ -144,6 +134,7 @@ repopick 258853 # Add CHANNEL_MODE_DUAL_CHANNEL constant
 repopick 258854 # Add Dual Channel into Bluetooth Audio Channel Mode developer options menu
 repopick 258855 # Allow SBC as HD audio codec in Bluetooth device configuration
 repopick 259505 # SystemUI: Avoid adding useless empty quick settings page
+repopick 259862 # SystemUI: runtime configurable audio panel location
 repopick 255646 # Revert "DO NOT MERGE Remove Privacy Indicators"
 repopick 255648 # Revert "DO NOT MERGE Revert "Adding the privacy chip to the CarStatusBar""
 repopick 255649 # PrivacyItemController: Enable permission hub by default
@@ -157,8 +148,6 @@ repopick 256192 # [DNM] IS_DEBUGGABLE -> IS_ENG
 # frameworks/native
 repopick 258443 # sensorservice: Register orientation sensor if HAL doesn't provide it
 repopick 258601 # sensorservice: customize sensor fusion mag filter via prop
-repopick 258537 # surfaceflinger: fix default frame/viewport assignment
-repopick 258538 # surfaceflinger: Pass proper transform orientation to setProjection()
 repopick 259448 # libui: Allow invalid bits from callers conditionally
 
 # hardware/broadcom/libbt
@@ -167,8 +156,6 @@ repopick 256553 # libbt: Only allow upio_start_stop_timer on 32bit arm
 repopick 256554 # libbt: Add btlock support
 repopick 256555 # libbt: Add support for using two stop bits
 repopick 256556 # libbt-vendor: add support for samsung bluetooth
-repopick 256557 # libbt: Make sure that we don't load pre-patch when looking for patch
-repopick 256558 # libbt: Align Samsung CID strings to those created by macloader
 repopick 256559 # libbt: configure audio codec right after firmware
 
 # hardware/broadcom/nfc
@@ -192,20 +179,30 @@ repopick 258222 # Revert^2 "Build bootctrl.msm8998 with Android.bp.""
 repopick 258243 # Build bootctrl.msm8996 with Android.bp.
 repopick 258244 # Remove Android.mk rules for building bootctrl.
 
+# hardware/qcom-caf/msm8974/display
+repopick 256287 # display: inform compilers of deliberate switch fallthrough
+
+# hardware/qcom-caf/msm8994/display
+repopick 256209 # hwcomposer: Work around overzealous fortify checks
+repopick 256881 # display: inform compilers of deliberate switch fallthrough
+repopick 256882 # libhwcomposer: Indicate fall-through in toggleDynamicDebug()
+
+# hardware/qcom-caf/msm8994/media
+repopick 256875 # media: Fix compilation error for switch case
+
 # hardware/qcom-caf/msm8998/audio
-repopick 259809 # audio: Use direct project pathmap
 repopick 259810 # audio: Skip libhdmipassthru on OSS builds
 repopick 259811 # ssr: Fix building with OSS materials
 repopick 259812 # audio_extn/gef.c: Include pthread.h
+repopick 259820 # hal: Add open source HAL for Elliptic Ultrasound
 
 # hardware/qcom-caf/msm8998/display
-repopick 259817 # display: Use project pathmap
 repopick 259818 # Don't build lights module if vendor supplies it
 
 # hardware/qcom-caf/msm8998/media
-repopick 259813 # media: Use project pathmap
 repopick 259814 # venc: Fix VQZip issue
 repopick 259815 # media: Add extrapolated gpustats header for PQ
+repopick 259819 # media: Don't link libgpustats
 
 # hardware/qcom-caf/wlan
 repopick 257200 # wcnss-service: Additional format support
@@ -382,16 +379,7 @@ repopick 259362 # Settings: Fix the failing strings
 # packages/apps/SetupWizard
 repopick 257058 # Update for Q setup library changes
 repopick 257064 # Add new method from ICaptivePortal
-repopick 257065 # [HAX] Temporarily fix build due to PhoneMonitor API change
-
-# packages/apps/Terminal
-repopick 256242 # TerminalKeys: Disable debug
-repopick 256243 # Allow terminal app to show in LeanBack (1/2)
-repopick 256244 # Terminal: Fix keyboard Ctrl- and ALT-key input.
-repopick 256245 # Add settings for fullscreen, orientation, font size, color
-repopick 256246 # Allow access to external storage
-repopick 256247 # Term: materialize
-repopick 256248 # Terminal: volume keys as up/down
+repopick 257065 # Account for PhoneMonitor API change
 
 # packages/apps/ThemePicker
 repopick 256017 # ThemePicker: Properly update clock face setting
@@ -497,16 +485,16 @@ repopick 258178 # vold: Accept Linux GPT partitions on external SD cards
 repopick 258179 # Add "changepw" command to vdc.
 
 # vendor/lineage
-repopick 259778 # kernel: Switch back to host openssl entirely
-repopick 259487 # build: Move CAF repositories to their original paths
-repopick 258913 # Revert "soong_config: Add flag for devices use metadata as FDE key"
+repopick 259981 # Revert "soong_config: Add flag for legacy HW FDE"
 repopick 256960 # soong_config: add TARGET_NEEDS_NETD_DIRECT_CONNECT_RULE
-repopick 256900 # lineage: allow Has_legacy_camera_hal1 to configure Shared_libs and Overrides
+repopick 259310 # prebuilt: Add a script to simplify A-only recovery system mount
 repopick 257000 # Remove apicheck.mk
-repopick 255667 # adb insecure by default
 repopick 258774 # extract_files: Add initial blueprint creation
 repopick 258775 # extract_files: Implement blueprint file generation
-repopick 259310 # prebuilt: Add a script to simplify A-only recovery system mount
+repopick 255667 # adb insecure by default
 
 # vendor/codeaurora/telephony
 repopick 257215 # Revert "IMS-VT: Low battery handling for Video calls"
+
+# vendor/qcom/opensource/interfaces
+#repopick 259980 # interfaces: Introduce qcom bluetooth_audio and btconfigstore HALs
