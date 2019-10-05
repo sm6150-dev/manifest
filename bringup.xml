@@ -5,7 +5,6 @@
   <remove-project name="platform/external/tinyalsa" />
   <remove-project name="platform/hardware/interfaces" />
   <remove-project name="platform/hardware/qcom/data/ipacfg-mgr" />
-  <remove-project name="platform/packages/apps/Launcher3" />
   <remove-project name="platform/packages/apps/ThemePicker" />
   <remove-project name="platform/platform_testing" />
   <remove-project name="platform/system/vold" />
@@ -15,7 +14,6 @@
   <project path="external/tinyalsa" name="LineageOS/android_external_tinyalsa" groups="pdk" />
   <project path="hardware/interfaces" name="LineageOS/android_hardware_interfaces" groups="pdk" />
   <project path="hardware/qcom/data/ipacfg-mgr" name="LineageOS/android_hardware_qcom_data_ipacfg-mgr" groups="qcom,pdk-qcom" />
-  <project path="packages/apps/Trebuchet" name="LineageOS/android_packages_apps_Trebuchet" />
   <project path="packages/apps/ThemePicker" name="LineageOS/android_packages_apps_ThemePicker" groups="pdk-fs" />
   <project path="platform_testing" name="LineageOS/android_platform_testing" groups="pdk-fs,pdk-cw-fs,cts" />
   <project path="system/vold" name="LineageOS/android_system_vold" groups="pdk" />
