@@ -87,11 +87,52 @@ repopick 259425 # msm8996: Consider additional ssr nodes
 repopick 259426 # sepolicy: Label persist partition for all SoCs
 repopick 259427 # sepolicy: allow vold to read persist dirs
 
+# external/bash
+repopick 260053 # Resolve LOCAL_MODULE_TAGS errors
+repopick 260061 # DNM temp build fix
+
+# external/libncurses
+repopick 260054 # Resolve LOCAL_MODULE_TAGS error
+
 # external/mksh
 repopick 259638 # mksh: Mark mkshrc as recovery_available
 
+# external/nano
+repopick 260055 # Resolve LOCAL_MODULE_TAGS error
+repopick 260060 # DNM temp build fix
+
+# external/openssh
+repopick 260038 # modify SSHDIR as that's not part of upstream code
+repopick 260039 # Move away from GLOBAL_CFLAGS for ssh configuration
+repopick 260040 # Revert "openssh: Silence build warnings"
+repopick 260041 # Revert "openssh: don't spam warnings as errors"
+repopick 260042 # Allow SSH to function with more strict android network stack.
+repopick 260043 # Use sshd mods with gce_x86_64 as well
+repopick 260044 # Add missing header for new sshd.c setns code
+repopick 260045 # Use -Werror and -Wno-error in external/openssh
+repopick 260046 # Enable namespace switching on the legacy branches
+repopick 260047 # Provide work-around for missing setns on K
+repopick 260048 # Remove assumption that _PATH_BSHELL is a compile-time constant.
+repopick 260049 # Fix build breakage
+repopick 260050 # Add libc.bootstrap only for Q and beyond
+repopick 260051 # Add default code reviewers into OWNERS
+repopick 260052 # Fix compilation with Q boringssl
+
+# external/p7zip
+repopick 260056 # p7zip: Silence even more warnings
+
+# external/rsync
+repopick 260057 # Resolve LOCAL_MODULE_TAGS error
+
 # external/tinycompress
 repopick 256308 # tinycompress: Enable extended compress format
+
+# external/unrar
+repopick 260058 # unrar: Silence even more warnings
+
+# external/vim
+repopick 260059 # Resolve LOCAL_MODULE_TAGS errors
+repopick 260062 # DNM temp build fix
 
 # frameworks/av
 repopick 256899 # camera: Allow devices to load custom CameraParameter code
@@ -99,6 +140,7 @@ repopick 258224 # Camera: Add extensions to CameraClient
 repopick 258437 # Camera: Add support for preview frame fd
 repopick 258439 # stagefright: add changes related to high-framerates in CameraSource
 repopick 258812 # CameraService: Support hooks for motorized camera
+repopick 259987 # audiopolicy: support extended feature in audiopolicymanager
 
 # frameworks/base
 #repopick 258530 # Use UnlockMethodCache#canSkipBouncer in user switcher
@@ -107,8 +149,6 @@ repopick 258180 # Fix Build Credentials refactored to use byte[]
 repopick 258160 # LockSettingsService: Support for separate clear key api
 repopick 256163 # Configurable 0, 90, 180 and 270 degree rotation
 repopick 256164 # SystemUI: Fix toggling lockscreen rotation [1/3]
-repopick 256186 # SystemUI: Add support for persistent usb drive notification.
-repopick 256291 # Support enforcing a minimum delay between notification sounds of an app
 repopick 257008 # SystemUI: Apply system_icons_keyguard_padding_end to parent view
 repopick 256446 # SystemUI: Enable and fix QS detail view, adapt layout to Pie
 repopick 256447 # SystemUI: Add Profiles tile
@@ -116,16 +156,12 @@ repopick 256448 # SystemUI: Advanced location tile
 repopick 256831 # KernelCpuUidTimeReader: Decrease log level on eng builds
 repopick 258225 # Camera: Add feature extensions
 repopick 258303 # power: Re-introduce custom charging sounds
-repopick 258301 # Forward port CM Screen Security settings (1/2)
-repopick 258504 # frameworks: Add unlinked ringtone and notification volumes
-repopick 258235 # Allow adjusting screen density to smaller sizes.
 repopick 257151 # Camera: allow camera to use power key as shutter
 repopick 258546 # Camera button support
 repopick 257246 # fingerprint: handle PerformanceStats NULL pointers
-#repopick 257247 # fingerprint: notify client when cancelling succeeded
-repopick 258516 # fw/b: Add capability to allow tethering to use VPN upstreams
-repopick 258517 # fw/b: Prevent trying to enable hw offload for tethering via VPN upstreams
 repopick 258754 # Keyguard: Allow disabling fingerprint wake-and-unlock
+repopick 257247 # fingerprint: notify client when cancelling succeeded
+repopick 258753 # FingerprintService: add overlay to prevent cleanup of unused fingerprints
 repopick 258803 # base: add Trust usb restrictor
 repopick 258820 # SystemUI: Add visualizer feature
 repopick 258826 # SystemUI: Dismiss keyguard on boot if disabled by current profile
@@ -134,7 +170,10 @@ repopick 258853 # Add CHANNEL_MODE_DUAL_CHANNEL constant
 repopick 258854 # Add Dual Channel into Bluetooth Audio Channel Mode developer options menu
 repopick 258855 # Allow SBC as HD audio codec in Bluetooth device configuration
 repopick 259505 # SystemUI: Avoid adding useless empty quick settings page
-repopick 259862 # SystemUI: runtime configurable audio panel location
+repopick 259983 # Merge changes for launching wifidisplay from system settings
+repopick 259984 # WiFiDisplayController: Defer the P2P Initialization from its constructor.
+repopick 259985 # WifiDisplayController: handle preexisting p2p connection status
+repopick 259458 # storage: Do not notify for volumes on non-removable disks
 repopick 255646 # Revert "DO NOT MERGE Remove Privacy Indicators"
 repopick 255648 # Revert "DO NOT MERGE Revert "Adding the privacy chip to the CarStatusBar""
 repopick 255649 # PrivacyItemController: Enable permission hub by default
@@ -149,6 +188,9 @@ repopick 256192 # [DNM] IS_DEBUGGABLE -> IS_ENG
 repopick 258443 # sensorservice: Register orientation sensor if HAL doesn't provide it
 repopick 258601 # sensorservice: customize sensor fusion mag filter via prop
 repopick 259448 # libui: Allow invalid bits from callers conditionally
+
+# frameworks/opt/net/wifi
+repopick 260004 # WiFi: Ignore connectivity scans during WFD session
 
 # hardware/broadcom/libbt
 repopick 256552 # libbt: Add prepatch support
@@ -190,15 +232,6 @@ repopick 256882 # libhwcomposer: Indicate fall-through in toggleDynamicDebug()
 # hardware/qcom-caf/msm8994/media
 repopick 256875 # media: Fix compilation error for switch case
 
-# hardware/qcom-caf/msm8998/audio
-repopick 259810 # audio: Skip libhdmipassthru on OSS builds
-repopick 259811 # ssr: Fix building with OSS materials
-repopick 259812 # audio_extn/gef.c: Include pthread.h
-repopick 259820 # hal: Add open source HAL for Elliptic Ultrasound
-
-# hardware/qcom-caf/msm8998/display
-repopick 259818 # Don't build lights module if vendor supplies it
-
 # hardware/qcom-caf/msm8998/media
 repopick 259814 # venc: Fix VQZip issue
 repopick 259815 # media: Add extrapolated gpustats header for PQ
@@ -218,6 +251,7 @@ repopick 257209 # wcnss-service: Opt-in to disable copying WCNSS_qcom_cfg.ini to
 
 # lineage-sdk
 repopick 258333 # lineage-sdk: Bump PREF_HAS_MIGRATED_LINEAGE_SETTINGS for 17.0
+repopick 259996 # lineage-sdk: Update path to ChargingStarted.ogg
 
 # packages/apps/Bluetooth
 repopick 258859 # SBC Dual Channel (SBC HD Audio) support
@@ -347,34 +381,19 @@ repopick 257343 # Messaging: Implement per conversation channels
 
 # packages/apps/Nfc
 repopick 256814 # NFCService: Add sysprop to prevent FW download during boot with NFC off.
-repopick 257348 # NFC: Restore legacy NXP stack
-repopick 257349 # nxp: jni: Forward-port the stack sources
-repopick 257350 # nxp: NativeNfcManager: Implement missing inherited abstract methods
-repopick 257351 # nxp: jni: use proper nativehelper headers
-repopick 257352 # nxp: jni: Remove unused variables and functions
-repopick 257353 # nxp: jni: Implement AOSP P abstract methods
-repopick 258124 # nxp: Q api updates
+repopick 260063 # NfcNci: make T3T/Nfc-F HCE optional
 
 # packages/apps/PackageInstaller
 repopick 255658 # Revert "Remove Permissions Hub."
 repopick 255659 # PermissionController: Enable permission hub by default
 
 # packages/apps/Settings
-repopick 258518 # Settings: Add hotspot setting to allow VPN upstreams
-repopick 256290 # Settings: Add setup UI for minimum delay between an app's notification sounds
-repopick 258501 # Settings: Add switch for linked ring and media notification volumes
-repopick 258502 # Settings: Use correct icon for ring volume
-repopick 258500 # Settings: Add back increasing ring feature (2/2).
-repopick 258299 # Settings: forward port lock pattern grid size (2/2)
-repopick 258300 # Settings: Forward port pattern visibility settings (2/2)
 repopick 256162 # Settings: Add rotation settings
 repopick 258304 # Settings: Add LineageParts charging sound settings preference
 repopick 258819 # Settings: Add lockscreen visualizer toggle
 repopick 258856 # Add Dual Channel into Bluetooth Audio Channel Mode developer options menu
 #repopick 259315 # One does not simply become a Developer
-repopick 259319 # Allow sorting Applications by size
-repopick 259361 # Settings: fix apn_editor carrier_enabled summaryOff string
-repopick 259362 # Settings: Fix the failing strings
+repopick 259459 # storage: Do not allow eject for volumes on non-removable disks
 
 # packages/apps/SetupWizard
 repopick 257058 # Update for Q setup library changes
@@ -425,7 +444,6 @@ repopick 256774 # CallLogDatabase: Try to re-run the version 5 upgrade path
 repopick 256780 # TelephonyProvider: add upgrade support from cm-14.1
 
 # packages/services/Telecomm
-repopick 258503 # Add back increasing ring feature (1/2).
 repopick 256161 # Telecomm: Make sensitive phone numbers not to be shown in call log history.
 repopick 256265 # CallLog: Take into account multiple SIMs for sensitive numbers
 
@@ -437,6 +455,9 @@ repopick 256795 # Don't start SIP service before decrypted
 repopick 256797 # Allow to disable the new scan API for manual network search.
 
 # system/bt
+repopick 258590 # Prevent abort in case of command timeout
+repopick 258829 # Bluetooth: Read BLE vendor capability to proceed on Secure conn
+repopick 258589 # Add support to force disable enhanced sco commands
 repopick 258857 # Increase maximum Bluetooth SBC codec bitrate for SBC HD
 repopick 258858 # Explicit SBC Dual Channel (SBC HD) support
 
@@ -487,6 +508,7 @@ repopick 258179 # Add "changepw" command to vdc.
 # vendor/lineage
 repopick 259981 # Revert "soong_config: Add flag for legacy HW FDE"
 repopick 256960 # soong_config: add TARGET_NEEDS_NETD_DIRECT_CONNECT_RULE
+repopick 259449 # config: Mark more gralloc bits as valid
 repopick 259310 # prebuilt: Add a script to simplify A-only recovery system mount
 repopick 257000 # Remove apicheck.mk
 repopick 258774 # extract_files: Add initial blueprint creation
