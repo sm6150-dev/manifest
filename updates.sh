@@ -455,9 +455,6 @@ repopick 256795 # Don't start SIP service before decrypted
 repopick 256797 # Allow to disable the new scan API for manual network search.
 
 # system/bt
-repopick 258590 # Prevent abort in case of command timeout
-repopick 258829 # Bluetooth: Read BLE vendor capability to proceed on Secure conn
-repopick 258589 # Add support to force disable enhanced sco commands
 repopick 258857 # Increase maximum Bluetooth SBC codec bitrate for SBC HD
 repopick 258858 # Explicit SBC Dual Channel (SBC HD) support
 
@@ -518,5 +515,69 @@ repopick 255667 # adb insecure by default
 # vendor/codeaurora/telephony
 repopick 257215 # Revert "IMS-VT: Low battery handling for Video calls"
 
-# vendor/qcom/opensource/interfaces
-#repopick 259980 # interfaces: Introduce qcom bluetooth_audio and btconfigstore HALs
+# vendor/qcom/opensource/fm-commonsys
+repopick 260194 # Revert "FM: Use btconfigstore interface to fetch vendor features"
+repopick 260195 # Revert "Fm: Use btconfigstore interface to fetch vendor features"
+
+# vendor/qcom/opensource/power
+repopick 260196 # power: Remove powerhintparser
+repopick 260197 # power: Fix power hal compiler warnings
+repopick 260198 # power: Fix a few compiler warnings
+repopick 260199 # power: Use log/log.h instead of utils/Log.h
+repopick 260200 # power: Add support for tap-to-wake feature control
+repopick 260092 # power: Refactor TARGET_TAP_TO_WAKE_NODE
+repopick 260091 # power: Allow device specific hooks for set_interactive
+repopick 260201 # power: Allow devices to write their own platform specific bits
+repopick 260202 # power: override encode hint for 8909
+repopick 260203 # power: Change the Hi-Speed freq to 800Mhz for camcorder case
+repopick 260204 # power: Changed the minfreq to 400Mhz for display off scenario.
+repopick 260205 # power: Fix to handle min freq changes when CPU cores hotplugged.
+repopick 260206 # power: modify return value for display off hint in 8994
+repopick 260207 # power: introduce 8992-specific handling
+repopick 260208 # power: Enable 4+0 core config for display off cases
+repopick 260209 # power: Remove unused arg from power_hint_override/set_interactive_override
+repopick 260210 # power: Remove mutex to hints
+repopick 260211 # power: Add -qti suffix to module name
+repopick 260212 # power: clang-format
+repopick 260213 # power: Remove leftover support for msm-dcvs governor
+repopick 260214 # power: Remove leftover support for ondemand governor
+repopick 260215 # power: Introduce is_schedutil_governor
+repopick 260216 # power: Use is_interactive_governor/is_schedutil_governor
+repopick 260217 # power: Avoid interaction build errors
+repopick 260218 # power: Remove unused list utils
+repopick 260219 # power: Simplify soc_id checks
+repopick 260220 # power: Simplify display_hint_sent
+repopick 260221 # power: Add back display_boost checks
+repopick 260222 # power: Cache SOC ID checks for future queries
+repopick 260223 # power: Drop default POWER_HINT_INTERACTION routine
+repopick 260224 # power: Use ARRAY_SIZE macro where possible
+repopick 260225 # power: add back check for ro.vendor.extension_library
+repopick 260226 # power: msm8996: Remove dead code
+repopick 260227 # power: fix sysfs_read/sysfs_write usage
+repopick 260228 # power: msm8916: Code clean up
+repopick 260229 # power: Compile with -Wall -Wextra -Werror
+repopick 260230 # power: Remove unused camera_hint_ref_count
+repopick 260231 # Reduce hwbinder buffer size for power HAL
+repopick 260232 # power: Clean up and fix video encode/decode hint handling
+repopick 260233 # power: Clean up and fix set_interactive_override
+repopick 260234 # power: msm8996: Support VR + Sustained performance mode
+repopick 260235 # power: Add known perf hint IDs
+repopick 260236 # power: perform_hint_action: return an error code
+repopick 260237 # power: Use monotonic time for interaction boost
+repopick 260238 # power: Handle launch and interaction hints for perf HAL platforms
+repopick 260239 # power: Handle launch and interaction hints for legacy platforms
+repopick 260240 # power: Prepare for power profile support
+repopick 260241 # power: msm8998: Support power profiles
+repopick 260242 # power: sdm660: Support power profiles
+repopick 260243 # power: msm8996: Support power profiles
+repopick 260244 # power: msm8953: Support power profiles
+repopick 260245 # power: Rename power-8952.c to power-8937.c
+repopick 260246 # power: msm8937: Support power profiles
+repopick 260247 # power: Support power profiles on legacy platforms
+repopick 260248 # power: msm8952: Remove launch and interaction hints
+repopick 260249 # power: msm8952: Remove HBTP support
+repopick 260250 # power: msm8952: Support power profiles
+repopick 260251 # power: msm8952: Readd video encode/decode hint handling
+repopick 260252 # power: msm8960: Implement performance profiles
+repopick 260253 # power: msm8960: Readd video encode/decode hint handling
+repopick 260254 # power: msm8960: Readd set_interactive_override
