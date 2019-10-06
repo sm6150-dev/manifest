@@ -2,7 +2,6 @@
 <manifest>
   <remove-project name="platform/build/blueprint" />
   <remove-project name="platform/external/mksh" />
-  <remove-project name="platform/frameworks/opt/net/wifi" />
   <remove-project name="platform/hardware/broadcom/libbt" />
   <remove-project name="platform/hardware/interfaces" />
   <remove-project name="platform/hardware/qcom/bootctrl" />
@@ -17,7 +16,6 @@
 
   <project path="build/blueprint" name="LineageOS/android_build_blueprint" groups="pdk,tradefed" />
   <project path="external/mksh" name="LineageOS/android_external_mksh" groups="pdk" />
-  <project path="frameworks/opt/net/wifi" name="LineageOS/android_frameworks_opt_net_wifi" groups="pdk" />
   <project path="hardware/broadcom/libbt" name="LineageOS/android_hardware_broadcom_libbt" groups="pdk" />
   <project path="hardware/interfaces" name="LineageOS/android_hardware_interfaces" groups="pdk" />
   <project path="hardware/qcom/bootctrl" name="LineageOS/android_hardware_qcom_bootctrl" groups="pdk-qcom" />
@@ -33,9 +31,10 @@
   <project path="hardware/broadcom/nfc" name="LineageOS/android_hardware_broadcom_nfc" />
   <project path="device/lineage/sepolicy" name="LineageOS/android_device_lineage_sepolicy" />
   <project path="packages/apps/Exchange" name="LineageOS/android_packages_apps_Exchange" />
-  <project path="packages/apps/FMRadio" name="LineageOS/android_packages_apps_FMRadio" revision="lineage-16.0" />
-  <project path="packages/apps/Profiles" name="LineageOS/android_packages_apps_Profiles" revision="lineage-16.0" />
+  <project path="packages/apps/FMRadio" name="LineageOS/android_packages_apps_FMRadio" />
+  <project path="packages/apps/Profiles" name="LineageOS/android_packages_apps_Profiles" />
   <project path="packages/apps/SetupWizard" name="LineageOS/android_packages_apps_SetupWizard" />
+  <project path="vendor/qcom/opensource/libfmjni" name="LineageOS/android_vendor_qcom_opensource_libfmjni" groups="qcom,pdk-qcom" />
 
   <remove-project name="platform/external/openssh" />
   <project path="external/openssh" name="LineageOS/android_external_openssh" />
