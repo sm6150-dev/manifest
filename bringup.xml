@@ -11,6 +11,7 @@
   <remove-project name="platform/hardware/qcom/media" />
   <remove-project name="platform/packages/apps/Launcher3" />
   <remove-project name="platform/packages/apps/ThemePicker" />
+  <remove-project name="platform/platform_testing" />
   <remove-project name="platform/system/netd" />
   <remove-project name="platform/system/vold" />
 
@@ -25,6 +26,7 @@
   <project path="hardware/qcom/media" name="LineageOS/android_hardware_qcom_media" groups="qcom,pdk-qcom" />
   <project path="packages/apps/Trebuchet" name="LineageOS/android_packages_apps_Trebuchet" />
   <project path="packages/apps/ThemePicker" name="LineageOS/android_packages_apps_ThemePicker" groups="pdk-fs" />
+  <project path="platform_testing" name="LineageOS/android_platform_testing" groups="pdk-fs,pdk-cw-fs,cts" />
   <project path="system/netd" name="LineageOS/android_system_netd" groups="pdk" />
   <project path="system/vold" name="LineageOS/android_system_vold" groups="pdk" />
 

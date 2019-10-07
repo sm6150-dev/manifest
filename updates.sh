@@ -76,6 +76,9 @@ repopick 259515 # AndroidMkEntries minor refactoring.
 repopick 259516 # Comment out broken android_app_imports tests
 
 # device/lineage/sepolicy
+repopick 260022 # sepolicy: vendor: Label Cryptfshw HIDL HALs
+repopick 259727 # sepolicy: vendor: Migrate to power 1.2
+repopick 259538 # sepolicy: Allow uncrypt to open OTA package as rw
 repopick 257053 # sepolicy: Make recovery permissive
 repopick 257100 # [DND] Kill su
 
@@ -156,7 +159,6 @@ repopick 256448 # SystemUI: Advanced location tile
 repopick 256831 # KernelCpuUidTimeReader: Decrease log level on eng builds
 repopick 258225 # Camera: Add feature extensions
 repopick 258303 # power: Re-introduce custom charging sounds
-repopick 257151 # Camera: allow camera to use power key as shutter
 repopick 258546 # Camera button support
 repopick 257246 # fingerprint: handle PerformanceStats NULL pointers
 repopick 258754 # Keyguard: Allow disabling fingerprint wake-and-unlock
@@ -214,6 +216,7 @@ repopick 258849 # cryptfshw: Split implementations into dlsym and ioctl
 repopick 258850 # cryptfshw: ioctl: Wire up the implementation
 repopick 258851 # cryptfshw: dlsym: Wire up the implementation
 repopick 256420 # Initial audio amplifier HAL
+repopick 260069 # wifi: Disable softAP MAC randomization by default
 
 # hardware/qcom/bootctrl
 repopick 258221 # Build bootctrl.sdm710 with Android.bp.
@@ -224,31 +227,6 @@ repopick 258244 # Remove Android.mk rules for building bootctrl.
 # hardware/qcom-caf/msm8974/display
 repopick 256287 # display: inform compilers of deliberate switch fallthrough
 
-# hardware/qcom-caf/msm8994/display
-repopick 256209 # hwcomposer: Work around overzealous fortify checks
-repopick 256881 # display: inform compilers of deliberate switch fallthrough
-repopick 256882 # libhwcomposer: Indicate fall-through in toggleDynamicDebug()
-
-# hardware/qcom-caf/msm8994/media
-repopick 256875 # media: Fix compilation error for switch case
-
-# hardware/qcom-caf/msm8998/media
-repopick 259814 # venc: Fix VQZip issue
-repopick 259815 # media: Add extrapolated gpustats header for PQ
-repopick 259819 # media: Don't link libgpustats
-
-# hardware/qcom-caf/wlan
-repopick 257200 # wcnss-service: Additional format support
-repopick 257201 # wcnss: Build and dlopen wcnss_qmi_client as a shared library
-repopick 257202 # wcnss_service: Deal with mdm-detect too
-repopick 257203 # wifi-hal: Only try LOWI once
-repopick 257204 # wifi-hal: stop the UMAC logspam
-repopick 257205 # Wifi: Quiet some excessive debug output
-repopick 257206 # Make wcnss_service build with the VNDK.
-repopick 257207 # wifi-hal: Use generated kernel headers
-repopick 257208 # Reading the serialno property is forbidden
-repopick 257209 # wcnss-service: Opt-in to disable copying WCNSS_qcom_cfg.ini to userdata
-
 # lineage-sdk
 repopick 258333 # lineage-sdk: Bump PREF_HAS_MIGRATED_LINEAGE_SETTINGS for 17.0
 repopick 259996 # lineage-sdk: Update path to ChargingStarted.ogg
@@ -256,20 +234,6 @@ repopick 259996 # lineage-sdk: Update path to ChargingStarted.ogg
 # packages/apps/Bluetooth
 repopick 258859 # SBC Dual Channel (SBC HD Audio) support
 repopick 258860 # Assume optional codecs are supported if were supported previously
-
-# packages/apps/Camera2
-repopick 256641 # Don't attempt to convert degree to orientation enum twice
-repopick 256642 # Camera2: Only autofocus before a snap if we are actually in "auto" mode.
-repopick 256643 # Camera2: Remove settings preferences only once
-repopick 256646 # Camera: Powerkey shutter (2/2)
-repopick 256647 # Camera2: Add option to set max screen brightness
-repopick 256648 # Camera2: Remove google help preference
-repopick 256649 # Camera2: Fix Undo button behaviour
-repopick 256650 # Fix crash if Exif-Tag buffer-length and component-count are both 0
-repopick 256816 # BasicCameraFactory: check if continuous picture af is available before requesting it.
-repopick 256817 # Request WRITE_EXTERNAL_STORAGE as well
-repopick 256818 # Rework permissions request flow
-repopick 256645 # Camera2: Request for ACCESS_FINE_LOCATION permission
 
 # packages/apps/Contacts
 repopick 256654 # Contacts: Enable support for device contact.
@@ -279,11 +243,8 @@ repopick 256657 # Allow calling contacts via specific phone accounts.
 #repopick 256658 # Contacts: use white nav bar
 
 # packages/apps/DeskClock
-repopick 256662 # DeskClock: Add back flip and shake actions
 repopick 256663 # Provide upgrade path for cm-14.1 -> lineage-16.0
 repopick 256664 # Make new menu entry to link to cLock widget settings.
-repopick 256665 # DeskClock: Add support of power off alarm feature
-repopick 256666 # DeskClock: Use POWER_OFF_ALARM permission
 
 # packages/apps/Dialer
 repopick 257131 # Dialer: handle database upgrade from cm-14.1
@@ -407,6 +368,28 @@ repopick 256017 # ThemePicker: Properly update clock face setting
 repopick 256018 # Revert "[DO NOT MERGE] Disable swipe down to pull noti shade for Q"
 repopick 256019 # Launcher3: Export GridOptionsProvider
 repopick 259724 # Launcher3: Fix launcher preview rendering
+repopick 260127 # Trebuchet: update build configs
+repopick 260128 # Create LineageLauncher
+repopick 260129 # Launcher3: Google Feed integration
+repopick 260130 # Launcher3: exclude from recents
+repopick 260131 # Launcher3: No Calendarwidget 4x4 widget displayed
+repopick 260132 # Launcher3: Stability NullPointer issue
+repopick 260133 # Workspace: Allow resizing any widget
+repopick 260134 # PagedView: fix pointer index out of range
+repopick 260135 # Launcher3: Can't search out local app by Chinese
+repopick 260136 # DeviceProfile: fix divide by zero
+repopick 260137 # Provider: Initialize createEmptyRowOnFirstScreen without QSB
+repopick 260138 # config: enable LAUNCHER3_PROMISE_APPS_IN_ALL_APPS
+repopick 260139 # proguard: Also keep FixedScaleDrawable
+repopick 260145 # Change app name to Trebuchet
+repopick 260141 # Trebuchet: adaptive icon
+repopick 260142 # Trebuchet: Bump min SDK to 26 as required for adaptive icons
+repopick 260143 # Trebuchet: prefer our wallpaper picker if possible
+repopick 260144 # Trebuchet: Hide Notification Dots on low RAM devices
+repopick 260319 # Trebuchet: Update default workspace
+repopick 260320 # Change icon drawable padding
+repopick 260321 # Disable QSB on first screen by default
+repopick 260322 # QSB: request round search bar
 
 # packages/apps/UnifiedEmail
 repopick 256727 # unified email: prefer account display name to sender name
@@ -454,6 +437,12 @@ repopick 256794 # Fix non-protected broadcasts sent from phone process.
 repopick 256795 # Don't start SIP service before decrypted
 repopick 256797 # Allow to disable the new scan API for manual network search.
 
+# platform_testing
+repopick 257354 # Remove LauncherRotationStressTest; Launcher2 was removed
+repopick 257355 # Revert "Test: Manually tested."
+repopick 257356 # Revert "Test: Manually tested."
+repopick 257357 # Revert "Add PlatformScenarioTests to test artifacts."
+
 # system/bt
 repopick 258857 # Increase maximum Bluetooth SBC codec bitrate for SBC HD
 repopick 258858 # Explicit SBC Dual Channel (SBC HD) support
@@ -464,6 +453,7 @@ repopick 255932 # adb: Add wait-for-online command
 repopick 256219 # utils: Threads: Handle empty thread names
 repopick 256823 # Camera: Add feature extensions
 repopick 259414 # reboot: mark as recovery_available
+repopick 260334 # fs_mgr: mount: don't set the block device as ro for recovery
 repopick 259650 # Make adb use a custom prop for adb root
 
 # system/netd
