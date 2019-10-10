@@ -75,6 +75,7 @@ repopick 259513 # Add sh_test_host.
 repopick 259514 # Add overrides property to prebuilt_apex
 repopick 259515 # AndroidMkEntries minor refactoring.
 repopick 259516 # Comment out broken android_app_imports tests
+repopick 261076 # soong: Give priority to modules in exported namespaces for bootjars
 
 # device/lineage/sepolicy
 repopick 260022 # sepolicy: vendor: Label Cryptfshw HIDL HALs
@@ -89,6 +90,12 @@ repopick 259424 # common: Fix labelling of lcd-backlight
 repopick 259425 # msm8996: Consider additional ssr nodes
 repopick 259426 # sepolicy: Label persist partition for all SoCs
 repopick 259427 # sepolicy: allow vold to read persist dirs
+repopick 261034 # sepolicy: label IMapper 2.1
+repopick 261035 # msm8998: Label usbpd sysfs
+repopick 261036 # msm8998: Label LED sysfs
+repopick 261037 # sepolicy: setting secontext to rtc node
+repopick 261038 # sepolicy: label persist.vendor.bluetooth.a4wp
+repopick 261039 # common: Label persist.vendor.camera.debug.logfile
 
 # external/bash
 repopick 260053 # Resolve LOCAL_MODULE_TAGS errors
@@ -311,6 +318,7 @@ repopick 257297 # Exchange: Migrate to androidx
 repopick 256409 # LineageParts: Reenable DisplayRotation
 repopick 258825 # LineageParts: Reenable system profiles
 repopick 260416 # Parts: Convert charging sound path to uri
+repopick 260782 # LineageParts: Migrate to Android.bp
 
 # packages/apps/Messaging
 repopick 256720 # Messaging: Fix generating id in android namespace
@@ -524,7 +532,8 @@ repopick 258775 # extract_files: Implement blueprint file generation
 repopick 260417 # extract_utils: Added Suffix uses COMMON_SUFFIX
 repopick 255667 # adb insecure by default
 repopick 260603 # Kill sysinit
-repopick 260562 # common: Add nano to PRODUCT_PACKAGES
+repopick 260562 # common: Add nano to PRODUCT_PACKAGES'
+repopick 261043 # privapp-permissions: Allow Gallery2 to use android.permission.MODIFY_AUDIO_ROUTING
 
 # vendor/codeaurora/telephony
 repopick 257215 # Revert "IMS-VT: Low battery handling for Video calls"
