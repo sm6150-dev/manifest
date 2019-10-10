@@ -81,6 +81,7 @@ repopick 261076 # soong: Give priority to modules in exported namespaces for boo
 repopick 260022 # sepolicy: vendor: Label Cryptfshw HIDL HALs
 repopick 259727 # sepolicy: vendor: Migrate to power 1.2
 repopick 257053 # sepolicy: Make recovery permissive
+repopick 260604 # Kill sysinit
 repopick 257100 # [DND] Kill su
 repopick 259621/4 # sepolicy: qcom: RIP legacy
 repopick 260711 # sepolicy: Add sepolicy rules for event-based tap to wake gesture control
