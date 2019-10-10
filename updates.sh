@@ -56,6 +56,7 @@ repopick 257175 # releasetools: Add script to sign zips
 repopick 257176 # releasetools: Store the build.prop file in the OTA zip
 repopick 257178 # build: allow forcing build of otatools
 repopick 257099 # Make PRODUCT_BUILD_PROP_OVERRIDES bit more powerful
+repopick 260346 # build: Remove su inclusion
 repopick -f 259858 # Sorry bro: 6 -> 3
 
 # build/soong
@@ -78,7 +79,6 @@ repopick 259516 # Comment out broken android_app_imports tests
 # device/lineage/sepolicy
 repopick 260022 # sepolicy: vendor: Label Cryptfshw HIDL HALs
 repopick 259727 # sepolicy: vendor: Migrate to power 1.2
-repopick 259538 # sepolicy: Allow uncrypt to open OTA package as rw
 repopick 257053 # sepolicy: Make recovery permissive
 repopick 257100 # [DND] Kill su
 
@@ -92,7 +92,7 @@ repopick 259427 # sepolicy: allow vold to read persist dirs
 
 # external/bash
 repopick 260053 # Resolve LOCAL_MODULE_TAGS errors
-repopick 260061 # DNM temp build fix
+repopick 260598 # Fix copy rule correctness (requirement for Android 10).
 
 # external/libncurses
 repopick 260054 # Resolve LOCAL_MODULE_TAGS error
@@ -102,7 +102,7 @@ repopick 259638 # mksh: Mark mkshrc as recovery_available
 
 # external/nano
 repopick 260055 # Resolve LOCAL_MODULE_TAGS error
-repopick 260060 # DNM temp build fix
+repopick 260558 # Fix copy rule correctness (requirement for Android 10).
 
 # external/openssh
 repopick 260038 # modify SSHDIR as that's not part of upstream code
@@ -127,6 +127,9 @@ repopick 260056 # p7zip: Silence even more warnings
 # external/rsync
 repopick 260057 # Resolve LOCAL_MODULE_TAGS error
 
+# external/tinyalsa
+repopick 260543 # Mark tinymix/tinyplay as vendor_available
+
 # external/tinycompress
 repopick 256308 # tinycompress: Enable extended compress format
 
@@ -135,7 +138,7 @@ repopick 260058 # unrar: Silence even more warnings
 
 # external/vim
 repopick 260059 # Resolve LOCAL_MODULE_TAGS errors
-repopick 260062 # DNM temp build fix
+repopick 260559 # Fix copy rule correctness (requirement for Android 10).
 
 # frameworks/av
 repopick 256899 # camera: Allow devices to load custom CameraParameter code
@@ -144,6 +147,9 @@ repopick 258437 # Camera: Add support for preview frame fd
 repopick 258439 # stagefright: add changes related to high-framerates in CameraSource
 repopick 258812 # CameraService: Support hooks for motorized camera
 repopick 259987 # audiopolicy: support extended feature in audiopolicymanager
+repopick 260580 # Camera: CameraHardwareInterface changes to support Extended FD
+repopick 260581 # Camera: Miscellaneous fixes in QDataCallback and binder death scenarios.
+repopick 260582 # camera: Only link and use vendor.qti.hardware.camera.device if specified
 
 # frameworks/base
 #repopick 258530 # Use UnlockMethodCache#canSkipBouncer in user switcher
@@ -164,7 +170,6 @@ repopick 257246 # fingerprint: handle PerformanceStats NULL pointers
 repopick 258754 # Keyguard: Allow disabling fingerprint wake-and-unlock
 repopick 257247 # fingerprint: notify client when cancelling succeeded
 repopick 258753 # FingerprintService: add overlay to prevent cleanup of unused fingerprints
-repopick 258803 # base: add Trust usb restrictor
 repopick 258820 # SystemUI: Add visualizer feature
 repopick 258826 # SystemUI: Dismiss keyguard on boot if disabled by current profile
 repopick 258827 # SystemUI: Don't dismiss keyguard if user key isn't unlocked
@@ -176,6 +181,7 @@ repopick 259983 # Merge changes for launching wifidisplay from system settings
 repopick 259984 # WiFiDisplayController: Defer the P2P Initialization from its constructor.
 repopick 259985 # WifiDisplayController: handle preexisting p2p connection status
 repopick 259458 # storage: Do not notify for volumes on non-removable disks
+repopick 260002 # fw/b: Squash of app fw restriction commits
 repopick 255646 # Revert "DO NOT MERGE Remove Privacy Indicators"
 repopick 255648 # Revert "DO NOT MERGE Revert "Adding the privacy chip to the CarStatusBar""
 repopick 255649 # PrivacyItemController: Enable permission hub by default
@@ -208,24 +214,32 @@ repopick 256313 # nfc: Deprecate register keyword
 
 # hardware/interfaces
 repopick 258181 # keymasterV4_0: Tags support for FBE wrapped key.
+repopick 260578 # Camed HAL extension: Added support in HIDL for Extended FD.
+repopick 260579 # camera: Only link and use vendor.qti.hardware.camera.device if specified
+
+# hardware/libhardware
+repopick 256912 # audio: Add audio amplifier HAL
 
 # hardware/lineage/interfaces
 repopick 258215 # Initial dummy cryptfshw implementation
-repopick 258828 # cryptfshw: Setup boilerplate items before actual implementation
-repopick 258849 # cryptfshw: Split implementations into dlsym and ioctl
-repopick 258850 # cryptfshw: ioctl: Wire up the implementation
-repopick 258851 # cryptfshw: dlsym: Wire up the implementation
+#repopick 258828 # cryptfshw: Setup boilerplate items before actual implementation
+#repopick 258849 # cryptfshw: Split implementations into dlsym and ioctl
+#repopick 258850 # cryptfshw: ioctl: Wire up the implementation
+#repopick 258851 # cryptfshw: dlsym: Wire up the implementation
+repopick 260411 # cryptfshw: Introduce qti backend implementation
 repopick 256420 # Initial audio amplifier HAL
 repopick 260069 # wifi: Disable softAP MAC randomization by default
 
-# hardware/qcom/bootctrl
-repopick 258221 # Build bootctrl.sdm710 with Android.bp.
-repopick 258222 # Revert^2 "Build bootctrl.msm8998 with Android.bp.""
-repopick 258243 # Build bootctrl.msm8996 with Android.bp.
-repopick 258244 # Remove Android.mk rules for building bootctrl.
+# hardware/qcom/keymaster
+repopick 260415 # keymaster: Reverse wait for qsee flag
 
 # hardware/qcom-caf/msm8974/display
 repopick 256287 # display: inform compilers of deliberate switch fallthrough
+
+# hardware/qcom-caf/msm8998/audio
+repopick 260703 # audio: Extend platform parser to allow device name aliasing
+repopick 260704 # hal: Add missing compress voip PCM device ID
+repopick 260366 # hal: Support the audio amplifier hook
 
 # lineage-sdk
 repopick 258333 # lineage-sdk: Bump PREF_HAS_MIGRATED_LINEAGE_SETTINGS for 17.0
@@ -296,6 +310,7 @@ repopick 257297 # Exchange: Migrate to androidx
 # packages/apps/LineageParts
 repopick 256409 # LineageParts: Reenable DisplayRotation
 repopick 258825 # LineageParts: Reenable system profiles
+repopick 260416 # Parts: Convert charging sound path to uri
 
 # packages/apps/Messaging
 repopick 256720 # Messaging: Fix generating id in android namespace
@@ -355,10 +370,11 @@ repopick 258819 # Settings: Add lockscreen visualizer toggle
 repopick 258856 # Add Dual Channel into Bluetooth Audio Channel Mode developer options menu
 #repopick 259315 # One does not simply become a Developer
 repopick 259459 # storage: Do not allow eject for volumes on non-removable disks
+repopick 260584 # Enable dismissal feature on legacy suggestions.
+repopick 260853 # Make sure close button has proper color
+repopick 259455 # Settings: per-app cellular data, vpn and wifi restrictions
 
 # packages/apps/SetupWizard
-repopick 257058 # Update for Q setup library changes
-repopick 257064 # Add new method from ICaptivePortal
 repopick 257065 # Account for PhoneMonitor API change
 
 # packages/apps/ThemePicker
@@ -458,6 +474,7 @@ repopick 259650 # Make adb use a custom prop for adb root
 
 # system/netd
 repopick 256959 # netd: Allow devices to force-add directly-connected routes
+repopick 260003 # system/netd: Squash of app fw restriction commits
 
 # system/update_engine
 repopick 259363 # Move performance mode to top app
@@ -494,13 +511,20 @@ repopick 258179 # Add "changepw" command to vdc.
 
 # vendor/lineage
 repopick 259981 # Revert "soong_config: Add flag for legacy HW FDE"
+repopick 260414 # soong_config: Reverse wait for qsee flag
 repopick 256960 # soong_config: add TARGET_NEEDS_NETD_DIRECT_CONNECT_RULE
 repopick 259449 # config: Mark more gralloc bits as valid
 repopick 259310 # prebuilt: Add a script to simplify A-only recovery system mount
 repopick 257000 # Remove apicheck.mk
+repopick 259699 # extract_files: Support system/ prefixes
+repopick 259701 # extract_files: Add extract2() function
+repopick 260081 # extract_files: Match non-treble path prefixes
 repopick 258774 # extract_files: Add initial blueprint creation
 repopick 258775 # extract_files: Implement blueprint file generation
+repopick 260417 # extract_utils: Added Suffix uses COMMON_SUFFIX
 repopick 255667 # adb insecure by default
+repopick 260603 # Kill sysinit
+repopick 260562 # common: Add nano to PRODUCT_PACKAGES
 
 # vendor/codeaurora/telephony
 repopick 257215 # Revert "IMS-VT: Low battery handling for Video calls"
@@ -508,6 +532,47 @@ repopick 257215 # Revert "IMS-VT: Low battery handling for Video calls"
 # vendor/qcom/opensource/fm-commonsys
 repopick 260194 # Revert "FM: Use btconfigstore interface to fetch vendor features"
 repopick 260195 # Revert "Fm: Use btconfigstore interface to fetch vendor features"
+repopick 260422 # jni: fix calibration data path for legacy fm_qsoc_patches
+repopick 260423 # jni: Skip loading FM firmware if requested
+repopick 260429 # jni: Remove unused variables
+repopick 260431 # jni: Resolve FM_DEVICE_PATH R/O open flag
+repopick 260432 # jni: Ignore unused parameters from APIs
+repopick 260434 # jni: Resolve equality comparisons with extraneous parentheses
+repopick 260435 # jni: Resolve V4L2_CID_AUDIO_MUTE redefinitions
+repopick 260436 # jni: Resolve -Wwritable-strings warnings in helium FW library variables
+repopick 260437 # Allow library to be used by apps directly
+repopick 260438 # FM: Break bootclasspath dependency
+repopick 260439 # FM: Re-vamp UI
+repopick 260440 # FM: Restore seek arrows
+repopick 260441 # FM: Make default country an overlay
+repopick 260442 # FM: Re-add RDS fields to UI
+repopick 260443 # FM: Scanned frequencies are saved in ascending ordering
+repopick 260444 # FM: Call unregister in onPause
+repopick 260445 # FM: Switch file extension to aac
+repopick 260446 # FM: Add property to force use internal antenna
+repopick 260447 # FM: Cleanup resources
+repopick 260448 # FM: add Indonesia
+repopick 260449 # FM: materialize
+repopick 260450 # FM: retune last frequency when resume after call
+repopick 260451 # FM: Store tag num/value in sequence
+repopick 260452 # FM: reenable radio text visibility after station info updated
+repopick 260453 # FM: Launch station list automatically after scan
+repopick 260454 # FM: Fix status text to reflect when FM is enabled.
+repopick 260455 # FM: The collect channel disappear when quit FM
+repopick 260456 # FM: Ensure scan state is kept in sync
+repopick 260457 # FM: Keep track of scanned frequencies in service
+repopick 260458 # FM: Select band based on country
+repopick 260459 # FM: improved band selection
+repopick 260460 # FM: Localization of band types
+repopick 260461 # FM: Fix settings UI bugs
+repopick 260462 # FM: Fix headphone icon
+repopick 260463 # FM: Update India bands
+repopick 260464 # FM: Convert regional band arrays to string references
+repopick 260465 # FM: Fix KHz->kHz
+repopick 260487 # FM: Revamp notifications
+repopick 260488 # FM: adaptive icon
+repopick 260489 # fm: Drop unnecessary dependencies
+repopick 260490 # FM: Remove unnecessary TARGET_BOARD_PLATFORM guard
 
 # vendor/qcom/opensource/power
 repopick 260196 # power: Remove powerhintparser
