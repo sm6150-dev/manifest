@@ -240,8 +240,10 @@ repopick 258215 # Initial dummy cryptfshw implementation
 repopick 260411 # cryptfshw: Introduce qti backend implementation
 repopick 256420 # Initial audio amplifier HAL
 repopick 260069 # wifi: Disable softAP MAC randomization by default
-repopick 261106 # fwk-detect: Relocate from vendor/qcom-opensource/core-utils
-repopick 261107 # fwk-detect: Use log/log.h instead of utils/Log.h
+
+# hardware/qcom-caf/common
+repopick 261271 # fwk-detect: Relocate from vendor/qcom-opensource/core-utils
+repopick 261272 # fwk-detect: Use log/log.h instead of utils/Log.h
 
 # hardware/qcom/keymaster
 repopick 260415 # keymaster: Reverse wait for qsee flag
