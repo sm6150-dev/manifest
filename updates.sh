@@ -26,6 +26,7 @@ repopick 259547 # recovery: Blank screen during shutdown and reboot
 repopick 259720 # recovery: sdcard is data/media/0
 repopick 259629 # recovery: Provide caching for sideload files
 repopick 259548 # recovery: Provide sideload cancellation
+repopick 259823 # otautil: add support for unmounting entire volumes
 repopick 259642 # recovery: Add wipe system partition option
 repopick 259643 # recovery: Remove "Supported API" message
 repopick 259644 # recovery: Enable the menu for User builds
@@ -314,6 +315,75 @@ repopick 257362 # Revert "Revert "AOSP/Email - Bump targetSdkVersion to 28.""
 # packages/apps/Exchange
 repopick 257297 # Exchange: Migrate to androidx
 
+# packages/apps/Gallery2
+repopick 260784 # Revert "fix toolbar is overlaid on ni-co-bar"
+repopick 260785 # Fix ProGuard error.
+repopick 260786 # Float.NaN != ... always evaluates to true, use Float.isNaN.
+repopick 260787 # Fix misc-macro-parentheses warnings in Gallery2.
+repopick 260788 # Add missing includes.
+repopick 260789 # Revert "Fix compiling errors in P"
+repopick 260790 # Stop using junit classes in production
+repopick 260791 # Gallery2: Fix NaN comparisons
+repopick 260792 # Gallery2: Fix CollectionIncompatibleType
+repopick 260793 # Rename android.utils.Pools to com.android.photos.util.Pools
+repopick 260794 # Fix build Gallery2
+repopick 260795 # Use explicit support library prebuilts
+repopick 260796 # Fix proguard failure when using javac
+repopick 260797 # Fix makefile include for support-v4
+repopick 260798 # Fix build with proguard
+repopick 260799 # Use -Werror in packages/apps/Gallery2
+repopick 260800 # Move Gallery2 over to AAPT2 and new v4 modules
+repopick 260801 # Gallery2: Remove slideshow option if there are only videos
+repopick 260802 # Gallery2: Support GIF animation
+repopick 260803 # SnapdragonGallery: Fix FC when init() before setContentView
+repopick 260804 # SnapdragonGallery: Fix dialog dismiss when home
+repopick 260805 # SnapdragonGallery: Fix crash show dialog when activity finished
+repopick 260806 # Don't show Camera Icon when no pictures found in Albums
+repopick 260807 # SDGallery:Fix monkey FC when url from pick activity is null
+repopick 260808 # Fix FC of parsing uri is null
+repopick 260809 # Fix the issue of view don't reload when onPause
+repopick 260810 # Add new rule about watermark
+repopick 260811 # Rename app back to Gallery
+repopick 260812 # FaceDetect: Catch linker errors during initialization
+repopick 260813 # Gallery: TileImageView: fix NPE
+repopick 260814 # Gallery2: Bump minsdk and targetsdk version
+repopick 260815 # Gallery2: Try to open existing camera
+repopick 260816 # Gallery2: Fix crash of gallery on showing details
+repopick 260817 # Gallery2: Add record time to details view
+repopick 260818 # Gallery2: Store DATE_TAKEN as milliseconds
+repopick 260819 # Gallery2: Reduce logspam in video player
+repopick 260821 # Gallery2: Make sure no NPE happens
+repopick 260822 # Gallery2: Change all share intents to chooser style
+repopick 260823 # Gallery2: Properly declare the own permissions
+repopick 260824 # Gallery2: Update theme
+repopick 260825 # Gallery2: Update menu
+repopick 260826 # Gallery: define app category
+repopick 260827 # Gallery: adaptive-icon
+repopick 260828 # Gallery: use platform cert
+repopick 260829 # Gallery2: Remove CAF translations
+repopick 260830 # Gallery2: Modify AOSP EL translations
+repopick 260831 # Gallery2: Move & improve CAF strings
+repopick 260832 # Gallery2: Replace hamburger menu with bottom bar
+repopick 260833 # Gallery2: Disable dummy starting window
+repopick 260834 # Gallery2: Everyone or no one
+repopick 260835 # Gallery2: Fix up audio effects dialog
+repopick 260836 # Gallery2: Remove 3D overscroll effect
+repopick 260837 # Gallery2: Enable frames in the editor
+repopick 260838 # Gallery2: Support the newly added media file types in MTP mode
+repopick 260839 # Gallery2: Increase the size of the tiles when decoding images
+repopick 260840 # Gallery2: Fix views overlap
+repopick 260841 # Gallery2: Fix potential crash
+repopick 260842 # Gallery2: Fix various issues and glitches
+repopick 260843 # Gallery: Kill media effect dialog on movies
+repopick 260844 # Gallery2: Get rid of packages monitor
+repopick 260845 # Fix can't enable speaker with bluetooth headset
+repopick 260846 # Move Gallery2 to androidx.
+repopick 260847 # Gallery2: Migrate remaining bits to AndroidX
+repopick 261044 # Rename language+country resources to just language
+repopick 261045 # Sync translations with AOSP
+repopick 261046 # Move Gallery2 and its libs to /product
+repopick 261047 # Add default code reviewers into OWNERS
+
 # packages/apps/LineageParts
 repopick 256409 # LineageParts: Reenable DisplayRotation
 repopick 258825 # LineageParts: Reenable system profiles
@@ -378,9 +448,8 @@ repopick 258819 # Settings: Add lockscreen visualizer toggle
 repopick 258856 # Add Dual Channel into Bluetooth Audio Channel Mode developer options menu
 #repopick 259315 # One does not simply become a Developer
 repopick 259459 # storage: Do not allow eject for volumes on non-removable disks
-repopick 260584 # Enable dismissal feature on legacy suggestions.
-repopick 260853 # Make sure close button has proper color
 repopick 259455 # Settings: per-app cellular data, vpn and wifi restrictions
+repopick 261351 # Settings: Fix QrCamera crash on devices without flash
 
 # packages/apps/SetupWizard
 repopick 257065 # Account for PhoneMonitor API change
@@ -534,6 +603,7 @@ repopick 255667 # adb insecure by default
 repopick 260603 # Kill sysinit
 repopick 260562 # common: Add nano to PRODUCT_PACKAGES'
 repopick 261043 # privapp-permissions: Allow Gallery2 to use android.permission.MODIFY_AUDIO_ROUTING
+repopick 261292 # vendor/lineage: Fix dopush
 
 # vendor/codeaurora/telephony
 repopick 257215 # Revert "IMS-VT: Low battery handling for Video calls"
