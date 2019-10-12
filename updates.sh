@@ -241,9 +241,6 @@ repopick 260069 # wifi: Disable softAP MAC randomization by default
 # hardware/qcom/keymaster
 repopick 260415 # keymaster: Reverse wait for qsee flag
 
-# hardware/qcom-caf/msm8974/display
-repopick 256287 # display: inform compilers of deliberate switch fallthrough
-
 # hardware/qcom-caf/msm8998/audio
 repopick 260703 # audio: Extend platform parser to allow device name aliasing
 repopick 260704 # hal: Add missing compress voip PCM device ID
