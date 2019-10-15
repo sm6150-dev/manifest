@@ -103,6 +103,7 @@ repopick 261039 # common: Label persist.vendor.camera.debug.logfile
 # external/bash
 repopick 260053 # Resolve LOCAL_MODULE_TAGS errors
 repopick 260598 # Fix copy rule correctness (requirement for Android 10).
+repopick 261365 # Disable getdtablesize for everyone
 
 # external/libncurses
 repopick 260054 # Resolve LOCAL_MODULE_TAGS error
@@ -168,7 +169,6 @@ repopick 258180 # Fix Build Credentials refactored to use byte[]
 repopick 258160 # LockSettingsService: Support for separate clear key api
 repopick 256163 # Configurable 0, 90, 180 and 270 degree rotation
 repopick 256164 # SystemUI: Fix toggling lockscreen rotation [1/3]
-repopick 257008 # SystemUI: Apply system_icons_keyguard_padding_end to parent view
 repopick 256446 # SystemUI: Enable and fix QS detail view, adapt layout to Pie
 repopick 256447 # SystemUI: Add Profiles tile
 repopick 256448 # SystemUI: Advanced location tile
@@ -180,18 +180,20 @@ repopick 257246 # fingerprint: handle PerformanceStats NULL pointers
 repopick 258754 # Keyguard: Allow disabling fingerprint wake-and-unlock
 repopick 257247 # fingerprint: notify client when cancelling succeeded
 repopick 258753 # FingerprintService: add overlay to prevent cleanup of unused fingerprints
+#thank aviraxp for using web UI to pick commits and not putting them in chain...
+#repopick 260295 # PackageManager: allow build-time disabling of components
 repopick 258820 # SystemUI: Add visualizer feature
 repopick 258826 # SystemUI: Dismiss keyguard on boot if disabled by current profile
 repopick 258827 # SystemUI: Don't dismiss keyguard if user key isn't unlocked
 repopick 258853 # Add CHANNEL_MODE_DUAL_CHANNEL constant
 repopick 258854 # Add Dual Channel into Bluetooth Audio Channel Mode developer options menu
 repopick 258855 # Allow SBC as HD audio codec in Bluetooth device configuration
-repopick 259505 # SystemUI: Avoid adding useless empty quick settings page
 repopick 259983 # Merge changes for launching wifidisplay from system settings
 repopick 259984 # WiFiDisplayController: Defer the P2P Initialization from its constructor.
 repopick 259985 # WifiDisplayController: handle preexisting p2p connection status
 repopick 259458 # storage: Do not notify for volumes on non-removable disks
 repopick 260002 # fw/b: Squash of app fw restriction commits
+repopick 261314 # Allow override of DUN settings
 repopick 255646 # Revert "DO NOT MERGE Remove Privacy Indicators"
 repopick 255648 # Revert "DO NOT MERGE Revert "Adding the privacy chip to the CarStatusBar""
 repopick 255649 # PrivacyItemController: Enable permission hub by default
@@ -256,6 +258,9 @@ repopick 260366 # hal: Support the audio amplifier hook
 # lineage-sdk
 repopick 258333 # lineage-sdk: Bump PREF_HAS_MIGRATED_LINEAGE_SETTINGS for 17.0
 repopick 259996 # lineage-sdk: Update path to ChargingStarted.ogg
+
+# packages/apps/AudioFX
+repopick 261313 # AudioFX: Add support for usb headset devices
 
 # packages/apps/Bluetooth
 repopick 258859 # SBC Dual Channel (SBC HD Audio) support
@@ -454,6 +459,7 @@ repopick 258856 # Add Dual Channel into Bluetooth Audio Channel Mode developer o
 repopick 259459 # storage: Do not allow eject for volumes on non-removable disks
 repopick 259455 # Settings: per-app cellular data, vpn and wifi restrictions
 repopick 261351 # Settings: Fix QrCamera crash on devices without flash
+repopick 261364 # Settings: Use landscape qrcode scanner layout for sw600dp
 
 # packages/apps/SetupWizard
 repopick 257065 # Account for PhoneMonitor API change
@@ -608,6 +614,8 @@ repopick 260603 # Kill sysinit
 repopick 260562 # common: Add nano to PRODUCT_PACKAGES'
 repopick 261043 # privapp-permissions: Allow Gallery2 to use android.permission.MODIFY_AUDIO_ROUTING
 repopick 261292 # vendor/lineage: Fix dopush
+repopick 261642 # vendor: make dopush recognize /vendor files
+repopick 258204 # build: set build fingerprint for all devices
 
 # vendor/codeaurora/telephony
 repopick 257215 # Revert "IMS-VT: Low battery handling for Video calls"
@@ -696,27 +704,24 @@ repopick 260228 # power: msm8916: Code clean up
 repopick 260229 # power: Compile with -Wall -Wextra -Werror
 repopick 260230 # power: Remove unused camera_hint_ref_count
 repopick 260231 # Reduce hwbinder buffer size for power HAL
+repopick 260245 # power: Rename power-8952.c to power-8937.c
+repopick 260249 # power: msm8952: Remove HBTP support
+repopick 261751 # power: Find online CPU core and get scaling governor
 repopick 260232 # power: Clean up and fix video encode/decode hint handling
 repopick 260233 # power: Clean up and fix set_interactive_override
 repopick 260234 # power: msm8996: Support VR + Sustained performance mode
 repopick 260235 # power: Add known perf hint IDs
+repopick 261752 # power: Use declared enums where possible
 repopick 260236 # power: perform_hint_action: return an error code
 repopick 260237 # power: Use monotonic time for interaction boost
 repopick 260238 # power: Handle launch and interaction hints for perf HAL platforms
 repopick 260239 # power: Handle launch and interaction hints for legacy platforms
+repopick 261753 # power: msm8916: Drop MIN_FREQ tweak for 8939
 repopick 260240 # power: Prepare for power profile support
 repopick 260241 # power: msm8998: Support power profiles
 repopick 260242 # power: sdm660: Support power profiles
 repopick 260243 # power: msm8996: Support power profiles
 repopick 260244 # power: msm8953: Support power profiles
-repopick 260245 # power: Rename power-8952.c to power-8937.c
 repopick 260246 # power: msm8937: Support power profiles
 repopick 260247 # power: Support power profiles on legacy platforms
-repopick 260248 # power: msm8952: Remove launch and interaction hints
-repopick 260249 # power: msm8952: Remove HBTP support
-repopick 260250 # power: msm8952: Support power profiles
-repopick 260251 # power: msm8952: Readd video encode/decode hint handling
-repopick 260252 # power: msm8960: Implement performance profiles
-repopick 260253 # power: msm8960: Readd video encode/decode hint handling
-repopick 260254 # power: msm8960: Readd set_interactive_override
 repopick 260710 # power: Add support for event-based tap to wake gesture control
