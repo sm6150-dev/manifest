@@ -204,6 +204,7 @@ repopick 255647 # Revert "Drop Type clock face."
 repopick 255651 # TypeClockController: Make it compile with new plugin API
 repopick 256192 # [DNM] IS_DEBUGGABLE -> IS_ENG
 repopick 260783 # FODCircleView: Add MIUI FP icon
+repopick 261836 # FODCircleView: Pass current ambient light during onPress()
 
 # frameworks/native
 repopick 258443 # sensorservice: Register orientation sensor if HAL doesn't provide it
@@ -242,6 +243,7 @@ repopick 258215 # Initial dummy cryptfshw implementation
 repopick 260411 # cryptfshw: Introduce qti backend implementation
 repopick 256420 # Initial audio amplifier HAL
 repopick 260069 # wifi: Disable softAP MAC randomization by default
+repopick 261315 # IFingerprintInscreen: Add support ambient light for onPress()
 
 # hardware/qcom-caf/common
 repopick 261271 # fwk-detect: Relocate from vendor/qcom-opensource/core-utils
