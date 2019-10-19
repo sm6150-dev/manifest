@@ -101,6 +101,7 @@ changes=(
 257053 # sepolicy: Make recovery permissive
 261929 # sepolicy: Allow Snap to execute bcc
 257100 # [DND] Kill su
+259621 # sepolicy: qcom: RIP legacy
 )
 repopick ${changes[@]}&
 
