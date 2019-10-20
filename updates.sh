@@ -198,7 +198,6 @@ changes=(
 255651 # TypeClockController: Make it compile with new plugin API
 256192 # [DNM] IS_DEBUGGABLE -> IS_ENG
 260783 # FODCircleView: Add MIUI FP icon
-261836 # FODCircleView: Pass current ambient light during onPress()
 )
 repopick ${changes[@]}&
 
@@ -243,7 +242,6 @@ changes=(
 258215 # Initial dummy cryptfshw implementation
 260411 # cryptfshw: Introduce qti backend implementation
 260069 # wifi: Disable softAP MAC randomization by default
-261315 # IFingerprintInscreen: Add support ambient light for onPress()
 )
 repopick ${changes[@]}&
 
