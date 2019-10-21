@@ -2,7 +2,6 @@
 <manifest>
   <remove-project name="platform/build/blueprint" />
   <remove-project name="platform/external/mksh" />
-  <remove-project name="platform/external/tinyalsa" />
   <remove-project name="platform/hardware/interfaces" />
   <remove-project name="platform/hardware/qcom/data/ipacfg-mgr" />
   <remove-project name="platform/packages/apps/ThemePicker" />
@@ -11,7 +10,6 @@
 
   <project path="build/blueprint" name="LineageOS/android_build_blueprint" groups="pdk,tradefed" />
   <project path="external/mksh" name="LineageOS/android_external_mksh" groups="pdk" />
-  <project path="external/tinyalsa" name="LineageOS/android_external_tinyalsa" groups="pdk" />
   <project path="hardware/interfaces" name="LineageOS/android_hardware_interfaces" groups="pdk" />
   <project path="hardware/qcom/data/ipacfg-mgr" name="LineageOS/android_hardware_qcom_data_ipacfg-mgr" groups="qcom,pdk-qcom" />
   <project path="packages/apps/ThemePicker" name="LineageOS/android_packages_apps_ThemePicker" groups="pdk-fs" />
