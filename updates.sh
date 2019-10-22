@@ -3,12 +3,6 @@
 set -e
 source build/envsetup.sh
 
-# art
-changes=(
-259265 # Revert "ART: Add version check for memfd_create()"
-)
-repopick ${changes[@]}&
-
 # bionic
 changes=(
 256150 # bionic: Use legacy pthread_mutex_init() behavior on pre-P API levels
@@ -18,10 +12,7 @@ repopick ${changes[@]}&
 
 # bootable/recovery
 changes=(
-255846 # recovery: Allow custom bootloader msg offset in block misc
-255847 # recovery: wipe bootloader message from index 0 when using custom offsets
 255990 # recovery: Remove HOST_OS guard for f2fs tools
-255830 # Make adb use a custom prop for adb root
 255831 # recovery: Get a proper shell environment in recovery
 255832 # recovery: ui: Default to touch enabled
 255833 # recovery: ui: Minor cleanup for touch code
@@ -45,6 +36,7 @@ changes=(
 255979 # recovery: symlink /sbin for script compatibility
 259738 # recovery: Allow bypassing signature verification on non-release builds
 259748 # recovery: Add runtime checks for A/B vs traditional updates
+255830 # Make adb use a custom prop for adb root
 )
 repopick ${changes[@]}&
 
@@ -97,40 +89,15 @@ repopick ${changes[@]}&
 
 # device/lineage/sepolicy
 changes=(
-259727 # sepolicy: vendor: Migrate to power 1.2
-257053 # sepolicy: Make recovery permissive
+259621 # sepolicy: qcom: RIP legacy
 261929 # sepolicy: Allow Snap to execute bcc
-257100 # [DND] Kill su
-)
-repopick ${changes[@]}&
-
-# device/qcom/sepolicy/legacy-um
-changes=(
-259422 # sepolicy: Fix video4linux "name" node labeling
-259423 # sepolicy: Allow mm-qcamerad to access v4L "name" node
-259424 # common: Fix labelling of lcd-backlight
-259425 # msm8996: Consider additional ssr nodes
-259426 # sepolicy: Label persist partition for all SoCs
-259427 # sepolicy: allow vold to read persist dirs
-261035 # msm8998: Label usbpd sysfs
-261036 # msm8998: Label LED sysfs
-261037 # sepolicy: setting secontext to rtc node
-261038 # sepolicy: label persist.vendor.bluetooth.a4wp
-261039 # common: Label persist.vendor.camera.debug.logfile
-#261784 # common: Correctly Label /sys/class/kgsl
-#261785 # common: Fix sysfs_socinfo Label for sensors
+257100 # [DNM] Kill su
 )
 repopick ${changes[@]}&
 
 # external/mksh
 changes=(
 259638 # mksh: Mark mkshrc as recovery_available
-)
-repopick ${changes[@]}&
-
-# external/tinyalsa
-changes=(
-260543 # Mark tinymix/tinyplay as vendor_available
 )
 repopick ${changes[@]}&
 
@@ -143,14 +110,7 @@ repopick ${changes[@]}&
 # frameworks/av
 changes=(
 256899 # camera: Allow devices to load custom CameraParameter code
-258224 # Camera: Add extensions to CameraClient
-258437 # Camera: Add support for preview frame fd
-258439 # stagefright: add changes related to high-framerates in CameraSource
 258812 # CameraService: Support hooks for motorized camera
-259987 # audiopolicy: support extended feature in audiopolicymanager
-260580 # Camera: CameraHardwareInterface changes to support Extended FD
-260581 # Camera: Miscellaneous fixes in QDataCallback and binder death scenarios.
-260582 # camera: Only link and use vendor.qti.hardware.camera.device if specified
 )
 repopick ${changes[@]}&
 
@@ -165,8 +125,6 @@ changes=(
 256446 # SystemUI: Enable and fix QS detail view, adapt layout to Pie
 256447 # SystemUI: Add Profiles tile
 256448 # SystemUI: Advanced location tile
-256831 # KernelCpuUidTimeReader: Decrease log level on eng builds
-258225 # Camera: Add feature extensions
 258303 # power: Re-introduce custom charging sounds
 258546 # Camera button support
 257246 # fingerprint: handle PerformanceStats NULL pointers
@@ -181,9 +139,6 @@ changes=(
 258853 # Add CHANNEL_MODE_DUAL_CHANNEL constant
 258854 # Add Dual Channel into Bluetooth Audio Channel Mode developer options menu
 258855 # Allow SBC as HD audio codec in Bluetooth device configuration
-259983 # Merge changes for launching wifidisplay from system settings
-259984 # WiFiDisplayController: Defer the P2P Initialization from its constructor.
-259985 # WifiDisplayController: handle preexisting p2p connection status
 259458 # storage: Do not notify for volumes on non-removable disks
 260002 # fw/b: Squash of app fw restriction commits
 261314 # Allow override of DUN settings
@@ -210,7 +165,6 @@ repopick ${changes[@]}&
 
 # frameworks/opt/net/wifi
 changes=(
-260004 # WiFi: Ignore connectivity scans during WFD session
 261857 # wifi: Not reset country code for Dual SIM if any slot is active
 )
 repopick ${changes[@]}&
@@ -224,14 +178,6 @@ repopick ${changes[@]}&
 # hardware/interfaces
 changes=(
 258181 # keymasterV4_0: Tags support for FBE wrapped key.
-260578 # Camed HAL extension: Added support in HIDL for Extended FD.
-260579 # camera: Only link and use vendor.qti.hardware.camera.device if specified
-)
-repopick ${changes[@]}&
-
-# hardware/libhardware
-changes=(
-256912 # audio: Add audio amplifier HAL
 )
 repopick ${changes[@]}&
 
@@ -284,12 +230,6 @@ repopick ${changes[@]}&
 changes=(
 258333 # lineage-sdk: Bump PREF_HAS_MIGRATED_LINEAGE_SETTINGS for 17.0
 259996 # lineage-sdk: Update path to ChargingStarted.ogg
-)
-repopick ${changes[@]}&
-
-# packages/apps/AudioFX
-changes=(
-261313 # AudioFX: Add support for usb headset devices
 )
 repopick ${changes[@]}&
 
@@ -357,7 +297,6 @@ changes=(
 256692 # Search in folder specified via URI parameter, if possible.
 256693 # Remove max aspect ratio.
 257358 # Fix Email tests on userdebug builds.
-257359 # AOSP/Email -Added TEST_MAPPING file and "LOCAL_COMPATIBILITY_SUITE := ...
 257360 # Remove build-time dep on opt-datetimepicker
 257361 # Revert "Revert "AOSP/Email - Changes for code to work with UnifiedEmail's ...
 257362 # Revert "Revert "AOSP/Email - Bump targetSdkVersion to 28.""
@@ -370,78 +309,6 @@ repopick ${changes[@]}&
 # packages/apps/Exchange
 changes=(
 257297 # Exchange: Migrate to androidx
-)
-repopick ${changes[@]}&
-
-# packages/apps/Gallery2
-changes=(
-260784 # Revert "fix toolbar is overlaid on ni-co-bar"
-260785 # Fix ProGuard error.
-260786 # Float.NaN != ... always evaluates to true, use Float.isNaN.
-260787 # Fix misc-macro-parentheses warnings in Gallery2.
-260788 # Add missing includes.
-260789 # Revert "Fix compiling errors in P"
-260790 # Stop using junit classes in production
-260791 # Gallery2: Fix NaN comparisons
-260792 # Gallery2: Fix CollectionIncompatibleType
-260793 # Rename android.utils.Pools to com.android.photos.util.Pools
-260794 # Fix build Gallery2
-260795 # Use explicit support library prebuilts
-260796 # Fix proguard failure when using javac
-260797 # Fix makefile include for support-v4
-260798 # Fix build with proguard
-260799 # Use -Werror in packages/apps/Gallery2
-260800 # Move Gallery2 over to AAPT2 and new v4 modules
-260801 # Gallery2: Remove slideshow option if there are only videos
-260802 # Gallery2: Support GIF animation
-260803 # SnapdragonGallery: Fix FC when init() before setContentView
-260804 # SnapdragonGallery: Fix dialog dismiss when home
-260805 # SnapdragonGallery: Fix crash show dialog when activity finished
-260806 # Don't show Camera Icon when no pictures found in Albums
-260807 # SDGallery:Fix monkey FC when url from pick activity is null
-260808 # Fix FC of parsing uri is null
-260809 # Fix the issue of view don't reload when onPause
-260810 # Add new rule about watermark
-260811 # Rename app back to Gallery
-260812 # FaceDetect: Catch linker errors during initialization
-260813 # Gallery: TileImageView: fix NPE
-260814 # Gallery2: Bump minsdk and targetsdk version
-260815 # Gallery2: Try to open existing camera
-260816 # Gallery2: Fix crash of gallery on showing details
-260817 # Gallery2: Add record time to details view
-260818 # Gallery2: Store DATE_TAKEN as milliseconds
-260819 # Gallery2: Reduce logspam in video player
-260821 # Gallery2: Make sure no NPE happens
-260822 # Gallery2: Change all share intents to chooser style
-260823 # Gallery2: Properly declare the own permissions
-260824 # Gallery2: Update theme
-260825 # Gallery2: Update menu
-260826 # Gallery: define app category
-260827 # Gallery: adaptive-icon
-260828 # Gallery: use platform cert
-260829 # Gallery2: Remove CAF translations
-260830 # Gallery2: Modify AOSP EL translations
-260831 # Gallery2: Move & improve CAF strings
-260832 # Gallery2: Replace hamburger menu with bottom bar
-260833 # Gallery2: Disable dummy starting window
-260834 # Gallery2: Everyone or no one
-260835 # Gallery2: Fix up audio effects dialog
-260836 # Gallery2: Remove 3D overscroll effect
-260837 # Gallery2: Enable frames in the editor
-260838 # Gallery2: Support the newly added media file types in MTP mode
-260839 # Gallery2: Increase the size of the tiles when decoding images
-260840 # Gallery2: Fix views overlap
-260841 # Gallery2: Fix potential crash
-260842 # Gallery2: Fix various issues and glitches
-260843 # Gallery: Kill media effect dialog on movies
-260844 # Gallery2: Get rid of packages monitor
-260845 # Fix can't enable speaker with bluetooth headset
-260846 # Move Gallery2 to androidx.
-260847 # Gallery2: Migrate remaining bits to AndroidX
-261044 # Rename language+country resources to just language
-261045 # Sync translations with AOSP
-261046 # Move Gallery2 and its libs to /product
-261047 # Add default code reviewers into OWNERS
 )
 repopick ${changes[@]}&
 
@@ -542,31 +409,7 @@ repopick ${changes[@]}&
 
 # packages/apps/Trebuchet
 changes=(
-256018 # Revert "[DO NOT MERGE] Disable swipe down to pull noti shade for Q"
-256019 # Launcher3: Export GridOptionsProvider
-259724 # Launcher3: Fix launcher preview rendering
-260127 # Trebuchet: update build configs
-260128 # Create LineageLauncher
-260129 # Launcher3: Google Feed integration
-260130 # Launcher3: exclude from recents
-260131 # Launcher3: No Calendarwidget 4x4 widget displayed
-260132 # Launcher3: Stability NullPointer issue
-260133 # Workspace: Allow resizing any widget
-260134 # PagedView: fix pointer index out of range
-260135 # Launcher3: Can't search out local app by Chinese
-260136 # DeviceProfile: fix divide by zero
-260137 # Provider: Initialize createEmptyRowOnFirstScreen without QSB
-260138 # config: enable LAUNCHER3_PROMISE_APPS_IN_ALL_APPS
-260139 # proguard: Also keep FixedScaleDrawable
-260145 # Change app name to Trebuchet
-260141 # Trebuchet: adaptive icon
-260142 # Trebuchet: Bump min SDK to 26 as required for adaptive icons
 260143 # Trebuchet: prefer our wallpaper picker if possible
-260144 # Trebuchet: Hide Notification Dots on low RAM devices
-260319 # Trebuchet: Update default workspace
-260320 # Change icon drawable padding
-260321 # Disable QSB on first screen by default
-260322 # QSB: request round search bar
 )
 repopick ${changes[@]}&
 
@@ -651,7 +494,6 @@ repopick ${changes[@]}&
 changes=(
 258166 # Add wrapped key support
 256219 # utils: Threads: Handle empty thread names
-256823 # Camera: Add feature extensions
 261945 # fs_mgr: Fix EnsurePathMounted with a given mount_point.
 259414 # reboot: mark as recovery_available
 260334 # fs_mgr: mount: don't set the block device as ro for recovery
@@ -721,12 +563,10 @@ changes=(
 258775 # extract_files: Implement blueprint file generation
 260417 # extract_utils: Added Suffix uses COMMON_SUFFIX
 255667 # adb insecure by default
-260603 # Kill sysinit
-260562 # common: Add nano to PRODUCT_PACKAGES'
-261043 # privapp-permissions: Allow Gallery2 to use android.permission.MODIFY_AUDIO_ROUTING
 261292 # vendor/lineage: Fix dopush
 261642 # vendor: make dopush recognize /vendor files
 258204 # build: set build fingerprint for all devices
+259683 # lineage: don't mount system during install{boot,recovery}
 )
 repopick ${changes[@]}&
 
@@ -786,46 +626,6 @@ repopick ${changes[@]}&
 
 # vendor/qcom/opensource/power
 changes=(
-260196 # power: Remove powerhintparser
-260197 # power: Fix power hal compiler warnings
-260198 # power: Fix a few compiler warnings
-260199 # power: Use log/log.h instead of utils/Log.h
-260200 # power: Add support for tap-to-wake feature control
-260092 # power: Refactor TARGET_TAP_TO_WAKE_NODE
-260091 # power: Allow device specific hooks for set_interactive
-260201 # power: Allow devices to write their own platform specific bits
-260202 # power: override encode hint for 8909
-260203 # power: Change the Hi-Speed freq to 800Mhz for camcorder case
-260204 # power: Changed the minfreq to 400Mhz for display off scenario.
-260205 # power: Fix to handle min freq changes when CPU cores hotplugged.
-260206 # power: modify return value for display off hint in 8994
-260207 # power: introduce 8992-specific handling
-260208 # power: Enable 4+0 core config for display off cases
-260209 # power: Remove unused arg from power_hint_override/set_interactive_override
-260210 # power: Remove mutex to hints
-260211 # power: Add -qti suffix to module name
-260212 # power: clang-format
-260213 # power: Remove leftover support for msm-dcvs governor
-260214 # power: Remove leftover support for ondemand governor
-260215 # power: Introduce is_schedutil_governor
-260216 # power: Use is_interactive_governor/is_schedutil_governor
-260217 # power: Avoid interaction build errors
-260218 # power: Remove unused list utils
-260219 # power: Simplify soc_id checks
-260220 # power: Simplify display_hint_sent
-260221 # power: Add back display_boost checks
-260222 # power: Cache SOC ID checks for future queries
-260223 # power: Drop default POWER_HINT_INTERACTION routine
-260224 # power: Use ARRAY_SIZE macro where possible
-260225 # power: add back check for ro.vendor.extension_library
-260226 # power: msm8996: Remove dead code
-260227 # power: fix sysfs_read/sysfs_write usage
-260228 # power: msm8916: Code clean up
-260229 # power: Compile with -Wall -Wextra -Werror
-260230 # power: Remove unused camera_hint_ref_count
-260231 # Reduce hwbinder buffer size for power HAL
-260245 # power: Rename power-8952.c to power-8937.c
-260249 # power: msm8952: Remove HBTP support
 261751 # power: Find online CPU core and get scaling governor
 260232 # power: Clean up and fix video encode/decode hint handling
 260233 # power: Clean up and fix set_interactive_override
@@ -844,26 +644,6 @@ changes=(
 260244 # power: msm8953: Support power profiles
 260246 # power: msm8937: Support power profiles
 260247 # power: Support power profiles on legacy platforms
-)
-repopick ${changes[@]}&
-
-wait
-
-# LA.UM.8.1.r1-09500-sm8150.0
-changes=(
-261904 261905 261910 261911 261912 261913 261914 261916 261917 261918 261923 261924 261925 261926 261927
-)
-repopick ${changes[@]}&
-
-# LA.UM.8.3.r1-06100-sdm845.0
-changes=(
-261908 261909 261915
-)
-repopick ${changes[@]}&
-
-# LA.UM.8.4.r1-04500-8x98.0
-changes=(
-261906 261907
 )
 repopick ${changes[@]}&
 
