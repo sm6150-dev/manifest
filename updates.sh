@@ -128,6 +128,24 @@ changes=(
 )
 repopick -P hardware/qcom-caf/msm8996/audio ${changes[@]}&
 
+# hardware/qcom-caf/sm8150/audio
+changes=(
+264577 # [DNM][SQUASH] Merge tag 'LA.UM.8.1.r1-11600-sm8150.0'
+)
+repopick ${changes[@]}&
+
+# hardware/qcom-caf/sm8150/display
+changes=(
+264576 # [DNM][SQUASH] Merge tag 'LA.UM.8.1.r1-11600-sm8150.0'
+)
+repopick ${changes[@]}&
+
+# hardware/qcom-caf/sm8150/media
+changes=(
+264578 # [DNM][SQUASH] Merge tag 'LA.UM.8.1.r1-11600-sm8150.0'
+)
+repopick ${changes[@]}&
+
 # lineage-sdk
 changes=(
 259996 # lineage-sdk: Update path to ChargingStarted.ogg
