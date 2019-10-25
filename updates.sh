@@ -234,6 +234,34 @@ changes=(
 )
 repopick ${changes[@]}&
 
+# hardware/qcom-caf/sm8150/audio
+changes=(
+262309 # audio: Use project pathmap
+262310 # audio: Skip libhdmipassthru on OSS builds
+262311 # audio: Add missing includes
+)
+repopick ${changes[@]}&
+
+# hardware/qcom-caf/sm8150/display
+changes=(
+262182 # display: Use project pathmap
+262183 # Don't build lights module if vendor supplies it
+262184 # Add C2D_COLOR_FORMAT_420_TP10 to C2D_YUV_FORMAT
+262185 # Add C2D_FORMAT_BT601_FULLRANGE to C2D_FORMAT_MODE
+262186 # display-hals: Expose c2d2.h even if TARGET_DISABLE_DISPLAY is set
+262187 # display-hals: Allow building libdisplayconfig
+)
+repopick ${changes[@]}&
+
+# hardware/qcom-caf/sm8150/media
+changes=(
+262180 # media: Use project pathmap
+262158 # media: libOmxSw encoders require prop headers :(
+262179 # media: Depend on display_headers not display_intf_headers
+262188 # media: Exclude libplatformconfig from OSS builds
+)
+repopick ${changes[@]}&
+
 # lineage-sdk
 changes=(
 258333 # lineage-sdk: Bump PREF_HAS_MIGRATED_LINEAGE_SETTINGS for 17.0
