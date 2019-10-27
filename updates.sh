@@ -612,6 +612,12 @@ changes=(
 )
 repopick ${changes[@]}&
 
+# vendor/qcom/opensource/dataservices
+changes=(
+262557 # librmnetctl: Add flag for netmgrd without uplink features support
+)
+repopick ${changes[@]}&
+
 # vendor/qcom/opensource/fm-commonsys
 changes=(
 260194 # Revert "FM: Use btconfigstore interface to fetch vendor features"
