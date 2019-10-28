@@ -40,12 +40,6 @@ changes=(
 )
 repopick ${changes[@]}&
 
-# build/blueprint
-changes=(
-259301 # Make off-the-shelf order funcs public.
-)
-repopick ${changes[@]}&
-
 # build/make
 changes=(
 257172 # releasetools: squash backuptool support
@@ -69,27 +63,12 @@ repopick ${changes[@]}&
 # build/soong
 changes=(
 256886 # soong: Add function to return camera parameters library name
-259286 # Add android_app_import.
-259287 # uncompressedDex option for android_app_import.
-259288 # Implement DPI variants in android_app_import.
-259289 # androidmk conversion logic for android_app_import
-259290 # Improve android_app_import.dpi_variants handling.
-259291 # Add filename property to android_app_import
-259292 # Add arch variant support to android_app_import.
-259293 # Add default_dev_cert to android_app_import
-259511 # New AndroidMk authoring system based on entry map.
-259512 # Add data property to sh_test.
-259513 # Add sh_test_host.
-259514 # Add overrides property to prebuilt_apex
-259515 # AndroidMkEntries minor refactoring.
-259516 # Comment out broken android_app_imports tests
 261076 # soong: Give priority to modules in exported namespaces for bootjars
 )
 repopick ${changes[@]}&
 
 # device/lineage/sepolicy
 changes=(
-259621 # sepolicy: qcom: RIP legacy
 261929 # sepolicy: Allow Snap to execute bcc
 257100 # [DNM] Kill su
 )
@@ -120,8 +99,6 @@ changes=(
 258159 # frameworks: base: Port password retention feature
 258180 # Fix Build Credentials refactored to use byte[]
 258160 # LockSettingsService: Support for separate clear key api
-256163 # Configurable 0, 90, 180 and 270 degree rotation
-256164 # SystemUI: Fix toggling lockscreen rotation [1/3]
 256446 # SystemUI: Enable and fix QS detail view, adapt layout to Pie
 256447 # SystemUI: Add Profiles tile
 256448 # SystemUI: Advanced location tile
@@ -167,12 +144,6 @@ repopick ${changes[@]}&
 # frameworks/opt/net/wifi
 changes=(
 261857 # wifi: Not reset country code for Dual SIM if any slot is active
-)
-repopick ${changes[@]}&
-
-# hardware/broadcom/libbt
-changes=(
-261899 # correct WBS config VSC params
 )
 repopick ${changes[@]}&
 
@@ -282,7 +253,7 @@ changes=(
 256655 # Place MyInfo shortcut on drawer
 256656 # Place EmergencyInfo shortcut on drawer
 256657 # Allow calling contacts via specific phone accounts.
-#256658 # Contacts: use white nav bar
+256658 # Contacts: use white nav bar
 )
 repopick ${changes[@]}&
 
@@ -333,9 +304,11 @@ changes=(
 256692 # Search in folder specified via URI parameter, if possible.
 256693 # Remove max aspect ratio.
 257358 # Fix Email tests on userdebug builds.
+257359 # AOSP/Email -Added TEST_MAPPING file and "LOCAL_COMPATIBILITY_SUITE := device-tests" to enable presubmit tests for Email.
 257360 # Remove build-time dep on opt-datetimepicker
 257361 # Revert "Revert "AOSP/Email - Changes for code to work with UnifiedEmail's ...
 257362 # Revert "Revert "AOSP/Email - Bump targetSdkVersion to 28.""
+262352 # Add missing LOCAL_MODULE_PATH
 #257363 # AOSP/Email - Bump version number to 28 in the XML file.
 #257364 # AOSP/Email - Bumped version number to 28. Disabled notifications, uifolders ...
 #257365 # AOSP/Email and AOSP/UnfiedEmail - Added back call to uiaccounts. + Added ...
@@ -350,7 +323,6 @@ repopick ${changes[@]}&
 
 # packages/apps/LineageParts
 changes=(
-256409 # LineageParts: Reenable DisplayRotation
 258825 # LineageParts: Reenable system profiles
 260416 # Parts: Convert charging sound path to uri
 260782 # LineageParts: Migrate to Android.bp
@@ -359,27 +331,6 @@ repopick ${changes[@]}&
 
 # packages/apps/Messaging
 changes=(
-256720 # Messaging: Fix generating id in android namespace
-257324 # AOSP/Messaging - Update the Messaging version to 24 until notification related logic changes are made. Fixes the error "Developer warning for package com.android. messaging failed to post notification on channel null".
-257325 # AOSP/Messaging - Remove TEST_MAPPING because presubmit tests fail on build_target: aosp_cf_x86_phone-userdebug
-257326 # AOSP/Messaging - Moved LOCAL_COMPATIBILITY_SUITE to tests/Android.mk. + Deleted the unnecessary blankId check. Updated the TODO comment for NUM_TEST_CONVERSATIONS+4. + Added AndroidTest.xml + Added "LOCAL_PROGUARD_ENABLED := disabled" for tests to pass on cf.
-257327 # AOSP/Messaging - Fix many improperly formatted resource strings in Messaging.
-257328 # Fix X-Mms-Transaction-ID of M-Acknowledge.ind
-257329 # Fix SMS status handling
-257330 # Use correct format info for SMS
-257331 # Fix MMS Config issues in Debug menu
-257332 # Fix assertion failures caused by different instance type
-257333 # Fix wrong PreferenceCategory for SMS delivery report
-257334 # Apply new duplication detection logic for M-Notification.ind
-257335 # Replace no error code '0' for SMS with '-1'
-257336 # Fix GetOrCreateConversationActionTest failure
-257337 # Sort ParticipantsData in order of the slot id
-257338 # Ignore unexpected ACTION_DOWN for SIM avatar icons
-257339 # Fix FATAL EXCEPTION on SmsStorageLowWarningActivity
-257340 # Move Messaging to /product
-257341 # Move libgiftranscode.so to /product
-256696 # Messaging: define app category
-256697 # Messaging: adaptive icon
 256698 # Messaging: Implement option for swipe right to delete.
 256699 # Messaging: change Avatar fontFamily to sans-serif-medium
 256700 # MessageQueue: Process pending messages per subscription
@@ -419,7 +370,6 @@ repopick ${changes[@]}&
 
 # packages/apps/Settings
 changes=(
-256162 # Settings: Add rotation settings
 258304 # Settings: Add LineageParts charging sound settings preference
 258819 # Settings: Add lockscreen visualizer toggle
 258856 # Add Dual Channel into Bluetooth Audio Channel Mode developer options menu
@@ -487,6 +437,12 @@ changes=(
 )
 repopick ${changes[@]}&
 
+# packages/providers/MediaProvider
+changes=(
+262193 # MediaProvider: Make sure to check the type when searching for sounds
+)
+repopick ${changes[@]}&
+
 # packages/providers/TelephonyProvider
 changes=(
 256780 # TelephonyProvider: add upgrade support from cm-14.1
@@ -504,7 +460,6 @@ repopick ${changes[@]}&
 changes=(
 256792 # Telephony: Add ERI configuration for U.S. Cellular
 256793 # Telephony: Support muting by RIL command
-256794 # Fix non-protected broadcasts sent from phone process.
 256795 # Don't start SIP service before decrypted
 256797 # Allow to disable the new scan API for manual network search.
 )
@@ -569,6 +524,7 @@ changes=(
 258140 # system: vold: Use wrapped key for metadata encryption
 258149 # [automerger] vold: resolve crypto device creation failure with dm-crypt skipped: 4b5c1b2db2
 258150 # system: vold: Use ICE for UFS card
+262319 # system: vold: Fix for ICE UFS card support
 258151 # vold: Move QCOM HW FDE inclusion under Lineage namespace
 258169 # vold: add support for more filesystems for public storage
 258170 # vold: Fix fsck on public volumes
@@ -592,17 +548,14 @@ changes=(
 259449 # config: Mark more gralloc bits as valid
 259310 # prebuilt: Add a script to simplify A-only recovery system mount
 257000 # Remove apicheck.mk
-259699 # extract_files: Support system/ prefixes
 259701 # extract_files: Add extract2() function
-260081 # extract_files: Match non-treble path prefixes
-258774 # extract_files: Add initial blueprint creation
-258775 # extract_files: Implement blueprint file generation
-260417 # extract_utils: Added Suffix uses COMMON_SUFFIX
 255667 # adb insecure by default
 261292 # vendor/lineage: Fix dopush
 261642 # vendor: make dopush recognize /vendor files
 258204 # build: set build fingerprint for all devices
 259683 # lineage: don't mount system during install{boot,recovery}
+262357 # common: Bring back Android Beam
+262320 # aosp_audio: copy our own old AOSP alarm variants
 )
 repopick ${changes[@]}&
 
@@ -615,54 +568,6 @@ repopick ${changes[@]}&
 # vendor/qcom/opensource/dataservices
 changes=(
 262557 # librmnetctl: Add flag for netmgrd without uplink features support
-)
-repopick ${changes[@]}&
-
-# vendor/qcom/opensource/fm-commonsys
-changes=(
-260194 # Revert "FM: Use btconfigstore interface to fetch vendor features"
-260195 # Revert "Fm: Use btconfigstore interface to fetch vendor features"
-260422 # jni: fix calibration data path for legacy fm_qsoc_patches
-260423 # jni: Skip loading FM firmware if requested
-260429 # jni: Remove unused variables
-260431 # jni: Resolve FM_DEVICE_PATH R/O open flag
-260432 # jni: Ignore unused parameters from APIs
-260434 # jni: Resolve equality comparisons with extraneous parentheses
-260435 # jni: Resolve V4L2_CID_AUDIO_MUTE redefinitions
-260436 # jni: Resolve -Wwritable-strings warnings in helium FW library variables
-260437 # Allow library to be used by apps directly
-260438 # FM: Break bootclasspath dependency
-260439 # FM: Re-vamp UI
-260440 # FM: Restore seek arrows
-260441 # FM: Make default country an overlay
-260442 # FM: Re-add RDS fields to UI
-260443 # FM: Scanned frequencies are saved in ascending ordering
-260444 # FM: Call unregister in onPause
-260445 # FM: Switch file extension to aac
-260446 # FM: Add property to force use internal antenna
-260447 # FM: Cleanup resources
-260448 # FM: add Indonesia
-260449 # FM: materialize
-260450 # FM: retune last frequency when resume after call
-260451 # FM: Store tag num/value in sequence
-260452 # FM: reenable radio text visibility after station info updated
-260453 # FM: Launch station list automatically after scan
-260454 # FM: Fix status text to reflect when FM is enabled.
-260455 # FM: The collect channel disappear when quit FM
-260456 # FM: Ensure scan state is kept in sync
-260457 # FM: Keep track of scanned frequencies in service
-260458 # FM: Select band based on country
-260459 # FM: improved band selection
-260460 # FM: Localization of band types
-260461 # FM: Fix settings UI bugs
-260462 # FM: Fix headphone icon
-260463 # FM: Update India bands
-260464 # FM: Convert regional band arrays to string references
-260465 # FM: Fix KHz->kHz
-260487 # FM: Revamp notifications
-260488 # FM: adaptive icon
-260489 # fm: Drop unnecessary dependencies
-260490 # FM: Remove unnecessary TARGET_BOARD_PLATFORM guard
 )
 repopick ${changes[@]}&
 
