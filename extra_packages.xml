@@ -9,4 +9,7 @@
   <project name="minz1/android_device_xiaomi_sm6150-common" path="device/xiaomi/sm6150-common" remote="private" revision="lineage-17.0" />
   <project name="davinci-dev/android_kernel_xiaomi_davinci" path="kernel/xiaomi/davinci" remote="private" revision="lineage-17.0" />
   <project name="davinci-dev/vendor_xiaomi" path="vendor/xiaomi" remote="private" revision="lineage-17.0" />
+
+  <!--Gapps-->
+  <project name="MindTheGapps/vendor_gapps" path="vendor/gapps" remote="gitlab" revision="qoppa" />
 </manifest>
