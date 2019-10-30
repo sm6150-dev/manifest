@@ -10,6 +10,36 @@ changes=(
 )
 repopick -P bionic ${changes[@]}&
 
+# bootable/recovery
+changes=(
+255990 # recovery: Remove HOST_OS guard for f2fs tools
+255832 # recovery: ui: Default to touch enabled
+255833 # recovery: ui: Minor cleanup for touch code
+255992 # recovery: ui: Support hardware virtual keys
+256010 # recovery: Include vendor init trigger
+259546 # recovery: Allow device-specific recovery modules
+259547 # recovery: Blank screen during shutdown and reboot
+259548 # recovery: Provide sideload cancellation
+259823 # otautil: add support for unmounting entire volumes
+259642 # recovery: Add wipe system partition option
+259643 # recovery: Remove "Supported API" message
+259644 # recovery: Enable the menu for User builds
+259645 # recovery: init: mount pstore fs
+259646 # recovery: Expose reboot to recovery option
+259647 # recovery: Only show tests in eng builds
+259648 # recovery: Also hide rescue mode from non eng builds
+259738 # recovery: Allow bypassing signature verification on non-release builds
+259748 # recovery: Add runtime checks for A/B vs traditional updates
+259649 # recovery: Blank screen on init
+#255831 # recovery: Get a proper shell environment in recovery
+#259434 # recovery: Puke out an /etc/fstab so stuff like busybox/toybox is happy
+#259720 # recovery: sdcard is data/media/0
+#259629 # recovery: Provide caching for sideload files
+#255979 # recovery: symlink /sbin for script compatibility
+#255830 # Make adb use a custom prop for adb root
+)
+repopick ${changes[@]}&
+
 # build/make
 changes=(
 257172 # releasetools: squash backuptool support
@@ -33,7 +63,6 @@ repopick -P build/make ${changes[@]}&
 # build/soong
 changes=(
 256886 # soong: Add function to return camera parameters library name
-261076 # soong: Give priority to modules in exported namespaces for bootjars
 )
 repopick -P build/soong ${changes[@]}&
 
@@ -83,6 +112,8 @@ changes=(
 259458 # storage: Do not notify for volumes on non-removable disks
 260002 # fw/b: Squash of app fw restriction commits
 261314 # Allow override of DUN settings
+262045 # SystemUI: Allow disabling BrightlineFalsingManager with config flag
+262889 # Disable doc generation
 255646 # Revert "DO NOT MERGE Remove Privacy Indicators"
 255648 # Revert "DO NOT MERGE Revert "Adding the privacy chip to the CarStatusBar""
 255649 # PrivacyItemController: Enable permission hub by default
@@ -110,6 +141,14 @@ changes=(
 261857 # wifi: Not reset country code for Dual SIM if any slot is active
 )
 repopick -P frameworks/opt/net/wifi ${changes[@]}&
+
+# frameworks/opt/telephony
+changes=(
+262868 # Migrate GSM SignalStrength to WCDMA on HAL 1.0
+262869 # Fix Issue Where SignalStrengthGsm is null
+262870 # 2G wants proper signal strength too
+)
+repopick -P frameworks/opt/telephony ${changes[@]}&
 
 # hardware/interfaces
 changes=(
@@ -274,12 +313,14 @@ repopick -P packages/apps/PermissionController ${changes[@]}&
 changes=(
 258304 # Settings: Add LineageParts charging sound settings preference
 258819 # Settings: Add lockscreen visualizer toggle
-258856 # Add Dual Channel into Bluetooth Audio Channel Mode developer options menu
+#258856 # Add Dual Channel into Bluetooth Audio Channel Mode developer options menu
 259315 # One does not simply become a Developer
 259459 # storage: Do not allow eject for volumes on non-removable disks
 259455 # Settings: per-app cellular data, vpn and wifi restrictions
-261351 # Settings: Fix QrCamera crash on devices without flash
 261364 # Settings: Use landscape qrcode scanner layout for sw600dp
+262883 # Fix duplicated entries in sound settings.
+262884 # Don't change nouns in summaries to lower case for German
+262886 # VolumePanel: fix showing notification volume slider when unlinked
 )
 repopick -P packages/apps/Settings ${changes[@]}&
 
@@ -540,7 +581,7 @@ repopick -P packages/services/Telephony ${changes[@]}&
 changes=(
 258166 # Add wrapped key support
 256219 # utils: Threads: Handle empty thread names
-259650 # Make adb use a custom prop for adb root
+#259650 # Make adb use a custom prop for adb root
 )
 repopick -P system/core ${changes[@]}&
 
@@ -609,7 +650,7 @@ changes=(
 262174 # vendor: Add messaging app to power whitelist
 262413 # privapp-permissions: Allow Snap to use android.permission.START_ACTIVITIES_FROM_BACKGROUND
 262606 # overlay: Remove config_show4GForLTE
-#262169 # overlay: Merge Settings' bools.xml into config.xml
+262169 # overlay: Clean up Settings overlay
 )
 repopick -P vendor/lineage ${changes[@]}&
 
