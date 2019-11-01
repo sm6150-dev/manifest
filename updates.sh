@@ -5,8 +5,7 @@ source build/envsetup.sh
 
 # bionic
 changes=(
-256150 # bionic: Use legacy pthread_mutex_init() behavior on pre-P API levels
-256151 # Actually restore pre-P mutex behavior
+262885 # bionic: Squash of pre-P mutex behavior restoration
 )
 repopick -P bionic ${changes[@]}&
 
