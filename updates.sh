@@ -581,6 +581,8 @@ changes=(
 258166 # Add wrapped key support
 256219 # utils: Threads: Handle empty thread names
 #259650 # Make adb use a custom prop for adb root
+262937 # healthd: Add support for HVDCP_3 chargers
+263575 # healthd: Reinitialize mChargerNames for every battery update
 )
 repopick -P system/core ${changes[@]}&
 
