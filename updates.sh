@@ -45,6 +45,7 @@ repopick -P build/soong ${changes[@]}&
 # device/lineage/sepolicy
 changes=(
 261929 # sepolicy: Allow Snap to execute bcc
+263443 # Add adb_root rules
 )
 repopick -P device/lineage/sepolicy ${changes[@]}&
 
@@ -84,6 +85,9 @@ changes=(
 256016 # Revert "Disable custom clock faces in SystemUI"
 256015 # Revert "Disable ClockOptionsProvider so clocks don't appear in picker app"
 263050 # etc: Add privapp whitelist permissions for ThemePicker
+263116 # SystemUI: Revive navbar layout tuning via sysui_nav_bar tunable
+263089 # Expose the ADBRoot interface to priv-apps
+263444 # Whitelist settings to use adb root permission
 255646 # Revert "DO NOT MERGE Remove Privacy Indicators"
 255648 # Revert "DO NOT MERGE Revert "Adding the privacy chip to the CarStatusBar""
 255649 # PrivacyItemController: Enable permission hub by default
@@ -118,7 +122,6 @@ repopick -P frameworks/opt/telephony ${changes[@]}&
 # hardware/lineage/interfaces
 changes=(
 260411 # cryptfshw: Introduce qti backend implementation
-260069 # wifi: Disable softAP MAC randomization by default
 )
 repopick -P hardware/lineage/interfaces ${changes[@]}&
 
@@ -142,6 +145,7 @@ repopick -P hardware/qcom-caf/msm8996/audio ${changes[@]}&
 changes=(
 258333 # lineage-sdk: Bump PREF_HAS_MIGRATED_LINEAGE_SETTINGS for 17.0
 259996 # lineage-sdk: Update path to ChargingStarted.ogg
+263544 # sdk: Mark PG settings as deprecated and remove related resources
 )
 repopick -P lineage-sdk ${changes[@]}&
 
@@ -166,6 +170,7 @@ changes=(
 258825 # LineageParts: Reenable system profiles
 260416 # Parts: Convert charging sound path to uri
 260782 # LineageParts: Migrate to Android.bp
+263452 # Kill privacy guard
 )
 repopick -P packages/apps/LineageParts ${changes[@]}&
 
@@ -192,13 +197,17 @@ changes=(
 259455 # Settings: per-app cellular data, vpn and wifi restrictions
 261364 # Settings: Use landscape qrcode scanner layout for sw600dp
 262884 # Don't change nouns in summaries to lower case for German
-262886 # VolumePanel: fix showing notification volume slider when unlinked
+263441 # Revert "Remove Permissions Hub."
+263442 # Settings: Enable permission hub by default
+263093 # Add toggle to enable ADB root
+263671 # Remove empty space in tether preference
 )
 repopick -P packages/apps/Settings ${changes[@]}&
 
 # packages/apps/SetupWizard
 changes=(
 257065 # Account for PhoneMonitor API change
+263545 # SuW: Remove PG bits
 )
 repopick -P packages/apps/SetupWizard ${changes[@]}&
 
@@ -444,13 +453,6 @@ changes=(
 )
 repopick -P packages/providers/TelephonyProvider ${changes[@]}&
 
-# packages/services/Telecomm
-changes=(
-256161 # Telecomm: Make sensitive phone numbers not to be shown in call log history.
-256265 # CallLog: Take into account multiple SIMs for sensitive numbers
-)
-repopick -P packages/services/Telecomm ${changes[@]}&
-
 # packages/services/Telephony
 changes=(
 256792 # Telephony: Add ERI configuration for U.S. Cellular
@@ -462,6 +464,8 @@ repopick -P packages/services/Telephony ${changes[@]}&
 # system/core
 changes=(
 256219 # utils: Threads: Handle empty thread names
+263088 # Add adb_root daemon
+263095 # Add adb root hooks
 #259650 # Make adb use a custom prop for adb root
 )
 repopick -P system/core ${changes[@]}&
@@ -507,19 +511,14 @@ changes=(
 262320 # aosp_audio: copy our own old AOSP alarm variants
 262413 # privapp-permissions: Allow Snap to use android.permission.START_ACTIVITIES_FROM_BACKGROUND
 262176 # vendor: Rename config_disabledComponents
-262171 # overlay: Update list of GSF/GMS activities
+263569 # lineage: GMS updater components disable list bringup
 263052 # Build ThemePicker
 263053 # Add overlay to specify our custom theme provider
 263055 # Build Lineage Themes stub package
+263096 # Build adb_root
 255667 # adb insecure by default
 )
 repopick -P vendor/lineage ${changes[@]}&
-
-# vendor/codeaurora/telephony
-changes=(
-257215 # Revert "IMS-VT: Low battery handling for Video calls"
-)
-repopick -P vendor/codeaurora/telephony ${changes[@]}&
 
 wait
 
