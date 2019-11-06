@@ -95,6 +95,7 @@ changes=(
 255647 # Revert "Drop Type clock face."
 255651 # TypeClockController: Make it compile with new plugin API
 260783 # FODCircleView: Add MIUI FP icon
+258160 # LockSettingsService: Support for separate clear key api
 )
 repopick -P frameworks/base ${changes[@]}&
 
@@ -119,6 +120,12 @@ changes=(
 262870 # 2G wants proper signal strength too
 )
 repopick -P frameworks/opt/telephony ${changes[@]}&
+
+# hardware/interfaces	
+changes=(	
+258181 # keymasterV4_0: Tags support for FBE wrapped key.	
+)	
+repopick -P hardware/interfaces ${changes[@]}&	
 
 # hardware/lineage/interfaces
 changes=(
@@ -470,12 +477,11 @@ repopick -P packages/services/Telephony ${changes[@]}&
 
 # system/core
 changes=(
+258166 # Add wrapped key support
 256219 # utils: Threads: Handle empty thread names
 263088 # Add adb_root daemon
 263095 # Add adb root hooks
 #259650 # Make adb use a custom prop for adb root
-262937 # healthd: Add support for HVDCP_3 chargers
-263575 # healthd: Reinitialize mChargerNames for every battery update
 )
 repopick -P system/core ${changes[@]}&
 
@@ -501,6 +507,13 @@ changes=(
 #258173 # vold: Mount ext4/f2fs portable storage with sdcard_posix
 #258174 # vold ext4/f2fs: do not use dirsync if we're mounting adopted storage
 #258175 # Fix the group permissions of the sdcard root.
+258133 # vold: Wrapped key support for FBE
+258134 # vold: Use separate flag for wrappedkey
+258135 # Remove no longer relevant header file
+258136 # vold: add support for clear key
+258139 # vold: change to upgrade key if export fails
+258145 # Updates for migrated code upstream
+258140 # system: vold: Use wrapped key for metadata encryption
 258176 # vold: skip first disk change when converting MBR to GPT
 258177 # vold: Allow reset after shutdown
 258178 # vold: Accept Linux GPT partitions on external SD cards
