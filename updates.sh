@@ -3,12 +3,6 @@
 set -e
 source build/envsetup.sh
 
-# bionic
-changes=(
-262885 # bionic: Squash of pre-P mutex behavior restoration
-)
-repopick -P bionic ${changes[@]}&
-
 # bootable/recovery
 changes=(
 255831 # recovery: Get a proper shell environment in recovery
@@ -17,7 +11,6 @@ changes=(
 258978 # applypatch: Use static libs for libbrotli and libbz.
 #259720 # recovery: sdcard is data/media/0
 #259629 # recovery: Provide caching for sideload files
-#255830 # Make adb use a custom prop for adb root
 )
 repopick ${changes[@]}&
 
@@ -45,7 +38,6 @@ repopick -P build/soong ${changes[@]}&
 # device/lineage/sepolicy
 changes=(
 261929 # sepolicy: Allow Snap to execute bcc
-263443 # Add adb_root rules
 )
 repopick -P device/lineage/sepolicy ${changes[@]}&
 
@@ -86,11 +78,6 @@ changes=(
 256015 # Revert "Disable ClockOptionsProvider so clocks don't appear in picker app"
 263050 # etc: Add privapp whitelist permissions for ThemePicker
 263116 # SystemUI: Revive navbar layout tuning via sysui_nav_bar tunable
-263089 # Expose the ADBRoot interface to priv-apps
-263444 # Whitelist settings to use adb root permission
-255646 # Revert "DO NOT MERGE Remove Privacy Indicators"
-255648 # Revert "DO NOT MERGE Revert "Adding the privacy chip to the CarStatusBar""
-255649 # PrivacyItemController: Enable permission hub by default
 255650 # Revert "Drop final remnants of Type clock face"
 255647 # Revert "Drop Type clock face."
 255651 # TypeClockController: Make it compile with new plugin API
@@ -159,7 +146,6 @@ repopick -P hardware/qcom-caf/msm8996/audio ${changes[@]}&
 changes=(
 258333 # lineage-sdk: Bump PREF_HAS_MIGRATED_LINEAGE_SETTINGS for 17.0
 259996 # lineage-sdk: Update path to ChargingStarted.ogg
-263544 # sdk: Mark PG settings as deprecated and remove related resources
 )
 repopick -P lineage-sdk ${changes[@]}&
 
@@ -184,7 +170,6 @@ changes=(
 258825 # LineageParts: Reenable system profiles
 260416 # Parts: Convert charging sound path to uri
 260782 # LineageParts: Migrate to Android.bp
-263452 # Kill privacy guard
 )
 repopick -P packages/apps/LineageParts ${changes[@]}&
 
@@ -195,13 +180,6 @@ changes=(
 )
 repopick -P packages/apps/Nfc ${changes[@]}&
 
-# packages/apps/PermissionController
-changes=(
-255658 # Revert "Remove Permissions Hub."
-255659 # PermissionController: Enable permission hub by default
-)
-repopick -P packages/apps/PermissionController ${changes[@]}&
-
 # packages/apps/Settings
 changes=(
 258304 # Settings: Add LineageParts charging sound settings preference
@@ -211,9 +189,6 @@ changes=(
 259455 # Settings: per-app cellular data, vpn and wifi restrictions
 261364 # Settings: Use landscape qrcode scanner layout for sw600dp
 262884 # Don't change nouns in summaries to lower case for German
-263441 # Revert "Remove Permissions Hub."
-263442 # Settings: Enable permission hub by default
-263093 # Add toggle to enable ADB root
 263671 # Remove empty space in tether preference
 )
 repopick -P packages/apps/Settings ${changes[@]}&
@@ -221,7 +196,6 @@ repopick -P packages/apps/Settings ${changes[@]}&
 # packages/apps/SetupWizard
 changes=(
 257065 # Account for PhoneMonitor API change
-263545 # SuW: Remove PG bits
 )
 repopick -P packages/apps/SetupWizard ${changes[@]}&
 
@@ -455,6 +429,12 @@ changes=(
 )
 repopick -P packages/overlays/Lineage ${changes[@]}&
 
+# packages/providers/ContactsProvider
+changes=(
+263903 # CallLogDatabase: Try to re-run the version 6 upgrade path
+)
+repopick -P packages/providers/ContactsProvider ${changes[@]}&
+
 # packages/providers/MediaProvider
 changes=(
 262193 # MediaProvider: Make sure to check the type when searching for sounds
@@ -479,9 +459,6 @@ repopick -P packages/services/Telephony ${changes[@]}&
 changes=(
 258166 # Add wrapped key support
 256219 # utils: Threads: Handle empty thread names
-263088 # Add adb_root daemon
-263095 # Add adb root hooks
-#259650 # Make adb use a custom prop for adb root
 )
 repopick -P system/core ${changes[@]}&
 
@@ -537,7 +514,7 @@ changes=(
 263052 # Build ThemePicker
 263053 # Add overlay to specify our custom theme provider
 263055 # Build Lineage Themes stub package
-263096 # Build adb_root
+263873 # overlay: Update webview providers
 255667 # adb insecure by default
 )
 repopick -P vendor/lineage ${changes[@]}&
