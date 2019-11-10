@@ -63,6 +63,7 @@ changes=(
 258546 # Camera button support
 257246 # fingerprint: handle PerformanceStats NULL pointers
 258754 # Keyguard: Allow disabling fingerprint wake-and-unlock
+256695 # Biometrics: Allow posting reset runnable for all clients
 257247 # fingerprint: notify client when cancelling succeeded
 258753 # FingerprintService: add overlay to prevent cleanup of unused fingerprints
 #262953 # PackageManager: allow build-time disabling of components
