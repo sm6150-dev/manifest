@@ -412,7 +412,7 @@ changes=(
 262577 # Add contacts app to hotseat
 #263001 # Trebuchet: implement hidden & protected apps
 #263005 # Trebuchet: add toggle for desktop and drawer labels
-#263006 # Update default workspace
+263006 # Update default workspace
 )
 repopick -P packages/apps/Trebuchet ${changes[@]}&
 
