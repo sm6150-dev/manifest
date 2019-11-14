@@ -47,7 +47,4 @@
   <project path="vendor/qcom/opensource/interfaces" name="davinci-dev/android_vendor_qcom_opensource_interfaces" remote="private" revision="lineage-16.0" />
 
   <project path="packages/resources/devicesettings" name="LineageOS/android_packages_resources_devicesettings" remote="private" revision="lineage-16.0" />
-  <project name="LineageOS/android_device_oneplus_oneplus2" path="device/oneplus/oneplus2" remote="github" />
-  <project name="LineageOS/android_device_oppo_common" path="device/oppo/common" remote="github" />
-  <project name="LineageOS/android_kernel_oneplus_msm8994" path="kernel/oneplus/msm8994" remote="github" />
 </manifest>
