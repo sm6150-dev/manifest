@@ -5,12 +5,12 @@ source build/envsetup.sh
 
 # bootable/recovery
 changes=(
+259629 # recovery: Provide caching for sideload files
 255831 # recovery: Get a proper shell environment in recovery
 259434 # recovery: Puke out an /etc/fstab so stuff like busybox/toybox is happy
 255979 # recovery: symlink /sbin for script compatibility
 258978 # applypatch: Use static libs for libbrotli and libbz.
 #259720 # recovery: sdcard is data/media/0
-#259629 # recovery: Provide caching for sideload files
 )
 repopick ${changes[@]}&
 
@@ -35,6 +35,12 @@ changes=(
 )
 repopick -P build/soong ${changes[@]}&
 
+# external/tinycompress
+changes=(
+256308 # tinycompress: Enable extended compress format
+)
+repopick -P external/tinycompress ${changes[@]}&
+
 # frameworks/av
 changes=(
 256899 # camera: Allow devices to load custom CameraParameter code
@@ -49,24 +55,19 @@ changes=(
 256448 # SystemUI: Advanced location tile
 258303 # power: Re-introduce custom charging sounds
 258546 # Camera button support
-257246 # fingerprint: handle PerformanceStats NULL pointers
 258754 # Keyguard: Allow disabling fingerprint wake-and-unlock
-256695 # Biometrics: Allow posting reset runnable for all clients
-257247 # fingerprint: notify client when cancelling succeeded
-258753 # FingerprintService: add overlay to prevent cleanup of unused fingerprints
-#262953 # PackageManager: allow build-time disabling of components
 258820 # SystemUI: Add visualizer feature
 258826 # SystemUI: Dismiss keyguard on boot if disabled by current profile
 258827 # SystemUI: Don't dismiss keyguard if user key isn't unlocked
 259458 # storage: Do not notify for volumes on non-removable disks
 260002 # fw/b: Squash of app fw restriction commits
 261314 # Allow override of DUN settings
-262045 # SystemUI: Allow disabling BrightlineFalsingManager with config flag
 263007 # SystemUI: get rid of build text in qs
 256016 # Revert "Disable custom clock faces in SystemUI"
 256015 # Revert "Disable ClockOptionsProvider so clocks don't appear in picker app"
 263050 # etc: Add privapp whitelist permissions for ThemePicker
 263116 # SystemUI: Revive navbar layout tuning via sysui_nav_bar tunable
+258529 # SystemUI: add left and right virtual buttons while typing
 255650 # Revert "Drop final remnants of Type clock face"
 255647 # Revert "Drop Type clock face."
 255651 # TypeClockController: Make it compile with new plugin API
@@ -105,7 +106,8 @@ repopick -P hardware/interfaces ${changes[@]}&
 
 # hardware/lineage/interfaces
 changes=(
-260411 # cryptfshw: Introduce qti backend implementation
+260411 # cryptfshw: Introduce QSEECom backend implementation
+263896 # cryptfshw: Introduce kernel backend implementation
 )
 repopick -P hardware/lineage/interfaces ${changes[@]}&
 
@@ -133,10 +135,15 @@ repopick -P hardware/qcom-caf/msm8996/audio ${changes[@]}&
 
 # lineage-sdk
 changes=(
-258333 # lineage-sdk: Bump PREF_HAS_MIGRATED_LINEAGE_SETTINGS for 17.0
 259996 # lineage-sdk: Update path to ChargingStarted.ogg
 )
 repopick -P lineage-sdk ${changes[@]}&
+
+# packages/apps/Bluetooth
+changes=(
+264025 # Delete unused common.android.emailcommon package.
+)
+repopick -P packages/apps/Bluetooth ${changes[@]}&
 
 # packages/apps/DeskClock
 changes=(
@@ -144,15 +151,11 @@ changes=(
 )
 repopick -P packages/apps/DeskClock ${changes[@]}&
 
-# packages/apps/Email
+# packages/apps/ExactCalculator
 changes=(
-257361 # Revert "Revert "AOSP/Email - Changes for code to work with UnifiedEmail's ...
-257362 # Revert "Revert "AOSP/Email - Bump targetSdkVersion to 28.""
-#257363 # AOSP/Email - Bump version number to 28 in the XML file.
-#257364 # AOSP/Email - Bumped version number to 28. Disabled notifications, uifolders ...
-#257365 # AOSP/Email and AOSP/UnfiedEmail - Added back call to uiaccounts. + Added ...
+263677 # ExactCalculator: prevent back gesture conflict
 )
-repopick -P packages/apps/Email ${changes[@]}&
+repopick -P packages/apps/ExactCalculator ${changes[@]}&
 
 # packages/apps/LineageParts
 changes=(
@@ -178,7 +181,7 @@ changes=(
 259455 # Settings: per-app cellular data, vpn and wifi restrictions
 261364 # Settings: Use landscape qrcode scanner layout for sw600dp
 262884 # Don't change nouns in summaries to lower case for German
-263671 # Remove empty space in tether preference
+264237 # Add accessibility timeout video and illustration
 )
 repopick -P packages/apps/Settings ${changes[@]}&
 
@@ -187,6 +190,12 @@ changes=(
 257065 # Account for PhoneMonitor API change
 )
 repopick -P packages/apps/SetupWizard ${changes[@]}&
+
+# packages/apps/Snap
+changes=(
+264059 # Snap: Handle SDCard-removed case
+)
+repopick -P packages/apps/Snap ${changes[@]}&
 
 # packages/apps/ThemePicker
 changes=(
@@ -204,21 +213,16 @@ changes=(
 263061 # Properly expose GridOptionsProvider
 263062 # Specify the wallpaper picker package
 263063 # Specify the component name to start the picker
+263006 # Update default workspace
 262575 # Apply icon size modifications from old Trebuchet
 262576 # Add a 5x4 workspace and switch to it
 262577 # Add contacts app to hotseat
 #263001 # Trebuchet: implement hidden & protected apps
+#263070 # Switch to BiometricPrompt
 #263005 # Trebuchet: add toggle for desktop and drawer labels
 263006 # Update default workspace
 )
 repopick -P packages/apps/Trebuchet ${changes[@]}&
-
-# packages/apps/UnifiedEmail
-changes=(
-257370 # Revert "Revert "AOSP/UnifiedEmail - Bumped the targetSdkVersion to 28 ...
-#257371 # AOSP/Email and AOSP/UnfiedEmail - Added back call to uiaccounts. + Added ...
-)
-repopick -P packages/apps/UnifiedEmail ${changes[@]}&
 
 # packages/overlays/Lineage
 changes=(
@@ -226,24 +230,6 @@ changes=(
 263054 # Add initial stub apk for themes
 )
 repopick -P packages/overlays/Lineage ${changes[@]}&
-
-# packages/providers/ContactsProvider
-changes=(
-263903 # CallLogDatabase: Try to re-run the version 6 upgrade path
-)
-repopick -P packages/providers/ContactsProvider ${changes[@]}&
-
-# packages/providers/MediaProvider
-changes=(
-262193 # MediaProvider: Make sure to check the type when searching for sounds
-)
-repopick -P packages/providers/MediaProvider ${changes[@]}&
-
-# packages/providers/TelephonyProvider
-changes=(
-256780 # TelephonyProvider: add upgrade support from cm-14.1
-)
-repopick -P packages/providers/TelephonyProvider ${changes[@]}&
 
 # packages/services/Telephony
 changes=(
@@ -256,6 +242,8 @@ repopick -P packages/services/Telephony ${changes[@]}&
 # system/core
 changes=(
 258166 # Add wrapped key support
+264109 # adb: host: Provide better sideload status
+264110 # debuggerd: add Lineage version to tombstones
 256219 # utils: Threads: Handle empty thread names
 )
 repopick -P system/core ${changes[@]}&
@@ -306,9 +294,6 @@ changes=(
 258204 # build: set build fingerprint for all devices
 259683 # lineage: don't mount system during install{boot,recovery}
 262320 # aosp_audio: copy our own old AOSP alarm variants
-262413 # privapp-permissions: Allow Snap to use android.permission.START_ACTIVITIES_FROM_BACKGROUND
-262176 # vendor: Rename config_disabledComponents
-263569 # lineage: GMS updater components disable list bringup
 263052 # Build ThemePicker
 263053 # Add overlay to specify our custom theme provider
 263055 # Build Lineage Themes stub package
