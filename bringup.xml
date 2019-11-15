@@ -13,9 +13,5 @@
   <!--<project path="external/libtar" name="LineageOS/android_external_libtar" />-->
   <!--<project path="hardware/lineage/telephony" name="LineageOS/android_hardware_lineage_telephony" />-->
   <!--<project path="lineage-sdk/samples/weatherproviderservice/OpenWeatherMapProvider" name="LineageOS/android_packages_apps_OpenWeatherMapProvider" />-->
-  <!--<project path="packages/apps/Backgrounds" name="LineageOS/android_packages_apps_Backgrounds" />-->
-  <!--<project path="packages/apps/LineageCustomizer" name="LineageOS/android_packages_apps_LineageCustomizer" />-->
   <!--<project path="packages/apps/LockClock" name="LineageOS/android_packages_apps_LockClock" />-->
-  <!--<project path="packages/providers/WeatherProvider" name="LineageOS/android_packages_providers_WeatherProvider" />-->
-  <!--<project path="system/extras/su" name="LineageOS/android_system_extras_su" />-->
 </manifest>
