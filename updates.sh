@@ -137,11 +137,11 @@ changes=(
 )
 repopick -P packages/apps/DeskClock ${changes[@]}&
 
-# packages/apps/Dialer
+# packages/apps/ExactCalculator
 changes=(
-264183 # Fix crash in call stats.
+263677 # ExactCalculator: prevent back gesture conflict
 )
-repopick -P packages/apps/Dialer ${changes[@]}&
+repopick -P packages/apps/ExactCalculator ${changes[@]}&
 
 # packages/apps/LineageParts
 changes=(
@@ -167,6 +167,7 @@ changes=(
 259455 # Settings: per-app cellular data, vpn and wifi restrictions
 261364 # Settings: Use landscape qrcode scanner layout for sw600dp
 262884 # Don't change nouns in summaries to lower case for German
+264237 # Add accessibility timeout video and illustration
 )
 repopick -P packages/apps/Settings ${changes[@]}&
 
@@ -198,12 +199,13 @@ changes=(
 263061 # Properly expose GridOptionsProvider
 263062 # Specify the wallpaper picker package
 263063 # Specify the component name to start the picker
+263006 # Update default workspace
 262575 # Apply icon size modifications from old Trebuchet
 262576 # Add a 5x4 workspace and switch to it
 262577 # Add contacts app to hotseat
 #263001 # Trebuchet: implement hidden & protected apps
+#263070 # Switch to BiometricPrompt
 #263005 # Trebuchet: add toggle for desktop and drawer labels
-#263006 # Update default workspace
 )
 repopick -P packages/apps/Trebuchet ${changes[@]}&
 
@@ -224,6 +226,8 @@ repopick -P packages/services/Telephony ${changes[@]}&
 
 # system/core
 changes=(
+264109 # adb: host: Provide better sideload status
+264110 # debuggerd: add Lineage version to tombstones
 256219 # utils: Threads: Handle empty thread names
 )
 repopick -P system/core ${changes[@]}&
