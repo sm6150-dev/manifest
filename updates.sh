@@ -51,6 +51,7 @@ repopick -P frameworks/av ${changes[@]}&
 # frameworks/base
 changes=(
 256446 # SystemUI: Enable and fix QS detail view, adapt layout to Pie
+264268 # SystemUI: Add VPN tile
 256447 # SystemUI: Add Profiles tile
 256448 # SystemUI: Advanced location tile
 258303 # power: Re-introduce custom charging sounds
