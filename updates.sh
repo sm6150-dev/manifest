@@ -25,7 +25,6 @@ changes=(
 257175 # releasetools: Add script to sign zips
 257176 # releasetools: Store the build.prop file in the OTA zip
 257178 # build: allow forcing build of otatools
-257099 # Make PRODUCT_BUILD_PROP_OVERRIDES bit more powerful
 )
 repopick -P build/make ${changes[@]}&
 
@@ -50,13 +49,10 @@ repopick -P frameworks/av ${changes[@]}&
 
 # frameworks/base
 changes=(
-256446 # SystemUI: Enable and fix QS detail view, adapt layout to Pie
 264268 # SystemUI: Add VPN tile
 256447 # SystemUI: Add Profiles tile
-256448 # SystemUI: Advanced location tile
 258303 # power: Re-introduce custom charging sounds
 258546 # Camera button support
-258754 # Keyguard: Allow disabling fingerprint wake-and-unlock
 258820 # SystemUI: Add visualizer feature
 258826 # SystemUI: Dismiss keyguard on boot if disabled by current profile
 258827 # SystemUI: Don't dismiss keyguard if user key isn't unlocked
@@ -68,12 +64,11 @@ changes=(
 256015 # Revert "Disable ClockOptionsProvider so clocks don't appear in picker app"
 263050 # etc: Add privapp whitelist permissions for ThemePicker
 263116 # SystemUI: Revive navbar layout tuning via sysui_nav_bar tunable
-258529 # SystemUI: add left and right virtual buttons while typing
 255650 # Revert "Drop final remnants of Type clock face"
 255647 # Revert "Drop Type clock face."
 255651 # TypeClockController: Make it compile with new plugin API
+264388 # Fix ADB root system API extension
 260783 # FODCircleView: Add MIUI FP icon
-258160 # LockSettingsService: Support for separate clear key api
 )
 repopick -P frameworks/base ${changes[@]}&
 
@@ -162,7 +157,6 @@ repopick -P packages/apps/ExactCalculator ${changes[@]}&
 changes=(
 258825 # LineageParts: Reenable system profiles
 260416 # Parts: Convert charging sound path to uri
-260782 # LineageParts: Migrate to Android.bp
 )
 repopick -P packages/apps/LineageParts ${changes[@]}&
 
@@ -180,7 +174,6 @@ changes=(
 259315 # One does not simply become a Developer
 259459 # storage: Do not allow eject for volumes on non-removable disks
 259455 # Settings: per-app cellular data, vpn and wifi restrictions
-261364 # Settings: Use landscape qrcode scanner layout for sw600dp
 262884 # Don't change nouns in summaries to lower case for German
 264237 # Add accessibility timeout video and illustration
 )
@@ -217,7 +210,6 @@ changes=(
 263006 # Update default workspace
 262575 # Apply icon size modifications from old Trebuchet
 262576 # Add a 5x4 workspace and switch to it
-262577 # Add contacts app to hotseat
 #263001 # Trebuchet: implement hidden & protected apps
 #263070 # Switch to BiometricPrompt
 #263005 # Trebuchet: add toggle for desktop and drawer labels
