@@ -5,7 +5,6 @@ source build/envsetup.sh
 
 # bootable/recovery
 changes=(
-259629 # recovery: Provide caching for sideload files
 255831 # recovery: Get a proper shell environment in recovery
 259434 # recovery: Puke out an /etc/fstab so stuff like busybox/toybox is happy
 255979 # recovery: symlink /sbin for script compatibility
@@ -64,10 +63,10 @@ changes=(
 256015 # Revert "Disable ClockOptionsProvider so clocks don't appear in picker app"
 263050 # etc: Add privapp whitelist permissions for ThemePicker
 263116 # SystemUI: Revive navbar layout tuning via sysui_nav_bar tunable
+264427 # Prevent NFE in SystemUI when parsing invalid int
 255650 # Revert "Drop final remnants of Type clock face"
 255647 # Revert "Drop Type clock face."
 255651 # TypeClockController: Make it compile with new plugin API
-264388 # Fix ADB root system API extension
 260783 # FODCircleView: Add MIUI FP icon
 )
 repopick -P frameworks/base ${changes[@]}&
@@ -134,12 +133,6 @@ changes=(
 259996 # lineage-sdk: Update path to ChargingStarted.ogg
 )
 repopick -P lineage-sdk ${changes[@]}&
-
-# packages/apps/Bluetooth
-changes=(
-264025 # Delete unused common.android.emailcommon package.
-)
-repopick -P packages/apps/Bluetooth ${changes[@]}&
 
 # packages/apps/DeskClock
 changes=(
@@ -235,7 +228,6 @@ repopick -P packages/services/Telephony ${changes[@]}&
 # system/core
 changes=(
 258166 # Add wrapped key support
-264109 # adb: host: Provide better sideload status
 264110 # debuggerd: add Lineage version to tombstones
 256219 # utils: Threads: Handle empty thread names
 )
