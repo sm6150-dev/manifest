@@ -131,6 +131,8 @@ repopick -P hardware/qcom-caf/msm8996/audio ${changes[@]}&
 # lineage-sdk
 changes=(
 259996 # lineage-sdk: Update path to ChargingStarted.ogg
+264068 # sdk: Make phone a new compile target
+264513 # sdk: Nuke Berry Styles
 )
 repopick -P lineage-sdk ${changes[@]}&
 
@@ -150,6 +152,7 @@ repopick -P packages/apps/ExactCalculator ${changes[@]}&
 changes=(
 258825 # LineageParts: Reenable system profiles
 260416 # Parts: Convert charging sound path to uri
+264511 # Parts: Ditch Styles in favour of ThemePicker
 )
 repopick -P packages/apps/LineageParts ${changes[@]}&
 
@@ -181,6 +184,9 @@ repopick -P packages/apps/SetupWizard ${changes[@]}&
 # packages/apps/Snap
 changes=(
 264059 # Snap: Handle SDCard-removed case
+264485 # Snap: Fix getting supported ISO with legacy HAL
+264487 # Snap: Perform null check on AF state in updateCaptureStateMachine
+264488 # Snap: Don't remove scene modes!
 )
 repopick -P packages/apps/Snap ${changes[@]}&
 
@@ -190,6 +196,9 @@ changes=(
 256017 # ThemePicker: Properly update clock face setting
 263057 # Properly catch exceptions
 263058 # Specify we read and write launcher settings
+264495 # ThemePicker: limit number of icon previews shown
+264515 # ThemePicker: fix grid control activity name
+264528 # ThemePicker: Add launcher icon
 )
 repopick -P packages/apps/ThemePicker ${changes[@]}&
 
@@ -210,12 +219,25 @@ changes=(
 )
 repopick -P packages/apps/Trebuchet ${changes[@]}&
 
+# packages/apps/WallpaperPicker2
+changes=(
+264527 # Disable launcher icon
+)
+repopick -P packages/apps/WallpaperPicker2 ${changes[@]}&
+
 # packages/overlays/Lineage
 changes=(
-263056 # [TMP]Kill accents
 263054 # Add initial stub apk for themes
+264499 # Kill dark and black overlays
+264506 # accents: Redo for compatibility with ThemePicker
 )
 repopick -P packages/overlays/Lineage ${changes[@]}&
+
+# packages/services/Telecomm
+changes=(
+264067 # Telecom: Move SensitivePhoneNumbers to own package
+)
+repopick -P packages/services/Telecomm ${changes[@]}&
 
 # packages/services/Telephony
 changes=(
@@ -282,7 +304,13 @@ changes=(
 263052 # Build ThemePicker
 263053 # Add overlay to specify our custom theme provider
 263055 # Build Lineage Themes stub package
+264497 # ThemePicker: show our apps in icon previews
+264512 # Revert "privapp-permissions: Whitelist CHANGE_OVERLAY_PACKAGES permission"
+264514 # ThemePicker: Do not override default values
+264529 # Revert "vendor: add style api"
+264531 # Revert "lineage: add BUILD_RRO_SYSTEM_PACKAGE target"
 263873 # overlay: Update webview providers
+264061 # prebuilt: Remove lineage-governor.rc
 255667 # adb insecure by default
 )
 repopick -P vendor/lineage ${changes[@]}&
