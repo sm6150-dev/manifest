@@ -33,6 +33,12 @@ changes=(
 )
 repopick -P build/soong ${changes[@]}&
 
+# device/qcom/sepolicy
+changes=(
+264669 # [DNM][SQUASH] Merge tag 'LA.UM.8.1.r1-11600-sm8150.0'
+)
+repopick -P device/qcom/sepolicy ${changes[@]}&
+
 # external/tinycompress
 changes=(
 256308 # tinycompress: Enable extended compress format
@@ -280,6 +286,31 @@ changes=(
 255667 # adb insecure by default
 )
 repopick -P vendor/lineage ${changes[@]}&
+
+# vendor/nxp/opensource/commonsys/external/libnfc-nci
+changes=(
+264670 # [DNM][SQUASH] Merge tag 'LA.UM.8.1.r1-11600-sm8150.0'
+)
+repopick -P vendor/nxp/opensource/commonsys/external/libnfc-nci ${changes[@]}&
+
+# vendor/nxp/opensource/commonsys/packages/apps/Nfc
+changes=(
+264668 # [DNM][SQUASH] Merge tag 'LA.UM.8.1.r1-11600-sm8150.0'
+)
+repopick -P vendor/nxp/opensource/commonsys/packages/apps/Nfc ${changes[@]}&
+
+# vendor/nxp/opensource/sn100x/halimpl
+changes=(
+264667 # [DNM][SQUASH] Merge tag 'LA.UM.8.1.r1-11600-sm8150.0'
+)
+repopick -P vendor/nxp/opensource/sn100x/halimpl ${changes[@]}&
+
+# vendor/qcom/opensource/interfaces
+changes=(
+264665 # [DNM][SQUASH] Merge tag 'LA.UM.8.1.r1-11600-sm8150.0'
+264666 # interfaces: Regenerate blueprints
+)
+repopick -P vendor/qcom/opensource/interfaces ${changes[@]}&
 
 wait
 
