@@ -59,9 +59,6 @@ changes=(
 260002 # fw/b: Squash of app fw restriction commits
 261314 # Allow override of DUN settings
 263007 # SystemUI: get rid of build text in qs
-256016 # Revert "Disable custom clock faces in SystemUI"
-256015 # Revert "Disable ClockOptionsProvider so clocks don't appear in picker app"
-263050 # etc: Add privapp whitelist permissions for ThemePicker
 263116 # SystemUI: Revive navbar layout tuning via sysui_nav_bar tunable
 264427 # Prevent NFE in SystemUI when parsing invalid int
 255650 # Revert "Drop final remnants of Type clock face"
@@ -84,14 +81,6 @@ changes=(
 261857 # wifi: Not reset country code for Dual SIM if any slot is active
 )
 repopick -P frameworks/opt/net/wifi ${changes[@]}&
-
-# frameworks/opt/telephony
-changes=(
-262868 # Migrate GSM SignalStrength to WCDMA on HAL 1.0
-262869 # Fix Issue Where SignalStrengthGsm is null
-262870 # 2G wants proper signal strength too
-)
-repopick -P frameworks/opt/telephony ${changes[@]}&
 
 # hardware/interfaces	
 changes=(	
@@ -150,7 +139,6 @@ repopick ${changes[@]}&
 changes=(
 259996 # lineage-sdk: Update path to ChargingStarted.ogg
 264068 # sdk: Make phone a new compile target
-264513 # sdk: Nuke Berry Styles
 )
 repopick -P lineage-sdk ${changes[@]}&
 
@@ -170,7 +158,6 @@ repopick -P packages/apps/ExactCalculator ${changes[@]}&
 changes=(
 258825 # LineageParts: Reenable system profiles
 260416 # Parts: Convert charging sound path to uri
-264511 # Parts: Ditch Styles in favour of ThemePicker
 )
 repopick -P packages/apps/LineageParts ${changes[@]}&
 
@@ -208,25 +195,8 @@ changes=(
 )
 repopick -P packages/apps/Snap ${changes[@]}&
 
-# packages/apps/ThemePicker
-changes=(
-263051 # Require wallpaper privapp whitelist package
-256017 # ThemePicker: Properly update clock face setting
-263057 # Properly catch exceptions
-263058 # Specify we read and write launcher settings
-264495 # ThemePicker: limit number of icon previews shown
-264515 # ThemePicker: fix grid control activity name
-264528 # ThemePicker: Add launcher icon
-)
-repopick -P packages/apps/ThemePicker ${changes[@]}&
-
 # packages/apps/Trebuchet
 changes=(
-263059 # Revert "Launcher3: Export GridOptionsProvider"
-263060 # Revert "Add developer options for grid change for Styles"
-263061 # Properly expose GridOptionsProvider
-263062 # Specify the wallpaper picker package
-263063 # Specify the component name to start the picker
 263006 # Update default workspace
 262575 # Apply icon size modifications from old Trebuchet
 262576 # Add a 5x4 workspace and switch to it
@@ -236,20 +206,6 @@ changes=(
 263006 # Update default workspace
 )
 repopick -P packages/apps/Trebuchet ${changes[@]}&
-
-# packages/apps/WallpaperPicker2
-changes=(
-264527 # Disable launcher icon
-)
-repopick -P packages/apps/WallpaperPicker2 ${changes[@]}&
-
-# packages/overlays/Lineage
-changes=(
-263054 # Add initial stub apk for themes
-264499 # Kill dark and black overlays
-264506 # accents: Redo for compatibility with ThemePicker
-)
-repopick -P packages/overlays/Lineage ${changes[@]}&
 
 # packages/services/Telecomm
 changes=(
@@ -319,14 +275,6 @@ changes=(
 258204 # build: set build fingerprint for all devices
 259683 # lineage: don't mount system during install{boot,recovery}
 262320 # aosp_audio: copy our own old AOSP alarm variants
-263052 # Build ThemePicker
-263053 # Add overlay to specify our custom theme provider
-263055 # Build Lineage Themes stub package
-264497 # ThemePicker: show our apps in icon previews
-264512 # Revert "privapp-permissions: Whitelist CHANGE_OVERLAY_PACKAGES permission"
-264514 # ThemePicker: Do not override default values
-264529 # Revert "vendor: add style api"
-264531 # Revert "lineage: add BUILD_RRO_SYSTEM_PACKAGE target"
 263873 # overlay: Update webview providers
 264061 # prebuilt: Remove lineage-governor.rc
 255667 # adb insecure by default
