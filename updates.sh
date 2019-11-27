@@ -101,12 +101,6 @@ changes=(
 )
 repopick -P hardware/lineage/interfaces ${changes[@]}&
 
-# hardware/qcom-caf/common
-changes=(
-261272 # fwk-detect: Use log/log.h instead of utils/Log.h
-)
-repopick ${changes[@]}&
-
 # hardware/qcom/data/ipacfg-mgr
 changes=(
 261831 # Kernel Header Changes
