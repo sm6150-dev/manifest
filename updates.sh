@@ -79,6 +79,7 @@ changes=(
 258443 # sensorservice: Register orientation sensor if HAL doesn't provide it
 258601 # sensorservice: customize sensor fusion mag filter via prop
 259448 # libui: Allow invalid bits from callers conditionally
+264915 # libui: Allow extension of valid gralloc 1.0 buffer usage bits
 )
 repopick -P frameworks/native ${changes[@]}&
 
