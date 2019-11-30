@@ -8,7 +8,6 @@ changes=(
 255831 # recovery: Get a proper shell environment in recovery
 259434 # recovery: Puke out an /etc/fstab so stuff like busybox/toybox is happy
 255979 # recovery: symlink /sbin for script compatibility
-258978 # applypatch: Use static libs for libbrotli and libbz.
 #259720 # recovery: sdcard is data/media/0
 )
 repopick ${changes[@]}&
@@ -54,7 +53,6 @@ repopick -P frameworks/av ${changes[@]}&
 
 # frameworks/base
 changes=(
-264268 # SystemUI: Add VPN tile
 256447 # SystemUI: Add Profiles tile
 258303 # power: Re-introduce custom charging sounds
 258546 # Camera button support
@@ -66,28 +64,20 @@ changes=(
 261314 # Allow override of DUN settings
 263007 # SystemUI: get rid of build text in qs
 263116 # SystemUI: Revive navbar layout tuning via sysui_nav_bar tunable
-264427 # Prevent NFE in SystemUI when parsing invalid int
 255650 # Revert "Drop final remnants of Type clock face"
 255647 # Revert "Drop Type clock face."
 255651 # TypeClockController: Make it compile with new plugin API
 260783 # FODCircleView: Add MIUI FP icon
+264994 # SystemUI: Bring back good ol' circle battery style
 )
 repopick -P frameworks/base ${changes[@]}&
 
 # frameworks/native
 changes=(
-258443 # sensorservice: Register orientation sensor if HAL doesn't provide it
-258601 # sensorservice: customize sensor fusion mag filter via prop
 259448 # libui: Allow invalid bits from callers conditionally
 264915 # libui: Allow extension of valid gralloc 1.0 buffer usage bits
 )
 repopick -P frameworks/native ${changes[@]}&
-
-# frameworks/opt/net/wifi
-changes=(
-261857 # wifi: Not reset country code for Dual SIM if any slot is active
-)
-repopick -P frameworks/opt/net/wifi ${changes[@]}&
 
 # hardware/interfaces	
 changes=(	
@@ -140,7 +130,6 @@ repopick ${changes[@]}&
 # lineage-sdk
 changes=(
 259996 # lineage-sdk: Update path to ChargingStarted.ogg
-264068 # sdk: Make phone a new compile target
 )
 repopick -P lineage-sdk ${changes[@]}&
 
@@ -166,7 +155,6 @@ repopick -P packages/apps/LineageParts ${changes[@]}&
 # packages/apps/Nfc
 changes=(
 256814 # NFCService: Add sysprop to prevent FW download during boot with NFC off.
-260063 # NfcNci: make T3T/Nfc-F HCE optional
 )
 repopick -P packages/apps/Nfc ${changes[@]}&
 
@@ -177,8 +165,6 @@ changes=(
 259315 # One does not simply become a Developer
 259459 # storage: Do not allow eject for volumes on non-removable disks
 259455 # Settings: per-app cellular data, vpn and wifi restrictions
-262884 # Don't change nouns in summaries to lower case for German
-264237 # Add accessibility timeout video and illustration
 )
 repopick -P packages/apps/Settings ${changes[@]}&
 
@@ -188,32 +174,15 @@ changes=(
 )
 repopick -P packages/apps/SetupWizard ${changes[@]}&
 
-# packages/apps/Snap
-changes=(
-264059 # Snap: Handle SDCard-removed case
-264485 # Snap: Fix getting supported ISO with legacy HAL
-264487 # Snap: Perform null check on AF state in updateCaptureStateMachine
-264488 # Snap: Don't remove scene modes!
-)
-repopick -P packages/apps/Snap ${changes[@]}&
-
 # packages/apps/Trebuchet
 changes=(
-263006 # Update default workspace
 262575 # Apply icon size modifications from old Trebuchet
 262576 # Add a 5x4 workspace and switch to it
 #263001 # Trebuchet: implement hidden & protected apps
 #263070 # Switch to BiometricPrompt
 #263005 # Trebuchet: add toggle for desktop and drawer labels
-263006 # Update default workspace
 )
 repopick -P packages/apps/Trebuchet ${changes[@]}&
-
-# packages/services/Telecomm
-changes=(
-264067 # Telecom: Move SensitivePhoneNumbers to own package
-)
-repopick -P packages/services/Telecomm ${changes[@]}&
 
 # packages/services/Telephony
 changes=(
@@ -226,23 +195,14 @@ repopick -P packages/services/Telephony ${changes[@]}&
 # system/core
 changes=(
 258166 # Add wrapped key support
-264110 # debuggerd: add Lineage version to tombstones
-256219 # utils: Threads: Handle empty thread names
 )
 repopick -P system/core ${changes[@]}&
 
 # system/netd
 changes=(
-256959 # netd: Allow devices to force-add directly-connected routes
 260003 # system/netd: Squash of app fw restriction commits
 )
 repopick -P system/netd ${changes[@]}&
-
-# system/update_engine
-changes=(
-259363 # Move performance mode to top app
-)
-repopick -P system/update_engine ${changes[@]}&
 
 # system/vold
 changes=(
@@ -268,16 +228,12 @@ repopick -P system/vold ${changes[@]}&
 
 # vendor/lineage
 changes=(
-256960 # soong_config: add TARGET_NEEDS_NETD_DIRECT_CONNECT_RULE
 259449 # config: Mark more gralloc bits as valid
 259310 # prebuilt: Add a script to simplify A-only recovery system mount
 257000 # Remove apicheck.mk
 261292 # vendor/lineage: Fix dopush
 261642 # vendor: make dopush recognize /vendor files
 258204 # build: set build fingerprint for all devices
-259683 # lineage: don't mount system during install{boot,recovery}
-262320 # aosp_audio: copy our own old AOSP alarm variants
-263873 # overlay: Update webview providers
 264061 # prebuilt: Remove lineage-governor.rc
 255667 # adb insecure by default
 )
