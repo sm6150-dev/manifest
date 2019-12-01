@@ -4,14 +4,10 @@ set -e
 source build/envsetup.sh
 
 # bootable/recovery
-changes=(
-255831 # recovery: Get a proper shell environment in recovery
-259434 # recovery: Puke out an /etc/fstab so stuff like busybox/toybox is happy
-255979 # recovery: symlink /sbin for script compatibility
-258978 # applypatch: Use static libs for libbrotli and libbz.
+#changes=(
 #259720 # recovery: sdcard is data/media/0
-)
-repopick ${changes[@]}&
+#)
+#repopick ${changes[@]}&
 
 # build/make
 changes=(
@@ -27,28 +23,20 @@ changes=(
 )
 repopick -P build/make ${changes[@]}&
 
-# build/soong
-changes=(
-256886 # soong: Add function to return camera parameters library name
-)
-repopick -P build/soong ${changes[@]}&
-
 # external/tinycompress
 changes=(
-256308 # tinycompress: Enable extended compress format
+264913 # tinycompress: Conditionally enable extended compress format
 )
 repopick -P external/tinycompress ${changes[@]}&
 
 # frameworks/av
 changes=(
-256899 # camera: Allow devices to load custom CameraParameter code
 258812 # CameraService: Support hooks for motorized camera
 )
 repopick -P frameworks/av ${changes[@]}&
 
 # frameworks/base
 changes=(
-264268 # SystemUI: Add VPN tile
 256447 # SystemUI: Add Profiles tile
 258303 # power: Re-introduce custom charging sounds
 258546 # Camera button support
@@ -60,26 +48,8 @@ changes=(
 261314 # Allow override of DUN settings
 263007 # SystemUI: get rid of build text in qs
 263116 # SystemUI: Revive navbar layout tuning via sysui_nav_bar tunable
-264427 # Prevent NFE in SystemUI when parsing invalid int
-255650 # Revert "Drop final remnants of Type clock face"
-255647 # Revert "Drop Type clock face."
-255651 # TypeClockController: Make it compile with new plugin API
 )
 repopick -P frameworks/base ${changes[@]}&
-
-# frameworks/native
-changes=(
-258443 # sensorservice: Register orientation sensor if HAL doesn't provide it
-258601 # sensorservice: customize sensor fusion mag filter via prop
-259448 # libui: Allow invalid bits from callers conditionally
-)
-repopick -P frameworks/native ${changes[@]}&
-
-# frameworks/opt/net/wifi
-changes=(
-261857 # wifi: Not reset country code for Dual SIM if any slot is active
-)
-repopick -P frameworks/opt/net/wifi ${changes[@]}&
 
 # hardware/lineage/interfaces
 changes=(
@@ -107,15 +77,14 @@ repopick -P hardware/qcom-caf/msm8996/audio ${changes[@]}&
 # lineage-sdk
 changes=(
 259996 # lineage-sdk: Update path to ChargingStarted.ogg
-264068 # sdk: Make phone a new compile target
 )
 repopick -P lineage-sdk ${changes[@]}&
 
 # packages/apps/DeskClock
-changes=(
-256664 # Make new menu entry to link to cLock widget settings.
-)
-repopick -P packages/apps/DeskClock ${changes[@]}&
+#changes=(
+#256664 # Make new menu entry to link to cLock widget settings.
+#)
+#repopick -P packages/apps/DeskClock ${changes[@]}&
 
 # packages/apps/ExactCalculator
 changes=(
@@ -133,7 +102,6 @@ repopick -P packages/apps/LineageParts ${changes[@]}&
 # packages/apps/Nfc
 changes=(
 256814 # NFCService: Add sysprop to prevent FW download during boot with NFC off.
-260063 # NfcNci: make T3T/Nfc-F HCE optional
 )
 repopick -P packages/apps/Nfc ${changes[@]}&
 
@@ -142,10 +110,8 @@ changes=(
 258304 # Settings: Add LineageParts charging sound settings preference
 258819 # Settings: Add lockscreen visualizer toggle
 259315 # One does not simply become a Developer
-259459 # storage: Do not allow eject for volumes on non-removable disks
+#259459 # storage: Do not allow eject for volumes on non-removable disks
 259455 # Settings: per-app cellular data, vpn and wifi restrictions
-262884 # Don't change nouns in summaries to lower case for German
-264237 # Add accessibility timeout video and illustration
 )
 repopick -P packages/apps/Settings ${changes[@]}&
 
@@ -154,15 +120,6 @@ changes=(
 257065 # Account for PhoneMonitor API change
 )
 repopick -P packages/apps/SetupWizard ${changes[@]}&
-
-# packages/apps/Snap
-changes=(
-264059 # Snap: Handle SDCard-removed case
-264485 # Snap: Fix getting supported ISO with legacy HAL
-264487 # Snap: Perform null check on AF state in updateCaptureStateMachine
-264488 # Snap: Don't remove scene modes!
-)
-repopick -P packages/apps/Snap ${changes[@]}&
 
 # packages/apps/Trebuchet
 changes=(
@@ -175,39 +132,19 @@ changes=(
 )
 repopick -P packages/apps/Trebuchet ${changes[@]}&
 
-# packages/services/Telecomm
-changes=(
-264067 # Telecom: Move SensitivePhoneNumbers to own package
-)
-repopick -P packages/services/Telecomm ${changes[@]}&
-
 # packages/services/Telephony
 changes=(
 256792 # Telephony: Add ERI configuration for U.S. Cellular
-256793 # Telephony: Support muting by RIL command
-256795 # Don't start SIP service before decrypted
+#256793 # Telephony: Support muting by RIL command
+#256795 # Don't start SIP service before decrypted
 )
 repopick -P packages/services/Telephony ${changes[@]}&
 
-# system/core
-changes=(
-264110 # debuggerd: add Lineage version to tombstones
-256219 # utils: Threads: Handle empty thread names
-)
-repopick -P system/core ${changes[@]}&
-
 # system/netd
 changes=(
-256959 # netd: Allow devices to force-add directly-connected routes
 260003 # system/netd: Squash of app fw restriction commits
 )
 repopick -P system/netd ${changes[@]}&
-
-# system/update_engine
-changes=(
-259363 # Move performance mode to top app
-)
-repopick -P system/update_engine ${changes[@]}&
 
 # system/vold
 changes=(
@@ -219,24 +156,21 @@ changes=(
 #258174 # vold ext4/f2fs: do not use dirsync if we're mounting adopted storage
 #258175 # Fix the group permissions of the sdcard root.
 258176 # vold: skip first disk change when converting MBR to GPT
-258177 # vold: Allow reset after shutdown
+#258177 # vold: Allow reset after shutdown
 258178 # vold: Accept Linux GPT partitions on external SD cards
 )
 repopick -P system/vold ${changes[@]}&
 
 # vendor/lineage
 changes=(
-256960 # soong_config: add TARGET_NEEDS_NETD_DIRECT_CONNECT_RULE
-259449 # config: Mark more gralloc bits as valid
 259310 # prebuilt: Add a script to simplify A-only recovery system mount
 257000 # Remove apicheck.mk
 261292 # vendor/lineage: Fix dopush
 261642 # vendor: make dopush recognize /vendor files
 258204 # build: set build fingerprint for all devices
-259683 # lineage: don't mount system during install{boot,recovery}
-262320 # aosp_audio: copy our own old AOSP alarm variants
-263873 # overlay: Update webview providers
-264061 # prebuilt: Remove lineage-governor.rc
+#259683 # lineage: don't mount system during install{boot,recovery}
+#262320 # aosp_audio: copy our own old AOSP alarm variants
+264912 # soong: Add AUDIO_FEATURE_ENABLED_EXTENDED_COMPRESS_FORMAT
 255667 # adb insecure by default
 )
 repopick -P vendor/lineage ${changes[@]}&
