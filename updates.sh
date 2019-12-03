@@ -40,7 +40,6 @@ changes=(
 259458 # storage: Do not notify for volumes on non-removable disks
 260002 # fw/b: Squash of app fw restriction commits
 261314 # Allow override of DUN settings
-263007 # SystemUI: get rid of build text in qs
 263116 # SystemUI: Revive navbar layout tuning via sysui_nav_bar tunable
 )
 repopick -P frameworks/base ${changes[@]}&
