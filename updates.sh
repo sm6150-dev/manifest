@@ -4,10 +4,10 @@ set -e
 source build/envsetup.sh
 
 # bootable/recovery
-#changes=(
-#259720 # recovery: sdcard is data/media/0
-#)
-#repopick ${changes[@]}&
+changes=(
+259720 # recovery: sdcard is data/media/0
+)
+repopick ${changes[@]}&
 
 # build/make
 changes=(
@@ -28,12 +28,6 @@ changes=(
 264913 # tinycompress: Conditionally enable extended compress format
 )
 repopick -P external/tinycompress ${changes[@]}&
-
-# frameworks/av
-changes=(
-258812 # CameraService: Support hooks for motorized camera
-)
-repopick -P frameworks/av ${changes[@]}&
 
 # frameworks/base
 changes=(
@@ -80,12 +74,6 @@ changes=(
 )
 repopick -P lineage-sdk ${changes[@]}&
 
-# packages/apps/DeskClock
-#changes=(
-#256664 # Make new menu entry to link to cLock widget settings.
-#)
-#repopick -P packages/apps/DeskClock ${changes[@]}&
-
 # packages/apps/ExactCalculator
 changes=(
 263677 # ExactCalculator: prevent back gesture conflict
@@ -99,18 +87,12 @@ changes=(
 )
 repopick -P packages/apps/LineageParts ${changes[@]}&
 
-# packages/apps/Nfc
-changes=(
-256814 # NFCService: Add sysprop to prevent FW download during boot with NFC off.
-)
-repopick -P packages/apps/Nfc ${changes[@]}&
-
 # packages/apps/Settings
 changes=(
 258304 # Settings: Add LineageParts charging sound settings preference
 258819 # Settings: Add lockscreen visualizer toggle
 259315 # One does not simply become a Developer
-#259459 # storage: Do not allow eject for volumes on non-removable disks
+259459 # storage: Do not allow eject for volumes on non-removable disks
 259455 # Settings: per-app cellular data, vpn and wifi restrictions
 )
 repopick -P packages/apps/Settings ${changes[@]}&
@@ -123,20 +105,16 @@ repopick -P packages/apps/SetupWizard ${changes[@]}&
 
 # packages/apps/Trebuchet
 changes=(
-263006 # Update default workspace
 262575 # Apply icon size modifications from old Trebuchet
 262576 # Add a 5x4 workspace and switch to it
-#263001 # Trebuchet: implement hidden & protected apps
-#263070 # Switch to BiometricPrompt
-#263005 # Trebuchet: add toggle for desktop and drawer labels
 )
 repopick -P packages/apps/Trebuchet ${changes[@]}&
 
 # packages/services/Telephony
 changes=(
 256792 # Telephony: Add ERI configuration for U.S. Cellular
-#256793 # Telephony: Support muting by RIL command
-#256795 # Don't start SIP service before decrypted
+256793 # Telephony: Support muting by RIL command
+256795 # Don't start SIP service before decrypted
 )
 repopick -P packages/services/Telephony ${changes[@]}&
 
@@ -148,15 +126,7 @@ repopick -P system/netd ${changes[@]}&
 
 # system/vold
 changes=(
-#258169 # vold: add support for more filesystems for public storage
-#258170 # vold: Fix fsck on public volumes
-#258171 # vold: Support internal storage partitions
-#258172 # vold: Honor mount options for ext4/f2fs partitions
-#258173 # vold: Mount ext4/f2fs portable storage with sdcard_posix
-#258174 # vold ext4/f2fs: do not use dirsync if we're mounting adopted storage
-#258175 # Fix the group permissions of the sdcard root.
 258176 # vold: skip first disk change when converting MBR to GPT
-#258177 # vold: Allow reset after shutdown
 258178 # vold: Accept Linux GPT partitions on external SD cards
 )
 repopick -P system/vold ${changes[@]}&
@@ -168,8 +138,6 @@ changes=(
 261292 # vendor/lineage: Fix dopush
 261642 # vendor: make dopush recognize /vendor files
 258204 # build: set build fingerprint for all devices
-#259683 # lineage: don't mount system during install{boot,recovery}
-#262320 # aosp_audio: copy our own old AOSP alarm variants
 264912 # soong: Add AUDIO_FEATURE_ENABLED_EXTENDED_COMPRESS_FORMAT
 255667 # adb insecure by default
 )
