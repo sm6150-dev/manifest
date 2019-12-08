@@ -88,20 +88,21 @@ repopick -P hardware/qcom-caf/msm8996/audio ${changes[@]}&
 
 # hardware/qcom-caf/sm8150/audio
 changes=(
-264577 # [DNM][SQUASH] Merge tag 'LA.UM.8.1.r1-11600-sm8150.0'
+265341 # [DNM][SQUASH] Merge tag 'LA.UM.8.1.r1-12200-sm8150.0'
+262311 # audio: Add missing includes
 )
 repopick ${changes[@]}&
 
 # hardware/qcom-caf/sm8150/display
 changes=(
-264576 # [DNM][SQUASH] Merge tag 'LA.UM.8.1.r1-11600-sm8150.0'
+264576 # [DNM][SQUASH] Merge tag 'LA.UM.8.1.r1-12200-sm8150.0'
 264201 # gralloc: Upgrade mapper and allocator to 3.0
 )
 repopick ${changes[@]}&
 
 # hardware/qcom-caf/sm8150/media
 changes=(
-264578 # [DNM][SQUASH] Merge tag 'LA.UM.8.1.r1-11600-sm8150.0'
+264578 # [DNM][SQUASH] Merge tag 'LA.UM.8.1.r1-12200-sm8150.0'
 )
 repopick ${changes[@]}&
 
