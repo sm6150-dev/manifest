@@ -54,6 +54,9 @@ changes=(
 261314 # Allow override of DUN settings
 263007 # SystemUI: get rid of build text in qs
 263116 # SystemUI: Revive navbar layout tuning via sysui_nav_bar tunable
+265531 # core: Add camera intents for camera state [1/2]
+260783 # FODCircleView: Add MIUI FP icon
+
 )
 repopick -P frameworks/base ${changes[@]}&
 
@@ -109,6 +112,7 @@ repopick ${changes[@]}&
 # lineage-sdk
 changes=(
 259996 # lineage-sdk: Update path to ChargingStarted.ogg
+265380 # lineage-sdk: Add camera intents for camera state [2/2]
 )
 repopick -P lineage-sdk ${changes[@]}&
 
