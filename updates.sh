@@ -23,12 +23,6 @@ changes=(
 )
 repopick -P build/make ${changes[@]}&
 
-# external/tinycompress
-changes=(
-264913 # tinycompress: Conditionally enable extended compress format
-)
-repopick -P external/tinycompress ${changes[@]}&
-
 # frameworks/base
 changes=(
 256447 # SystemUI: Add Profiles tile
@@ -39,7 +33,6 @@ changes=(
 258827 # SystemUI: Don't dismiss keyguard if user key isn't unlocked
 259458 # storage: Do not notify for volumes on non-removable disks
 260002 # fw/b: Squash of app fw restriction commits
-261314 # Allow override of DUN settings
 263116 # SystemUI: Revive navbar layout tuning via sysui_nav_bar tunable
 )
 repopick -P frameworks/base ${changes[@]}&
@@ -51,19 +44,14 @@ changes=(
 )
 repopick -P hardware/lineage/interfaces ${changes[@]}&
 
-# hardware/qcom/data/ipacfg-mgr
-changes=(
-261831 # Kernel Header Changes
-261832 # ipacfg-mgr: Use generated kernel headers
-)
-repopick -P hardware/qcom/data/ipacfg-mgr ${changes[@]}&
-
 # hardware/qcom-caf/msm8996/audio
 changes=(
-260610 # audio: Fix flac offload not working
-260613 # audio: Extend platform parser to allow device name aliasing
-260615 # hal: Add open source HAL for Elliptic Ultrasound
+265315 # hal: Support the audio amplifier hook
 261894 # Build audio.primary.* with BOARD_VNDK_VERSION
+265499 # hal: fix misc audio hal errors
+265500 # hal: Use log/log.h instead of cutils/log.h
+260613 # audio: Extend platform parser to allow device name aliasing
+260610 # audio: Fix flac offload not working
 )
 repopick -P hardware/qcom-caf/msm8996/audio ${changes[@]}&
 
@@ -137,7 +125,6 @@ changes=(
 261292 # vendor/lineage: Fix dopush
 261642 # vendor: make dopush recognize /vendor files
 258204 # build: set build fingerprint for all devices
-264912 # soong: Add AUDIO_FEATURE_ENABLED_EXTENDED_COMPRESS_FORMAT
 255667 # adb insecure by default
 )
 repopick -P vendor/lineage ${changes[@]}&
