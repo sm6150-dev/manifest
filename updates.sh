@@ -35,12 +35,6 @@ changes=(
 )
 repopick -P external/tinycompress ${changes[@]}&
 
-# frameworks/av
-changes=(
-258812 # CameraService: Support hooks for motorized camera
-)
-repopick -P frameworks/av ${changes[@]}&
-
 # frameworks/base
 changes=(
 256447 # SystemUI: Add Profiles tile
@@ -56,9 +50,14 @@ changes=(
 263116 # SystemUI: Revive navbar layout tuning via sysui_nav_bar tunable
 265531 # core: Add camera intents for camera state [1/2]
 260783 # FODCircleView: Add MIUI FP icon
-
 )
 repopick -P frameworks/base ${changes[@]}&
+
+# frameworks/opt/telephony
+changes=(
+265549 # Add support for overriding methods from PhoneSwitcher
+)
+repopick -P frameworks/opt/telephony ${changes[@]}&
 
 # hardware/interfaces	
 changes=(	
