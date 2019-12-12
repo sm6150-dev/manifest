@@ -29,12 +29,6 @@ changes=(
 )
 repopick -P device/qcom/sepolicy ${changes[@]}&
 
-# external/tinycompress
-changes=(
-264913 # tinycompress: Conditionally enable extended compress format
-)
-repopick -P external/tinycompress ${changes[@]}&
-
 # frameworks/base
 changes=(
 256447 # SystemUI: Add Profiles tile
@@ -45,19 +39,12 @@ changes=(
 258827 # SystemUI: Don't dismiss keyguard if user key isn't unlocked
 259458 # storage: Do not notify for volumes on non-removable disks
 260002 # fw/b: Squash of app fw restriction commits
-261314 # Allow override of DUN settings
 263007 # SystemUI: get rid of build text in qs
 263116 # SystemUI: Revive navbar layout tuning via sysui_nav_bar tunable
 265531 # core: Add camera intents for camera state [1/2]
 260783 # FODCircleView: Add MIUI FP icon
 )
 repopick -P frameworks/base ${changes[@]}&
-
-# frameworks/opt/telephony
-changes=(
-265549 # Add support for overriding methods from PhoneSwitcher
-)
-repopick -P frameworks/opt/telephony ${changes[@]}&
 
 # hardware/interfaces	
 changes=(	
@@ -72,18 +59,10 @@ changes=(
 )
 repopick -P hardware/lineage/interfaces ${changes[@]}&
 
-# hardware/qcom/data/ipacfg-mgr
-changes=(
-261831 # Kernel Header Changes
-261832 # ipacfg-mgr: Use generated kernel headers
-)
-repopick -P hardware/qcom/data/ipacfg-mgr ${changes[@]}&
-
 # hardware/qcom-caf/msm8996/audio
 changes=(
 260610 # audio: Fix flac offload not working
 260613 # audio: Extend platform parser to allow device name aliasing
-260615 # hal: Add open source HAL for Elliptic Ultrasound
 261894 # Build audio.primary.* with BOARD_VNDK_VERSION
 )
 repopick -P hardware/qcom-caf/msm8996/audio ${changes[@]}&
@@ -217,7 +196,6 @@ changes=(
 258204 # build: set build fingerprint for all devices
 #259683 # lineage: don't mount system during install{boot,recovery}
 #262320 # aosp_audio: copy our own old AOSP alarm variants
-264912 # soong: Add AUDIO_FEATURE_ENABLED_EXTENDED_COMPRESS_FORMAT
 255667 # adb insecure by default
 )
 repopick -P vendor/lineage ${changes[@]}&
