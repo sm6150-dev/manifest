@@ -91,6 +91,7 @@ repopick ${changes[@]}&
 changes=(
 259996 # lineage-sdk: Update path to ChargingStarted.ogg
 265380 # lineage-sdk: Add camera intents for camera state [2/2]
+265585 # lineage-sdk: Introduce LimitSizeList
 )
 repopick -P lineage-sdk ${changes[@]}&
 
