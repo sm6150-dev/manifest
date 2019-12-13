@@ -76,7 +76,7 @@ repopick ${changes[@]}&
 
 # hardware/qcom-caf/sm8150/display
 changes=(
-264576 # [DNM][SQUASH] Merge tag 'LA.UM.8.1.r1-12200-sm8150.0'
+264576/3 # [DNM][SQUASH] Merge tag 'LA.UM.8.1.r1-12200-sm8150.0'
 264201 # gralloc: Upgrade mapper and allocator to 3.0
 )
 repopick ${changes[@]}&
