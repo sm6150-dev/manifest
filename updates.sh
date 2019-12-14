@@ -34,6 +34,7 @@ changes=(
 259458 # storage: Do not notify for volumes on non-removable disks
 260002 # fw/b: Squash of app fw restriction commits
 263116 # SystemUI: Revive navbar layout tuning via sysui_nav_bar tunable
+264994 # SystemUI: Bring back good ol' circle battery style
 )
 repopick -P frameworks/base ${changes[@]}&
 
