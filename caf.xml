@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote  name="caf"
+           fetch="git://codeaurora.org/quic/la"
+           review="codeaurora.org" />
+
+  <project revision="refs/tags/LA.UM.8.11.r1-01900-NICOBAR.0" remote="caf" sync-c="true" name="platform/vendor/qcom-opensource/system/bt" path="vendor/qcom/opensource/commonsys/system/bt" />
+  <project revision="refs/tags/LA.UM.8.11.r1-01900-NICOBAR.0" remote="caf" sync-c="true" name="platform/vendor/qcom-opensource/bluetooth" path="vendor/qcom/opensource/commonsys/bluetooth" />
+  <project revision="refs/tags/LA.UM.8.11.r1-01900-NICOBAR.0" remote="caf" sync-c="true" name="platform/vendor/qcom-opensource/bluetooth-commonsys-intf" path="vendor/qcom/opensource/commonsys-intf/bluetooth" />
+</manifest>

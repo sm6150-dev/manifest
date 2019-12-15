@@ -141,6 +141,39 @@ changes=(
 )
 repopick -P packages/services/Telephony ${changes[@]}&
 
+# system/bt
+changes=(
+258914 #
+258915 #
+258916 #
+258917 #
+258918 #
+258919 #
+258920 #
+258921 #
+258922 #
+258923 #
+258924 #
+258925 #
+258926 #
+258927 #
+258928 #
+258929 #
+258930 #
+258931 #
+258932 #
+258933 #
+258934 #
+258935 #
+258936 #
+258937 #
+258938 #
+258939 #
+258940 #
+258941 # Bluetooth: Enable bt_stack.conf from QC stack [2/2]
+)
+repopick -P system/bt ${changes[@]}&
+
 # system/core
 changes=(
 258166 # Add wrapped key support
@@ -178,6 +211,7 @@ repopick -P vendor/lineage ${changes[@]}&
 changes=(
 264665 # [DNM][SQUASH] Merge tag 'LA.UM.8.1.r1-11600-sm8150.0'
 264666 # interfaces: Regenerate blueprints
+259980 # interfaces: Introduce qcom bluetooth_audio and btconfigstore HALs
 )
 repopick -P vendor/qcom/opensource/interfaces ${changes[@]}&
 
