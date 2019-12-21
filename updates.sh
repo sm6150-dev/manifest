@@ -29,6 +29,12 @@ changes=(
 )
 repopick -P build/make ${changes[@]}&
 
+# device/lineage/sepolicy
+changes=(
+265749 # Silence adbroot dac_override denial
+)
+repopick -P device/lineage/sepolicy ${changes[@]}&
+
 # device/qcom/sepolicy
 changes=(
 264669 # [DNM][SQUASH] Merge tag 'LA.UM.8.1.r1-11600-sm8150.0'
@@ -50,7 +56,6 @@ changes=(
 265531 # core: Add camera intents for camera state [1/2]
 265653 # FODCircleView: Add partial wakelock on aod
 260783 # FODCircleView: Add MIUI FP icon
-265487 # Allow tuning of heaptargetutilization
 )
 repopick -P frameworks/base ${changes[@]}&
 
