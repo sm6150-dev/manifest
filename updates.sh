@@ -38,6 +38,7 @@ repopick -P device/qcom/sepolicy ${changes[@]}&
 # frameworks/base
 changes=(
 256447 # SystemUI: Add Profiles tile
+258160 # LockSettingsService: Support for separate clear key api
 258303 # power: Re-introduce custom charging sounds
 258546 # Camera button support
 258820 # SystemUI: Add visualizer feature
@@ -180,24 +181,6 @@ changes=(
 255667 # adb insecure by default
 )
 repopick -P vendor/lineage ${changes[@]}&
-
-# vendor/nxp/opensource/commonsys/external/libnfc-nci
-changes=(
-264670 # [DNM][SQUASH] Merge tag 'LA.UM.8.1.r1-11600-sm8150.0'
-)
-repopick -P vendor/nxp/opensource/commonsys/external/libnfc-nci ${changes[@]}&
-
-# vendor/nxp/opensource/commonsys/packages/apps/Nfc
-changes=(
-264668 # [DNM][SQUASH] Merge tag 'LA.UM.8.1.r1-11600-sm8150.0'
-)
-repopick -P vendor/nxp/opensource/commonsys/packages/apps/Nfc ${changes[@]}&
-
-# vendor/nxp/opensource/sn100x/halimpl
-changes=(
-264667 # [DNM][SQUASH] Merge tag 'LA.UM.8.1.r1-11600-sm8150.0'
-)
-repopick -P vendor/nxp/opensource/sn100x/halimpl ${changes[@]}&
 
 # vendor/qcom/opensource/interfaces
 changes=(
