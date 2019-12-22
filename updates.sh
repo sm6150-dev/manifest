@@ -3,17 +3,11 @@
 set -e
 source build/envsetup.sh
 
-# android
-changes=(
-262469 # [WIP] manifest: Move from android-10.0.0_r11 to android-10.0.0_r18
-)
-repopick ${changes[@]}&
-
 # art
 changes=(
 265485 # Trigger GC when 90% heap is utilized
 )
-repopick ${changes[@]}&
+repopick -P art ${changes[@]}&
 
 # bootable/recovery
 #changes=(
@@ -160,12 +154,11 @@ changes=(
 repopick -P packages/apps/Trebuchet ${changes[@]}&
 
 # packages/services/Telephony
-changes=(
-256792 # Telephony: Add ERI configuration for U.S. Cellular
+#changes=(
 #256793 # Telephony: Support muting by RIL command
 #256795 # Don't start SIP service before decrypted
-)
-repopick -P packages/services/Telephony ${changes[@]}&
+#)
+#repopick -P packages/services/Telephony ${changes[@]}&
 
 # system/core
 changes=(
