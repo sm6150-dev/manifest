@@ -3,6 +3,12 @@
 set -e
 source build/envsetup.sh
 
+# android
+changes=(
+262469 # [WIP] manifest: Move from android-10.0.0_r11 to android-10.0.0_r18
+)
+repopick ${changes[@]}&
+
 # art
 changes=(
 265485 # Trigger GC when 90% heap is utilized
@@ -28,12 +34,6 @@ changes=(
 257178 # build: allow forcing build of otatools
 )
 repopick -P build/make ${changes[@]}&
-
-# device/lineage/sepolicy
-#changes=(
-#265749 # Silence adbroot dac_override denial
-#)
-#repopick -P device/lineage/sepolicy ${changes[@]}&
 
 # device/qcom/sepolicy
 changes=(
