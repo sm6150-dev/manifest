@@ -199,9 +199,6 @@ repopick -P system/vold ${changes[@]}&
 changes=(
 259310 # prebuilt: Add a script to simplify A-only recovery system mount
 257000 # Remove apicheck.mk
-261292 # vendor/lineage: Fix dopush
-261642 # vendor: make dopush recognize /vendor files
-258204 # build: set build fingerprint for all devices
 #259683 # lineage: don't mount system during install{boot,recovery}
 #262320 # aosp_audio: copy our own old AOSP alarm variants
 255667 # adb insecure by default
