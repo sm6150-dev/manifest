@@ -100,8 +100,6 @@ repopick -P packages/apps/Trebuchet ${changes[@]}&
 
 # packages/services/Telephony
 changes=(
-256792 # Telephony: Add ERI configuration for U.S. Cellular
-256793 # Telephony: Support muting by RIL command
 256795 # Don't start SIP service before decrypted
 )
 repopick -P packages/services/Telephony ${changes[@]}&
@@ -122,10 +120,6 @@ repopick -P system/vold ${changes[@]}&
 # vendor/lineage
 changes=(
 259310 # prebuilt: Add a script to simplify A-only recovery system mount
-257000 # Remove apicheck.mk
-261292 # vendor/lineage: Fix dopush
-261642 # vendor: make dopush recognize /vendor files
-258204 # build: set build fingerprint for all devices
 255667 # adb insecure by default
 )
 repopick -P vendor/lineage ${changes[@]}&
