@@ -48,7 +48,7 @@ changes=(
 263116 # SystemUI: Revive navbar layout tuning via sysui_nav_bar tunable
 264994 # SystemUI: Bring back good ol' circle battery style
 265784 # core: Add camera intents for camera state [1/2]
-265653 # FODCircleView: Add partial wakelock on aod
+265790 # FODCircleView: Add partial wakelock on aod
 260783 # FODCircleView: Add MIUI FP icon
 )
 repopick -P frameworks/base ${changes[@]}&
