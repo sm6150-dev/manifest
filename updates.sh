@@ -10,10 +10,10 @@ changes=(
 repopick -P art ${changes[@]}&
 
 # bootable/recovery
-#changes=(
-#259720 # recovery: sdcard is data/media/0
-#)
-#repopick ${changes[@]}&
+changes=(
+259720 # recovery: sdcard is data/media/0
+)
+repopick ${changes[@]}&
 
 # build/make
 changes=(
@@ -45,8 +45,8 @@ changes=(
 258827 # SystemUI: Don't dismiss keyguard if user key isn't unlocked
 259458 # storage: Do not notify for volumes on non-removable disks
 260002 # fw/b: Squash of app fw restriction commits
-263007 # SystemUI: get rid of build text in qs
 263116 # SystemUI: Revive navbar layout tuning via sysui_nav_bar tunable
+264994 # SystemUI: Bring back good ol' circle battery style
 265784 # core: Add camera intents for camera state [1/2]
 265653 # FODCircleView: Add partial wakelock on aod
 260783 # FODCircleView: Add MIUI FP icon
@@ -68,9 +68,12 @@ repopick -P hardware/lineage/interfaces ${changes[@]}&
 
 # hardware/qcom-caf/msm8996/audio
 changes=(
-260610 # audio: Fix flac offload not working
-260613 # audio: Extend platform parser to allow device name aliasing
+265315 # hal: Support the audio amplifier hook
 261894 # Build audio.primary.* with BOARD_VNDK_VERSION
+265499 # hal: fix misc audio hal errors
+265500 # hal: Use log/log.h instead of cutils/log.h
+260613 # audio: Extend platform parser to allow device name aliasing
+260610 # audio: Fix flac offload not working
 )
 repopick -P hardware/qcom-caf/msm8996/audio ${changes[@]}&
 
@@ -102,12 +105,6 @@ changes=(
 )
 repopick -P lineage-sdk ${changes[@]}&
 
-# packages/apps/DeskClock
-#changes=(
-#256664 # Make new menu entry to link to cLock widget settings.
-#)
-#repopick -P packages/apps/DeskClock ${changes[@]}&
-
 # packages/apps/ExactCalculator
 changes=(
 263677 # ExactCalculator: prevent back gesture conflict
@@ -121,18 +118,12 @@ changes=(
 )
 repopick -P packages/apps/LineageParts ${changes[@]}&
 
-# packages/apps/Nfc
-changes=(
-256814 # NFCService: Add sysprop to prevent FW download during boot with NFC off.
-)
-repopick -P packages/apps/Nfc ${changes[@]}&
-
 # packages/apps/Settings
 changes=(
 258304 # Settings: Add LineageParts charging sound settings preference
 258819 # Settings: Add lockscreen visualizer toggle
 259315 # One does not simply become a Developer
-#259459 # storage: Do not allow eject for volumes on non-removable disks
+259459 # storage: Do not allow eject for volumes on non-removable disks
 259455 # Settings: per-app cellular data, vpn and wifi restrictions
 )
 repopick -P packages/apps/Settings ${changes[@]}&
@@ -147,18 +138,14 @@ repopick -P packages/apps/SetupWizard ${changes[@]}&
 changes=(
 262575 # Apply icon size modifications from old Trebuchet
 262576 # Add a 5x4 workspace and switch to it
-#263001 # Trebuchet: implement hidden & protected apps
-#263070 # Switch to BiometricPrompt
-#263005 # Trebuchet: add toggle for desktop and drawer labels
 )
 repopick -P packages/apps/Trebuchet ${changes[@]}&
 
 # packages/services/Telephony
-#changes=(
-#256793 # Telephony: Support muting by RIL command
-#256795 # Don't start SIP service before decrypted
-#)
-#repopick -P packages/services/Telephony ${changes[@]}&
+changes=(
+256795 # Don't start SIP service before decrypted
+)
+repopick -P packages/services/Telephony ${changes[@]}&
 
 # system/core
 changes=(
@@ -175,13 +162,6 @@ repopick -P system/netd ${changes[@]}&
 
 # system/vold
 changes=(
-#258169 # vold: add support for more filesystems for public storage
-#258170 # vold: Fix fsck on public volumes
-#258171 # vold: Support internal storage partitions
-#258172 # vold: Honor mount options for ext4/f2fs partitions
-#258173 # vold: Mount ext4/f2fs portable storage with sdcard_posix
-#258174 # vold ext4/f2fs: do not use dirsync if we're mounting adopted storage
-#258175 # Fix the group permissions of the sdcard root.
 258133 # vold: Wrapped key support for FBE
 258134 # vold: Use separate flag for wrappedkey
 258135 # Remove no longer relevant header file
@@ -190,7 +170,6 @@ changes=(
 258145 # Updates for migrated code upstream
 258140 # system: vold: Use wrapped key for metadata encryption
 258176 # vold: skip first disk change when converting MBR to GPT
-#258177 # vold: Allow reset after shutdown
 258178 # vold: Accept Linux GPT partitions on external SD cards
 )
 repopick -P system/vold ${changes[@]}&
@@ -198,9 +177,6 @@ repopick -P system/vold ${changes[@]}&
 # vendor/lineage
 changes=(
 259310 # prebuilt: Add a script to simplify A-only recovery system mount
-257000 # Remove apicheck.mk
-#259683 # lineage: don't mount system during install{boot,recovery}
-#262320 # aosp_audio: copy our own old AOSP alarm variants
 255667 # adb insecure by default
 )
 repopick -P vendor/lineage ${changes[@]}&
