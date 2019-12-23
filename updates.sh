@@ -151,7 +151,6 @@ repopick -P packages/services/Telephony ${changes[@]}&
 # system/core
 changes=(
 258166 # Add wrapped key support
-265753 # Run adb_root with system group
 )
 repopick -P system/core ${changes[@]}&
 
