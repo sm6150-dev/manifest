@@ -12,5 +12,5 @@
   <project name="davinci-dev/vendor_xiaomi" path="vendor/xiaomi" remote="private" revision="lineage-17.0" />
 
   <!--Gapps-->
-  <project name="MindTheGapps/vendor_gapps" path="vendor/gapps" remote="gitlab" revision="qoppa" />
+  <project name="luca020400/android_vendor_gapps" path="vendor/gapps" remote="gitlab" revision="ten" />
 </manifest>
