@@ -192,3 +192,6 @@ wait
 
 # build/make
 repopick -P build/make -f 259858 # Sorry bro: 6 -> 3
+
+# frameworks/opt/telephony
+repopick -P frameworks/opt/telephony -f 265623
