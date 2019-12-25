@@ -60,13 +60,6 @@ changes=(
 )	
 repopick -P hardware/interfaces ${changes[@]}&	
 
-# hardware/lineage/interfaces
-changes=(
-260411 # cryptfshw: Introduce QSEECom backend implementation
-263896 # cryptfshw: Introduce kernel backend implementation
-)
-repopick -P hardware/lineage/interfaces ${changes[@]}&
-
 # hardware/qcom-caf/msm8996/audio
 changes=(
 265315 # hal: Support the audio amplifier hook
