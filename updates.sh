@@ -188,7 +188,7 @@ repopick -P system/netd ${changes[@]}&
 
 # system/vold
 changes=(
-258133 # vold: Wrapped key support for FBE
+258133/3 # vold: Wrapped key support for FBE
 258134 # vold: Use separate flag for wrappedkey
 258135 # Remove no longer relevant header file
 258136 # vold: add support for clear key
