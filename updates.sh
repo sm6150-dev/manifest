@@ -178,6 +178,7 @@ repopick -P vendor/lineage ${changes[@]}&
 changes=(
 264665 # [DNM][SQUASH] Merge tag 'LA.UM.8.1.r1-11600-sm8150.0'
 264666 # interfaces: Regenerate blueprints
+259980 # interfaces: Introduce qcom bluetooth_audio and btconfigstore HALs
 )
 repopick -P vendor/qcom/opensource/interfaces ${changes[@]}&
 
