@@ -93,6 +93,12 @@ changes=(
 )
 repopick ${changes[@]}&
 
+# hardware/qcom/data/ipacfg-mgr
+changes=(
+266058 # use log/log.h instead of cutils/log.h
+)
+repopick ${changes[@]}&
+
 # lineage-sdk
 changes=(
 259996 # lineage-sdk: Update path to ChargingStarted.ogg
@@ -146,6 +152,7 @@ repopick -P packages/services/Telephony ${changes[@]}&
 # system/core
 changes=(
 258166 # Add wrapped key support
+266061 # keymaster: use log/log.h instead of cutils/log.h
 )
 repopick -P system/core ${changes[@]}&
 
