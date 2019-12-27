@@ -51,6 +51,8 @@ changes=(
 265784 # core: Add camera intents for camera state [1/2]
 265790 # FODCircleView: Add partial wakelock on aod
 260783 # FODCircleView: Add MIUI FP icon
+265958 # DO NOT MERGE Revert all scrim related changes in qpr
+266052 # Revert "Apply front scrim to doze pulsing"
 )
 repopick -P frameworks/base ${changes[@]}&
 
