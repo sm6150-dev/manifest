@@ -49,10 +49,12 @@ changes=(
 263116 # SystemUI: Revive navbar layout tuning via sysui_nav_bar tunable
 264994 # SystemUI: Bring back good ol' circle battery style
 265784 # core: Add camera intents for camera state [1/2]
-265790 # FODCircleView: Add partial wakelock on aod
-260783 # FODCircleView: Add MIUI FP icon
 265958 # DO NOT MERGE Revert all scrim related changes in qpr
 266052 # Revert "Apply front scrim to doze pulsing"
+266111 # FODCircleView: place above other UI elements
+266112 # FODCircleView: rewrite and simplify implementation
+266116 # KeyguardView: report transiting bouncer as shown
+260783 # FODCircleView: Add MIUI FP icon
 )
 repopick -P frameworks/base ${changes[@]}&
 
