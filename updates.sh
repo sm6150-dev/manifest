@@ -36,6 +36,12 @@ changes=(
 )
 repopick -P device/qcom/sepolicy ${changes[@]}&
 
+# device/lineage/sepolicy
+changes=(
+266115 # snap_app: Allow allow binder call with gpuservice
+)
+repopick -P device/lineage/sepolicy ${changes[@]}&
+
 # frameworks/base
 changes=(
 256447 # SystemUI: Add Profiles tile
