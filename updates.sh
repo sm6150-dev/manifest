@@ -55,7 +55,7 @@ changes=(
 266111 # FODCircleView: place above other UI elements
 266112 # FODCircleView: rewrite and simplify implementation
 266116 # KeyguardView: report transiting bouncer as shown
-260783 # FODCircleView: Add MIUI FP icon
+266130 # FODCircleView: Add MIUI FP icon
 )
 repopick -P frameworks/base ${changes[@]}&
 
