@@ -31,7 +31,8 @@ repopick -P build/make ${changes[@]}&
 
 # device/qcom/sepolicy
 changes=(
-264669 # [DNM][SQUASH] Merge tag 'LA.UM.8.1.r1-11600-sm8150.0'
+264669 # [DNM][SQUASH] Merge tag 'LA.UM.8.1.r1-13000-sm8150.0'
+266117 # msmsteppe: Address init denials
 )
 repopick -P device/qcom/sepolicy ${changes[@]}&
 
