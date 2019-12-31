@@ -5,8 +5,8 @@
   <project path="packages/apps/FlipFlap" name="LineageOS/android_packages_apps_FlipFlap" />
 
   <!-- Device specific repositories -->
-  <project name="minz1/android_device_xiaomi_davinci" path="device/xiaomi/davinci" remote="private" revision="lineage-17.0" />
-  <project name="minz1/android_device_xiaomi_sm6150-common" path="device/xiaomi/sm6150-common" remote="private" revision="lineage-17.0" />
+  <project name="davinci-dev/android_device_xiaomi_davinci" path="device/xiaomi/davinci" remote="private" revision="lineage-17.0" />
+  <project name="davinci-dev/android_device_xiaomi_sm6150-common" path="device/xiaomi/sm6150-common" remote="private" revision="lineage-17.0" />
   <project name="davinci-dev/android_device_xiaomi_common" path="device/xiaomi/common" remote="private" revision="lineage-17.0" />
   <project name="davinci-dev/android_kernel_xiaomi_davinci" path="kernel/xiaomi/davinci" remote="private" revision="lineage-17.0" />
   <project name="davinci-dev/android_kernel_xiaomi_msm-4.14" path="kernel/xiaomi/msm-4.14" remote="private" revision="lineage-17.0" />
