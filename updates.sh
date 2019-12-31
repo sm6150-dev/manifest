@@ -63,7 +63,6 @@ changes=(
 263116 # SystemUI: Revive navbar layout tuning via sysui_nav_bar tunable
 264994 # SystemUI: Bring back good ol' circle battery style
 265784 # core: Add camera intents for camera state [1/2]
-265958 # DO NOT MERGE Revert all scrim related changes in qpr
 266052 # Revert "Apply front scrim to doze pulsing"
 266111 # FODCircleView: place above other UI elements
 266112 # FODCircleView: rewrite and simplify implementation
@@ -106,12 +105,6 @@ repopick ${changes[@]}&
 # hardware/qcom-caf/sm8150/media
 changes=(
 264578 # [DNM][SQUASH] Merge tag 'LA.UM.8.1.r1-12200-sm8150.0'
-)
-repopick ${changes[@]}&
-
-# hardware/qcom/data/ipacfg-mgr
-changes=(
-266058 # use log/log.h instead of cutils/log.h
 )
 repopick ${changes[@]}&
 
