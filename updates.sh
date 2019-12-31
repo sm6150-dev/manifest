@@ -42,6 +42,13 @@ changes=(
 )
 repopick -P device/lineage/sepolicy ${changes[@]}&
 
+# device/xiaomi/common
+changes=(
+266162 # common: Import Xiaomi HAL definitions
+266163 # common: Import Goodix biometrics fingerprint HAL definitions
+)
+repopick -P device/xiaomi/common ${changes[@]}&
+
 # frameworks/base
 changes=(
 256447 # SystemUI: Add Profiles tile
