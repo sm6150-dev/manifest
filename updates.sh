@@ -64,10 +64,11 @@ changes=(
 264994 # SystemUI: Bring back good ol' circle battery style
 265784 # core: Add camera intents for camera state [1/2]
 266052 # Revert "Apply front scrim to doze pulsing"
-266111 # FODCircleView: place above other UI elements
-266112 # FODCircleView: rewrite and simplify implementation
-266116 # KeyguardView: report transiting bouncer as shown
-266130 # FODCircleView: Add MIUI FP icon
+#266111 # FODCircleView: place above other UI elements
+#266112 # FODCircleView: rewrite and simplify implementation
+#266116 # KeyguardView: report transiting bouncer as shown
+#266130 # FODCircleView: Add MIUI FP icon
+260783/3 # FODCircleView: Add MIUI FP icon
 )
 repopick -P frameworks/base ${changes[@]}&
 
