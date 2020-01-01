@@ -147,8 +147,10 @@ repopick -P packages/apps/SetupWizard ${changes[@]}&
 
 # packages/apps/Trebuchet
 changes=(
-262575 # Apply icon size modifications from old Trebuchet
-262576 # Add a 5x4 workspace and switch to it
+266208 # Replace 4x4 grid option with a 4x5 one
+266209 # Trebuchet: implement hidden & protected apps
+266210 # Switch to BiometricPrompt
+266211 # Trebuchet: add toggle for desktop and drawer labels
 )
 repopick -P packages/apps/Trebuchet ${changes[@]}&
 
