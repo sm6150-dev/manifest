@@ -6,7 +6,7 @@
   <!-- Device specific repositories -->
   <project name="xiaomi-sdm660-devs/android_device_xiaomi_wayne" path="device/xiaomi/wayne" remote="private" revision="lineage-17.0" />
   <project name="xiaomi-sdm660-devs/android_device_xiaomi_wayne-common" path="device/xiaomi/wayne-common" remote="private" revision="lineage-17.0" />
-  <project name="xiaomi-sdm660-devs/android_device_xiaomi_sdm660-common" path="device/xiaomi/sdm660-common" remote="private" revision="lineage-17.0" />
+  <project name="xiaomi-sdm660-devs/android_device_xiaomi_sdm660-common" path="device/xiaomi/sdm660-common" remote="private" revision="pig" />
   <project name="xiaomi-sdm660-devs/android_kernel_xiaomi_sdm660" path="kernel/xiaomi/sdm660" remote="private" revision="lineage-17.0" />
   <project name="xiaomi-sdm660-devs/proprietary_vendor_xiaomi" path="vendor/xiaomi" remote="private" revision="lineage-17.0-nowhyred" />
 </manifest>
