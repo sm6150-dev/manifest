@@ -62,7 +62,6 @@ changes=(
 264994 # SystemUI: Bring back good ol' circle battery style
 265784 # core: Add camera intents for camera state [1/2]
 266052 # Revert "Apply front scrim to doze pulsing"
-#266111 # FODCircleView: place above other UI elements
 #266112 # FODCircleView: rewrite and simplify implementation
 #266116 # KeyguardView: report transiting bouncer as shown
 #266130 # FODCircleView: Add MIUI FP icon
@@ -155,7 +154,6 @@ repopick -P packages/services/Telephony ${changes[@]}&
 
 # system/core
 changes=(
-258166 # Add wrapped key support
 266061 # keymaster: use log/log.h instead of cutils/log.h
 )
 repopick -P system/core ${changes[@]}&
