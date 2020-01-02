@@ -35,6 +35,12 @@ changes=(
 )
 repopick -P device/lineage/sepolicy ${changes[@]}&
 
+# device/qcom/sepolicy-legacy-um
+changes=(
+266114 # Revert "common: Correctly Label /sys/class/kgsl"
+)
+repopick -P device/qcom/sepolicy-legacy-um ${changes[@]}&
+
 # frameworks/base
 changes=(
 256447 # SystemUI: Add Profiles tile
