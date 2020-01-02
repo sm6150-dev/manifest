@@ -38,7 +38,6 @@ repopick -P device/lineage/sepolicy ${changes[@]}&
 # frameworks/base
 changes=(
 256447 # SystemUI: Add Profiles tile
-258160 # LockSettingsService: Support for separate clear key api
 258303 # power: Re-introduce custom charging sounds
 258546 # Camera button support
 258820 # SystemUI: Add visualizer feature
@@ -51,12 +50,6 @@ changes=(
 266052 # Revert "Apply front scrim to doze pulsing"
 )
 repopick -P frameworks/base ${changes[@]}&
-
-# hardware/interfaces	
-changes=(	
-258181 # keymasterV4_0: Tags support for FBE wrapped key.	
-)	
-repopick -P hardware/interfaces ${changes[@]}&	
 
 # hardware/qcom-caf/msm8996/audio
 changes=(
@@ -121,7 +114,6 @@ repopick -P packages/services/Telephony ${changes[@]}&
 
 # system/core
 changes=(
-258166 # Add wrapped key support
 266061 # keymaster: use log/log.h instead of cutils/log.h
 )
 repopick -P system/core ${changes[@]}&
@@ -134,13 +126,6 @@ repopick -P system/netd ${changes[@]}&
 
 # system/vold
 changes=(
-258133/3 # vold: Wrapped key support for FBE
-258134 # vold: Use separate flag for wrappedkey
-258135 # Remove no longer relevant header file
-258136 # vold: add support for clear key
-258139 # vold: change to upgrade key if export fails
-258145 # Updates for migrated code upstream
-258140 # system: vold: Use wrapped key for metadata encryption
 258176 # vold: skip first disk change when converting MBR to GPT
 258178 # vold: Accept Linux GPT partitions on external SD cards
 )
