@@ -29,24 +29,11 @@ changes=(
 )
 repopick -P build/make ${changes[@]}&
 
-# device/qcom/sepolicy
-changes=(
-264669 # [DNM][SQUASH] Merge tag 'LA.UM.8.1.r1-13000-sm8150.0'
-)
-repopick -P device/qcom/sepolicy ${changes[@]}&
-
 # device/lineage/sepolicy
 changes=(
 266115 # snap_app: Allow allow binder call with gpuservice
 )
 repopick -P device/lineage/sepolicy ${changes[@]}&
-
-# device/xiaomi/common
-changes=(
-266162 # common: Import Xiaomi HAL definitions
-266163 # common: Import Goodix biometrics fingerprint HAL definitions
-)
-repopick -P device/xiaomi/common ${changes[@]}&
 
 # frameworks/base
 changes=(
@@ -61,13 +48,7 @@ changes=(
 260002 # fw/b: Squash of app fw restriction commits
 263116 # SystemUI: Revive navbar layout tuning via sysui_nav_bar tunable
 264994 # SystemUI: Bring back good ol' circle battery style
-265784 # core: Add camera intents for camera state [1/2]
 266052 # Revert "Apply front scrim to doze pulsing"
-#266111 # FODCircleView: place above other UI elements
-#266112 # FODCircleView: rewrite and simplify implementation
-#266116 # KeyguardView: report transiting bouncer as shown
-#266130 # FODCircleView: Add MIUI FP icon
-260783/3 # FODCircleView: Add MIUI FP icon
 )
 repopick -P frameworks/base ${changes[@]}&
 
@@ -88,31 +69,9 @@ changes=(
 )
 repopick -P hardware/qcom-caf/msm8996/audio ${changes[@]}&
 
-# hardware/qcom-caf/sm8150/audio
-changes=(
-265341 # [DNM][SQUASH] Merge tag 'LA.UM.8.1.r1-12200-sm8150.0'
-262311 # audio: Add missing includes
-)
-repopick ${changes[@]}&
-
-# hardware/qcom-caf/sm8150/display
-changes=(
-264576/3 # [DNM][SQUASH] Merge tag 'LA.UM.8.1.r1-12200-sm8150.0'
-264201 # gralloc: Upgrade mapper and allocator to 3.0
-)
-repopick ${changes[@]}&
-
-# hardware/qcom-caf/sm8150/media
-changes=(
-264578 # [DNM][SQUASH] Merge tag 'LA.UM.8.1.r1-12200-sm8150.0'
-)
-repopick ${changes[@]}&
-
 # lineage-sdk
 changes=(
 259996 # lineage-sdk: Update path to ChargingStarted.ogg
-265380 # lineage-sdk: Add camera intents for camera state [2/2]
-265585 # lineage-sdk: Introduce LimitSizeList
 )
 repopick -P lineage-sdk ${changes[@]}&
 
@@ -193,14 +152,6 @@ changes=(
 255667 # adb insecure by default
 )
 repopick -P vendor/lineage ${changes[@]}&
-
-# vendor/qcom/opensource/interfaces
-changes=(
-264665 # [DNM][SQUASH] Merge tag 'LA.UM.8.1.r1-11600-sm8150.0'
-264666 # interfaces: Regenerate blueprints
-259980 # interfaces: Introduce qcom bluetooth_audio and btconfigstore HALs
-)
-repopick -P vendor/qcom/opensource/interfaces ${changes[@]}&
 
 wait
 
