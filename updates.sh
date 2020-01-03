@@ -3,11 +3,18 @@
 set -e
 source build/envsetup.sh
 
+# art
+changes=(
+265485 # Trigger GC when 90% heap is utilized
+)
+repopick -P art ${changes[@]}&
+
 # bootable/recovery
-#changes=(
-#259720 # recovery: sdcard is data/media/0
-#)
-#repopick ${changes[@]}&
+changes=(
+259720 # recovery: sdcard is data/media/0
+265182 # updater: Fix lost capabilities of set_metadata
+)
+repopick -P bootable/recovery ${changes[@]}&
 
 # build/make
 changes=(
@@ -23,17 +30,17 @@ changes=(
 )
 repopick -P build/make ${changes[@]}&
 
-# external/tinycompress
+# device/qcom/sepolicy
 changes=(
-264913 # tinycompress: Conditionally enable extended compress format
+266220 # Expose TimeService app cert to soong
 )
-repopick -P external/tinycompress ${changes[@]}&
+repopick -P device/qcom/sepolicy ${changes[@]}&
 
-# frameworks/av
+# device/qcom/sepolicy-legacy-um
 changes=(
-258812 # CameraService: Support hooks for motorized camera
+266212 # Expose TimeService app cert to soong
 )
-repopick -P frameworks/av ${changes[@]}&
+repopick -P device/qcom/sepolicy-legacy-um ${changes[@]}&
 
 # frameworks/base
 changes=(
@@ -41,50 +48,57 @@ changes=(
 258303 # power: Re-introduce custom charging sounds
 258546 # Camera button support
 258820 # SystemUI: Add visualizer feature
-258826 # SystemUI: Dismiss keyguard on boot if disabled by current profile
-258827 # SystemUI: Don't dismiss keyguard if user key isn't unlocked
-259458 # storage: Do not notify for volumes on non-removable disks
+266280 # SystemUI: Dismiss keyguard on boot if disabled by current profile
+266281 # SystemUI: Don't dismiss keyguard if user key isn't unlocked
 260002 # fw/b: Squash of app fw restriction commits
-261314 # Allow override of DUN settings
-263007 # SystemUI: get rid of build text in qs
-263116 # SystemUI: Revive navbar layout tuning via sysui_nav_bar tunable
+266052 # Revert "Apply front scrim to doze pulsing"
+266112 # FODCircleView: rewrite and simplify implementation
+266116 # KeyguardView: report transiting bouncer as shown
+266282 # SystemUI: Bring back good ol' circle battery style
+265508 # Phone ringtone setting for Multi SIM device
+265511 # Don't change public API
+265784 # core: Add camera intents for camera state [1/2]
 )
 repopick -P frameworks/base ${changes[@]}&
 
-# hardware/lineage/interfaces
+# frameworks/opt/telephony
 changes=(
-260411 # cryptfshw: Introduce QSEECom backend implementation
-263896 # cryptfshw: Introduce kernel backend implementation
+265322 # SimPhoneBook: Add ANR/EMAIL support for USIM phonebook.
+266275 # IccPhoneBookInterfaceManager: Move class Request from private to public
+265822 # Restore isEmergency method
+265823 # Restore getSubIdFromNetworkRequest method
 )
-repopick -P hardware/lineage/interfaces ${changes[@]}&
+repopick -P frameworks/opt/telephony ${changes[@]}&
 
-# hardware/qcom/data/ipacfg-mgr
+# hardware/libhardware
 changes=(
-261831 # Kernel Header Changes
-261832 # ipacfg-mgr: Use generated kernel headers
+266139 # libhardware: Add new display types.
 )
-repopick -P hardware/qcom/data/ipacfg-mgr ${changes[@]}&
+repopick -P hardware/libhardware ${changes[@]}&
 
 # hardware/qcom-caf/msm8996/audio
 changes=(
-260610 # audio: Fix flac offload not working
-260613 # audio: Extend platform parser to allow device name aliasing
-260615 # hal: Add open source HAL for Elliptic Ultrasound
+265315 # hal: Support the audio amplifier hook
 261894 # Build audio.primary.* with BOARD_VNDK_VERSION
+265499 # hal: fix misc audio hal errors
+265500 # hal: Use log/log.h instead of cutils/log.h
+260613 # audio: Extend platform parser to allow device name aliasing
+260610 # audio: Fix flac offload not working
 )
 repopick -P hardware/qcom-caf/msm8996/audio ${changes[@]}&
 
 # lineage-sdk
 changes=(
 259996 # lineage-sdk: Update path to ChargingStarted.ogg
+264593 # SensitivePhoneNumbers: Additionally check against the given sim operator
 )
 repopick -P lineage-sdk ${changes[@]}&
 
-# packages/apps/DeskClock
-#changes=(
-#256664 # Make new menu entry to link to cLock widget settings.
-#)
-#repopick -P packages/apps/DeskClock ${changes[@]}&
+# packages/apps/Dialer
+changes=(
+265040 # Beautify call stats details category headers.
+)
+repopick -P packages/apps/Dialer ${changes[@]}&
 
 # packages/apps/ExactCalculator
 changes=(
@@ -94,7 +108,7 @@ repopick -P packages/apps/ExactCalculator ${changes[@]}&
 
 # packages/apps/LineageParts
 changes=(
-258825 # LineageParts: Reenable system profiles
+266140 # LineageParts: Reenable system profiles
 260416 # Parts: Convert charging sound path to uri
 )
 repopick -P packages/apps/LineageParts ${changes[@]}&
@@ -110,8 +124,9 @@ changes=(
 258304 # Settings: Add LineageParts charging sound settings preference
 258819 # Settings: Add lockscreen visualizer toggle
 259315 # One does not simply become a Developer
-#259459 # storage: Do not allow eject for volumes on non-removable disks
 259455 # Settings: per-app cellular data, vpn and wifi restrictions
+265959 # Settings: Add a RemotePreference for device-specific doze settings
+265509 # Phone ringtone setting for Multi SIM device
 )
 repopick -P packages/apps/Settings ${changes[@]}&
 
@@ -123,22 +138,31 @@ repopick -P packages/apps/SetupWizard ${changes[@]}&
 
 # packages/apps/Trebuchet
 changes=(
-263006 # Update default workspace
-262575 # Apply icon size modifications from old Trebuchet
-262576 # Add a 5x4 workspace and switch to it
-#263001 # Trebuchet: implement hidden & protected apps
-#263070 # Switch to BiometricPrompt
-#263005 # Trebuchet: add toggle for desktop and drawer labels
+266208 # Replace 4x4 grid option with a 4x5 one
+266209 # Trebuchet: implement hidden & protected apps
+266210 # Switch to BiometricPrompt
+266211 # Trebuchet: add toggle for desktop and drawer labels
 )
 repopick -P packages/apps/Trebuchet ${changes[@]}&
 
-# packages/services/Telephony
+# packages/services/Telecomm
 changes=(
-256792 # Telephony: Add ERI configuration for U.S. Cellular
-#256793 # Telephony: Support muting by RIL command
-#256795 # Don't start SIP service before decrypted
+265510 # Phone ringtone setting for Multi SIM device
 )
-repopick -P packages/services/Telephony ${changes[@]}&
+repopick -P packages/services/Telecomm ${changes[@]}&
+
+# packages/services/Telephony
+#changes=(
+#256795 # Don't start SIP service before decrypted
+#)
+#repopick -P packages/services/Telephony ${changes[@]}&
+
+# system/core
+changes=(
+265551 # adb_root: Bypass few more checks
+265553 # adb_root: Allow root uid to get root status
+)
+repopick -P system/core ${changes[@]}&
 
 # system/netd
 changes=(
@@ -148,15 +172,14 @@ repopick -P system/netd ${changes[@]}&
 
 # system/vold
 changes=(
-#258169 # vold: add support for more filesystems for public storage
-#258170 # vold: Fix fsck on public volumes
-#258171 # vold: Support internal storage partitions
-#258172 # vold: Honor mount options for ext4/f2fs partitions
-#258173 # vold: Mount ext4/f2fs portable storage with sdcard_posix
-#258174 # vold ext4/f2fs: do not use dirsync if we're mounting adopted storage
-#258175 # Fix the group permissions of the sdcard root.
+258169 # vold: add support for more filesystems for public storage
+258170 # vold: Fix fsck on public volumes
+258171 # vold: Support internal storage partitions
+258172 # vold: Honor mount options for ext4/f2fs partitions
+258173 # vold: Mount ext4/f2fs portable storage with sdcard_posix
+258174 # vold ext4/f2fs: do not use dirsync if we're mounting adopted storage
+258175 # Fix the group permissions of the sdcard root.
 258176 # vold: skip first disk change when converting MBR to GPT
-#258177 # vold: Allow reset after shutdown
 258178 # vold: Accept Linux GPT partitions on external SD cards
 )
 repopick -P system/vold ${changes[@]}&
@@ -165,13 +188,10 @@ repopick -P system/vold ${changes[@]}&
 changes=(
 259310 # prebuilt: Add a script to simplify A-only recovery system mount
 257000 # Remove apicheck.mk
-261292 # vendor/lineage: Fix dopush
-261642 # vendor: make dopush recognize /vendor files
-258204 # build: set build fingerprint for all devices
-#259683 # lineage: don't mount system during install{boot,recovery}
-#262320 # aosp_audio: copy our own old AOSP alarm variants
-264912 # soong: Add AUDIO_FEATURE_ENABLED_EXTENDED_COMPRESS_FORMAT
+259683 # lineage: Update installboot for Q
 255667 # adb insecure by default
+265937 # lineage: Deprecate AddonSU
+266218 # extract_utils: Drop string after semicolon when parsing destination
 )
 repopick -P vendor/lineage ${changes[@]}&
 
@@ -179,3 +199,6 @@ wait
 
 # build/make
 repopick -P build/make -f 259858 # Sorry bro: 6 -> 3
+
+# vendor/lineage
+repopick -P vendor/lineage -f 262320 # aosp_audio: copy our own old AOSP alarm variants
