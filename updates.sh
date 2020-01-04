@@ -12,8 +12,9 @@ repopick -P art ${changes[@]}&
 # bootable/recovery
 changes=(
 259720 # recovery: sdcard is data/media/0
+265182 # updater: Fix lost capabilities of set_metadata
 )
-repopick ${changes[@]}&
+repopick -P bootable/recovery ${changes[@]}&
 
 # build/make
 changes=(
@@ -32,8 +33,15 @@ repopick -P build/make ${changes[@]}&
 # device/qcom/sepolicy
 changes=(
 264669 # [DNM][SQUASH] Merge tag 'LA.UM.8.1.r1-13000-sm8150.0'
+266220 # Expose TimeService app cert to soong
 )
 repopick -P device/qcom/sepolicy ${changes[@]}&
+
+# device/qcom/sepolicy-legacy-um
+changes=(
+266212 # Expose TimeService app cert to soong
+)
+repopick -P device/qcom/sepolicy-legacy-um ${changes[@]}&
 
 # device/lineage/sepolicy
 changes=(
@@ -54,20 +62,33 @@ changes=(
 258303 # power: Re-introduce custom charging sounds
 258546 # Camera button support
 258820 # SystemUI: Add visualizer feature
-258826 # SystemUI: Dismiss keyguard on boot if disabled by current profile
-258827 # SystemUI: Don't dismiss keyguard if user key isn't unlocked
-259458 # storage: Do not notify for volumes on non-removable disks
+266280 # SystemUI: Dismiss keyguard on boot if disabled by current profile
+266281 # SystemUI: Don't dismiss keyguard if user key isn't unlocked
 260002 # fw/b: Squash of app fw restriction commits
-263116 # SystemUI: Revive navbar layout tuning via sysui_nav_bar tunable
-264994 # SystemUI: Bring back good ol' circle battery style
-265784 # core: Add camera intents for camera state [1/2]
 266052 # Revert "Apply front scrim to doze pulsing"
-#266112 # FODCircleView: rewrite and simplify implementation
-#266116 # KeyguardView: report transiting bouncer as shown
-#266130 # FODCircleView: Add MIUI FP icon
-260783/3 # FODCircleView: Add MIUI FP icon
+266112 # FODCircleView: rewrite and simplify implementation
+266116 # KeyguardView: report transiting bouncer as shown
+266282 # SystemUI: Bring back good ol' circle battery style
+265508 # Phone ringtone setting for Multi SIM device
+265511 # Don't change public API
+265784 # core: Add camera intents for camera state [1/2]
 )
 repopick -P frameworks/base ${changes[@]}&
+
+# frameworks/opt/telephony
+changes=(
+265322 # SimPhoneBook: Add ANR/EMAIL support for USIM phonebook.
+266275 # IccPhoneBookInterfaceManager: Move class Request from private to public
+265822 # Restore isEmergency method
+265823 # Restore getSubIdFromNetworkRequest method
+)
+repopick -P frameworks/opt/telephony ${changes[@]}&
+
+# hardware/libhardware
+changes=(
+266139 # libhardware: Add new display types.
+)
+repopick -P hardware/libhardware ${changes[@]}&
 
 # hardware/qcom-caf/msm8996/audio
 changes=(
@@ -104,9 +125,15 @@ repopick ${changes[@]}&
 changes=(
 259996 # lineage-sdk: Update path to ChargingStarted.ogg
 265380 # lineage-sdk: Add camera intents for camera state [2/2]
-265585 # lineage-sdk: Introduce LimitSizeList
+264593 # SensitivePhoneNumbers: Additionally check against the given sim operator
 )
 repopick -P lineage-sdk ${changes[@]}&
+
+# packages/apps/Dialer
+changes=(
+265040 # Beautify call stats details category headers.
+)
+repopick -P packages/apps/Dialer ${changes[@]}&
 
 # packages/apps/ExactCalculator
 changes=(
@@ -116,7 +143,7 @@ repopick -P packages/apps/ExactCalculator ${changes[@]}&
 
 # packages/apps/LineageParts
 changes=(
-258825 # LineageParts: Reenable system profiles
+266140 # LineageParts: Reenable system profiles
 260416 # Parts: Convert charging sound path to uri
 )
 repopick -P packages/apps/LineageParts ${changes[@]}&
@@ -126,8 +153,9 @@ changes=(
 258304 # Settings: Add LineageParts charging sound settings preference
 258819 # Settings: Add lockscreen visualizer toggle
 259315 # One does not simply become a Developer
-259459 # storage: Do not allow eject for volumes on non-removable disks
 259455 # Settings: per-app cellular data, vpn and wifi restrictions
+265959 # Settings: Add a RemotePreference for device-specific doze settings
+265509 # Phone ringtone setting for Multi SIM device
 )
 repopick -P packages/apps/Settings ${changes[@]}&
 
@@ -146,11 +174,24 @@ changes=(
 )
 repopick -P packages/apps/Trebuchet ${changes[@]}&
 
-# packages/services/Telephony
+# packages/services/Telecomm
 changes=(
-256795 # Don't start SIP service before decrypted
+265510 # Phone ringtone setting for Multi SIM device
 )
-repopick -P packages/services/Telephony ${changes[@]}&
+repopick -P packages/services/Telecomm ${changes[@]}&
+
+# packages/services/Telephony
+#changes=(
+#256795 # Don't start SIP service before decrypted
+#)
+#repopick -P packages/services/Telephony ${changes[@]}&
+
+# system/core
+changes=(
+265551 # adb_root: Bypass few more checks
+265553 # adb_root: Allow root uid to get root status
+)
+repopick -P system/core ${changes[@]}&
 
 # system/core
 changes=(
@@ -166,6 +207,13 @@ repopick -P system/netd ${changes[@]}&
 
 # system/vold
 changes=(
+258169 # vold: add support for more filesystems for public storage
+258170 # vold: Fix fsck on public volumes
+258171 # vold: Support internal storage partitions
+258172 # vold: Honor mount options for ext4/f2fs partitions
+258173 # vold: Mount ext4/f2fs portable storage with sdcard_posix
+258174 # vold ext4/f2fs: do not use dirsync if we're mounting adopted storage
+258175 # Fix the group permissions of the sdcard root.
 258176 # vold: skip first disk change when converting MBR to GPT
 258178 # vold: Accept Linux GPT partitions on external SD cards
 )
@@ -174,7 +222,11 @@ repopick -P system/vold ${changes[@]}&
 # vendor/lineage
 changes=(
 259310 # prebuilt: Add a script to simplify A-only recovery system mount
+257000 # Remove apicheck.mk
+259683 # lineage: Update installboot for Q
 255667 # adb insecure by default
+265937 # lineage: Deprecate AddonSU
+266218 # extract_utils: Drop string after semicolon when parsing destination
 )
 repopick -P vendor/lineage ${changes[@]}&
 
@@ -190,3 +242,6 @@ wait
 
 # build/make
 repopick -P build/make -f 259858 # Sorry bro: 6 -> 3
+
+# vendor/lineage
+repopick -P vendor/lineage -f 262320 # aosp_audio: copy our own old AOSP alarm variants
