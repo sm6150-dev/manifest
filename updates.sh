@@ -158,6 +158,7 @@ changes=(
 259455 # Settings: per-app cellular data, vpn and wifi restrictions
 265959 # Settings: Add a RemotePreference for device-specific doze settings
 265509 # Phone ringtone setting for Multi SIM device
+265959 # Settings: Add a RemotePreference for device-specific doze settings
 )
 repopick -P packages/apps/Settings ${changes[@]}&
 
