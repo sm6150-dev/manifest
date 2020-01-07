@@ -126,6 +126,7 @@ changes=(
 259996 # lineage-sdk: Update path to ChargingStarted.ogg
 265380 # lineage-sdk: Add camera intents for camera state [2/2]
 264593 # SensitivePhoneNumbers: Additionally check against the given sim operator
+266410 # lineage-sdk: Drop Expanded Desktop API
 )
 repopick -P lineage-sdk ${changes[@]}&
 
@@ -145,6 +146,7 @@ repopick -P packages/apps/ExactCalculator ${changes[@]}&
 changes=(
 266140 # LineageParts: Reenable system profiles
 260416 # Parts: Convert charging sound path to uri
+266409 # LineageParts: Drop Expanded Desktop feature
 )
 repopick -P packages/apps/LineageParts ${changes[@]}&
 
