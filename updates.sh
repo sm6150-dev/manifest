@@ -66,8 +66,6 @@ changes=(
 266281 # SystemUI: Don't dismiss keyguard if user key isn't unlocked
 260002 # fw/b: Squash of app fw restriction commits
 266052 # Revert "Apply front scrim to doze pulsing"
-266112 # FODCircleView: rewrite and simplify implementation
-266116 # KeyguardView: report transiting bouncer as shown
 266282 # SystemUI: Bring back good ol' circle battery style
 265508 # Phone ringtone setting for Multi SIM device
 265511 # Don't change public API
@@ -170,10 +168,7 @@ repopick -P packages/apps/SetupWizard ${changes[@]}&
 
 # packages/apps/Trebuchet
 changes=(
-266208 # Replace 4x4 grid option with a 4x5 one
-266209 # Trebuchet: implement hidden & protected apps
 266210 # Switch to BiometricPrompt
-266211 # Trebuchet: add toggle for desktop and drawer labels
 )
 repopick -P packages/apps/Trebuchet ${changes[@]}&
 
