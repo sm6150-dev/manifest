@@ -18,10 +18,7 @@ repopick -P bootable/recovery ${changes[@]}&
 
 # build/make
 changes=(
-257172 # releasetools: squash backuptool support
 257177 # releasetools: Use the first entry of a mount point when reading fstab
-259308 # build: Force system-as-root layout for backuptool
-259309 # releasetools: Implement system-mount script to support any recovery system mount
 257170 # build: Never set persist.sys.usb.config=none in recovery
 257174 # releasetools: support reading release keys out of some sort of command
 257175 # releasetools: Add script to sign zips
@@ -33,15 +30,8 @@ repopick -P build/make ${changes[@]}&
 # device/qcom/sepolicy
 changes=(
 264669 # [DNM][SQUASH] Merge tag 'LA.UM.8.1.r1-13000-sm8150.0'
-266220 # Expose TimeService app cert to soong
 )
 repopick -P device/qcom/sepolicy ${changes[@]}&
-
-# device/qcom/sepolicy-legacy-um
-changes=(
-266212 # Expose TimeService app cert to soong
-)
-repopick -P device/qcom/sepolicy-legacy-um ${changes[@]}&
 
 # device/lineage/sepolicy
 changes=(
@@ -65,8 +55,6 @@ changes=(
 266280 # SystemUI: Dismiss keyguard on boot if disabled by current profile
 266281 # SystemUI: Don't dismiss keyguard if user key isn't unlocked
 260002 # fw/b: Squash of app fw restriction commits
-266052 # Revert "Apply front scrim to doze pulsing"
-266282 # SystemUI: Bring back good ol' circle battery style
 265508 # Phone ringtone setting for Multi SIM device
 265511 # Don't change public API
 265784 # core: Add camera intents for camera state [1/2]
@@ -219,12 +207,8 @@ repopick -P system/vold ${changes[@]}&
 
 # vendor/lineage
 changes=(
-259310 # prebuilt: Add a script to simplify A-only recovery system mount
-257000 # Remove apicheck.mk
 259683 # lineage: Update installboot for Q
 255667 # adb insecure by default
-265937 # lineage: Deprecate AddonSU
-266218 # extract_utils: Drop string after semicolon when parsing destination
 )
 repopick -P vendor/lineage ${changes[@]}&
 
