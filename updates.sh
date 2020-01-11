@@ -18,10 +18,7 @@ repopick -P bootable/recovery ${changes[@]}&
 
 # build/make
 changes=(
-257172 # releasetools: squash backuptool support
 257177 # releasetools: Use the first entry of a mount point when reading fstab
-259308 # build: Force system-as-root layout for backuptool
-259309 # releasetools: Implement system-mount script to support any recovery system mount
 257170 # build: Never set persist.sys.usb.config=none in recovery
 257174 # releasetools: support reading release keys out of some sort of command
 257175 # releasetools: Add script to sign zips
@@ -29,19 +26,6 @@ changes=(
 257178 # build: allow forcing build of otatools
 )
 repopick -P build/make ${changes[@]}&
-
-# device/qcom/sepolicy
-changes=(
-266114 # Revert "common: Correctly Label /sys/class/kgsl"
-266220 # Expose TimeService app cert to soong
-)
-repopick -P device/qcom/sepolicy ${changes[@]}&
-
-# device/qcom/sepolicy-legacy-um
-changes=(
-266212 # Expose TimeService app cert to soong
-)
-repopick -P device/qcom/sepolicy-legacy-um ${changes[@]}&
 
 # device/lineage/sepolicy
 changes=(
@@ -58,10 +42,6 @@ changes=(
 266280 # SystemUI: Dismiss keyguard on boot if disabled by current profile
 266281 # SystemUI: Don't dismiss keyguard if user key isn't unlocked
 260002 # fw/b: Squash of app fw restriction commits
-266052 # Revert "Apply front scrim to doze pulsing"
-266112 # FODCircleView: rewrite and simplify implementation
-266116 # KeyguardView: report transiting bouncer as shown
-266282 # SystemUI: Bring back good ol' circle battery style
 265508 # Phone ringtone setting for Multi SIM device
 265511 # Don't change public API
 265784 # core: Add camera intents for camera state [1/2]
@@ -99,6 +79,7 @@ changes=(
 259996 # lineage-sdk: Update path to ChargingStarted.ogg
 265380 # lineage-sdk: Add camera intents for camera state [2/2]
 264593 # SensitivePhoneNumbers: Additionally check against the given sim operator
+266410 # lineage-sdk: Drop Expanded Desktop API
 )
 repopick -P lineage-sdk ${changes[@]}&
 
@@ -118,6 +99,7 @@ repopick -P packages/apps/ExactCalculator ${changes[@]}&
 changes=(
 266140 # LineageParts: Reenable system profiles
 260416 # Parts: Convert charging sound path to uri
+266409 # LineageParts: Drop Expanded Desktop feature
 )
 repopick -P packages/apps/LineageParts ${changes[@]}&
 
@@ -129,6 +111,7 @@ changes=(
 259455 # Settings: per-app cellular data, vpn and wifi restrictions
 265959 # Settings: Add a RemotePreference for device-specific doze settings
 265509 # Phone ringtone setting for Multi SIM device
+265959 # Settings: Add a RemotePreference for device-specific doze settings
 )
 repopick -P packages/apps/Settings ${changes[@]}&
 
@@ -140,10 +123,7 @@ repopick -P packages/apps/SetupWizard ${changes[@]}&
 
 # packages/apps/Trebuchet
 changes=(
-266208 # Replace 4x4 grid option with a 4x5 one
-266209 # Trebuchet: implement hidden & protected apps
 266210 # Switch to BiometricPrompt
-266211 # Trebuchet: add toggle for desktop and drawer labels
 )
 repopick -P packages/apps/Trebuchet ${changes[@]}&
 
@@ -194,12 +174,8 @@ repopick -P system/vold ${changes[@]}&
 
 # vendor/lineage
 changes=(
-259310 # prebuilt: Add a script to simplify A-only recovery system mount
-257000 # Remove apicheck.mk
 259683 # lineage: Update installboot for Q
 255667 # adb insecure by default
-265937 # lineage: Deprecate AddonSU
-266218 # extract_utils: Drop string after semicolon when parsing destination
 )
 repopick -P vendor/lineage ${changes[@]}&
 
