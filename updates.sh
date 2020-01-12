@@ -3,6 +3,12 @@
 set -e
 source build/envsetup.sh
 
+#repopick -P vendor/lineage 264429 # build: add the 'picklist' utility
+
+#source build/envsetup.sh
+
+#picklist picks.yml
+
 # art
 changes=(
 265485 # Trigger GC when 90% heap is utilized
@@ -18,10 +24,7 @@ repopick -P bootable/recovery ${changes[@]}&
 
 # build/make
 changes=(
-257172 # releasetools: squash backuptool support
 257177 # releasetools: Use the first entry of a mount point when reading fstab
-259308 # build: Force system-as-root layout for backuptool
-259309 # releasetools: Implement system-mount script to support any recovery system mount
 257170 # build: Never set persist.sys.usb.config=none in recovery
 257174 # releasetools: support reading release keys out of some sort of command
 257175 # releasetools: Add script to sign zips
@@ -29,18 +32,6 @@ changes=(
 257178 # build: allow forcing build of otatools
 )
 repopick -P build/make ${changes[@]}&
-
-# device/qcom/sepolicy
-changes=(
-266220 # Expose TimeService app cert to soong
-)
-repopick -P device/qcom/sepolicy ${changes[@]}&
-
-# device/qcom/sepolicy-legacy-um
-changes=(
-266212 # Expose TimeService app cert to soong
-)
-repopick -P device/qcom/sepolicy-legacy-um ${changes[@]}&
 
 # frameworks/base
 changes=(
@@ -51,30 +42,10 @@ changes=(
 266280 # SystemUI: Dismiss keyguard on boot if disabled by current profile
 266281 # SystemUI: Don't dismiss keyguard if user key isn't unlocked
 260002 # fw/b: Squash of app fw restriction commits
-266052 # Revert "Apply front scrim to doze pulsing"
-266112 # FODCircleView: rewrite and simplify implementation
-266116 # KeyguardView: report transiting bouncer as shown
-266282 # SystemUI: Bring back good ol' circle battery style
 265508 # Phone ringtone setting for Multi SIM device
 265511 # Don't change public API
-265784 # core: Add camera intents for camera state [1/2]
 )
 repopick -P frameworks/base ${changes[@]}&
-
-# frameworks/opt/telephony
-changes=(
-265322 # SimPhoneBook: Add ANR/EMAIL support for USIM phonebook.
-266275 # IccPhoneBookInterfaceManager: Move class Request from private to public
-265822 # Restore isEmergency method
-265823 # Restore getSubIdFromNetworkRequest method
-)
-repopick -P frameworks/opt/telephony ${changes[@]}&
-
-# hardware/libhardware
-changes=(
-266139 # libhardware: Add new display types.
-)
-repopick -P hardware/libhardware ${changes[@]}&
 
 # hardware/qcom-caf/msm8996/audio
 changes=(
@@ -106,18 +77,18 @@ changes=(
 )
 repopick -P packages/apps/ExactCalculator ${changes[@]}&
 
+# packages/apps/Exchange
+changes=(
+266803 # Exchange: bump target sdk to 23
+)
+repopick -P packages/apps/Exchange ${changes[@]}&
+
 # packages/apps/LineageParts
 changes=(
 266140 # LineageParts: Reenable system profiles
 260416 # Parts: Convert charging sound path to uri
 )
 repopick -P packages/apps/LineageParts ${changes[@]}&
-
-# packages/apps/Nfc
-changes=(
-256814 # NFCService: Add sysprop to prevent FW download during boot with NFC off.
-)
-repopick -P packages/apps/Nfc ${changes[@]}&
 
 # packages/apps/Settings
 changes=(
@@ -138,24 +109,21 @@ repopick -P packages/apps/SetupWizard ${changes[@]}&
 
 # packages/apps/Trebuchet
 changes=(
-266208 # Replace 4x4 grid option with a 4x5 one
-266209 # Trebuchet: implement hidden & protected apps
 266210 # Switch to BiometricPrompt
-266211 # Trebuchet: add toggle for desktop and drawer labels
 )
 repopick -P packages/apps/Trebuchet ${changes[@]}&
+
+# packages/inputmethods/LatinIME
+changes=(
+266617 # LatinIME: Update emojis
+)
+repopick -P packages/inputmethods/LatinIME ${changes[@]}&
 
 # packages/services/Telecomm
 changes=(
 265510 # Phone ringtone setting for Multi SIM device
 )
 repopick -P packages/services/Telecomm ${changes[@]}&
-
-# packages/services/Telephony
-#changes=(
-#256795 # Don't start SIP service before decrypted
-#)
-#repopick -P packages/services/Telephony ${changes[@]}&
 
 # system/core
 changes=(
@@ -169,6 +137,18 @@ changes=(
 260003 # system/netd: Squash of app fw restriction commits
 )
 repopick -P system/netd ${changes[@]}&
+
+# system/sepolicy
+changes=(
+#264230 # sepolicy: Optionally build sepolicy_freeze_test
+264266 # Mark mediacodec_2{6,7,8} as hal_omx_server
+264267 # file_contexts: Include legacy /system/vendor paths
+264057 # Fix storaged access to /sys/block/mmcblk0/stat after 48027a00
+264432 # sepolicy: Treat proc-based DT fstab the same and sys-based
+266416 # neverallows: Adjust check neverallow rules to use actual TARGET_BUILD_VARIANT
+264406 # sepolicy: New type sdcard_posix for labeled filesystems
+)
+repopick -P system/sepolicy ${changes[@]}&
 
 # system/vold
 changes=(
@@ -186,19 +166,17 @@ repopick -P system/vold ${changes[@]}&
 
 # vendor/lineage
 changes=(
-259310 # prebuilt: Add a script to simplify A-only recovery system mount
-257000 # Remove apicheck.mk
+266664 # overlay: Add more default packages from Google
+265745 # default-permissions: Grant default permissions to com.android.exchange
 259683 # lineage: Update installboot for Q
 255667 # adb insecure by default
-265937 # lineage: Deprecate AddonSU
-266218 # extract_utils: Drop string after semicolon when parsing destination
 )
 repopick -P vendor/lineage ${changes[@]}&
 
 wait
 
 # build/make
-repopick -P build/make -f 259858 # Sorry bro: 6 -> 3
+repopick -P build/make -f 266145 # Sorry bro: 6 -> 3
 
 # vendor/lineage
 repopick -P vendor/lineage -f 262320 # aosp_audio: copy our own old AOSP alarm variants
