@@ -61,15 +61,6 @@ changes=(
 )
 repopick -P frameworks/base ${changes[@]}&
 
-# frameworks/opt/telephony
-changes=(
-265322 # SimPhoneBook: Add ANR/EMAIL support for USIM phonebook.
-266275 # IccPhoneBookInterfaceManager: Move class Request from private to public
-265822 # Restore isEmergency method
-265823 # Restore getSubIdFromNetworkRequest method
-)
-repopick -P frameworks/opt/telephony ${changes[@]}&
-
 # hardware/libhardware
 changes=(
 266139 # libhardware: Add new display types.
@@ -115,12 +106,6 @@ changes=(
 266410 # lineage-sdk: Drop Expanded Desktop API
 )
 repopick -P lineage-sdk ${changes[@]}&
-
-# packages/apps/Dialer
-changes=(
-265040 # Beautify call stats details category headers.
-)
-repopick -P packages/apps/Dialer ${changes[@]}&
 
 # packages/apps/ExactCalculator
 changes=(
