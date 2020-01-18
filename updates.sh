@@ -58,11 +58,12 @@ changes=(
 258303 # power: Re-introduce custom charging sounds
 258546 # Camera button support
 258820 # SystemUI: Add visualizer feature
-266280 # SystemUI: Dismiss keyguard on boot if disabled by current profile
-266281 # SystemUI: Don't dismiss keyguard if user key isn't unlocked
 260002 # fw/b: Squash of app fw restriction commits
 265508 # Phone ringtone setting for Multi SIM device
 265511 # Don't change public API
+267249 # DozeSensors: do not use binned brightness sensor for proximity if not supported
+266130 # FODCircleView: Add Support for custom FP pressed icon
+265784 # core: Add camera intents for camera state [1/2]
 )
 repopick -P frameworks/base ${changes[@]}&
 
@@ -82,20 +83,20 @@ changes=(
 265341 # [DNM][SQUASH] Merge tag 'LA.UM.8.1.r1-12200-sm8150.0'
 262311 # audio: Add missing includes
 )
-repopick ${changes[@]}&
+repopick -P hardware/qcom-caf/sm8150/audio ${changes[@]}&
 
 # hardware/qcom-caf/sm8150/display
 changes=(
 264576/3 # [DNM][SQUASH] Merge tag 'LA.UM.8.1.r1-12200-sm8150.0'
 264201 # gralloc: Upgrade mapper and allocator to 3.0
 )
-repopick ${changes[@]}&
+repopick -P hardware/qcom-caf/sm8150/display ${changes[@]}&
 
 # hardware/qcom-caf/sm8150/media
 changes=(
 264578 # [DNM][SQUASH] Merge tag 'LA.UM.8.1.r1-12200-sm8150.0'
 )
-repopick ${changes[@]}&
+repopick -P hardware/qcom-caf/sm8150/media ${changes[@]}&
 
 # lineage-sdk
 changes=(
@@ -120,7 +121,6 @@ repopick -P packages/apps/Exchange ${changes[@]}&
 
 # packages/apps/LineageParts
 changes=(
-266140 # LineageParts: Reenable system profiles
 260416 # Parts: Convert charging sound path to uri
 266409 # LineageParts: Drop Expanded Desktop feature
 )
@@ -132,9 +132,7 @@ changes=(
 258819 # Settings: Add lockscreen visualizer toggle
 259315 # One does not simply become a Developer
 259455 # Settings: per-app cellular data, vpn and wifi restrictions
-265959 # Settings: Add a RemotePreference for device-specific doze settings
 265509 # Phone ringtone setting for Multi SIM device
-265959 # Settings: Add a RemotePreference for device-specific doze settings
 )
 repopick -P packages/apps/Settings ${changes[@]}&
 
@@ -183,7 +181,7 @@ repopick -P system/netd ${changes[@]}&
 
 # system/sepolicy
 changes=(
-#264230 # sepolicy: Optionally build sepolicy_freeze_test
+264230 # sepolicy: Optionally build sepolicy_freeze_test
 264266 # Mark mediacodec_2{6,7,8} as hal_omx_server
 264267 # file_contexts: Include legacy /system/vendor paths
 264057 # Fix storaged access to /sys/block/mmcblk0/stat after 48027a00
