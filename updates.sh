@@ -3,6 +3,12 @@
 set -e
 source build/envsetup.sh
 
+#repopick -P vendor/lineage 264429 # build: add the 'picklist' utility
+
+#source build/envsetup.sh
+
+#picklist picks.yml
+
 # art
 changes=(
 265485 # Trigger GC when 90% heap is utilized
@@ -57,15 +63,8 @@ changes=(
 260002 # fw/b: Squash of app fw restriction commits
 265508 # Phone ringtone setting for Multi SIM device
 265511 # Don't change public API
-265784 # core: Add camera intents for camera state [1/2]
 )
 repopick -P frameworks/base ${changes[@]}&
-
-# hardware/libhardware
-changes=(
-266139 # libhardware: Add new display types.
-)
-repopick -P hardware/libhardware ${changes[@]}&
 
 # hardware/qcom-caf/msm8996/audio
 changes=(
@@ -113,6 +112,12 @@ changes=(
 )
 repopick -P packages/apps/ExactCalculator ${changes[@]}&
 
+# packages/apps/Exchange
+changes=(
+266803 # Exchange: bump target sdk to 23
+)
+repopick -P packages/apps/Exchange ${changes[@]}&
+
 # packages/apps/LineageParts
 changes=(
 266140 # LineageParts: Reenable system profiles
@@ -145,17 +150,17 @@ changes=(
 )
 repopick -P packages/apps/Trebuchet ${changes[@]}&
 
+# packages/inputmethods/LatinIME
+changes=(
+266617 # LatinIME: Update emojis
+)
+repopick -P packages/inputmethods/LatinIME ${changes[@]}&
+
 # packages/services/Telecomm
 changes=(
 265510 # Phone ringtone setting for Multi SIM device
 )
 repopick -P packages/services/Telecomm ${changes[@]}&
-
-# packages/services/Telephony
-#changes=(
-#256795 # Don't start SIP service before decrypted
-#)
-#repopick -P packages/services/Telephony ${changes[@]}&
 
 # system/core
 changes=(
@@ -176,6 +181,18 @@ changes=(
 )
 repopick -P system/netd ${changes[@]}&
 
+# system/sepolicy
+changes=(
+#264230 # sepolicy: Optionally build sepolicy_freeze_test
+264266 # Mark mediacodec_2{6,7,8} as hal_omx_server
+264267 # file_contexts: Include legacy /system/vendor paths
+264057 # Fix storaged access to /sys/block/mmcblk0/stat after 48027a00
+264432 # sepolicy: Treat proc-based DT fstab the same and sys-based
+266416 # neverallows: Adjust check neverallow rules to use actual TARGET_BUILD_VARIANT
+264406 # sepolicy: New type sdcard_posix for labeled filesystems
+)
+repopick -P system/sepolicy ${changes[@]}&
+
 # system/vold
 changes=(
 258169 # vold: add support for more filesystems for public storage
@@ -192,6 +209,8 @@ repopick -P system/vold ${changes[@]}&
 
 # vendor/lineage
 changes=(
+266664 # overlay: Add more default packages from Google
+265745 # default-permissions: Grant default permissions to com.android.exchange
 259683 # lineage: Update installboot for Q
 255667 # adb insecure by default
 )
@@ -208,7 +227,7 @@ repopick -P vendor/qcom/opensource/interfaces ${changes[@]}&
 wait
 
 # build/make
-repopick -P build/make -f 259858 # Sorry bro: 6 -> 3
+repopick -P build/make -f 266145 # Sorry bro: 6 -> 3
 
 # vendor/lineage
 repopick -P vendor/lineage -f 262320 # aosp_audio: copy our own old AOSP alarm variants
