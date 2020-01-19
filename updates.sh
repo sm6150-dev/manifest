@@ -182,7 +182,6 @@ repopick -P system/netd ${changes[@]}&
 # system/sepolicy
 changes=(
 264230 # sepolicy: Optionally build sepolicy_freeze_test
-264266 # Mark mediacodec_2{6,7,8} as hal_omx_server
 264267 # file_contexts: Include legacy /system/vendor paths
 264057 # Fix storaged access to /sys/block/mmcblk0/stat after 48027a00
 264432 # sepolicy: Treat proc-based DT fstab the same and sys-based
