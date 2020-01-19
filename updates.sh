@@ -186,7 +186,6 @@ changes=(
 264267 # file_contexts: Include legacy /system/vendor paths
 264057 # Fix storaged access to /sys/block/mmcblk0/stat after 48027a00
 264432 # sepolicy: Treat proc-based DT fstab the same and sys-based
-266416 # neverallows: Adjust check neverallow rules to use actual TARGET_BUILD_VARIANT
 264406 # sepolicy: New type sdcard_posix for labeled filesystems
 )
 repopick -P system/sepolicy ${changes[@]}&
