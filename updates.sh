@@ -63,7 +63,7 @@ changes=(
 265511 # Don't change public API
 267249 # DozeSensors: do not use binned brightness sensor for proximity if not supported
 266130 # FODCircleView: Add Support for custom FP pressed icon
-265784 # core: Add camera intents for camera state [1/2]
+265531 # core: Add camera intents for camera state [1/2]
 267437 # SystemUI: implement better partial screenshot
 )
 repopick -P frameworks/base ${changes[@]}&
