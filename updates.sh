@@ -70,11 +70,6 @@ repopick -P frameworks/base ${changes[@]}&
 
 # hardware/qcom-caf/msm8996/audio
 changes=(
-265315 # hal: Support the audio amplifier hook
-261894 # Build audio.primary.* with BOARD_VNDK_VERSION
-265499 # hal: fix misc audio hal errors
-265500 # hal: Use log/log.h instead of cutils/log.h
-260613 # audio: Extend platform parser to allow device name aliasing
 260610 # audio: Fix flac offload not working
 )
 repopick -P hardware/qcom-caf/msm8996/audio ${changes[@]}&
