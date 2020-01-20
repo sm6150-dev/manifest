@@ -54,7 +54,6 @@ repopick -P device/xiaomi/common ${changes[@]}&
 
 # frameworks/base
 changes=(
-256447 # SystemUI: Add Profiles tile
 258303 # power: Re-introduce custom charging sounds
 258546 # Camera button support
 258820 # SystemUI: Add visualizer feature
