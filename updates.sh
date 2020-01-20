@@ -65,6 +65,7 @@ changes=(
 265531 # core: Add camera intents for camera state [1/2]
 267437 # SystemUI: implement better partial screenshot
 267439 # ScreenshotHelper: ignore timeout when taking partial screenshots
+267459 # FODCircleView: Correct position on keyguard
 )
 repopick -P frameworks/base ${changes[@]}&
 
