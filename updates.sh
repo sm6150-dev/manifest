@@ -139,12 +139,6 @@ changes=(
 )
 repopick -P packages/apps/SetupWizard ${changes[@]}&
 
-# packages/apps/Trebuchet
-changes=(
-266210 # Switch to BiometricPrompt
-)
-repopick -P packages/apps/Trebuchet ${changes[@]}&
-
 # packages/inputmethods/LatinIME
 changes=(
 266617 # LatinIME: Update emojis
