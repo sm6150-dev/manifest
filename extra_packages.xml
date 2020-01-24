@@ -2,8 +2,6 @@
 <manifest>
   <!-- Extra packages not included in the main manifest -->
   <project path="device/xiaomi/common" name="LineageOS/android_device_xiaomi_common" />
-  <project path="packages/resources/devicesettings" name="LineageOS/android_packages_resources_devicesettings" />
-  <project path="packages/apps/FlipFlap" name="LineageOS/android_packages_apps_FlipFlap" />
 
   <!-- Device specific repositories -->
   <project name="davinci-dev/android_device_xiaomi_davinci" path="device/xiaomi/davinci" remote="private" revision="lineage-17.1" />
