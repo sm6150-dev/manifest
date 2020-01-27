@@ -113,12 +113,6 @@ changes=(
 )
 repopick -P packages/apps/ExactCalculator ${changes[@]}&
 
-# packages/apps/Exchange
-changes=(
-266803 # Exchange: bump target sdk to 23
-)
-repopick -P packages/apps/Exchange ${changes[@]}&
-
 # packages/apps/LineageParts
 changes=(
 260416 # Parts: Convert charging sound path to uri
@@ -200,7 +194,6 @@ repopick -P system/vold ${changes[@]}&
 # vendor/lineage
 changes=(
 266664 # overlay: Add more default packages from Google
-265745 # default-permissions: Grant default permissions to com.android.exchange
 259683 # lineage: Update installboot for Q
 255667 # adb insecure by default
 )
