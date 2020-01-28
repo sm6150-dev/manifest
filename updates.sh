@@ -15,13 +15,6 @@ changes=(
 )
 repopick -P art ${changes[@]}&
 
-# bootable/recovery
-changes=(
-259720 # recovery: sdcard is data/media/0
-265182 # updater: Fix lost capabilities of set_metadata
-)
-repopick -P bootable/recovery ${changes[@]}&
-
 # build/make
 changes=(
 257177 # releasetools: Use the first entry of a mount point when reading fstab
@@ -68,6 +61,7 @@ changes=(
 267313
 267312
 267314
+267804 # Updates to various icons:
 )
 repopick -P frameworks/base ${changes[@]}&
 
