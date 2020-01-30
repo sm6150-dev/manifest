@@ -62,6 +62,8 @@ changes=(
 267312
 267314
 267804 # Updates to various icons:
+267811 # Add upgrade step to fix system sounds issue
+267812 # SettingsProvider: Finish sounds migration
 )
 repopick -P frameworks/base ${changes[@]}&
 
