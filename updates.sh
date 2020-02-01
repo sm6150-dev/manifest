@@ -91,6 +91,7 @@ repopick -P hardware/qcom-caf/sm8150/display ${changes[@]}&
 # hardware/qcom-caf/sm8150/media
 changes=(
 264578 # [DNM][SQUASH] Merge tag 'LA.UM.8.1.r1-12200-sm8150.0'
+267926
 )
 repopick -P hardware/qcom-caf/sm8150/media ${changes[@]}&
 
