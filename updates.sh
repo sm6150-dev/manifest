@@ -117,6 +117,12 @@ changes=(
 )
 repopick -P packages/apps/LineageParts ${changes[@]}&
 
+# packages/apps/Recorder
+changes=(
+267929
+)
+repopick -P packages/apps/Recorder ${changes[@]}&
+
 # packages/apps/Settings
 changes=(
 258304 # Settings: Add LineageParts charging sound settings preference
