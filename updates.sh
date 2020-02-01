@@ -29,6 +29,8 @@ repopick -P build/make ${changes[@]}&
 # device/qcom/sepolicy
 changes=(
 264669 # [DNM][SQUASH] Merge tag 'LA.UM.8.1.r1-13000-sm8150.0'
+267998 # sepolicy: Allow system_server to read vendor camera props
+267999 # sepolicy: Allow all apps to read persist camera props
 )
 repopick -P device/qcom/sepolicy ${changes[@]}&
 
