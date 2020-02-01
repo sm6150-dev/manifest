@@ -81,7 +81,7 @@ repopick -P hardware/qcom-caf/msm8996/audio ${changes[@]}&
 changes=(
 265341 # [DNM][SQUASH] Merge tag 'LA.UM.8.1.r1-12200-sm8150.0'
 262311 # audio: Add missing includes
-268003 # audio_extn: Allow skipping compilation of audio HAL extensions
+267322 # audio_extn: Allow skipping compilation of audio HAL extensions
 )
 repopick -P hardware/qcom-caf/sm8150/audio ${changes[@]}&
 
