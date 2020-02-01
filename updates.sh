@@ -42,8 +42,10 @@ repopick -P device/lineage/sepolicy ${changes[@]}&
 
 # device/xiaomi/common
 changes=(
-266162 # common: Import Xiaomi HAL definitions
-266163 # common: Import Goodix biometrics fingerprint HAL definitions
+268009
+268010
+268011
+268012
 )
 repopick -P device/xiaomi/common ${changes[@]}&
 
