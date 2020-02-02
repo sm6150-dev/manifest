@@ -15,14 +15,16 @@ changes=(
 )
 repopick -P art ${changes[@]}&
 
+# bionic
+changes=(
+267304 # bionic: Support wildcards in cached hosts file
+)
+repopick -P bionic ${changes[@]}&
+
 # build/make
 changes=(
-257177 # releasetools: Use the first entry of a mount point when reading fstab
 257170 # build: Never set persist.sys.usb.config=none in recovery
-257174 # releasetools: support reading release keys out of some sort of command
-257175 # releasetools: Add script to sign zips
 257176 # releasetools: Store the build.prop file in the OTA zip
-257178 # build: allow forcing build of otatools
 )
 repopick -P build/make ${changes[@]}&
 
@@ -57,17 +59,18 @@ changes=(
 260002 # fw/b: Squash of app fw restriction commits
 265508 # Phone ringtone setting for Multi SIM device
 265511 # Don't change public API
+266938 # SystemUI: get rid of build text in qs
 267249 # DozeSensors: do not use binned brightness sensor for proximity if not supported
+267480 # Context-aware Bluetooth airplane mode
+267565 # SystemUI: Bring back ic_qs_bluetooth_connected.xml
 266130 # FODCircleView: Add Support for custom FP pressed icon
-265531 # core: Add camera intents for camera state [1/2]
 267459 # FODCircleView: Correct position on keyguard
+265531 # core: Add camera intents for camera state [1/2]
 267306
 267313
 267312
 267314
 267804 # Updates to various icons:
-#267811 # Add upgrade step to fix system sounds issue
-#267812 # SettingsProvider: Finish sounds migration
 )
 repopick -P frameworks/base ${changes[@]}&
 
@@ -137,12 +140,6 @@ changes=(
 )
 repopick -P packages/apps/Settings ${changes[@]}&
 
-# packages/apps/SetupWizard
-changes=(
-257065 # Account for PhoneMonitor API change
-)
-repopick -P packages/apps/SetupWizard ${changes[@]}&
-
 # packages/inputmethods/LatinIME
 changes=(
 266617 # LatinIME: Update emojis
@@ -159,6 +156,7 @@ repopick -P packages/services/Telecomm ${changes[@]}&
 changes=(
 265551 # adb_root: Bypass few more checks
 265553 # adb_root: Allow root uid to get root status
+267253 # adb: host: Fix windows build after 5c0999c
 )
 repopick -P system/core ${changes[@]}&
 
@@ -176,10 +174,6 @@ repopick -P system/netd ${changes[@]}&
 
 # system/sepolicy
 changes=(
-264230 # sepolicy: Optionally build sepolicy_freeze_test
-264267 # file_contexts: Include legacy /system/vendor paths
-264057 # Fix storaged access to /sys/block/mmcblk0/stat after 48027a00
-264432 # sepolicy: Treat proc-based DT fstab the same and sys-based
 264406 # sepolicy: New type sdcard_posix for labeled filesystems
 )
 repopick -P system/sepolicy ${changes[@]}&
@@ -200,8 +194,11 @@ repopick -P system/vold ${changes[@]}&
 
 # vendor/lineage
 changes=(
-266664 # overlay: Add more default packages from Google
 259683 # lineage: Update installboot for Q
+266664 # overlay: Add more default packages from Google
+267359 # backuptool: Fix addon.d version check for A-only
+267362 # backuptool: Run check_{black, white}list with proper system path
+267400 # backuptool: Execute check_blacklist from the current directory
 255667 # adb insecure by default
 )
 repopick -P vendor/lineage ${changes[@]}&
