@@ -25,6 +25,7 @@ repopick -P bionic ${changes[@]}&
 changes=(
 257170 # build: Never set persist.sys.usb.config=none in recovery
 257176 # releasetools: Store the build.prop file in the OTA zip
+268008 # build: Add vendor.prop and odm.prop capability
 )
 repopick -P build/make ${changes[@]}&
 
