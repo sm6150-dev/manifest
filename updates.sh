@@ -15,45 +15,36 @@ changes=(
 )
 repopick -P art ${changes[@]}&
 
-# bootable/recovery
+# bionic
 changes=(
-259720 # recovery: sdcard is data/media/0
-265182 # updater: Fix lost capabilities of set_metadata
+267304 # bionic: Support wildcards in cached hosts file
 )
-repopick -P bootable/recovery ${changes[@]}&
+repopick -P bionic ${changes[@]}&
 
 # build/make
 changes=(
-257177 # releasetools: Use the first entry of a mount point when reading fstab
 257170 # build: Never set persist.sys.usb.config=none in recovery
-257174 # releasetools: support reading release keys out of some sort of command
-257175 # releasetools: Add script to sign zips
 257176 # releasetools: Store the build.prop file in the OTA zip
-257178 # build: allow forcing build of otatools
 )
 repopick -P build/make ${changes[@]}&
 
 # frameworks/base
 changes=(
-256447 # SystemUI: Add Profiles tile
 258303 # power: Re-introduce custom charging sounds
 258546 # Camera button support
 258820 # SystemUI: Add visualizer feature
-266280 # SystemUI: Dismiss keyguard on boot if disabled by current profile
-266281 # SystemUI: Don't dismiss keyguard if user key isn't unlocked
 260002 # fw/b: Squash of app fw restriction commits
 265508 # Phone ringtone setting for Multi SIM device
 265511 # Don't change public API
+266938 # SystemUI: get rid of build text in qs
+267249 # DozeSensors: do not use binned brightness sensor for proximity if not supported
+267480 # Context-aware Bluetooth airplane mode
+267565 # SystemUI: Bring back ic_qs_bluetooth_connected.xml
 )
 repopick -P frameworks/base ${changes[@]}&
 
 # hardware/qcom-caf/msm8996/audio
 changes=(
-265315 # hal: Support the audio amplifier hook
-261894 # Build audio.primary.* with BOARD_VNDK_VERSION
-265499 # hal: fix misc audio hal errors
-265500 # hal: Use log/log.h instead of cutils/log.h
-260613 # audio: Extend platform parser to allow device name aliasing
 260610 # audio: Fix flac offload not working
 )
 repopick -P hardware/qcom-caf/msm8996/audio ${changes[@]}&
@@ -65,27 +56,14 @@ changes=(
 )
 repopick -P lineage-sdk ${changes[@]}&
 
-# packages/apps/Dialer
-changes=(
-265040 # Beautify call stats details category headers.
-)
-repopick -P packages/apps/Dialer ${changes[@]}&
-
 # packages/apps/ExactCalculator
 changes=(
 263677 # ExactCalculator: prevent back gesture conflict
 )
 repopick -P packages/apps/ExactCalculator ${changes[@]}&
 
-# packages/apps/Exchange
-changes=(
-266803 # Exchange: bump target sdk to 23
-)
-repopick -P packages/apps/Exchange ${changes[@]}&
-
 # packages/apps/LineageParts
 changes=(
-266140 # LineageParts: Reenable system profiles
 260416 # Parts: Convert charging sound path to uri
 )
 repopick -P packages/apps/LineageParts ${changes[@]}&
@@ -96,22 +74,9 @@ changes=(
 258819 # Settings: Add lockscreen visualizer toggle
 259315 # One does not simply become a Developer
 259455 # Settings: per-app cellular data, vpn and wifi restrictions
-265959 # Settings: Add a RemotePreference for device-specific doze settings
 265509 # Phone ringtone setting for Multi SIM device
 )
 repopick -P packages/apps/Settings ${changes[@]}&
-
-# packages/apps/SetupWizard
-changes=(
-257065 # Account for PhoneMonitor API change
-)
-repopick -P packages/apps/SetupWizard ${changes[@]}&
-
-# packages/apps/Trebuchet
-changes=(
-266210 # Switch to BiometricPrompt
-)
-repopick -P packages/apps/Trebuchet ${changes[@]}&
 
 # packages/inputmethods/LatinIME
 changes=(
@@ -129,6 +94,7 @@ repopick -P packages/services/Telecomm ${changes[@]}&
 changes=(
 265551 # adb_root: Bypass few more checks
 265553 # adb_root: Allow root uid to get root status
+267253 # adb: host: Fix windows build after 5c0999c
 )
 repopick -P system/core ${changes[@]}&
 
@@ -140,12 +106,6 @@ repopick -P system/netd ${changes[@]}&
 
 # system/sepolicy
 changes=(
-#264230 # sepolicy: Optionally build sepolicy_freeze_test
-264266 # Mark mediacodec_2{6,7,8} as hal_omx_server
-264267 # file_contexts: Include legacy /system/vendor paths
-264057 # Fix storaged access to /sys/block/mmcblk0/stat after 48027a00
-264432 # sepolicy: Treat proc-based DT fstab the same and sys-based
-266416 # neverallows: Adjust check neverallow rules to use actual TARGET_BUILD_VARIANT
 264406 # sepolicy: New type sdcard_posix for labeled filesystems
 )
 repopick -P system/sepolicy ${changes[@]}&
@@ -166,9 +126,11 @@ repopick -P system/vold ${changes[@]}&
 
 # vendor/lineage
 changes=(
-266664 # overlay: Add more default packages from Google
-265745 # default-permissions: Grant default permissions to com.android.exchange
 259683 # lineage: Update installboot for Q
+266664 # overlay: Add more default packages from Google
+267359 # backuptool: Fix addon.d version check for A-only
+267362 # backuptool: Run check_{black, white}list with proper system path
+267400 # backuptool: Execute check_blacklist from the current directory
 255667 # adb insecure by default
 )
 repopick -P vendor/lineage ${changes[@]}&

@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <!-- Extra packages not included in the main manifest -->
-  <project path="packages/resources/devicesettings" name="LineageOS/android_packages_resources_devicesettings" />
-  <project path="packages/apps/FlipFlap" name="LineageOS/android_packages_apps_FlipFlap" />
-
   <!-- Device repositories that can be translated
   <project path="device/asus/I01WD" name="LineageOS/android_device_asus_I01WD" />
   <project path="device/lenovo/kuntao" name="LineageOS/android_device_lenovo_kuntao" />
