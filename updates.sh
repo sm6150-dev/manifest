@@ -112,6 +112,14 @@ changes=(
 )
 repopick -P lineage-sdk ${changes[@]}&
 
+# packages/apps/Backgrounds
+changes=(
+268102
+268105
+268104
+)
+repopick -P packages/apps/Backgrounds ${changes[@]}&
+
 # packages/apps/ExactCalculator
 changes=(
 263677 # ExactCalculator: prevent back gesture conflict
