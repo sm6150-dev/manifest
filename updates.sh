@@ -33,7 +33,6 @@ repopick -P build/make ${changes[@]}&
 changes=(
 264669 # [DNM][SQUASH] Merge tag 'LA.UM.8.1.r1-13000-sm8150.0'
 267998 # sepolicy: Allow system_server to read vendor camera props
-267999 # sepolicy: Allow all apps to read persist camera props
 )
 repopick -P device/qcom/sepolicy ${changes[@]}&
 
@@ -68,8 +67,6 @@ changes=(
 267459 # FODCircleView: Correct position on keyguard
 265531 # core: Add camera intents for camera state [1/2]
 267306
-267313
-267312
 267314
 267804 # Updates to various icons:
 268107
