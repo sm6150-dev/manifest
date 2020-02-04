@@ -67,8 +67,6 @@ changes=(
 267459 # FODCircleView: Correct position on keyguard
 265531 # core: Add camera intents for camera state [1/2]
 267306
-267313
-267312
 267314
 267804 # Updates to various icons:
 268107
