@@ -44,10 +44,10 @@ repopick -P device/lineage/sepolicy ${changes[@]}&
 
 # device/xiaomi/common
 changes=(
-268009
-268010
-268011
-268012
+268009 # common: Import goodix HAL definitions
+268010 # common: Import Xiaomi TouchFeature HAL definitions
+268011 # common: Import Xiaomi HAL definitions
+268012 # common: Define soong namespace
 )
 repopick -P device/xiaomi/common ${changes[@]}&
 
@@ -66,8 +66,8 @@ changes=(
 266130 # FODCircleView: Add Support for custom FP pressed icon
 267459 # FODCircleView: Correct position on keyguard
 265531 # core: Add camera intents for camera state [1/2]
-267306
-267312
+267306 # Camera: Squashed support for Aux camera {black,white}list feature
+267312 # Camera: Force HAL1 for predefined package list.
 )
 repopick -P frameworks/base ${changes[@]}&
 
@@ -109,7 +109,7 @@ repopick -P packages/apps/LineageParts ${changes[@]}&
 
 # packages/apps/Recorder
 changes=(
-267929
+267929 # Recorder: Enable requestLegacyExternalStorage
 )
 repopick -P packages/apps/Recorder ${changes[@]}&
 
