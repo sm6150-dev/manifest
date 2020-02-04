@@ -77,28 +77,6 @@ changes=(
 )
 repopick -P hardware/qcom-caf/msm8996/audio ${changes[@]}&
 
-# hardware/qcom-caf/sm8150/audio
-changes=(
-265341 # [DNM][SQUASH] Merge tag 'LA.UM.8.1.r1-12200-sm8150.0'
-262311 # audio: Add missing includes
-267322 # audio_extn: Allow skipping compilation of audio HAL extensions
-)
-repopick -P hardware/qcom-caf/sm8150/audio ${changes[@]}&
-
-# hardware/qcom-caf/sm8150/display
-changes=(
-264576/3 # [DNM][SQUASH] Merge tag 'LA.UM.8.1.r1-12200-sm8150.0'
-264201 # gralloc: Upgrade mapper and allocator to 3.0
-)
-repopick -P hardware/qcom-caf/sm8150/display ${changes[@]}&
-
-# hardware/qcom-caf/sm8150/media
-changes=(
-264578 # [DNM][SQUASH] Merge tag 'LA.UM.8.1.r1-12200-sm8150.0'
-267926
-)
-repopick -P hardware/qcom-caf/sm8150/media ${changes[@]}&
-
 # lineage-sdk
 changes=(
 259996 # lineage-sdk: Update path to ChargingStarted.ogg
@@ -213,6 +191,9 @@ changes=(
 repopick -P vendor/qcom/opensource/interfaces ${changes[@]}&
 
 wait
+
+# hardware/qcom-caf/sm8150/{audio,display,media}
+repopick -t LA.UM.8.1.r1-12200-sm8150.0
 
 # build/make
 repopick -P build/make -f 266145 # Sorry bro: 6 -> 3
