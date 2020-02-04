@@ -67,9 +67,7 @@ changes=(
 267459 # FODCircleView: Correct position on keyguard
 265531 # core: Add camera intents for camera state [1/2]
 267306
-267314
-267804 # Updates to various icons:
-268107
+267312
 )
 repopick -P frameworks/base ${changes[@]}&
 
@@ -203,10 +201,6 @@ repopick -P system/vold ${changes[@]}&
 changes=(
 259683 # lineage: Update installboot for Q
 266664 # overlay: Add more default packages from Google
-267359 # backuptool: Fix addon.d version check for A-only
-267362 # backuptool: Run check_{black, white}list with proper system path
-267400 # backuptool: Execute check_blacklist from the current directory
-255667 # adb insecure by default
 )
 repopick -P vendor/lineage ${changes[@]}&
 
