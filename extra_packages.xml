@@ -4,11 +4,11 @@
   <project path="device/xiaomi/common" name="LineageOS/android_device_xiaomi_common" />
 
   <!-- Device specific repositories -->
-  <project name="davinci-dev/android_device_xiaomi_davinci" path="device/xiaomi/davinci" remote="private" revision="lineage-17.1" />
-  <project name="davinci-dev/android_device_xiaomi_sm6150-common" path="device/xiaomi/sm6150-common" remote="private" revision="lineage-17.1" />
-  <project name="davinci-dev/android_kernel_xiaomi_sm6150" path="kernel/xiaomi/sm6150" remote="private" revision="lineage-17.1" />
-  <project name="davinci-dev/android_kernel_xiaomi_msm-4.14" path="kernel/xiaomi/msm-4.14" remote="private" revision="lineage-17.0" />
-  <project name="davinci-dev/vendor_xiaomi" path="vendor/xiaomi" remote="private" revision="lineage-17.1" />
+  <project name="sm6150-dev/android_device_xiaomi_davinci" path="device/xiaomi/davinci" remote="private" revision="lineage-17.1" />
+  <project name="sm6150-dev/android_device_xiaomi_sm6150-common" path="device/xiaomi/sm6150-common" remote="private" revision="lineage-17.1" />
+  <project name="sm6150-dev/android_kernel_xiaomi_sm6150" path="kernel/xiaomi/sm6150" remote="private" revision="lineage-17.1" />
+  <project name="sm6150-dev/android_kernel_xiaomi_msm-4.14" path="kernel/xiaomi/msm-4.14" remote="private" revision="lineage-17.0" />
+  <project name="sm6150-dev/vendor_xiaomi" path="vendor/xiaomi" remote="private" revision="lineage-17.1" />
 
   <!--Gapps-->
   <project name="pig.priv/android_vendor_gapps" path="vendor/gapps" remote="gitlab" revision="ten" />
