@@ -195,3 +195,5 @@ repopick -P build/make -f 266145 # Sorry bro: 6 -> 3
 
 # vendor/lineage
 repopick -P vendor/lineage -f 262320 # aosp_audio: copy our own old AOSP alarm variants
+
+repopick -t android-10.0.0_r27
