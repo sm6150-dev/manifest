@@ -11,5 +11,5 @@
 
   <!--Gapps-->
   <project name="pig.priv/android_vendor_gapps" path="vendor/gapps" remote="gitlab" revision="ten" />
-  <project name"luk1337/android_vendor_extra" path="vendor/extra" remote="private" />
+  <project name="luk1337/android_vendor_extra" path="vendor/extra" remote="private" />
 </manifest>
