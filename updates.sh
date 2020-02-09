@@ -46,7 +46,6 @@ changes=(
 260002 # fw/b: Squash of app fw restriction commits
 265508 # Phone ringtone setting for Multi SIM device
 265511 # Don't change public API
-266938 # SystemUI: get rid of build text in qs
 267249 # DozeSensors: do not use binned brightness sensor for proximity if not supported
 267480 # Context-aware Bluetooth airplane mode
 267565 # SystemUI: Bring back ic_qs_bluetooth_connected.xml
