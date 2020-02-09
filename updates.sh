@@ -15,12 +15,6 @@ changes=(
 )
 repopick -P art ${changes[@]}&
 
-# bionic
-changes=(
-267304 # bionic: Support wildcards in cached hosts file
-)
-repopick -P bionic ${changes[@]}&
-
 # build/make
 changes=(
 257170 # build: Never set persist.sys.usb.config=none in recovery
@@ -133,7 +127,6 @@ repopick -P packages/services/Telecomm ${changes[@]}&
 changes=(
 265551 # adb_root: Bypass few more checks
 265553 # adb_root: Allow root uid to get root status
-267253 # adb: host: Fix windows build after 5c0999c
 )
 repopick -P system/core ${changes[@]}&
 
