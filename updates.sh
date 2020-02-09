@@ -187,13 +187,13 @@ repopick -P vendor/qcom/opensource/interfaces ${changes[@]}&
 wait
 
 # hardware/qcom-caf/sm8150/{audio,display,media}
-repopick -t LA.UM.8.1.r1-12200-sm8150.0
+repopick -t LA.UM.8.9.r1-07700-SM6xx.0
 repopick -t  qtc_mapper_allocator_3.0
 
 changes=(
 268143 # Revert "audio: Skip libhdmipassthru on OSS builds"
 268200 # hal: Add missing includes
-268533 hal: Remove hardcoded dependencies on libaudioparsers
+268533 # hal: Remove hardcoded dependencies on libaudioparsers
 )
 repopick -P hardware/qcom-caf/sm8150/audio ${changes[@]}&
 
