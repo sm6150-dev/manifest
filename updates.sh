@@ -175,12 +175,6 @@ changes=(
 )
 repopick -P vendor/qcom/opensource/interfaces ${changes[@]}&
 
-changes=(
-268143 # Revert "audio: Skip libhdmipassthru on OSS builds"
-268533 # hal: Remove hardcoded dependencies on libaudioparsers
-)
-repopick -P hardware/qcom-caf/sm8150/audio ${changes[@]}&
-
 wait
 
 # hardware/qcom-caf/sm8150/{audio,display,media}
