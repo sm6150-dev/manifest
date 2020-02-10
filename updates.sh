@@ -128,12 +128,6 @@ changes=(
 )
 repopick -P system/core ${changes[@]}&
 
-# system/core
-changes=(
-266061 # keymaster: use log/log.h instead of cutils/log.h
-)
-repopick -P system/core ${changes[@]}&
-
 # system/netd
 changes=(
 260003 # system/netd: Squash of app fw restriction commits
