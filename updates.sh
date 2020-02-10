@@ -47,7 +47,6 @@ changes=(
 265508 # Phone ringtone setting for Multi SIM device
 265511 # Don't change public API
 267249 # DozeSensors: do not use binned brightness sensor for proximity if not supported
-267480 # Context-aware Bluetooth airplane mode
 267565 # SystemUI: Bring back ic_qs_bluetooth_connected.xml
 266130 # FODCircleView: Add Support for custom FP pressed icon
 267459 # FODCircleView: Correct position on keyguard
