@@ -15,12 +15,6 @@ changes=(
 )
 repopick -P art ${changes[@]}&
 
-# bionic
-changes=(
-267304 # bionic: Support wildcards in cached hosts file
-)
-repopick -P bionic ${changes[@]}&
-
 # build/make
 changes=(
 257170 # build: Never set persist.sys.usb.config=none in recovery
@@ -31,7 +25,6 @@ repopick -P build/make ${changes[@]}&
 
 # device/qcom/sepolicy
 changes=(
-264669 # [DNM][SQUASH] Merge tag 'LA.UM.8.1.r1-13000-sm8150.0'
 267998 # sepolicy: Allow system_server to read vendor camera props
 )
 repopick -P device/qcom/sepolicy ${changes[@]}&
@@ -53,9 +46,7 @@ changes=(
 260002 # fw/b: Squash of app fw restriction commits
 265508 # Phone ringtone setting for Multi SIM device
 265511 # Don't change public API
-266938 # SystemUI: get rid of build text in qs
 267249 # DozeSensors: do not use binned brightness sensor for proximity if not supported
-267480 # Context-aware Bluetooth airplane mode
 267565 # SystemUI: Bring back ic_qs_bluetooth_connected.xml
 266130 # FODCircleView: Add Support for custom FP pressed icon
 267459 # FODCircleView: Correct position on keyguard
@@ -133,13 +124,6 @@ repopick -P packages/services/Telecomm ${changes[@]}&
 changes=(
 265551 # adb_root: Bypass few more checks
 265553 # adb_root: Allow root uid to get root status
-267253 # adb: host: Fix windows build after 5c0999c
-)
-repopick -P system/core ${changes[@]}&
-
-# system/core
-changes=(
-266061 # keymaster: use log/log.h instead of cutils/log.h
 )
 repopick -P system/core ${changes[@]}&
 
@@ -187,7 +171,7 @@ repopick -P vendor/qcom/opensource/interfaces ${changes[@]}&
 wait
 
 # hardware/qcom-caf/sm8150/{audio,display,media}
-repopick -t LA.UM.8.1.r1-12200-sm8150.0
+repopick -t LA.UM.8.1.r1-13500-sm8150.0
 repopick -t  qtc_mapper_allocator_3.0
 
 # build/make

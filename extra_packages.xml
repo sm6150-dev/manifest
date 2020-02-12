@@ -5,7 +5,9 @@
   <project name="LineageOS/android_device_xiaomi_davinci" path="device/xiaomi/davinci" remote="private" />
   <project name="LineageOS/android_device_xiaomi_sm6150-common" path="device/xiaomi/sm6150-common" remote="private" />
   <project name="LineageOS/android_kernel_xiaomi_sm6150" path="kernel/xiaomi/sm6150" remote="private" />
-  <project name="The-Muppets/proprietary_vendor_xiaomi" path="vendor/xiaomi" remote="gitlab"/>
+  <project name="The-Muppets/proprietary_vendor_xiaomi" path="vendor/xiaomi" remote="gitlab" revision="lineage-17.1"/>
+
   <!--Gapps-->
   <project name="pig.priv/android_vendor_gapps" path="vendor/gapps" remote="gitlab" revision="ten" />
+  <project name="luk1337/android_vendor_extra" path="vendor/extra" remote="private" />
 </manifest>
