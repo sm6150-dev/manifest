@@ -3,23 +3,11 @@
 set -e
 source build/envsetup.sh
 
-#repopick -P vendor/lineage 264429 # build: add the 'picklist' utility
-
-#source build/envsetup.sh
-
-#picklist picks.yml
-
 # art
 changes=(
 265485 # Trigger GC when 90% heap is utilized
 )
 repopick -P art ${changes[@]}&
-
-# bionic
-changes=(
-267304 # bionic: Support wildcards in cached hosts file
-)
-repopick -P bionic ${changes[@]}&
 
 # build/make
 changes=(
@@ -38,8 +26,10 @@ changes=(
 265511 # Don't change public API
 266938 # SystemUI: get rid of build text in qs
 267249 # DozeSensors: do not use binned brightness sensor for proximity if not supported
-267480 # Context-aware Bluetooth airplane mode
 267565 # SystemUI: Bring back ic_qs_bluetooth_connected.xml
+267916 # RingtoneManager: Don't crash if the ringtone doesn't have a numerical ID
+268800 # Enlarge EPSILON to 0.01 for android.display.cts.DisplayTest#testModeSwitch pass
+268802 # Allow zero stride
 )
 repopick -P frameworks/base ${changes[@]}&
 
@@ -55,6 +45,21 @@ changes=(
 264593 # SensitivePhoneNumbers: Additionally check against the given sim operator
 )
 repopick -P lineage-sdk ${changes[@]}&
+
+# packages/apps/Eleven
+changes=(
+268192 # Refactor music playback service binding logic.
+268634 # Use SystemClock.elapsedRealtime() for notification tracking time
+268635 # Fix notification foreground tracking behavior
+268193 # Stop playback button updates when playback fragment is stopped.
+268194 # Bind/unbind service on start/stop instead of create/destroy.
+268248 # Simplify queue change notification handling.
+268249 # Refactor AUDIO_BECOMING_NOISY broadcast handling.
+268370 # Avoid usage of deprecated APIs in MusicPlaybackService.
+268371 # Don't update notification twice on play start.
+268377 # Fix some lint issues in MusicPlaybackService.
+)
+repopick -P packages/apps/Eleven ${changes[@]}&
 
 # packages/apps/ExactCalculator
 changes=(
@@ -94,7 +99,6 @@ repopick -P packages/services/Telecomm ${changes[@]}&
 changes=(
 265551 # adb_root: Bypass few more checks
 265553 # adb_root: Allow root uid to get root status
-267253 # adb: host: Fix windows build after 5c0999c
 )
 repopick -P system/core ${changes[@]}&
 
@@ -128,9 +132,7 @@ repopick -P system/vold ${changes[@]}&
 changes=(
 259683 # lineage: Update installboot for Q
 266664 # overlay: Add more default packages from Google
-267359 # backuptool: Fix addon.d version check for A-only
-267362 # backuptool: Run check_{black, white}list with proper system path
-267400 # backuptool: Execute check_blacklist from the current directory
+268247 # backuptool: Remove backup blacklist/whitelist
 255667 # adb insecure by default
 )
 repopick -P vendor/lineage ${changes[@]}&
