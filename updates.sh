@@ -3,12 +3,6 @@
 set -e
 source build/envsetup.sh
 
-#repopick -P vendor/lineage 264429 # build: add the 'picklist' utility
-
-#source build/envsetup.sh
-
-#picklist picks.yml
-
 # art
 changes=(
 265485 # Trigger GC when 90% heap is utilized
@@ -53,6 +47,9 @@ changes=(
 265531 # core: Add camera intents for camera state [1/2]
 267306 # Camera: Squashed support for Aux camera {black,white}list feature
 267312 # Camera: Force HAL1 for predefined package list.
+267916 # RingtoneManager: Don't crash if the ringtone doesn't have a numerical ID
+268800 # Enlarge EPSILON to 0.01 for android.display.cts.DisplayTest#testModeSwitch pass
+268802 # Allow zero stride
 )
 repopick -P frameworks/base ${changes[@]}&
 
@@ -71,13 +68,20 @@ changes=(
 )
 repopick -P lineage-sdk ${changes[@]}&
 
-# packages/apps/Backgrounds
+# packages/apps/Eleven
 changes=(
-268102
-268105
-268104
+268192 # Refactor music playback service binding logic.
+268634 # Use SystemClock.elapsedRealtime() for notification tracking time
+268635 # Fix notification foreground tracking behavior
+268193 # Stop playback button updates when playback fragment is stopped.
+268194 # Bind/unbind service on start/stop instead of create/destroy.
+268248 # Simplify queue change notification handling.
+268249 # Refactor AUDIO_BECOMING_NOISY broadcast handling.
+268370 # Avoid usage of deprecated APIs in MusicPlaybackService.
+268371 # Don't update notification twice on play start.
+268377 # Fix some lint issues in MusicPlaybackService.
 )
-repopick -P packages/apps/Backgrounds ${changes[@]}&
+repopick -P packages/apps/Eleven ${changes[@]}&
 
 # packages/apps/ExactCalculator
 changes=(
@@ -157,6 +161,8 @@ repopick -P system/vold ${changes[@]}&
 changes=(
 259683 # lineage: Update installboot for Q
 266664 # overlay: Add more default packages from Google
+268247 # backuptool: Remove backup blacklist/whitelist
+255667 # adb insecure by default
 )
 repopick -P vendor/lineage ${changes[@]}&
 
