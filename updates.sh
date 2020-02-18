@@ -23,6 +23,14 @@ changes=(
 )
 repopick -P device/qcom/sepolicy ${changes[@]}&
 
+# device/xiaomi/sm6150-common	
+changes=(	
+268927
+268928
+268940
+)	
+repopick -P device/xiaomi/sm6150-common ${changes[@]}&	
+
 # frameworks/base
 changes=(
 258303 # power: Re-introduce custom charging sounds
@@ -170,6 +178,8 @@ wait
 # hardware/qcom-caf/sm8150/{audio,display,media}
 repopick -t LA.UM.8.1.r1-13500-sm8150.0
 repopick -t  qtc_mapper_allocator_3.0
+
+repopick -t mi6150-drm
 
 # build/make
 repopick -P build/make -f 266145 # Sorry bro: 6 -> 3
