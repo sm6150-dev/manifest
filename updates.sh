@@ -178,7 +178,6 @@ repopick -t LA.UM.8.1.r1-13500-sm8150.0
 repopick -t  qtc_mapper_allocator_3.0
 
 repopick -t mi6150-drm
-repopick -t ten-trichrome
 
 # build/make
 repopick -P build/make -f 266145 # Sorry bro: 6 -> 3
