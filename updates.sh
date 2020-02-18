@@ -23,15 +23,6 @@ changes=(
 )
 repopick -P device/qcom/sepolicy ${changes[@]}&
 
-# device/xiaomi/common
-changes=(
-268009 # common: Import goodix HAL definitions
-268010 # common: Import Xiaomi TouchFeature HAL definitions
-268011 # common: Import Xiaomi HAL definitions
-268012 # common: Define soong namespace
-)
-repopick -P device/xiaomi/common ${changes[@]}&
-
 # frameworks/base
 changes=(
 258303 # power: Re-introduce custom charging sounds
