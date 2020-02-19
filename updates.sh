@@ -13,7 +13,6 @@ repopick -P art ${changes[@]}&
 changes=(
 257170 # build: Never set persist.sys.usb.config=none in recovery
 257176 # releasetools: Store the build.prop file in the OTA zip
-268008 # build: Add vendor.prop and odm.prop capability
 )
 repopick -P build/make ${changes[@]}&
 
@@ -23,9 +22,18 @@ changes=(
 )
 repopick -P device/qcom/sepolicy ${changes[@]}&
 
-# device/xiaomi/sm6150-common	
+# device/xiaomi/sm6150-common
 changes=(
 268940
+268972
+268983
+268984
+)	
+repopick -P device/xiaomi/sm6150-common ${changes[@]}&	
+
+# device/xiaomi/sm6150-common
+changes=(
+268985
 )	
 repopick -P device/xiaomi/sm6150-common ${changes[@]}&	
 
