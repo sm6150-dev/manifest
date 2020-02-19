@@ -26,16 +26,15 @@ repopick -P device/qcom/sepolicy ${changes[@]}&
 changes=(
 268940
 268972
-268983
 268984
 )	
 repopick -P device/xiaomi/sm6150-common ${changes[@]}&	
 
-# device/xiaomi/sm6150-common
+# device/xiaomi/davinci
 changes=(
 268985
 )	
-repopick -P device/xiaomi/sm6150-common ${changes[@]}&	
+repopick -P device/xiaomi/davinci ${changes[@]}&	
 
 # frameworks/base
 changes=(
