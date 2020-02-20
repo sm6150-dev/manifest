@@ -46,8 +46,6 @@ changes=(
 265511 # Don't change public API
 267249 # DozeSensors: do not use binned brightness sensor for proximity if not supported
 267565 # SystemUI: Bring back ic_qs_bluetooth_connected.xml
-266130 # FODCircleView: Add Support for custom FP pressed icon
-267459 # FODCircleView: Correct position on keyguard
 265531 # core: Add camera intents for camera state [1/2]
 267306 # Camera: Squashed support for Aux camera {black,white}list feature
 267312 # Camera: Force HAL1 for predefined package list.
@@ -185,6 +183,9 @@ repopick -t LA.UM.8.1.r1-13500-sm8150.0
 repopick -t  qtc_mapper_allocator_3.0
 
 repopick -t mi6150-drm
+
+repopick -t fod-ten-pre-uprev
+repopick 266130 # FODCircleView: Add Support for custom FP pressed icon
 
 # build/make
 repopick -P build/make -f 266145 # Sorry bro: 6 -> 3
