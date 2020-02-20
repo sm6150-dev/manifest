@@ -85,12 +85,6 @@ changes=(
 )
 repopick -P packages/apps/Eleven ${changes[@]}&
 
-# packages/apps/ExactCalculator
-changes=(
-263677 # ExactCalculator: prevent back gesture conflict
-)
-repopick -P packages/apps/ExactCalculator ${changes[@]}&
-
 # packages/apps/LineageParts
 changes=(
 260416 # Parts: Convert charging sound path to uri
