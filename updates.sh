@@ -42,9 +42,6 @@ repopick -P device/xiaomi/davinci ${changes[@]}&
 # frameworks/base
 changes=(
 258303 # power: Re-introduce custom charging sounds
-258546 # Camera button support
-258820 # SystemUI: Add visualizer feature
-260002 # fw/b: Squash of app fw restriction commits
 265508 # Phone ringtone setting for Multi SIM device
 265511 # Don't change public API
 267249 # DozeSensors: do not use binned brightness sensor for proximity if not supported
@@ -52,7 +49,6 @@ changes=(
 265531 # core: Add camera intents for camera state [1/2]
 267306 # Camera: Squashed support for Aux camera {black,white}list feature
 267312 # Camera: Force HAL1 for predefined package list.
-267916 # RingtoneManager: Don't crash if the ringtone doesn't have a numerical ID
 268800 # Enlarge EPSILON to 0.01 for android.display.cts.DisplayTest#testModeSwitch pass
 268802 # Allow zero stride
 )
@@ -104,8 +100,6 @@ repopick -P packages/apps/Recorder ${changes[@]}&
 # packages/apps/Settings
 changes=(
 258304 # Settings: Add LineageParts charging sound settings preference
-258819 # Settings: Add lockscreen visualizer toggle
-259315 # One does not simply become a Developer
 259455 # Settings: per-app cellular data, vpn and wifi restrictions
 265509 # Phone ringtone setting for Multi SIM device
 )
