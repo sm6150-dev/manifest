@@ -27,6 +27,9 @@ changes=(
 268940
 268972
 268984
+269132
+269133
+269549
 )	
 repopick -P device/xiaomi/sm6150-common ${changes[@]}&	
 
@@ -176,7 +179,7 @@ wait
 repopick -t LA.UM.8.1.r1-13500-sm8150.0
 repopick -t  qtc_mapper_allocator_3.0
 
-repopick -t mi6150-drm
+repopick -t mi6150
 
 repopick -t fod-ten-pre-uprev
 repopick 266130 # FODCircleView: Add Support for custom FP pressed icon
@@ -185,4 +188,4 @@ repopick 266130 # FODCircleView: Add Support for custom FP pressed icon
 repopick -P build/make -f 266145 # Sorry bro: 6 -> 3
 
 # vendor/lineage
-repopick -P vendor/lineage -f 262320 # aosp_audio: copy our own old AOSP alarm variants
+repopick -P vendor/lineage -f 266414 # aosp_audio: copy our own old AOSP alarm variants
