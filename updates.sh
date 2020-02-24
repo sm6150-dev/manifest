@@ -33,12 +33,6 @@ changes=(
 )	
 repopick -P device/xiaomi/sm6150-common ${changes[@]}&	
 
-# device/xiaomi/davinci
-changes=(
-268985
-)	
-repopick -P device/xiaomi/davinci ${changes[@]}&	
-
 # frameworks/base
 changes=(
 258303 # power: Re-introduce custom charging sounds
