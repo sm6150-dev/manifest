@@ -179,7 +179,7 @@ wait
 repopick -t LA.UM.8.1.r1-13500-sm8150.0
 repopick -t  qtc_mapper_allocator_3.0
 
-repopick -t mi6150
+#repopick -t mi6150
 
 repopick -t fod-ten-pre-uprev
 repopick 266130 # FODCircleView: Add Support for custom FP pressed icon
