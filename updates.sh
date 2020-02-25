@@ -45,6 +45,7 @@ changes=(
 267312 # Camera: Force HAL1 for predefined package list.
 268800 # Enlarge EPSILON to 0.01 for android.display.cts.DisplayTest#testModeSwitch pass
 268802 # Allow zero stride
+266130/9 # FODCircleView: Add Support for custom FP pressed icon
 )
 repopick -P frameworks/base ${changes[@]}&
 
@@ -169,8 +170,7 @@ repopick -t  qtc_mapper_allocator_3.0
 
 #repopick -t mi6150
 
-repopick -t fod-ten-pre-uprev
-repopick 266130 # FODCircleView: Add Support for custom FP pressed icon
+#repopick -t fod-ten-pre-uprev
 
 # build/make
 repopick -P build/make -f 266145 # Sorry bro: 6 -> 3
