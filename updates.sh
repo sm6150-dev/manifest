@@ -110,6 +110,12 @@ changes=(
 )
 repopick -P packages/services/Telecomm ${changes[@]}&
 
+# packages/services/Telephony
+changes=(
+269643
+)
+repopick -P packages/services/Telephony ${changes[@]}&
+
 # system/core
 changes=(
 265551 # adb_root: Bypass few more checks
@@ -163,7 +169,7 @@ repopick -P vendor/qcom/opensource/interfaces ${changes[@]}&
 wait
 
 # hardware/qcom-caf/sm8150/{audio,display,media}
-repopick -t LA.UM.8.1.r1-13500-sm8150.0
+repopick -t LA.UM.8.1.r1-14300-sm8150.0
 repopick -t  qtc_mapper_allocator_3.0
 
 # build/make
