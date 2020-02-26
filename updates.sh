@@ -43,6 +43,7 @@ changes=(
 267306 # Camera: Squashed support for Aux camera {black,white}list feature
 267312 # Camera: Force HAL1 for predefined package list.
 266130 # FODCircleView: Add Support for custom FP pressed icon
+269020
 )
 repopick -P frameworks/base ${changes[@]}&
 
@@ -164,10 +165,6 @@ wait
 # hardware/qcom-caf/sm8150/{audio,display,media}
 repopick -t LA.UM.8.1.r1-13500-sm8150.0
 repopick -t  qtc_mapper_allocator_3.0
-
-#repopick -t mi6150
-
-#repopick -t fod-ten-pre-uprev
 
 # build/make
 repopick -P build/make -f 266145 # Sorry bro: 6 -> 3
