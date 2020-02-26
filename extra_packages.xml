@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
+  <remote  name="gitlab"
+           fetch="ssh://git@gitlab.com" />
+
   <!-- Extra packages not included in the main manifest -->
   <project name="LineageOS/android_device_xiaomi_common" path="device/xiaomi/common"/>
   <project name="LineageOS/android_device_xiaomi_davinci" path="device/xiaomi/davinci"/>
