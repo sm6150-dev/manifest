@@ -37,11 +37,10 @@ changes=(
 267249 # DozeSensors: do not use binned brightness sensor for proximity if not supported
 267565 # SystemUI: Bring back ic_qs_bluetooth_connected.xml
 265531 # core: Add camera intents for camera state [1/2]
+269489 # Camera: Skip stream size check for whitelisted apps..
 267306 # Camera: Squashed support for Aux camera {black,white}list feature
 267312 # Camera: Force HAL1 for predefined package list.
-268800 # Enlarge EPSILON to 0.01 for android.display.cts.DisplayTest#testModeSwitch pass
-268802 # Allow zero stride
-266130/9 # FODCircleView: Add Support for custom FP pressed icon
+266130 # FODCircleView: Add Support for custom FP pressed icon
 )
 repopick -P frameworks/base ${changes[@]}&
 
