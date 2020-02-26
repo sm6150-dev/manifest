@@ -34,6 +34,7 @@ changes=(
 258303 # power: Re-introduce custom charging sounds
 265508 # Phone ringtone setting for Multi SIM device
 265511 # Don't change public API
+260002 # fw/b: Squash of app fw restriction commits
 267249 # DozeSensors: do not use binned brightness sensor for proximity if not supported
 267565 # SystemUI: Bring back ic_qs_bluetooth_connected.xml
 265531 # core: Add camera intents for camera state [1/2]
