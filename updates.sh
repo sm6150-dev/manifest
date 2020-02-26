@@ -42,8 +42,11 @@ changes=(
 269489 # Camera: Skip stream size check for whitelisted apps..
 267306 # Camera: Squashed support for Aux camera {black,white}list feature
 267312 # Camera: Force HAL1 for predefined package list.
-266130 # FODCircleView: Add Support for custom FP pressed icon
+269018
 269020
+266130 # FODCircleView: Add Support for custom FP pressed icon
+269671
+269672
 )
 repopick -P frameworks/base ${changes[@]}&
 
