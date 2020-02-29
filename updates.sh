@@ -27,6 +27,7 @@ repopick -P build/soong ${changes[@]}&
 # device/qcom/sepolicy
 changes=(
 267998 # sepolicy: Allow system_server to read vendor camera props
+269992 # sepolicy: Allow Snap to read persist camera props
 )
 repopick -P device/qcom/sepolicy ${changes[@]}&
 
