@@ -29,6 +29,7 @@ changes=(
 268940 # sm6150-common: bluetooth: Set BTM_DEF_LOCAL_NAME again
 268972 # sm6150-common: power-libperfmgr: Scan input devices for eligible DT2W node
 269619 # sm6150-common: overlay: Update CarrierConfig
+269998 # sm6150-common: Import usb HAL
 )	
 repopick -P device/xiaomi/sm6150-common ${changes[@]}&	
 
