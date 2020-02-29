@@ -17,13 +17,6 @@ changes=(
 )
 repopick -P build/make ${changes[@]}&
 
-# build/soong
-changes=(
-269989 # Add runtime_resource_overlay.
-269990 # Do not remove RRO resources
-)
-repopick -P build/soong ${changes[@]}&
-
 # device/qcom/sepolicy
 changes=(
 267998 # sepolicy: Allow system_server to read vendor camera props
