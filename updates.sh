@@ -13,8 +13,16 @@ repopick -P art ${changes[@]}&
 changes=(
 257170 # build: Never set persist.sys.usb.config=none in recovery
 257176 # releasetools: Store the build.prop file in the OTA zip
+269991 # Do not remove RRO resources
 )
 repopick -P build/make ${changes[@]}&
+
+# build/soong
+changes=(
+269989 # Add runtime_resource_overlay.
+269990 # Do not remove RRO resources
+)
+repopick -P build/soong ${changes[@]}&
 
 # device/qcom/sepolicy
 changes=(
@@ -24,9 +32,9 @@ repopick -P device/qcom/sepolicy ${changes[@]}&
 
 # device/xiaomi/sm6150-common
 changes=(
-268940
-268972
-269619
+268940 # sm6150-common: bluetooth: Set BTM_DEF_LOCAL_NAME again
+268972 # sm6150-common: power-libperfmgr: Scan input devices for eligible DT2W node
+269619 # sm6150-common: overlay: Update CarrierConfig
 )	
 repopick -P device/xiaomi/sm6150-common ${changes[@]}&	
 
@@ -42,11 +50,11 @@ changes=(
 269489 # Camera: Skip stream size check for whitelisted apps..
 267306 # Camera: Squashed support for Aux camera {black,white}list feature
 267312 # Camera: Force HAL1 for predefined package list.
-269018
-269020
+269018 # Revert "FODCircleView: dispatch onPress to HAL only after dimming is applied"
+269020 # FODCircleView: update position of icon before show
 266130 # FODCircleView: Add Support for custom FP pressed icon
-269671
-269672
+269671 # FODCircleView: split boost and dim into separate functions
+269672 # FODCircleView: adjust dim amount based on changes in brightness
 )
 repopick -P frameworks/base ${changes[@]}&
 
@@ -115,7 +123,7 @@ repopick -P packages/services/Telecomm ${changes[@]}&
 
 # packages/services/Telephony
 changes=(
-269643
+269643 # Telephony: use Build.DATE to check for system update
 )
 repopick -P packages/services/Telephony ${changes[@]}&
 
@@ -163,8 +171,6 @@ repopick -P vendor/lineage ${changes[@]}&
 
 # vendor/qcom/opensource/interfaces
 changes=(
-264665 # [DNM][SQUASH] Merge tag 'LA.UM.8.1.r1-11600-sm8150.0'
-264666 # interfaces: Regenerate blueprints
 259980 # interfaces: Introduce qcom bluetooth_audio and btconfigstore HALs
 )
 repopick -P vendor/qcom/opensource/interfaces ${changes[@]}&
