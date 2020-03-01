@@ -13,7 +13,6 @@ repopick -P art ${changes[@]}&
 changes=(
 257170 # build: Never set persist.sys.usb.config=none in recovery
 257176 # releasetools: Store the build.prop file in the OTA zip
-269991 # Do not remove RRO resources
 )
 repopick -P build/make ${changes[@]}&
 
