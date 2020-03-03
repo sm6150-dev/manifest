@@ -157,7 +157,6 @@ repopick -P system/vold ${changes[@]}&
 changes=(
 259683 # lineage: Update installboot for Q
 266664 # overlay: Add more default packages from Google
-268247 # backuptool: Remove backup blacklist/whitelist
 255667 # adb insecure by default
 )
 repopick -P vendor/lineage ${changes[@]}&
