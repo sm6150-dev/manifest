@@ -23,6 +23,12 @@ changes=(
 )
 repopick -P device/qcom/sepolicy ${changes[@]}&
 
+# device/xiaomi/davinci
+changes=(
+269566 # davinci: Trim board info for new assertion logic 
+)	
+repopick -P device/xiaomi/davinci ${changes[@]}&	
+
 # device/xiaomi/sm6150-common
 changes=(
 268940 # sm6150-common: bluetooth: Set BTM_DEF_LOCAL_NAME again
@@ -35,6 +41,7 @@ changes=(
 270030 # sm6150-common: Clean up device layout
 270031 # sm6150-common: Remove gnss hidl entries in manifest.xml
 270038 # sm6150-common: Address denials
+268929 # sm6150-common: Specify lowest baseband version for recovery updater
 )	
 repopick -P device/xiaomi/sm6150-common ${changes[@]}&	
 
