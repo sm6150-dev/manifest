@@ -164,7 +164,7 @@ repopick -P vendor/lineage ${changes[@]}&
 # vendor/qcom/opensource/interfaces
 changes=(
 270204 # interfaces: Introduce qcom bluetooth_audio HALs
-270291 # interfaces: Introduce qcom bluetooth_sar HALs
+#270291 # interfaces: Introduce qcom bluetooth_sar HALs
 )
 repopick -P vendor/qcom/opensource/interfaces ${changes[@]}&
 
