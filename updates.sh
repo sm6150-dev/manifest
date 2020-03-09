@@ -65,18 +65,11 @@ changes=(
 )
 repopick -P frameworks/base ${changes[@]}&
 
-# hardware/qcom-caf/msm8996/audio
-changes=(
-260610 # audio: Fix flac offload not working
-)
-repopick -P hardware/qcom-caf/msm8996/audio ${changes[@]}&
-
 # lineage-sdk
 changes=(
 259996 # lineage-sdk: Update path to ChargingStarted.ogg
 265380 # lineage-sdk: Add camera intents for camera state [2/2]
 264593 # SensitivePhoneNumbers: Additionally check against the given sim operator
-266410 # lineage-sdk: Drop Expanded Desktop API
 )
 repopick -P lineage-sdk ${changes[@]}&
 
@@ -98,7 +91,6 @@ repopick -P packages/apps/Eleven ${changes[@]}&
 # packages/apps/LineageParts
 changes=(
 260416 # Parts: Convert charging sound path to uri
-266409 # LineageParts: Drop Expanded Desktop feature
 )
 repopick -P packages/apps/LineageParts ${changes[@]}&
 
@@ -127,12 +119,6 @@ changes=(
 265510 # Phone ringtone setting for Multi SIM device
 )
 repopick -P packages/services/Telecomm ${changes[@]}&
-
-# packages/services/Telephony
-changes=(
-269643 # Telephony: use Build.DATE to check for system update
-)
-repopick -P packages/services/Telephony ${changes[@]}&
 
 # system/core
 changes=(
