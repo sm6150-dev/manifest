@@ -62,6 +62,7 @@ changes=(
 266130 # FODCircleView: Add Support for custom FP pressed icon
 269671 # FODCircleView: split boost and dim into separate functions
 269672 # FODCircleView: adjust dim amount based on changes in brightness
+270679 # Send battery low intent when battery warning boundary changed
 )
 repopick -P frameworks/base ${changes[@]}&
 
