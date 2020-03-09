@@ -34,11 +34,11 @@ changes=(
 268940 # sm6150-common: bluetooth: Set BTM_DEF_LOCAL_NAME again
 268972 # sm6150-common: power-libperfmgr: Scan input devices for eligible DT2W node
 269619 # sm6150-common: overlay: Update CarrierConfig
+270030 # sm6150-common: Clean up device layout
 269740 # sm6150-common: Add init.recovery.qcom.rc
 269741 # sm6150-common: init.recovery.qcom.rc: Set up ADB in recovery mode
 269742 # sm6150-common: Support bootdevice symlink in recovery mode.
 269743 # sm6150-common: Handle recovery mode for non-configfs devices.
-270030 # sm6150-common: Clean up device layout
 270031 # sm6150-common: Remove gnss hidl entries in manifest.xml
 270038 # sm6150-common: Address denials
 268929 # sm6150-common: Specify lowest baseband version for recovery updater
