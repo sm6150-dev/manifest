@@ -56,11 +56,9 @@ changes=(
 269489 # Camera: Skip stream size check for whitelisted apps..
 267306 # Camera: Squashed support for Aux camera {black,white}list feature
 267312 # Camera: Force HAL1 for predefined package list.
-269018 # Revert "FODCircleView: dispatch onPress to HAL only after dimming is applied"
-269020 # FODCircleView: update position of icon before show
 266130 # FODCircleView: Add Support for custom FP pressed icon
-269671 # FODCircleView: split boost and dim into separate functions
-269672 # FODCircleView: adjust dim amount based on changes in brightness
+266804 # FODCircleView: Add partial wakelock on aod
+269590 # FODCircleView: Always enable hbm
 270679 # Send battery low intent when battery warning boundary changed
 )
 repopick -P frameworks/base ${changes[@]}&
@@ -173,6 +171,7 @@ repopick -t LA.UM.8.1.r1-14300-sm8150.0
 repopick -t qtc_mapper_allocator_3.0
 repopick -t ten-qc-telephony-fix-new
 repopick -t ten-camera-api2-fix
+repopick 269589
 
 # popup-cam
 repopick -t ten-popup-cam
