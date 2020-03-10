@@ -53,7 +53,6 @@ changes=(
 260002 # fw/b: Squash of app fw restriction commits
 267249 # DozeSensors: do not use binned brightness sensor for proximity if not supported
 267565 # SystemUI: Bring back ic_qs_bluetooth_connected.xml
-265531 # core: Add camera intents for camera state [1/2]
 269489 # Camera: Skip stream size check for whitelisted apps..
 267306 # Camera: Squashed support for Aux camera {black,white}list feature
 267312 # Camera: Force HAL1 for predefined package list.
@@ -69,7 +68,6 @@ repopick -P frameworks/base ${changes[@]}&
 # lineage-sdk
 changes=(
 259996 # lineage-sdk: Update path to ChargingStarted.ogg
-265380 # lineage-sdk: Add camera intents for camera state [2/2]
 264593 # SensitivePhoneNumbers: Additionally check against the given sim operator
 )
 repopick -P lineage-sdk ${changes[@]}&
@@ -165,7 +163,6 @@ repopick -P vendor/lineage ${changes[@]}&
 # vendor/qcom/opensource/interfaces
 changes=(
 270204 # interfaces: Introduce qcom bluetooth_audio HALs
-#270291 # interfaces: Introduce qcom bluetooth_sar HALs
 )
 repopick -P vendor/qcom/opensource/interfaces ${changes[@]}&
 
@@ -176,6 +173,9 @@ repopick -t LA.UM.8.1.r1-14300-sm8150.0
 repopick -t qtc_mapper_allocator_3.0
 repopick -t ten-qc-telephony-fix-new
 repopick -t ten-camera-api2-fix
+
+# popup-cam
+repopick -t ten-popup-cam
 
 # build/make
 repopick -P build/make -f 266145 # Sorry bro: 6 -> 3
