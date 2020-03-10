@@ -172,8 +172,9 @@ repopick -P vendor/qcom/opensource/interfaces ${changes[@]}&
 wait
 
 # hardware/qcom-caf/sm8150/{audio,display,media}
-repopick -t LA.UM.8.1.r1-13500-sm8150.0
+repopick -t LA.UM.8.1.r1-14300-sm8150.0
 repopick -t  qtc_mapper_allocator_3.0
+repopick -t ten-qc-telephony-fix-new
 
 # build/make
 repopick -P build/make -f 266145 # Sorry bro: 6 -> 3
