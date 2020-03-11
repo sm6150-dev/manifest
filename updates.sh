@@ -171,7 +171,7 @@ repopick -t qtc_mapper_allocator_3.0
 repopick -t ten-qc-telephony-fix-new
 repopick -t ten-camera-api2-fix
 repopick 269589
-
+repoick edge-long-swipe
 # popup-cam
 repopick -t ten-popup-cam
 
