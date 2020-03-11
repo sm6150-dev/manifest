@@ -59,7 +59,6 @@ changes=(
 266130 # FODCircleView: Add Support for custom FP pressed icon
 266804 # FODCircleView: Add partial wakelock on aod
 269590 # FODCircleView: Always enable hbm
-270679 # Send battery low intent when battery warning boundary changed
 )
 repopick -P frameworks/base ${changes[@]}&
 
