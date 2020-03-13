@@ -43,6 +43,10 @@ changes=(
 270038 # sm6150-common: Address denials
 268929 # sm6150-common: Specify lowest baseband version for recovery updater
 270782 # sm6150-common: fod: Clean hal and bump to version 1.1
+270827 # sm6150-common: init: Define SYS_NICE caps for android.hardware.audio@2.0-service.
+270828 # sm6150-common: config.fs: Add sys_boot cap to peripheral manager
+270829 # sm6150-common: init.target.rc: Prevent enumeration in ADB only composition
+270830 # sm6150-common: Add netflix custom property in vendor
 )	
 repopick -P device/xiaomi/sm6150-common ${changes[@]}&	
 
