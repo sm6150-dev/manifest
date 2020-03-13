@@ -171,6 +171,7 @@ repopick -t ten-qc-telephony-fix-new
 repopick -t ten-camera-api2-fix
 repopick 269589
 repopick  -t edge-long-swipe
+repopick 270823
 # popup-cam
 repopick -t ten-popup-cam
 
