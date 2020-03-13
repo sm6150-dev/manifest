@@ -3,12 +3,6 @@
 set -e
 source build/envsetup.sh
 
-# art
-changes=(
-265485 # Trigger GC when 90% heap is utilized
-)
-repopick -P art ${changes[@]}&
-
 # build/make
 changes=(
 257170 # build: Never set persist.sys.usb.config=none in recovery
