@@ -41,6 +41,7 @@ changes=(
 270828 # sm6150-common: config.fs: Add sys_boot cap to peripheral manager
 270829 # sm6150-common: init.target.rc: Prevent enumeration in ADB only composition
 270830 # sm6150-common: Add netflix custom property in vendor
+270857 # sm6150-common: overlay-lineage: Update display mode mapping
 )	
 repopick -P device/xiaomi/sm6150-common ${changes[@]}&	
 
