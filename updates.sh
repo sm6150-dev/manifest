@@ -172,13 +172,9 @@ repopick -t qtc_mapper_allocator_3.0
 repopick -t ten-qc-telephony-fix-new
 repopick -t ten-camera-api2-fix
 repopick 269589
-repopick  -t edge-long-swipe
-repopick 270823
+
 # popup-cam
 repopick -t ten-popup-cam
 
 # build/make
 repopick -P build/make -f 266145 # Sorry bro: 6 -> 3
-
-# vendor/lineage
-repopick -P vendor/lineage -f 266414 # aosp_audio: copy our own old AOSP alarm variants
