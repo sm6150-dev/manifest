@@ -20,6 +20,7 @@ repopick -P device/qcom/sepolicy ${changes[@]}&
 # device/xiaomi/davinci
 changes=(
 269566 # davinci: Trim board info for new assertion logic 
+270044 # davinci: Regenerate ADCB ID table
 )	
 repopick -P device/xiaomi/davinci ${changes[@]}&	
 
