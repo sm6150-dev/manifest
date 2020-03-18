@@ -67,7 +67,6 @@ changes=(
 267312 # Camera: Force HAL1 for predefined package list.
 266130 # FODCircleView: Add Support for custom FP pressed icon
 269590 # FODCircleView: Always enable hbm
-271065 # audioservice: fix persistency for volume per attributes
 271072 # Visualizer: Ensure multi-thread safety
 )
 repopick -P frameworks/base ${changes[@]}&
