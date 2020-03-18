@@ -21,6 +21,8 @@ repopick -P device/qcom/sepolicy ${changes[@]}&
 changes=(
 269566 # davinci: Trim board info for new assertion logic 
 270044 # davinci: Regenerate ADCB ID table
+271057 # davinci: Restore previously removed ctls
+271064 # davinci: Extend f8e1560a7167961b346e07050f6c2e365712c3a4 to compress offload speakers
 )	
 repopick -P device/xiaomi/davinci ${changes[@]}&	
 
@@ -42,6 +44,14 @@ changes=(
 270828 # sm6150-common: config.fs: Add sys_boot cap to peripheral manager
 270830 # sm6150-common: Add netflix custom property in vendor
 270857 # sm6150-common: overlay-lineage: Update display mode mapping
+270680 # sm6150-common: Update graphics blobs from LA.UM.8.1.r1-14300-sm8150.0
+271058 # sm6150-common: Enable headset calibration
+271059 # sm6150-common: Set property to avoid printing IMS_DataD message
+271060 # sm6150-common: Override so_mask indications when screen is off
+271061 # sm6150-common: media: Remove unwanted codecs
+271068 # sm6150-common: wifi: add parameters for Hotspot 2.0
+271069 # sm6150-common: Drop unused atfwd daemon
+271070 # sm6150-common: Update VENDOR_SECURITY_PATCH
 )	
 repopick -P device/xiaomi/sm6150-common ${changes[@]}&	
 
@@ -57,8 +67,9 @@ changes=(
 267306 # Camera: Squashed support for Aux camera {black,white}list feature
 267312 # Camera: Force HAL1 for predefined package list.
 266130 # FODCircleView: Add Support for custom FP pressed icon
-266804 # FODCircleView: Add partial wakelock on aod
 269590 # FODCircleView: Always enable hbm
+271065 # audioservice: fix persistency for volume per attributes
+271072 # Visualizer: Ensure multi-thread safety
 )
 repopick -P frameworks/base ${changes[@]}&
 
@@ -66,6 +77,7 @@ repopick -P frameworks/base ${changes[@]}&
 changes=(
 259996 # lineage-sdk: Update path to ChargingStarted.ogg
 264593 # SensitivePhoneNumbers: Additionally check against the given sim operator
+270942 # NetworkTraffic: Include tethering hw offload statistics
 )
 repopick -P lineage-sdk ${changes[@]}&
 
