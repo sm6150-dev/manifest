@@ -75,7 +75,6 @@ repopick -P frameworks/base ${changes[@]}&
 # lineage-sdk
 changes=(
 259996 # lineage-sdk: Update path to ChargingStarted.ogg
-264593 # SensitivePhoneNumbers: Additionally check against the given sim operator
 270942 # NetworkTraffic: Include tethering hw offload statistics
 )
 repopick -P lineage-sdk ${changes[@]}&
