@@ -1,4 +1,4 @@
-ne#!/bin/bash
+#!/bin/bash
 
 set -e
 source build/envsetup.sh
