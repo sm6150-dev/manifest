@@ -1,4 +1,4 @@
-#!/bin/bash
+ne#!/bin/bash
 
 set -e
 source build/envsetup.sh
@@ -42,7 +42,6 @@ changes=(
 270782 # sm6150-common: fod: Clean hal and bump to version 1.1
 270827 # sm6150-common: init: Define SYS_NICE caps for android.hardware.audio@2.0-service.
 270828 # sm6150-common: config.fs: Add sys_boot cap to peripheral manager
-270830 # sm6150-common: Add netflix custom property in vendor
 270857 # sm6150-common: overlay-lineage: Update display mode mapping
 270680 # sm6150-common: Update graphics blobs from LA.UM.8.1.r1-14300-sm8150.0
 271058 # sm6150-common: Enable headset calibration
