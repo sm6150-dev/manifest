@@ -73,7 +73,6 @@ repopick -P frameworks/base ${changes[@]}&
 # lineage-sdk
 changes=(
 259996 # lineage-sdk: Update path to ChargingStarted.ogg
-270942 # NetworkTraffic: Include tethering hw offload statistics
 )
 repopick -P lineage-sdk ${changes[@]}&
 
@@ -175,6 +174,7 @@ wait
 
 # hardware/qcom-caf/sm8150/{audio,display,media}
 repopick -t LA.UM.8.1.r1-14300-sm8150.0
+repopick -t LA.UM.8.1.r1-14500-sm8150.0
 repopick -t qtc_mapper_allocator_3.0
 repopick -t ten-qc-telephony-fix-new
 repopick -t ten-camera-api2-fix
