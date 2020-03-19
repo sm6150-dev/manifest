@@ -19,7 +19,6 @@ repopick -P device/qcom/sepolicy ${changes[@]}&
 
 # device/xiaomi/davinci
 changes=(
-269566 # davinci: Trim board info for new assertion logic
 271112 # davinci: Update blobs
 271113 # davinci: Import audio policy volume
 271074 # davinci: Update audio configs
@@ -39,7 +38,6 @@ changes=(
 269743 # sm6150-common: Handle recovery mode for non-configfs devices.
 270031 # sm6150-common: Remove gnss hidl entries in manifest.xml
 270038 # sm6150-common: Address denials
-268929 # sm6150-common: Specify lowest baseband version for recovery updater
 270782 # sm6150-common: fod: Clean hal and bump to version 1.1
 270827 # sm6150-common: init: Define SYS_NICE caps for android.hardware.audio@2.0-service.
 270828 # sm6150-common: config.fs: Add sys_boot cap to peripheral manager
