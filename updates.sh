@@ -19,10 +19,11 @@ repopick -P device/qcom/sepolicy ${changes[@]}&
 
 # device/xiaomi/davinci
 changes=(
-269566 # davinci: Trim board info for new assertion logic 
-270044 # davinci: Regenerate ADCB ID table
-271057 # davinci: Restore previously removed ctls
-271064 # davinci: Extend f8e1560a7167961b346e07050f6c2e365712c3a4 to compress offload speakers
+269566 # davinci: Trim board info for new assertion logic
+271112 # davinci: Update blobs
+271113 # davinci: Import audio policy volume
+271074 # davinci: Update audio configs
+271114 # davinci: Update init fingerprint(s) to latest stable
 )	
 repopick -P device/xiaomi/davinci ${changes[@]}&	
 
@@ -51,6 +52,7 @@ changes=(
 271068 # sm6150-common: wifi: add parameters for Hotspot 2.0
 271069 # sm6150-common: Drop unused atfwd daemon
 271070 # sm6150-common: Update VENDOR_SECURITY_PATCH
+271118 # sm6150-common: Drop unused BT blobs
 )	
 repopick -P device/xiaomi/sm6150-common ${changes[@]}&	
 
