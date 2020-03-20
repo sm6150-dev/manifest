@@ -37,20 +37,10 @@ changes=(
 269742 # sm6150-common: Support bootdevice symlink in recovery mode.
 269743 # sm6150-common: Handle recovery mode for non-configfs devices.
 270031 # sm6150-common: Remove gnss hidl entries in manifest.xml
-270038 # sm6150-common: Address denials
 270782 # sm6150-common: fod: Clean hal and bump to version 1.1
-270827 # sm6150-common: init: Define SYS_NICE caps for android.hardware.audio@2.0-service.
 270828 # sm6150-common: config.fs: Add sys_boot cap to peripheral manager
-270857 # sm6150-common: overlay-lineage: Update display mode mapping
-270680 # sm6150-common: Update graphics blobs from LA.UM.8.1.r1-14300-sm8150.0
 271058 # sm6150-common: Enable headset calibration
-271059 # sm6150-common: Set property to avoid printing IMS_DataD message
-271060 # sm6150-common: Override so_mask indications when screen is off
-271061 # sm6150-common: media: Remove unwanted codecs
-271068 # sm6150-common: wifi: add parameters for Hotspot 2.0
-271069 # sm6150-common: Drop unused atfwd daemon
 271070 # sm6150-common: Update VENDOR_SECURITY_PATCH
-271118 # sm6150-common: Drop unused BT blobs
 )	
 repopick -P device/xiaomi/sm6150-common ${changes[@]}&	
 
