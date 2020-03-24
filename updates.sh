@@ -3,6 +3,16 @@
 set -e
 source build/envsetup.sh
 
+# hardware/qcom-caf/sm8150/{audio,display,media}
+repopick -t LA.UM.8.1.r1-14300-sm8150.0
+repopick -t LA.UM.8.1.r1-14500-sm8150.0
+repopick -t qtc_mapper_allocator_3.0
+repopick -t ten-qc-telephony-fix-new
+repopick -t ten-camera-api2-fix
+repopick 269589
+
+# popup-cam
+repopick -t ten-popup-cam
 # build/make
 changes=(
 257170 # build: Never set persist.sys.usb.config=none in recovery
@@ -161,17 +171,6 @@ changes=(
 repopick -P vendor/qcom/opensource/interfaces ${changes[@]}&
 
 wait
-
-# hardware/qcom-caf/sm8150/{audio,display,media}
-repopick -t LA.UM.8.1.r1-14300-sm8150.0
-repopick -t LA.UM.8.1.r1-14500-sm8150.0
-repopick -t qtc_mapper_allocator_3.0
-repopick -t ten-qc-telephony-fix-new
-repopick -t ten-camera-api2-fix
-repopick 269589
-
-# popup-cam
-repopick -t ten-popup-cam
 
 # build/make
 repopick -P build/make -f 266145 # Sorry bro: 6 -> 3
