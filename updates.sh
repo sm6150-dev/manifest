@@ -5,8 +5,6 @@ source build/envsetup.sh
 
 # hardware/qcom-caf/sm8150/{audio,display,media}
 repopick -t LA.UM.8.1.r1-14500-sm8150.0
-repopick -t qtc_mapper_allocator_3.0
-repopick -t ten-qc-telephony-fix-new
 repopick -t ten-camera-api2-fix
 repopick 269589
 
@@ -43,7 +41,7 @@ changes=(
 271058 # sm6150-common: Enable headset calibration
 271070 # sm6150-common: Update VENDOR_SECURITY_PATCH
 )	
-repopick -P device/xiaomi/sm6150-common ${changes[@]}&	
+repopick -P device/xiaomi/sm6150-common ${changes[@]}&
 
 # frameworks/base
 changes=(
