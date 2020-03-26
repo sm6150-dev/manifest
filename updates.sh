@@ -25,6 +25,14 @@ changes=(
 )
 repopick -P device/qcom/sepolicy ${changes[@]}&
 
+# device/xiaomi/davinci
+changes=(
+271421 # davinci: Build device specific packages and init script
+271427 # davinci: Migrate to inscreen 1.1
+271444 # davinci: Commonize ACDB loader blobs
+)
+repopick -P device/xiaomi/davinci ${changes[@]}&
+
 # device/xiaomi/sm6150-common
 changes=(
 268940 # sm6150-common: bluetooth: Set BTM_DEF_LOCAL_NAME again
@@ -37,9 +45,9 @@ changes=(
 269743 # sm6150-common: Handle recovery mode for non-configfs devices.
 270031 # sm6150-common: Remove gnss hidl entries in manifest.xml
 270782 # sm6150-common: fod: Clean hal and bump to version 1.1
-270828 # sm6150-common: config.fs: Add sys_boot cap to peripheral manager
 271058 # sm6150-common: Enable headset calibration
 271070 # sm6150-common: Update VENDOR_SECURITY_PATCH
+271443 # sm6150-common: Commonize ACDB loader blobs
 )	
 repopick -P device/xiaomi/sm6150-common ${changes[@]}&
 
