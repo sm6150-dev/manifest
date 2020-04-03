@@ -91,12 +91,6 @@ changes=(
 )
 repopick -P packages/apps/Settings ${changes[@]}&
 
-# packages/inputmethods/LatinIME
-changes=(
-266617 # LatinIME: Update emojis
-)
-repopick -P packages/inputmethods/LatinIME ${changes[@]}&
-
 # packages/services/Telecomm
 changes=(
 265510 # Phone ringtone setting for Multi SIM device
