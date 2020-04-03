@@ -3,10 +3,7 @@
 set -e
 source build/envsetup.sh
 
-# hardware/qcom-caf/sm8150/{audio,display,media}
-repopick -t LA.UM.8.1.r1-14500-sm8150.0
 repopick -t ten-camera-api2-fix
-repopick 269589
 
 # popup-cam
 repopick -t ten-popup-cam
@@ -18,13 +15,6 @@ changes=(
 )
 repopick -P build/make ${changes[@]}&
 
-# device/qcom/sepolicy
-changes=(
-267998 # sepolicy: Allow system_server to read vendor camera props
-269992 # sepolicy: Allow Snap to read persist camera props
-)
-repopick -P device/qcom/sepolicy ${changes[@]}&
-
 # device/xiaomi/davinci
 changes=(
 271421 # davinci: Build device specific packages and init script
@@ -35,9 +25,6 @@ repopick -P device/xiaomi/davinci ${changes[@]}&
 
 # device/xiaomi/sm6150-common
 changes=(
-268940 # sm6150-common: bluetooth: Set BTM_DEF_LOCAL_NAME again
-268972 # sm6150-common: power-libperfmgr: Scan input devices for eligible DT2W node
-269619 # sm6150-common: overlay: Update CarrierConfig
 270030 # sm6150-common: Clean up device layout
 269740 # sm6150-common: Add init.recovery.qcom.rc
 269741 # sm6150-common: init.recovery.qcom.rc: Set up ADB in recovery mode
@@ -63,7 +50,6 @@ changes=(
 267306 # Camera: Squashed support for Aux camera {black,white}list feature
 267312 # Camera: Force HAL1 for predefined package list.
 266130 # FODCircleView: Add Support for custom FP pressed icon
-269590 # FODCircleView: Always enable hbm
 )
 repopick -P frameworks/base ${changes[@]}&
 
@@ -103,7 +89,6 @@ repopick -P packages/apps/Recorder ${changes[@]}&
 # packages/apps/Settings
 changes=(
 258304 # Settings: Add LineageParts charging sound settings preference
-259455 # Settings: per-app cellular data, vpn and wifi restrictions
 265509 # Phone ringtone setting for Multi SIM device
 )
 repopick -P packages/apps/Settings ${changes[@]}&
