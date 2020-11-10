@@ -6,6 +6,7 @@ repopick -p 289749 289835 286907 # HALs
 repopick -p 291006 291060 # QTI telephony
 repopick -p 286940 # Vibrator
 repopick -p 290708 # CpbCfgStr
+repopick 291744 # AMP
 git -C vendor/nxp/opensource/commonsys/external/libnfc-nci co 90dcf51252c12d8463b3e18ea1c64a3f608c9fc9
 git -C vendor/nxp/opensource/commonsys/frameworks co cfe757afa291b1b7dc9c6376ef538ac51c9d174d
 git -C vendor/nxp/opensource/commonsys/packages/apps/Nfc co 2a434b152fc63e2dfa17a4006d49ac2042ff700e
