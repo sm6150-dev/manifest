@@ -1,0 +1,10 @@
+#!/bin/bash
+KDIR="kernel/xiaomi/sm6150"
+CONFIG="/home/builder/losr/${KDIR}/arch/arm64/configs/vendor/lineage_davinci_defconfig"
+~/losr/${KDIR}/scripts/config --file ${CONFIG} \
+   -d LTO \
+   -d LTO_CLANG \
+   -d CFI \
+   -d CFI_PERMISSIVE \
+   -d CFI_CLANG \
+   -d SHADOW_CALL_STACK
