@@ -1,7 +1,8 @@
 #!/bin/bash
 source build/envsetup.sh
-repopick -p 292170 292162 # DT
-repopick -p 291217 289296 291217 287030 288145 287063 287075 291099 287040 # QTI BT
-repopick -p 289749 289835 286907 # HALs
+repopick -p 293240 293241 # DT
+repopick -p 289296 287030 288145 287063 287040 292491 292385 292383 287071 # QTI BT
+repopick -p 286900 286907 286925 # HALs
 repopick -p 291006 291060 # QTI telephony
 repopick -p 286940 # Vibrator
+repopick -p 293113 # 660 DT
