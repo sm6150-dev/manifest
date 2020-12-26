@@ -4,10 +4,6 @@
   <project name="LineageOS/android_device_xiaomi_sm6150-common" path="device/xiaomi/sm6150-common" remote="github" revision="lineage-17.1" />
   <project name="LineageOS/android_hardware_xiaomi" path="hardware/xiaomi" remote="github" />
   <project name="LineageOS/android_kernel_xiaomi_sm6150" path="kernel/xiaomi/sm6150" remote="github" revision="lineage-17.1" />
-  <project name="LineageOS/android_device_xiaomi_wayne" path="device/xiaomi/wayne" remote="github" />
-  <project name="LineageOS/android_device_xiaomi_wayne-common" path="device/xiaomi/wayne-common" remote="github" />
-  <project name="LineageOS/android_device_xiaomi_sdm660-common" path="device/xiaomi/sdm660-common" remote="github" />
-  <project name="LineageOS/android_kernel_xiaomi_sdm660" path="kernel/xiaomi/sdm660" remote="github" />
   <project name="LineageOS/android_device_oneplus_guacamole" path="device/oneplus/guacamole" remote="github" />
   <project name="LineageOS/android_device_oneplus_sm8150-common" path="device/oneplus/sm8150-common" remote="github" />
   <project name="LineageOS/android_kernel_oneplus_sm8150" path="kernel/oneplus/sm8150" remote="github" />
