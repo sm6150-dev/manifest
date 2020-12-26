@@ -1,6 +1,4 @@
 #!/bin/bash
 source build/envsetup.sh
-repopick -p 293240 293241 # DT
-repopick -p 289296 287030 288145 287063 287040 292491 292385 292383 287071 # QTI BT
+#repopick -p 293240 293241 # DT
 repopick -p 291006 291060 # QTI telephony
-repopick -p 293113 # 660 DT
