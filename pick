@@ -1,4 +1,7 @@
 #!/bin/bash
 source build/envsetup.sh
-#repopick -p 293240 293241 # DT
-repopick -p 291006 291060 # QTI telephony
+repopick -p 301152 301157 # DT
+repopick -p 291006 # QTI telephony
+repopick 291060 # ditto
+repopick 297547 # devicesettings
+repopick -p 295969 # FOD fixes
